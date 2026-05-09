@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ycIDE - 现代化开发体验</title>
+  <meta name="description" content="ycIDE 官方网站：专注效率、稳定与团队协作的现代化开发平台。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="ycIDE 首页">
+        <span class="brand-mark">yc</span>
+        <span class="brand-text">ycIDE</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="打开菜单" aria-expanded="false">菜单</button>
+      <nav class="nav" id="mainNav">
+        <a href="#features">功能</a>
+        <a href="#preview">预览</a>
+        <a href="#plans">友链</a>
+        <a href="https://github.com/chungbinb/ycIDE-electron/tree/main/lib" target="_blank" rel="noopener noreferrer">支持库</a>
+        <a href="https://github.com/chungbinb/ycIDE-electron/issues" target="_blank" rel="noopener noreferrer">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero-section">
+      <div class="orb orb-a" aria-hidden="true"></div>
+      <div class="orb orb-b" aria-hidden="true"></div>
+      <div class="container hero-grid reveal-up">
+        <div class="hero-copy">
+          <p class="eyebrow">Professional . Bright . Trustworthy</p>
+          <h1>让中文开发更高效</h1>
+          <p>
+            ycIDE 提供现代化开发工作流，兼顾新成员上手效率与大规模项目稳定性。
+            你可以现在先体验前端交互界面。
+          </p>
+          <div class="hero-actions">
+            <a href="https://github.com/chungbinb/ycIDE-electron/releases/download/v0.0.3-beta.54(2026-05-09)/ycIDE-win-unpacked-v0.0.3-beta.54.zip" class="btn btn-primary">立即体验</a>
+            <a href="#features" class="btn btn-ghost">查看核心能力</a>
+          </div>
+          <p class="hero-version-note">开发测试版 v0.0.3-beta.54(2026-05-09)</p>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-head">
+            <p class="hero-panel-label">核心体验</p>
+            <h3>一次打开开发全链路</h3>
+          </div>
+          <ul class="hero-highlights">
+            <li>
+              <h4>工程管理</h4>
+              <p>项目树、资源、模块一体化管理，减少频繁切换的认知负担。</p>
+            </li>
+            <li>
+              <h4>代码编辑</h4>
+              <p>文本模式与表格模式并存，方便切换为实际的文本模式查看代码和AI分析</p>
+            </li>
+            <li>
+              <h4>调试与输出</h4>
+              <p>编译输出、调试状态、错误定位集中呈现，问题闭环更直接。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section" id="features">
+      <div class="container reveal-up">
+        <h2>围绕易承开发流程构建的核心能力</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>工程结构一屏掌控</h3>
+            <p>窗口、程序集、全局变量、资源等节点集中管理，项目结构与代码入口保持同频。</p>
+          </article>
+          <article class="feature-card">
+            <h3>双模式编辑协同</h3>
+            <p>文本编辑与表格化编辑并行可用，在保持语义准确的同时提升大文件维护效率。</p>
+          </article>
+          <article class="feature-card">
+            <h3>AI 与调试联动</h3>
+            <p>AI 助手、错误列表、输出面板同域协作，定位问题到修复验证的链路更短、更直接。</p>
+          </article>
+          <article class="feature-card">
+            <h3>中文编程体验</h3>
+            <p>围绕中文开发者习惯设计语义与交互，让阅读、编写、维护都更自然顺手。</p>
+          </article>
+          <article class="feature-card">
+            <h3>继承易语言语法和表格</h3>
+            <p>兼容易语言语法和表格，在迁移与重构过程中最大限度复用历史资产。</p>
+          </article>
+          <article class="feature-card">
+            <h3>原生 64 位支持</h3>
+            <p>面向现代系统与大内存场景优化运行能力，满足更复杂项目的性能与稳定性需求。</p>
+          </article>
+          <article class="feature-card">
+            <h3>全面 Unicode 支持</h3>
+            <p>从编辑、编译到输出链路保持统一编码能力，跨语言文本处理更准确、更可靠。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-section" id="preview">
+      <div class="container reveal-up">
+        <h2>软件界面主题预览（静态展示）</h2>
+        <div class="theme-compare" id="themeCompare" aria-label="ycIDE 浅色与深色主题对比">
+          <img class="theme-compare-base" src="img/PixPin_2026-05-09_13-43-03.png" alt="ycIDE 浅色主题界面" loading="lazy" />
+          <div class="theme-compare-overlay" id="themeCompareOverlay">
+            <img src="img/PixPin_2026-05-09_13-43-22.png" alt="ycIDE 深色主题界面" loading="lazy" />
+          </div>
+          <div class="theme-compare-divider" id="themeCompareDivider" aria-hidden="true"></div>
+        </div>
+        <p class="preview-note">鼠标移动到最左侧时完整显示浅色主题，移动到最右侧时完整显示深色主题。</p>
+      </div>
+    </section>
+
+    <section class="plan-section" id="plans">
+      <div class="container reveal-up">
+        <h2>友情链接</h2>
+        <div class="timeline">
+          <a class="timeline-item" href="https://github.com/chungbinb/ycIDE-electron" target="_blank" rel="noopener noreferrer">
+            <p class="step">Link 01</p>
+            <h3>ycIDE-electron 仓库</h3>
+            <p>查看源码、提交记录与项目整体结构。</p>
+          </a>
+          <a class="timeline-item" href="https://github.com/chungbinb/ycIDE-electron/issues" target="_blank" rel="noopener noreferrer">
+            <p class="step">Link 02</p>
+            <h3>问题反馈与建议</h3>
+            <p>提交 Bug、功能建议与使用反馈。</p>
+          </a>
+          <a class="timeline-item" href="https://www.dywt.com.cn/" target="_blank" rel="noopener noreferrer">
+            <p class="step">Link 03</p>
+            <h3>易语言</h3>
+            <p>了解易语言的相关信息与资源。</p>
+          </a>
+          <a class="timeline-item" href="https://github.com/chungbinb/ycIDE-electron/releases" target="_blank" rel="noopener noreferrer">
+            <p class="step">Link 04</p>
+            <h3>历史版本</h3>
+            <p>获取版本发布包与版本说明。</p>
+          </a>
+            <a class="timeline-item" href="#" target="_blank" rel="noopener noreferrer">
+            <p class="step">Link 05</p>
+            <h3>简语言</h3>
+            <p>了解简语言的相关信息与资源。</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> ycIDE. All rights reserved.</p>
+      <a href="mailto:team@ycide.dev">team@ycide.dev</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

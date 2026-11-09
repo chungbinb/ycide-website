@@ -1,0 +1,103 @@
+name: 同步在线体验（playground）
+
+on:
+  workflow_dispatch: # 支持在 Actions 页面手动触发
+    inputs:
+      ref:
+        description: "ycIDE-electron 的分支 / tag / commit（留空用默认值）"
+        required: false
+        default: ""
+  repository_dispatch: # 支持 ycIDE-electron 发版后主动通知
+    types: [ycide-playground]
+  schedule:
+    - cron: "17 3 * * *" # 每天一次（UTC 03:17，北京时间 11:17）
+  pull_request: # 修改本工作流时只构建、不提交，用来检查构建是否正常
+    paths:
+      - .github/workflows/sync-playground.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-playground-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
+
+env:
+  # TODO: chungbinb/ycIDE-electron#77 合并进 dev 之后，把这里改回 dev
+  YCIDE_DEFAULT_REF: feat/web-playground
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出官网仓库
+        uses: actions/checkout@v4
+        with:
+          path: site
+
+      - name: 确定要构建的 ycIDE 版本
+        id: ref
+        env:
+          INPUT_REF: ${{ github.event.inputs.ref }}
+          PAYLOAD_REF: ${{ github.event.client_payload.ref }}
+        run: |
+          REF="${INPUT_REF:-${PAYLOAD_REF:-$YCIDE_DEFAULT_REF}}"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "构建 chungbinb/ycIDE-electron@$REF"
+
+      - name: 检出 ycIDE-electron
+        uses: actions/checkout@v4
+        with:
+          repository: chungbinb/ycIDE-electron
+          ref: ${{ steps.ref.outputs.ref }}
+          path: ycide
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ycide/package-lock.json
+
+      - name: 安装依赖
+        working-directory: ycide
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
+        # --ignore-scripts：不下载 Electron 二进制、不编译 node-pty，网页版用不到
+        run: npm ci --ignore-scripts
+
+      - name: 构建网页版
+        working-directory: ycide
+        run: npm run build:web
+
+      - name: 用构建产物替换 playground/
+        run: |
+          test -f ycide/out/web/index.html || { echo "构建产物缺少 index.html"; exit 1; }
+          rsync -a --delete ycide/out/web/ site/playground/
+          echo "YCIDE_SHA=$(git -C ycide rev-parse --short HEAD)" >> "$GITHUB_ENV"
+          git -C site status --short -- playground | head -50
+
+      - name: 上传构建产物（便于检查）
+        uses: actions/upload-artifact@v4
+        with:
+          name: playground
+          path: ycide/out/web
+          retention-days: 7
+
+      - name: 有变化则提交
+        if: github.event_name != 'pull_request'
+        working-directory: site
+        run: |
+          git add -A playground
+          if git diff --cached --quiet -- playground; then
+            echo "无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: 同步在线体验 playground（ycIDE-electron@${YCIDE_SHA}）"
+          # 和其他同步工作流同时推送时可能落后，先变基再推
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push && exit 0
+            sleep 5
+          done
+          exit 1

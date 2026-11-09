@@ -27,6 +27,10 @@ body {
   padding: 0;
 }
 
+main section[id] {
+  scroll-margin-top: 72px;
+}
+
 body {
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--text-main);

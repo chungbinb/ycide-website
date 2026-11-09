@@ -23,8 +23,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # TODO: chungbinb/ycIDE-electron#77 合并进 dev 之后，把这里改回 dev
-  YCIDE_DEFAULT_REF: feat/web-playground
+  # 默认构建 ycIDE-electron 的 dev 分支（网页版构建来自 chungbinb/ycIDE-electron#77）
+  YCIDE_DEFAULT_REF: dev
 
 jobs:
   sync:

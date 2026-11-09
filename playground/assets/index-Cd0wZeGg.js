@@ -132,1191 +132,1191 @@ Error generating stack: `+l.message+`
 `+l.stack}}var qt=Object.prototype.hasOwnProperty,Hn=n.unstable_scheduleCallback,ht=n.unstable_cancelCallback,He=n.unstable_shouldYield,cn=n.unstable_requestPaint,Rt=n.unstable_now,Pn=n.unstable_getCurrentPriorityLevel,yn=n.unstable_ImmediatePriority,Me=n.unstable_UserBlockingPriority,yt=n.unstable_NormalPriority,Lt=n.unstable_LowPriority,Gt=n.unstable_IdlePriority,fn=n.log,sn=n.unstable_setDisableYieldValue,zt=null,nn=null;function Re(e){if(typeof fn=="function"&&sn(e),nn&&typeof nn.setStrictMode=="function")try{nn.setStrictMode(zt,e)}catch{}}var Dt=Math.clz32?Math.clz32:Ht,_t=Math.log,On=Math.LN2;function Ht(e){return e>>>=0,e===0?32:31-(_t(e)/On|0)|0}var mn=256,zn=262144,Zt=4194304;function bn(e){var t=e&42;if(t!==0)return t;switch(e&-e){case 1:return 1;case 2:return 2;case 4:return 4;case 8:return 8;case 16:return 16;case 32:return 32;case 64:return 64;case 128:return 128;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:return e&261888;case 262144:case 524288:case 1048576:case 2097152:return e&3932160;case 4194304:case 8388608:case 16777216:case 33554432:return e&62914560;case 67108864:return 67108864;case 134217728:return 134217728;case 268435456:return 268435456;case 536870912:return 536870912;case 1073741824:return 0;default:return e}}function ii(e,t,s){var l=e.pendingLanes;if(l===0)return 0;var C=0,N=e.suspendedLanes,Z=e.pingedLanes;e=e.warmLanes;var fe=l&134217727;return fe!==0?(l=fe&~N,l!==0?C=bn(l):(Z&=fe,Z!==0?C=bn(Z):s||(s=fe&~e,s!==0&&(C=bn(s))))):(fe=l&~N,fe!==0?C=bn(fe):Z!==0?C=bn(Z):s||(s=l&~e,s!==0&&(C=bn(s)))),C===0?0:t!==0&&t!==C&&(t&N)===0&&(N=C&-C,s=t&-t,N>=s||N===32&&(s&4194048)!==0)?t:C}function Rn(e,t){return(e.pendingLanes&~(e.suspendedLanes&~e.pingedLanes)&t)===0}function Qn(e,t){switch(e){case 1:case 2:case 4:case 8:case 64:return t+250;case 16:case 32:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return t+5e3;case 4194304:case 8388608:case 16777216:case 33554432:return-1;case 67108864:case 134217728:case 268435456:case 536870912:case 1073741824:return-1;default:return-1}}function hr(){var e=Zt;return Zt<<=1,(Zt&62914560)===0&&(Zt=4194304),e}function vn(e){for(var t=[],s=0;31>s;s++)t.push(e);return t}function qn(e,t){e.pendingLanes|=t,t!==268435456&&(e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0)}function ls(e,t,s,l,C,N){var Z=e.pendingLanes;e.pendingLanes=s,e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0,e.expiredLanes&=s,e.entangledLanes&=s,e.errorRecoveryDisabledLanes&=s,e.shellSuspendCounter=0;var fe=e.entanglements,Ae=e.expirationTimes,ct=e.hiddenUpdates;for(s=Z&~s;0<s;){var wt=31-Dt(s),Et=1<<wt;fe[wt]=0,Ae[wt]=-1;var ut=ct[wt];if(ut!==null)for(ct[wt]=null,wt=0;wt<ut.length;wt++){var gt=ut[wt];gt!==null&&(gt.lane&=-536870913)}s&=~Et}l!==0&&ys(e,l,0),N!==0&&C===0&&e.tag!==0&&(e.suspendedLanes|=N&~(Z&~t))}function ys(e,t,s){e.pendingLanes|=t,e.suspendedLanes&=~t;var l=31-Dt(t);e.entangledLanes|=t,e.entanglements[l]=e.entanglements[l]|1073741824|s&261930}function Zn(e,t){var s=e.entangledLanes|=t;for(e=e.entanglements;s;){var l=31-Dt(s),C=1<<l;C&t|e[l]&t&&(e[l]|=t),s&=~C}}function Ps(e,t){var s=t&-t;return s=(s&42)!==0?1:sr(s),(s&(e.suspendedLanes|t))!==0?0:s}function sr(e){switch(e){case 2:e=1;break;case 8:e=4;break;case 32:e=16;break;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:case 4194304:case 8388608:case 16777216:case 33554432:e=128;break;case 268435456:e=134217728;break;default:e=0}return e}function lt(e){return e&=-e,2<e?8<e?(e&134217727)!==0?32:268435456:8:2}function Ut(){var e=ae.p;return e!==0?e:(e=window.event,e===void 0?32:Zy(e.type))}function _n(e,t){var s=ae.p;try{return ae.p=e,t()}finally{ae.p=s}}var fi=Math.random().toString(36).slice(2),ui="__reactFiber$"+fi,Tn="__reactProps$"+fi,bi="__reactContainer$"+fi,li="__reactEvents$"+fi,Ls="__reactListeners$"+fi,_s="__reactHandles$"+fi,rr="__reactResources$"+fi,Ti="__reactMarker$"+fi;function di(e){delete e[ui],delete e[Tn],delete e[li],delete e[Ls],delete e[_s]}function Ns(e){var t=e[ui];if(t)return t;for(var s=e.parentNode;s;){if(t=s[bi]||s[ui]){if(s=t.alternate,t.child!==null||s!==null&&s.child!==null)for(e=Ly(e);e!==null;){if(s=e[ui])return s;e=Ly(e)}return t}e=s,s=e.parentNode}return null}function Ii(e){if(e=e[ui]||e[bi]){var t=e.tag;if(t===5||t===6||t===13||t===31||t===26||t===27||t===3)return e}return null}function Vs(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e.stateNode;throw Error(o(33))}function Mr(e){var t=e[rr];return t||(t=e[rr]={hoistableStyles:new Map,hoistableScripts:new Map}),t}function yi(e){e[Ti]=!0}var ta=new Set,Mi={};function fs(e,t){En(e,t),En(e+"Capture",t)}function En(e,t){for(Mi[e]=t,e=0;e<t.length;e++)ta.add(t[e])}var Gn=RegExp("^[:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040]*$"),zs={},Ur={};function ns(e){return qt.call(Ur,e)?!0:qt.call(zs,e)?!1:Gn.test(e)?Ur[e]=!0:(zs[e]=!0,!1)}function Ye(e,t,s){if(ns(t))if(s===null)e.removeAttribute(t);else{switch(typeof s){case"undefined":case"function":case"symbol":e.removeAttribute(t);return;case"boolean":var l=t.toLowerCase().slice(0,5);if(l!=="data-"&&l!=="aria-"){e.removeAttribute(t);return}}e.setAttribute(t,""+s)}}function Tt(e,t,s){if(s===null)e.removeAttribute(t);else{switch(typeof s){case"undefined":case"function":case"symbol":case"boolean":e.removeAttribute(t);return}e.setAttribute(t,""+s)}}function rn(e,t,s,l){if(l===null)e.removeAttribute(s);else{switch(typeof l){case"undefined":case"function":case"symbol":case"boolean":e.removeAttribute(s);return}e.setAttributeNS(t,s,""+l)}}function Ln(e){switch(typeof e){case"bigint":case"boolean":case"number":case"string":case"undefined":return e;case"object":return e;default:return""}}function Yn(e){var t=e.type;return(e=e.nodeName)&&e.toLowerCase()==="input"&&(t==="checkbox"||t==="radio")}function hi(e,t,s){var l=Object.getOwnPropertyDescriptor(e.constructor.prototype,t);if(!e.hasOwnProperty(t)&&typeof l<"u"&&typeof l.get=="function"&&typeof l.set=="function"){var C=l.get,N=l.set;return Object.defineProperty(e,t,{configurable:!0,get:function(){return C.call(this)},set:function(Z){s=""+Z,N.call(this,Z)}}),Object.defineProperty(e,t,{enumerable:l.enumerable}),{getValue:function(){return s},setValue:function(Z){s=""+Z},stopTracking:function(){e._valueTracker=null,delete e[t]}}}}function Sn(e){if(!e._valueTracker){var t=Yn(e)?"checked":"value";e._valueTracker=hi(e,t,""+e[t])}}function xn(e){if(!e)return!1;var t=e._valueTracker;if(!t)return!0;var s=t.getValue(),l="";return e&&(l=Yn(e)?e.checked?"true":"false":e.value),e=l,e!==s?(t.setValue(e),!0):!1}function un(e){if(e=e||(typeof document<"u"?document:void 0),typeof e>"u")return null;try{return e.activeElement||e.body}catch{return e.body}}var Yt=/[\n"\\]/g;function dn(e){return e.replace(Yt,function(t){return"\\"+t.charCodeAt(0).toString(16)+" "})}function Cn(e,t,s,l,C,N,Z,fe){e.name="",Z!=null&&typeof Z!="function"&&typeof Z!="symbol"&&typeof Z!="boolean"?e.type=Z:e.removeAttribute("type"),t!=null?Z==="number"?(t===0&&e.value===""||e.value!=t)&&(e.value=""+Ln(t)):e.value!==""+Ln(t)&&(e.value=""+Ln(t)):Z!=="submit"&&Z!=="reset"||e.removeAttribute("value"),t!=null?Ci(e,Z,Ln(t)):s!=null?Ci(e,Z,Ln(s)):l!=null&&e.removeAttribute("value"),C==null&&N!=null&&(e.defaultChecked=!!N),C!=null&&(e.checked=C&&typeof C!="function"&&typeof C!="symbol"),fe!=null&&typeof fe!="function"&&typeof fe!="symbol"&&typeof fe!="boolean"?e.name=""+Ln(fe):e.removeAttribute("name")}function ei(e,t,s,l,C,N,Z,fe){if(N!=null&&typeof N!="function"&&typeof N!="symbol"&&typeof N!="boolean"&&(e.type=N),t!=null||s!=null){if(!(N!=="submit"&&N!=="reset"||t!=null)){Sn(e);return}s=s!=null?""+Ln(s):"",t=t!=null?""+Ln(t):s,fe||t===e.value||(e.value=t),e.defaultValue=t}l=l??C,l=typeof l!="function"&&typeof l!="symbol"&&!!l,e.checked=fe?e.checked:!!l,e.defaultChecked=!!l,Z!=null&&typeof Z!="function"&&typeof Z!="symbol"&&typeof Z!="boolean"&&(e.name=Z),Sn(e)}function Ci(e,t,s){t==="number"&&un(e.ownerDocument)===e||e.defaultValue===""+s||(e.defaultValue=""+s)}function en(e,t,s,l){if(e=e.options,t){t={};for(var C=0;C<s.length;C++)t["$"+s[C]]=!0;for(s=0;s<e.length;s++)C=t.hasOwnProperty("$"+e[s].value),e[s].selected!==C&&(e[s].selected=C),C&&l&&(e[s].defaultSelected=!0)}else{for(s=""+Ln(s),t=null,C=0;C<e.length;C++){if(e[C].value===s){e[C].selected=!0,l&&(e[C].defaultSelected=!0);return}t!==null||e[C].disabled||(t=e[C])}t!==null&&(t.selected=!0)}}function Bi(e,t,s){if(t!=null&&(t=""+Ln(t),t!==e.value&&(e.value=t),s==null)){e.defaultValue!==t&&(e.defaultValue=t);return}e.defaultValue=s!=null?""+Ln(s):""}function Lr(e,t,s,l){if(t==null){if(l!=null){if(s!=null)throw Error(o(92));if(Se(l)){if(1<l.length)throw Error(o(93));l=l[0]}s=l}s==null&&(s=""),t=s}s=Ln(t),e.defaultValue=s,l=e.textContent,l===s&&l!==""&&l!==null&&(e.value=l),Sn(e)}function Nt(e,t){if(t){var s=e.firstChild;if(s&&s===e.lastChild&&s.nodeType===3){s.nodeValue=t;return}}e.textContent=t}var si=new Set("animationIterationCount aspectRatio borderImageOutset borderImageSlice borderImageWidth boxFlex boxFlexGroup boxOrdinalGroup columnCount columns flex flexGrow flexPositive flexShrink flexNegative flexOrder gridArea gridRow gridRowEnd gridRowSpan gridRowStart gridColumn gridColumnEnd gridColumnSpan gridColumnStart fontWeight lineClamp lineHeight opacity order orphans scale tabSize widows zIndex zoom fillOpacity floodOpacity stopOpacity strokeDasharray strokeDashoffset strokeMiterlimit strokeOpacity strokeWidth MozAnimationIterationCount MozBoxFlex MozBoxFlexGroup MozLineClamp msAnimationIterationCount msFlex msZoom msFlexGrow msFlexNegative msFlexOrder msFlexPositive msFlexShrink msGridColumn msGridColumnSpan msGridRow msGridRowSpan WebkitAnimationIterationCount WebkitBoxFlex WebKitBoxFlexGroup WebkitBoxOrdinalGroup WebkitColumnCount WebkitColumns WebkitFlex WebkitFlexGrow WebkitFlexPositive WebkitFlexShrink WebkitLineClamp".split(" "));function Wr(e,t,s){var l=t.indexOf("--")===0;s==null||typeof s=="boolean"||s===""?l?e.setProperty(t,""):t==="float"?e.cssFloat="":e[t]="":l?e.setProperty(t,s):typeof s!="number"||s===0||si.has(t)?t==="float"?e.cssFloat=s:e[t]=(""+s).trim():e[t]=s+"px"}function Ma(e,t,s){if(t!=null&&typeof t!="object")throw Error(o(62));if(e=e.style,s!=null){for(var l in s)!s.hasOwnProperty(l)||t!=null&&t.hasOwnProperty(l)||(l.indexOf("--")===0?e.setProperty(l,""):l==="float"?e.cssFloat="":e[l]="");for(var C in t)l=t[C],t.hasOwnProperty(C)&&s[C]!==l&&Wr(e,C,l)}else for(var N in t)t.hasOwnProperty(N)&&Wr(e,N,t[N])}function Zi(e){if(e.indexOf("-")===-1)return!1;switch(e){case"annotation-xml":case"color-profile":case"font-face":case"font-face-src":case"font-face-uri":case"font-face-format":case"font-face-name":case"missing-glyph":return!1;default:return!0}}var na=new Map([["acceptCharset","accept-charset"],["htmlFor","for"],["httpEquiv","http-equiv"],["crossOrigin","crossorigin"],["accentHeight","accent-height"],["alignmentBaseline","alignment-baseline"],["arabicForm","arabic-form"],["baselineShift","baseline-shift"],["capHeight","cap-height"],["clipPath","clip-path"],["clipRule","clip-rule"],["colorInterpolation","color-interpolation"],["colorInterpolationFilters","color-interpolation-filters"],["colorProfile","color-profile"],["colorRendering","color-rendering"],["dominantBaseline","dominant-baseline"],["enableBackground","enable-background"],["fillOpacity","fill-opacity"],["fillRule","fill-rule"],["floodColor","flood-color"],["floodOpacity","flood-opacity"],["fontFamily","font-family"],["fontSize","font-size"],["fontSizeAdjust","font-size-adjust"],["fontStretch","font-stretch"],["fontStyle","font-style"],["fontVariant","font-variant"],["fontWeight","font-weight"],["glyphName","glyph-name"],["glyphOrientationHorizontal","glyph-orientation-horizontal"],["glyphOrientationVertical","glyph-orientation-vertical"],["horizAdvX","horiz-adv-x"],["horizOriginX","horiz-origin-x"],["imageRendering","image-rendering"],["letterSpacing","letter-spacing"],["lightingColor","lighting-color"],["markerEnd","marker-end"],["markerMid","marker-mid"],["markerStart","marker-start"],["overlinePosition","overline-position"],["overlineThickness","overline-thickness"],["paintOrder","paint-order"],["panose-1","panose-1"],["pointerEvents","pointer-events"],["renderingIntent","rendering-intent"],["shapeRendering","shape-rendering"],["stopColor","stop-color"],["stopOpacity","stop-opacity"],["strikethroughPosition","strikethrough-position"],["strikethroughThickness","strikethrough-thickness"],["strokeDasharray","stroke-dasharray"],["strokeDashoffset","stroke-dashoffset"],["strokeLinecap","stroke-linecap"],["strokeLinejoin","stroke-linejoin"],["strokeMiterlimit","stroke-miterlimit"],["strokeOpacity","stroke-opacity"],["strokeWidth","stroke-width"],["textAnchor","text-anchor"],["textDecoration","text-decoration"],["textRendering","text-rendering"],["transformOrigin","transform-origin"],["underlinePosition","underline-position"],["underlineThickness","underline-thickness"],["unicodeBidi","unicode-bidi"],["unicodeRange","unicode-range"],["unitsPerEm","units-per-em"],["vAlphabetic","v-alphabetic"],["vHanging","v-hanging"],["vIdeographic","v-ideographic"],["vMathematical","v-mathematical"],["vectorEffect","vector-effect"],["vertAdvY","vert-adv-y"],["vertOriginX","vert-origin-x"],["vertOriginY","vert-origin-y"],["wordSpacing","word-spacing"],["writingMode","writing-mode"],["xmlnsXlink","xmlns:xlink"],["xHeight","x-height"]]),ps=/^[\u0000-\u001F ]*j[\r\n\t]*a[\r\n\t]*v[\r\n\t]*a[\r\n\t]*s[\r\n\t]*c[\r\n\t]*r[\r\n\t]*i[\r\n\t]*p[\r\n\t]*t[\r\n\t]*:/i;function os(e){return ps.test(""+e)?"javascript:throw new Error('React has blocked a javascript: URL as a security precaution.')":e}function cs(){}var $i=null;function Pi(e){return e=e.target||e.srcElement||window,e.correspondingUseElement&&(e=e.correspondingUseElement),e.nodeType===3?e.parentNode:e}var vr=null,bs=null;function Ss(e){var t=Ii(e);if(t&&(e=t.stateNode)){var s=e[Tn]||null;e:switch(e=t.stateNode,t.type){case"input":if(Cn(e,s.value,s.defaultValue,s.defaultValue,s.checked,s.defaultChecked,s.type,s.name),t=s.name,s.type==="radio"&&t!=null){for(s=e;s.parentNode;)s=s.parentNode;for(s=s.querySelectorAll('input[name="'+dn(""+t)+'"][type="radio"]'),t=0;t<s.length;t++){var l=s[t];if(l!==e&&l.form===e.form){var C=l[Tn]||null;if(!C)throw Error(o(90));Cn(l,C.value,C.defaultValue,C.defaultValue,C.checked,C.defaultChecked,C.type,C.name)}}for(t=0;t<s.length;t++)l=s[t],l.form===e.form&&xn(l)}break e;case"textarea":Bi(e,s.value,s.defaultValue);break e;case"select":t=s.value,t!=null&&en(e,!!s.multiple,t,!1)}}}var ya=!1;function fr(e,t,s){if(ya)return e(t,s);ya=!0;try{var l=e(t);return l}finally{if(ya=!1,(vr!==null||bs!==null)&&(Nh(),vr&&(t=vr,e=bs,bs=vr=null,Ss(t),e)))for(t=0;t<e.length;t++)Ss(e[t])}}function pr(e,t){var s=e.stateNode;if(s===null)return null;var l=s[Tn]||null;if(l===null)return null;s=l[t];e:switch(t){case"onClick":case"onClickCapture":case"onDoubleClick":case"onDoubleClickCapture":case"onMouseDown":case"onMouseDownCapture":case"onMouseMove":case"onMouseMoveCapture":case"onMouseUp":case"onMouseUpCapture":case"onMouseEnter":(l=!l.disabled)||(e=e.type,l=!(e==="button"||e==="input"||e==="select"||e==="textarea")),e=!l;break e;default:e=!1}if(e)return null;if(s&&typeof s!="function")throw Error(o(231,t,typeof s));return s}var Xi=!(typeof window>"u"||typeof window.document>"u"||typeof window.document.createElement>"u"),Ba=!1;if(Xi)try{var wn={};Object.defineProperty(wn,"passive",{get:function(){Ba=!0}}),window.addEventListener("test",wn,wn),window.removeEventListener("test",wn,wn)}catch{Ba=!1}var Kr=null,Rr=null,Nn=null;function ia(){if(Nn)return Nn;var e,t=Rr,s=t.length,l,C="value"in Kr?Kr.value:Kr.textContent,N=C.length;for(e=0;e<s&&t[e]===C[e];e++);var Z=s-e;for(l=1;l<=Z&&t[s-l]===C[N-l];l++);return Nn=C.slice(e,1<l?1-l:void 0)}function Fs(e){var t=e.keyCode;return"charCode"in e?(e=e.charCode,e===0&&t===13&&(e=13)):e=t,e===10&&(e=13),32<=e||e===13?e:0}function $a(){return!0}function gl(){return!1}function Cs(e){function t(s,l,C,N,Z){this._reactName=s,this._targetInst=C,this.type=l,this.nativeEvent=N,this.target=Z,this.currentTarget=null;for(var fe in e)e.hasOwnProperty(fe)&&(s=e[fe],this[fe]=s?s(N):N[fe]);return this.isDefaultPrevented=(N.defaultPrevented!=null?N.defaultPrevented:N.returnValue===!1)?$a:gl,this.isPropagationStopped=gl,this}return x(t.prototype,{preventDefault:function(){this.defaultPrevented=!0;var s=this.nativeEvent;s&&(s.preventDefault?s.preventDefault():typeof s.returnValue!="unknown"&&(s.returnValue=!1),this.isDefaultPrevented=$a)},stopPropagation:function(){var s=this.nativeEvent;s&&(s.stopPropagation?s.stopPropagation():typeof s.cancelBubble!="unknown"&&(s.cancelBubble=!0),this.isPropagationStopped=$a)},persist:function(){},isPersistent:$a}),t}var Ui={eventPhase:0,bubbles:0,cancelable:0,timeStamp:function(e){return e.timeStamp||Date.now()},defaultPrevented:0,isTrusted:0},gr=Cs(Ui),sa=x({},Ui,{view:0,detail:0}),Pa=Cs(sa),Hr,ra,Ts,ml=x({},sa,{screenX:0,screenY:0,clientX:0,clientY:0,pageX:0,pageY:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,getModifierState:$e,button:0,buttons:0,relatedTarget:function(e){return e.relatedTarget===void 0?e.fromElement===e.srcElement?e.toElement:e.fromElement:e.relatedTarget},movementX:function(e){return"movementX"in e?e.movementX:(e!==Ts&&(Ts&&e.type==="mousemove"?(Hr=e.screenX-Ts.screenX,ra=e.screenY-Ts.screenY):ra=Hr=0,Ts=e),Hr)},movementY:function(e){return"movementY"in e?e.movementY:ra}}),Va=Cs(ml),Or=x({},ml,{dataTransfer:0}),io=Cs(Or),qs=x({},sa,{relatedTarget:0}),Br=Cs(qs),so=x({},Ui,{animationName:0,elapsedTime:0,pseudoElement:0}),ro=Cs(so),Fa=x({},Ui,{clipboardData:function(e){return"clipboardData"in e?e.clipboardData:window.clipboardData}}),La=Cs(Fa),ba=x({},Ui,{data:0}),Rl=Cs(ba),se={Esc:"Escape",Spacebar:" ",Left:"ArrowLeft",Up:"ArrowUp",Right:"ArrowRight",Down:"ArrowDown",Del:"Delete",Win:"OS",Menu:"ContextMenu",Apps:"ContextMenu",Scroll:"ScrollLock",MozPrintableKey:"Unidentified"},ve={8:"Backspace",9:"Tab",12:"Clear",13:"Enter",16:"Shift",17:"Control",18:"Alt",19:"Pause",20:"CapsLock",27:"Escape",32:" ",33:"PageUp",34:"PageDown",35:"End",36:"Home",37:"ArrowLeft",38:"ArrowUp",39:"ArrowRight",40:"ArrowDown",45:"Insert",46:"Delete",112:"F1",113:"F2",114:"F3",115:"F4",116:"F5",117:"F6",118:"F7",119:"F8",120:"F9",121:"F10",122:"F11",123:"F12",144:"NumLock",145:"ScrollLock",224:"Meta"},_e={Alt:"altKey",Control:"ctrlKey",Meta:"metaKey",Shift:"shiftKey"};function ze(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):(e=_e[e])?!!t[e]:!1}function $e(){return ze}var Ue=x({},sa,{key:function(e){if(e.key){var t=se[e.key]||e.key;if(t!=="Unidentified")return t}return e.type==="keypress"?(e=Fs(e),e===13?"Enter":String.fromCharCode(e)):e.type==="keydown"||e.type==="keyup"?ve[e.keyCode]||"Unidentified":""},code:0,location:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,repeat:0,locale:0,getModifierState:$e,charCode:function(e){return e.type==="keypress"?Fs(e):0},keyCode:function(e){return e.type==="keydown"||e.type==="keyup"?e.keyCode:0},which:function(e){return e.type==="keypress"?Fs(e):e.type==="keydown"||e.type==="keyup"?e.keyCode:0}}),ft=Cs(Ue),$=x({},ml,{pointerId:0,width:0,height:0,pressure:0,tangentialPressure:0,tiltX:0,tiltY:0,twist:0,pointerType:0,isPrimary:0}),ne=Cs($),xe=x({},sa,{touches:0,targetTouches:0,changedTouches:0,altKey:0,metaKey:0,ctrlKey:0,shiftKey:0,getModifierState:$e}),ke=Cs(xe),Q=x({},Ui,{propertyName:0,elapsedTime:0,pseudoElement:0}),Ee=Cs(Q),Ie=x({},ml,{deltaX:function(e){return"deltaX"in e?e.deltaX:"wheelDeltaX"in e?-e.wheelDeltaX:0},deltaY:function(e){return"deltaY"in e?e.deltaY:"wheelDeltaY"in e?-e.wheelDeltaY:"wheelDelta"in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0}),Be=Cs(Ie),Oe=x({},Ui,{newState:0,oldState:0}),pt=Cs(Oe),qe=[9,13,27,32],rt=Xi&&"CompositionEvent"in window,Mt=null;Xi&&"documentMode"in document&&(Mt=document.documentMode);var Pt=Xi&&"TextEvent"in window&&!Mt,Wt=Xi&&(!rt||Mt&&8<Mt&&11>=Mt),pn=" ",Un=!1;function vi(e,t){switch(e){case"keyup":return qe.indexOf(t.keyCode)!==-1;case"keydown":return t.keyCode!==229;case"keypress":case"mousedown":case"focusout":return!0;default:return!1}}function Li(e){return e=e.detail,typeof e=="object"&&"data"in e?e.data:null}var Di=!1;function aa(e,t){switch(e){case"compositionend":return Li(t);case"keypress":return t.which!==32?null:(Un=!0,pn);case"textInput":return e=t.data,e===pn&&Un?null:e;default:return null}}function la(e,t){if(Di)return e==="compositionend"||!rt&&vi(e,t)?(e=ia(),Nn=Rr=Kr=null,Di=!1,e):null;switch(e){case"paste":return null;case"keypress":if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case"compositionend":return Wt&&t.locale!=="ko"?null:t.data;default:return null}}var Hl={color:!0,date:!0,datetime:!0,"datetime-local":!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function oa(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t==="input"?!!Hl[e.type]:t==="textarea"}function ca(e,t,s,l){vr?bs?bs.push(l):bs=[l]:vr=l,t=Hh(t,"onChange"),0<t.length&&(s=new gr("onChange","change",null,s,l),e.push({event:s,listeners:t}))}var Gr=null,xr=null;function qa(e){gy(e,0)}function Za(e){var t=Vs(e);if(xn(t))return e}function Na(e,t){if(e==="change")return t}var Uc=!1;if(Xi){var pc;if(Xi){var $o="oninput"in document;if(!$o){var Wc=document.createElement("div");Wc.setAttribute("oninput","return;"),$o=typeof Wc.oninput=="function"}pc=$o}else pc=!1;Uc=pc&&(!document.documentMode||9<document.documentMode)}function ua(){Gr&&(Gr.detachEvent("onpropertychange",jo),xr=Gr=null)}function jo(e){if(e.propertyName==="value"&&Za(xr)){var t=[];ca(t,xr,e,Pi(e)),fr(qa,t)}}function yl(e,t,s){e==="focusin"?(ua(),Gr=t,xr=s,Gr.attachEvent("onpropertychange",jo)):e==="focusout"&&ua()}function gc(e){if(e==="selectionchange"||e==="keyup"||e==="keydown")return Za(xr)}function va(e,t){if(e==="click")return Za(t)}function wi(e,t){if(e==="input"||e==="change")return Za(t)}function ko(e,t){return e===t&&(e!==0||1/e===1/t)||e!==e&&t!==t}var wr=typeof Object.is=="function"?Object.is:ko;function Ua(e,t){if(wr(e,t))return!0;if(typeof e!="object"||e===null||typeof t!="object"||t===null)return!1;var s=Object.keys(e),l=Object.keys(t);if(s.length!==l.length)return!1;for(l=0;l<s.length;l++){var C=s[l];if(!qt.call(t,C)||!wr(e[C],t[C]))return!1}return!0}function Ol(e){for(;e&&e.firstChild;)e=e.firstChild;return e}function mc(e,t){var s=Ol(e);e=0;for(var l;s;){if(s.nodeType===3){if(l=e+s.textContent.length,e<=t&&l>=t)return{node:s,offset:t-e};e=l}e:{for(;s;){if(s.nextSibling){s=s.nextSibling;break e}s=s.parentNode}s=void 0}s=Ol(s)}}function Bl(e,t){return e&&t?e===t?!0:e&&e.nodeType===3?!1:t&&t.nodeType===3?Bl(e,t.parentNode):"contains"in e?e.contains(t):e.compareDocumentPosition?!!(e.compareDocumentPosition(t)&16):!1:!1}function _r(e){e=e!=null&&e.ownerDocument!=null&&e.ownerDocument.defaultView!=null?e.ownerDocument.defaultView:window;for(var t=un(e.document);t instanceof e.HTMLIFrameElement;){try{var s=typeof t.contentWindow.location.href=="string"}catch{s=!1}if(s)e=t.contentWindow;else break;t=un(e.document)}return t}function Wa(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&(t==="input"&&(e.type==="text"||e.type==="search"||e.type==="tel"||e.type==="url"||e.type==="password")||t==="textarea"||e.contentEditable==="true")}var yc=Xi&&"documentMode"in document&&11>=document.documentMode,ao=null,bl=null,Ka=null,Po=!1;function Kc(e,t,s){var l=s.window===s?s.document:s.nodeType===9?s:s.ownerDocument;Po||ao==null||ao!==un(l)||(l=ao,"selectionStart"in l&&Wa(l)?l={start:l.selectionStart,end:l.selectionEnd}:(l=(l.ownerDocument&&l.ownerDocument.defaultView||window).getSelection(),l={anchorNode:l.anchorNode,anchorOffset:l.anchorOffset,focusNode:l.focusNode,focusOffset:l.focusOffset}),Ka&&Ua(Ka,l)||(Ka=l,l=Hh(bl,"onSelect"),0<l.length&&(t=new gr("onSelect","select",null,t,s),e.push({event:t,listeners:l}),t.target=ao)))}function $l(e,t){var s={};return s[e.toLowerCase()]=t.toLowerCase(),s["Webkit"+e]="webkit"+t,s["Moz"+e]="moz"+t,s}var Xn={animationend:$l("Animation","AnimationEnd"),animationiteration:$l("Animation","AnimationIteration"),animationstart:$l("Animation","AnimationStart"),transitionrun:$l("Transition","TransitionRun"),transitionstart:$l("Transition","TransitionStart"),transitioncancel:$l("Transition","TransitionCancel"),transitionend:$l("Transition","TransitionEnd")},Yr={},za={};Xi&&(za=document.createElement("div").style,"AnimationEvent"in window||(delete Xn.animationend.animation,delete Xn.animationiteration.animation,delete Xn.animationstart.animation),"TransitionEvent"in window||delete Xn.transitionend.transition);function Ga(e){if(Yr[e])return Yr[e];if(!Xn[e])return e;var t=Xn[e],s;for(s in t)if(t.hasOwnProperty(s)&&s in za)return Yr[e]=t[s];return e}var Vo=Ga("animationend"),Fo=Ga("animationiteration"),Gc=Ga("animationstart"),Yc=Ga("transitionrun"),Zs=Ga("transitionstart"),Vi=Ga("transitioncancel"),qo=Ga("transitionend"),Ya=new Map,bc="abort auxClick beforeToggle cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(" ");bc.push("scrollEnd");function Xr(e,t){Ya.set(e,t),fs(t,[e])}var Eo=typeof reportError=="function"?reportError:function(e){if(typeof window=="object"&&typeof window.ErrorEvent=="function"){var t=new window.ErrorEvent("error",{bubbles:!0,cancelable:!0,message:typeof e=="object"&&e!==null&&typeof e.message=="string"?String(e.message):String(e),error:e});if(!window.dispatchEvent(t))return}else if(typeof process=="object"&&typeof process.emit=="function"){process.emit("uncaughtException",e);return}console.error(e)},Ki=[],lo=0,vc=0;function Mo(){for(var e=lo,t=vc=lo=0;t<e;){var s=Ki[t];Ki[t++]=null;var l=Ki[t];Ki[t++]=null;var C=Ki[t];Ki[t++]=null;var N=Ki[t];if(Ki[t++]=null,l!==null&&C!==null){var Z=l.pending;Z===null?C.next=C:(C.next=Z.next,Z.next=C),l.pending=C}N!==0&&Lo(s,C,N)}}function Pl(e,t,s,l){Ki[lo++]=e,Ki[lo++]=t,Ki[lo++]=s,Ki[lo++]=l,vc|=l,e.lanes|=l,e=e.alternate,e!==null&&(e.lanes|=l)}function oo(e,t,s,l){return Pl(e,t,s,l),co(e)}function Us(e,t){return Pl(e,null,null,t),co(e)}function Lo(e,t,s){e.lanes|=s;var l=e.alternate;l!==null&&(l.lanes|=s);for(var C=!1,N=e.return;N!==null;)N.childLanes|=s,l=N.alternate,l!==null&&(l.childLanes|=s),N.tag===22&&(e=N.stateNode,e===null||e._visibility&1||(C=!0)),e=N,N=N.return;return e.tag===3?(N=e.stateNode,C&&t!==null&&(C=31-Dt(s),e=N.hiddenUpdates,l=e[C],l===null?e[C]=[t]:l.push(t),t.lane=s|536870912),N):null}function co(e){if(50<xd)throw xd=0,cp=null,Error(o(185));for(var t=e.return;t!==null;)e=t,t=e.return;return e.tag===3?e.stateNode:null}var ar={};function _u(e,t,s,l){this.tag=e,this.key=s,this.sibling=this.child=this.return=this.stateNode=this.type=this.elementType=null,this.index=0,this.refCleanup=this.ref=null,this.pendingProps=t,this.dependencies=this.memoizedState=this.updateQueue=this.memoizedProps=null,this.mode=l,this.subtreeFlags=this.flags=0,this.deletions=null,this.childLanes=this.lanes=0,this.alternate=null}function js(e,t,s,l){return new _u(e,t,s,l)}function Xa(e){return e=e.prototype,!(!e||!e.isReactComponent)}function Ta(e,t){var s=e.alternate;return s===null?(s=js(e.tag,t,e.key,e.mode),s.elementType=e.elementType,s.type=e.type,s.stateNode=e.stateNode,s.alternate=e,e.alternate=s):(s.pendingProps=t,s.type=e.type,s.flags=0,s.subtreeFlags=0,s.deletions=null),s.flags=e.flags&65011712,s.childLanes=e.childLanes,s.lanes=e.lanes,s.child=e.child,s.memoizedProps=e.memoizedProps,s.memoizedState=e.memoizedState,s.updateQueue=e.updateQueue,t=e.dependencies,s.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext},s.sibling=e.sibling,s.index=e.index,s.ref=e.ref,s.refCleanup=e.refCleanup,s}function Aa(e,t){e.flags&=65011714;var s=e.alternate;return s===null?(e.childLanes=0,e.lanes=t,e.child=null,e.subtreeFlags=0,e.memoizedProps=null,e.memoizedState=null,e.updateQueue=null,e.dependencies=null,e.stateNode=null):(e.childLanes=s.childLanes,e.lanes=s.lanes,e.child=s.child,e.subtreeFlags=0,e.deletions=null,e.memoizedProps=s.memoizedProps,e.memoizedState=s.memoizedState,e.updateQueue=s.updateQueue,e.type=s.type,t=s.dependencies,e.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext}),e}function Ja(e,t,s,l,C,N){var Z=0;if(l=e,typeof e=="function")Xa(e)&&(Z=1);else if(typeof e=="string")Z=Yx(e,s,te.current)?26:e==="html"||e==="head"||e==="body"?27:5;else e:switch(e){case O:return e=js(31,s,t,C),e.elementType=O,e.lanes=N,e;case _:return Da(s.children,C,N,t);case v:Z=8,C|=24;break;case m:return e=js(12,s,t,C|2),e.elementType=m,e.lanes=N,e;case I:return e=js(13,s,t,C),e.elementType=I,e.lanes=N,e;case L:return e=js(19,s,t,C),e.elementType=L,e.lanes=N,e;default:if(typeof e=="object"&&e!==null)switch(e.$$typeof){case p:Z=10;break e;case y:Z=9;break e;case M:Z=11;break e;case R:Z=14;break e;case A:Z=16,l=null;break e}Z=29,s=Error(o(130,e===null?"null":typeof e,"")),l=null}return t=js(Z,s,t,C),t.elementType=e,t.type=l,t.lanes=N,t}function Da(e,t,s,l){return e=js(7,e,l,t),e.lanes=s,e}function vl(e,t,s){return e=js(6,e,null,t),e.lanes=s,e}function Xc(e){var t=js(18,null,null,0);return t.stateNode=e,t}function pi(e,t,s){return t=js(4,e.children!==null?e.children:[],e.key,t),t.lanes=s,t.stateNode={containerInfo:e.containerInfo,pendingChildren:null,implementation:e.implementation},t}var Jr=new WeakMap;function Qr(e,t){if(typeof e=="object"&&e!==null){var s=Jr.get(e);return s!==void 0?s:(t={value:e,source:t,stack:on(t)},Jr.set(e,t),t)}return{value:e,source:t,stack:on(t)}}var xl=[],xa=0,Zo=null,wa=0,Nr=[],_a=0,Sr=null,lr=1,$r="";function Qa(e,t){xl[xa++]=wa,xl[xa++]=Zo,Zo=e,wa=t}function zr(e,t,s){Nr[_a++]=lr,Nr[_a++]=$r,Nr[_a++]=Sr,Sr=e;var l=lr;e=$r;var C=32-Dt(l)-1;l&=~(1<<C),s+=1;var N=32-Dt(t)+C;if(30<N){var Z=C-C%5;N=(l&(1<<Z)-1).toString(32),l>>=Z,C-=Z,lr=1<<32-Dt(t)+C|s<<C|l,$r=N+e}else lr=1<<N|s<<C|l,$r=e}function No(e){e.return!==null&&(Qa(e,1),zr(e,1,0))}function wl(e){for(;e===Zo;)Zo=xl[--xa],xl[xa]=null,wa=xl[--xa],xl[xa]=null;for(;e===Sr;)Sr=Nr[--_a],Nr[_a]=null,$r=Nr[--_a],Nr[_a]=null,lr=Nr[--_a],Nr[_a]=null}function Uo(e,t){Nr[_a++]=lr,Nr[_a++]=$r,Nr[_a++]=Sr,lr=t.id,$r=t.overflow,Sr=e}var Cr=null,Ji=null,Ai=!1,Vl=null,Tr=!1,Jc=Error(o(519));function Fl(e){var t=Error(o(418,1<arguments.length&&arguments[1]!==void 0&&arguments[1]?"text":"HTML",""));throw Wo(Qr(t,e)),Jc}function Su(e){var t=e.stateNode,s=e.type,l=e.memoizedProps;switch(t[ui]=e,t[Tn]=l,s){case"dialog":Oi("cancel",t),Oi("close",t);break;case"iframe":case"object":case"embed":Oi("load",t);break;case"video":case"audio":for(s=0;s<_d.length;s++)Oi(_d[s],t);break;case"source":Oi("error",t);break;case"img":case"image":case"link":Oi("error",t),Oi("load",t);break;case"details":Oi("toggle",t);break;case"input":Oi("invalid",t),ei(t,l.value,l.defaultValue,l.checked,l.defaultChecked,l.type,l.name,!0);break;case"select":Oi("invalid",t);break;case"textarea":Oi("invalid",t),Lr(t,l.value,l.defaultValue,l.children)}s=l.children,typeof s!="string"&&typeof s!="number"&&typeof s!="bigint"||t.textContent===""+s||l.suppressHydrationWarning===!0||vy(t.textContent,s)?(l.popover!=null&&(Oi("beforetoggle",t),Oi("toggle",t)),l.onScroll!=null&&Oi("scroll",t),l.onScrollEnd!=null&&Oi("scrollend",t),l.onClick!=null&&(t.onclick=cs),t=!0):t=!1,t||Fl(e,!0)}function Qc(e){for(Cr=e.return;Cr;)switch(Cr.tag){case 5:case 31:case 13:Tr=!1;return;case 27:case 3:Tr=!0;return;default:Cr=Cr.return}}function zo(e){if(e!==Cr)return!1;if(!Ai)return Qc(e),Ai=!0,!1;var t=e.tag,s;if((s=t!==3&&t!==27)&&((s=t===5)&&(s=e.type,s=!(s!=="form"&&s!=="button")||Cp(e.type,e.memoizedProps)),s=!s),s&&Ji&&Fl(e),Qc(e),t===13){if(e=e.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(o(317));Ji=My(e)}else if(t===31){if(e=e.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(o(317));Ji=My(e)}else t===27?(t=Ji,Nc(e.type)?(e=Lp,Lp=null,Ji=e):Ji=t):Ji=Cr?Yl(e.stateNode.nextSibling):null;return!0}function el(){Ji=Cr=null,Ai=!1}function eu(){var e=Vl;return e!==null&&(ll===null?ll=e:ll.push.apply(ll,e),Vl=null),e}function Wo(e){Vl===null?Vl=[e]:Vl.push(e)}var vs=ue(null),_l=null,Pr=null;function ql(e,t,s){Te(vs,t._currentValue),t._currentValue=s}function jr(e){e._currentValue=vs.current,ye(vs)}function tu(e,t,s){for(;e!==null;){var l=e.alternate;if((e.childLanes&t)!==t?(e.childLanes|=t,l!==null&&(l.childLanes|=t)):l!==null&&(l.childLanes&t)!==t&&(l.childLanes|=t),e===s)break;e=e.return}}function Ko(e,t,s,l){var C=e.child;for(C!==null&&(C.return=e);C!==null;){var N=C.dependencies;if(N!==null){var Z=C.child;N=N.firstContext;e:for(;N!==null;){var fe=N;N=C;for(var Ae=0;Ae<t.length;Ae++)if(fe.context===t[Ae]){N.lanes|=s,fe=N.alternate,fe!==null&&(fe.lanes|=s),tu(N.return,s,e),l||(Z=null);break e}N=fe.next}}else if(C.tag===18){if(Z=C.return,Z===null)throw Error(o(341));Z.lanes|=s,N=Z.alternate,N!==null&&(N.lanes|=s),tu(Z,s,e),Z=null}else Z=C.child;if(Z!==null)Z.return=C;else for(Z=C;Z!==null;){if(Z===e){Z=null;break}if(C=Z.sibling,C!==null){C.return=Z.return,Z=C;break}Z=Z.return}C=Z}}function To(e,t,s,l){e=null;for(var C=t,N=!1;C!==null;){if(!N){if((C.flags&524288)!==0)N=!0;else if((C.flags&262144)!==0)break}if(C.tag===10){var Z=C.alternate;if(Z===null)throw Error(o(387));if(Z=Z.memoizedProps,Z!==null){var fe=C.type;wr(C.pendingProps.value,Z.value)||(e!==null?e.push(fe):e=[fe])}}else if(C===we.current){if(Z=C.alternate,Z===null)throw Error(o(387));Z.memoizedState.memoizedState!==C.memoizedState.memoizedState&&(e!==null?e.push(Ed):e=[Ed])}C=C.return}e!==null&&Ko(t,e,s,l),t.flags|=262144}function Zl(e){for(e=e.firstContext;e!==null;){if(!wr(e.context._currentValue,e.memoizedValue))return!0;e=e.next}return!1}function tl(e){_l=e,Pr=null,e=e.dependencies,e!==null&&(e.firstContext=null)}function Ys(e){return k(_l,e)}function Vr(e,t){return _l===null&&tl(e),k(e,t)}function k(e,t){var s=t._currentValue;if(t={context:t,memoizedValue:s,next:null},Pr===null){if(e===null)throw Error(o(308));Pr=t,e.dependencies={lanes:0,firstContext:t},e.flags|=524288}else Pr=Pr.next=t;return s}var F=typeof AbortController<"u"?AbortController:function(){var e=[],t=this.signal={aborted:!1,addEventListener:function(s,l){e.push(l)}};this.abort=function(){t.aborted=!0,e.forEach(function(s){return s()})}},V=n.unstable_scheduleCallback,G=n.unstable_NormalPriority,re={$$typeof:p,Consumer:null,Provider:null,_currentValue:null,_currentValue2:null,_threadCount:0};function be(){return{controller:new F,data:new Map,refCount:0}}function Ce(e){e.refCount--,e.refCount===0&&V(G,function(){e.controller.abort()})}var De=null,We=0,Ge=0,Ke=null;function nt(e,t){if(De===null){var s=De=[];We=0,Ge=gp(),Ke={status:"pending",value:void 0,then:function(l){s.push(l)}}}return We++,t.then(vt,vt),t}function vt(){if(--We===0&&De!==null){Ke!==null&&(Ke.status="fulfilled");var e=De;De=null,Ge=0,Ke=null;for(var t=0;t<e.length;t++)(0,e[t])()}}function jt(e,t){var s=[],l={status:"pending",value:null,reason:null,then:function(C){s.push(C)}};return e.then(function(){l.status="fulfilled",l.value=t;for(var C=0;C<s.length;C++)(0,s[C])(t)},function(C){for(l.status="rejected",l.reason=C,C=0;C<s.length;C++)(0,s[C])(void 0)}),l}var At=ee.S;ee.S=function(e,t){Fm=Rt(),typeof t=="object"&&t!==null&&typeof t.then=="function"&&nt(e,t),At!==null&&At(e,t)};var Vt=ue(null);function $t(){var e=Vt.current;return e!==null?e:Rs.pooledCache}function It(e,t){t===null?Te(Vt,Vt.current):Te(Vt,t.pool)}function Kt(){var e=$t();return e===null?null:{parent:re._currentValue,pool:e}}var Jt=Error(o(460)),tn=Error(o(474)),Bn=Error(o(542)),oi={then:function(){}};function gi(e){return e=e.status,e==="fulfilled"||e==="rejected"}function ti(e,t,s){switch(s=e[s],s===void 0?e.push(t):s!==t&&(t.then(cs,cs),t=s),t.status){case"fulfilled":return t.value;case"rejected":throw e=t.reason,Qi(e),e;default:if(typeof t.status=="string")t.then(cs,cs);else{if(e=Rs,e!==null&&100<e.shellSuspendCounter)throw Error(o(482));e=t,e.status="pending",e.then(function(l){if(t.status==="pending"){var C=t;C.status="fulfilled",C.value=l}},function(l){if(t.status==="pending"){var C=t;C.status="rejected",C.reason=l}})}switch(t.status){case"fulfilled":return t.value;case"rejected":throw e=t.reason,Qi(e),e}throw gn=t,Jt}}function hn(e){try{var t=e._init;return t(e._payload)}catch(s){throw s!==null&&typeof s=="object"&&typeof s.then=="function"?(gn=s,Jt):s}}var gn=null;function kn(){if(gn===null)throw Error(o(459));var e=gn;return gn=null,e}function Qi(e){if(e===Jt||e===Bn)throw Error(o(483))}var Sa=null,gs=0;function Ul(e){var t=gs;return gs+=1,Sa===null&&(Sa=[]),ti(Sa,e,t)}function _i(e,t){t=t.props.ref,e.ref=t!==void 0?t:null}function Xs(e,t){throw t.$$typeof===j?Error(o(525)):(e=Object.prototype.toString.call(t),Error(o(31,e==="[object Object]"?"object with keys {"+Object.keys(t).join(", ")+"}":e)))}function As(e){function t(tt,Fe){if(e){var ot=tt.deletions;ot===null?(tt.deletions=[Fe],tt.flags|=16):ot.push(Fe)}}function s(tt,Fe){if(!e)return null;for(;Fe!==null;)t(tt,Fe),Fe=Fe.sibling;return null}function l(tt){for(var Fe=new Map;tt!==null;)tt.key!==null?Fe.set(tt.key,tt):Fe.set(tt.index,tt),tt=tt.sibling;return Fe}function C(tt,Fe){return tt=Ta(tt,Fe),tt.index=0,tt.sibling=null,tt}function N(tt,Fe,ot){return tt.index=ot,e?(ot=tt.alternate,ot!==null?(ot=ot.index,ot<Fe?(tt.flags|=67108866,Fe):ot):(tt.flags|=67108866,Fe)):(tt.flags|=1048576,Fe)}function Z(tt){return e&&tt.alternate===null&&(tt.flags|=67108866),tt}function fe(tt,Fe,ot,St){return Fe===null||Fe.tag!==6?(Fe=vl(ot,tt.mode,St),Fe.return=tt,Fe):(Fe=C(Fe,ot),Fe.return=tt,Fe)}function Ae(tt,Fe,ot,St){var Fn=ot.type;return Fn===_?wt(tt,Fe,ot.props.children,St,ot.key):Fe!==null&&(Fe.elementType===Fn||typeof Fn=="object"&&Fn!==null&&Fn.$$typeof===A&&hn(Fn)===Fe.type)?(Fe=C(Fe,ot.props),_i(Fe,ot),Fe.return=tt,Fe):(Fe=Ja(ot.type,ot.key,ot.props,null,tt.mode,St),_i(Fe,ot),Fe.return=tt,Fe)}function ct(tt,Fe,ot,St){return Fe===null||Fe.tag!==4||Fe.stateNode.containerInfo!==ot.containerInfo||Fe.stateNode.implementation!==ot.implementation?(Fe=pi(ot,tt.mode,St),Fe.return=tt,Fe):(Fe=C(Fe,ot.children||[]),Fe.return=tt,Fe)}function wt(tt,Fe,ot,St,Fn){return Fe===null||Fe.tag!==7?(Fe=Da(ot,tt.mode,St,Fn),Fe.return=tt,Fe):(Fe=C(Fe,ot),Fe.return=tt,Fe)}function Et(tt,Fe,ot){if(typeof Fe=="string"&&Fe!==""||typeof Fe=="number"||typeof Fe=="bigint")return Fe=vl(""+Fe,tt.mode,ot),Fe.return=tt,Fe;if(typeof Fe=="object"&&Fe!==null){switch(Fe.$$typeof){case T:return ot=Ja(Fe.type,Fe.key,Fe.props,null,tt.mode,ot),_i(ot,Fe),ot.return=tt,ot;case z:return Fe=pi(Fe,tt.mode,ot),Fe.return=tt,Fe;case A:return Fe=hn(Fe),Et(tt,Fe,ot)}if(Se(Fe)||he(Fe))return Fe=Da(Fe,tt.mode,ot,null),Fe.return=tt,Fe;if(typeof Fe.then=="function")return Et(tt,Ul(Fe),ot);if(Fe.$$typeof===p)return Et(tt,Vr(tt,Fe),ot);Xs(tt,Fe)}return null}function ut(tt,Fe,ot,St){var Fn=Fe!==null?Fe.key:null;if(typeof ot=="string"&&ot!==""||typeof ot=="number"||typeof ot=="bigint")return Fn!==null?null:fe(tt,Fe,""+ot,St);if(typeof ot=="object"&&ot!==null){switch(ot.$$typeof){case T:return ot.key===Fn?Ae(tt,Fe,ot,St):null;case z:return ot.key===Fn?ct(tt,Fe,ot,St):null;case A:return ot=hn(ot),ut(tt,Fe,ot,St)}if(Se(ot)||he(ot))return Fn!==null?null:wt(tt,Fe,ot,St,null);if(typeof ot.then=="function")return ut(tt,Fe,Ul(ot),St);if(ot.$$typeof===p)return ut(tt,Fe,Vr(tt,ot),St);Xs(tt,ot)}return null}function gt(tt,Fe,ot,St,Fn){if(typeof St=="string"&&St!==""||typeof St=="number"||typeof St=="bigint")return tt=tt.get(ot)||null,fe(Fe,tt,""+St,Fn);if(typeof St=="object"&&St!==null){switch(St.$$typeof){case T:return tt=tt.get(St.key===null?ot:St.key)||null,Ae(Fe,tt,St,Fn);case z:return tt=tt.get(St.key===null?ot:St.key)||null,ct(Fe,tt,St,Fn);case A:return St=hn(St),gt(tt,Fe,ot,St,Fn)}if(Se(St)||he(St))return tt=tt.get(ot)||null,wt(Fe,tt,St,Fn,null);if(typeof St.then=="function")return gt(tt,Fe,ot,Ul(St),Fn);if(St.$$typeof===p)return gt(tt,Fe,ot,Vr(Fe,St),Fn);Xs(Fe,St)}return null}function Mn(tt,Fe,ot,St){for(var Fn=null,rs=null,In=Fe,Ei=Fe=0,qi=null;In!==null&&Ei<ot.length;Ei++){In.index>Ei?(qi=In,In=null):qi=In.sibling;var as=ut(tt,In,ot[Ei],St);if(as===null){In===null&&(In=qi);break}e&&In&&as.alternate===null&&t(tt,In),Fe=N(as,Fe,Ei),rs===null?Fn=as:rs.sibling=as,rs=as,In=qi}if(Ei===ot.length)return s(tt,In),Ai&&Qa(tt,Ei),Fn;if(In===null){for(;Ei<ot.length;Ei++)In=Et(tt,ot[Ei],St),In!==null&&(Fe=N(In,Fe,Ei),rs===null?Fn=In:rs.sibling=In,rs=In);return Ai&&Qa(tt,Ei),Fn}for(In=l(In);Ei<ot.length;Ei++)qi=gt(In,tt,Ei,ot[Ei],St),qi!==null&&(e&&qi.alternate!==null&&In.delete(qi.key===null?Ei:qi.key),Fe=N(qi,Fe,Ei),rs===null?Fn=qi:rs.sibling=qi,rs=qi);return e&&In.forEach(function(Ic){return t(tt,Ic)}),Ai&&Qa(tt,Ei),Fn}function ni(tt,Fe,ot,St){if(ot==null)throw Error(o(151));for(var Fn=null,rs=null,In=Fe,Ei=Fe=0,qi=null,as=ot.next();In!==null&&!as.done;Ei++,as=ot.next()){In.index>Ei?(qi=In,In=null):qi=In.sibling;var Ic=ut(tt,In,as.value,St);if(Ic===null){In===null&&(In=qi);break}e&&In&&Ic.alternate===null&&t(tt,In),Fe=N(Ic,Fe,Ei),rs===null?Fn=Ic:rs.sibling=Ic,rs=Ic,In=qi}if(as.done)return s(tt,In),Ai&&Qa(tt,Ei),Fn;if(In===null){for(;!as.done;Ei++,as=ot.next())as=Et(tt,as.value,St),as!==null&&(Fe=N(as,Fe,Ei),rs===null?Fn=as:rs.sibling=as,rs=as);return Ai&&Qa(tt,Ei),Fn}for(In=l(In);!as.done;Ei++,as=ot.next())as=gt(In,tt,Ei,as.value,St),as!==null&&(e&&as.alternate!==null&&In.delete(as.key===null?Ei:as.key),Fe=N(as,Fe,Ei),rs===null?Fn=as:rs.sibling=as,rs=as);return e&&In.forEach(function(lw){return t(tt,lw)}),Ai&&Qa(tt,Ei),Fn}function Ms(tt,Fe,ot,St){if(typeof ot=="object"&&ot!==null&&ot.type===_&&ot.key===null&&(ot=ot.props.children),typeof ot=="object"&&ot!==null){switch(ot.$$typeof){case T:e:{for(var Fn=ot.key;Fe!==null;){if(Fe.key===Fn){if(Fn=ot.type,Fn===_){if(Fe.tag===7){s(tt,Fe.sibling),St=C(Fe,ot.props.children),St.return=tt,tt=St;break e}}else if(Fe.elementType===Fn||typeof Fn=="object"&&Fn!==null&&Fn.$$typeof===A&&hn(Fn)===Fe.type){s(tt,Fe.sibling),St=C(Fe,ot.props),_i(St,ot),St.return=tt,tt=St;break e}s(tt,Fe);break}else t(tt,Fe);Fe=Fe.sibling}ot.type===_?(St=Da(ot.props.children,tt.mode,St,ot.key),St.return=tt,tt=St):(St=Ja(ot.type,ot.key,ot.props,null,tt.mode,St),_i(St,ot),St.return=tt,tt=St)}return Z(tt);case z:e:{for(Fn=ot.key;Fe!==null;){if(Fe.key===Fn)if(Fe.tag===4&&Fe.stateNode.containerInfo===ot.containerInfo&&Fe.stateNode.implementation===ot.implementation){s(tt,Fe.sibling),St=C(Fe,ot.children||[]),St.return=tt,tt=St;break e}else{s(tt,Fe);break}else t(tt,Fe);Fe=Fe.sibling}St=pi(ot,tt.mode,St),St.return=tt,tt=St}return Z(tt);case A:return ot=hn(ot),Ms(tt,Fe,ot,St)}if(Se(ot))return Mn(tt,Fe,ot,St);if(he(ot)){if(Fn=he(ot),typeof Fn!="function")throw Error(o(150));return ot=Fn.call(ot),ni(tt,Fe,ot,St)}if(typeof ot.then=="function")return Ms(tt,Fe,Ul(ot),St);if(ot.$$typeof===p)return Ms(tt,Fe,Vr(tt,ot),St);Xs(tt,ot)}return typeof ot=="string"&&ot!==""||typeof ot=="number"||typeof ot=="bigint"?(ot=""+ot,Fe!==null&&Fe.tag===6?(s(tt,Fe.sibling),St=C(Fe,ot),St.return=tt,tt=St):(s(tt,Fe),St=vl(ot,tt.mode,St),St.return=tt,tt=St),Z(tt)):s(tt,Fe)}return function(tt,Fe,ot,St){try{gs=0;var Fn=Ms(tt,Fe,ot,St);return Sa=null,Fn}catch(In){if(In===Jt||In===Bn)throw In;var rs=js(29,In,null,tt.mode);return rs.lanes=St,rs.return=tt,rs}finally{}}}var Ds=As(!0),Is=As(!1),or=!1;function Ca(e){e.updateQueue={baseState:e.memoizedState,firstBaseUpdate:null,lastBaseUpdate:null,shared:{pending:null,lanes:0,hiddenCallbacks:null},callbacks:null}}function Hs(e,t){e=e.updateQueue,t.updateQueue===e&&(t.updateQueue={baseState:e.baseState,firstBaseUpdate:e.firstBaseUpdate,lastBaseUpdate:e.lastBaseUpdate,shared:e.shared,callbacks:null})}function kr(e){return{lane:e,tag:0,payload:null,callback:null,next:null}}function Fr(e,t,s){var l=e.updateQueue;if(l===null)return null;if(l=l.shared,(hs&2)!==0){var C=l.pending;return C===null?t.next=t:(t.next=C.next,C.next=t),l.pending=t,t=co(e),Lo(e,null,s),t}return Pl(e,l,t,s),co(e)}function Dn(e,t,s){if(t=t.updateQueue,t!==null&&(t=t.shared,(s&4194048)!==0)){var l=t.lanes;l&=e.pendingLanes,s|=l,t.lanes=s,Zn(e,s)}}function Ni(e,t){var s=e.updateQueue,l=e.alternate;if(l!==null&&(l=l.updateQueue,s===l)){var C=null,N=null;if(s=s.firstBaseUpdate,s!==null){do{var Z={lane:s.lane,tag:s.tag,payload:s.payload,callback:null,next:null};N===null?C=N=Z:N=N.next=Z,s=s.next}while(s!==null);N===null?C=N=t:N=N.next=t}else C=N=t;s={baseState:l.baseState,firstBaseUpdate:C,lastBaseUpdate:N,shared:l.shared,callbacks:l.callbacks},e.updateQueue=s;return}e=s.lastBaseUpdate,e===null?s.firstBaseUpdate=t:e.next=t,s.lastBaseUpdate=t}var cr=!1;function Gi(){if(cr){var e=Ke;if(e!==null)throw e}}function ms(e,t,s,l){cr=!1;var C=e.updateQueue;or=!1;var N=C.firstBaseUpdate,Z=C.lastBaseUpdate,fe=C.shared.pending;if(fe!==null){C.shared.pending=null;var Ae=fe,ct=Ae.next;Ae.next=null,Z===null?N=ct:Z.next=ct,Z=Ae;var wt=e.alternate;wt!==null&&(wt=wt.updateQueue,fe=wt.lastBaseUpdate,fe!==Z&&(fe===null?wt.firstBaseUpdate=ct:fe.next=ct,wt.lastBaseUpdate=Ae))}if(N!==null){var Et=C.baseState;Z=0,wt=ct=Ae=null,fe=N;do{var ut=fe.lane&-536870913,gt=ut!==fe.lane;if(gt?(Fi&ut)===ut:(l&ut)===ut){ut!==0&&ut===Ge&&(cr=!0),wt!==null&&(wt=wt.next={lane:0,tag:fe.tag,payload:fe.payload,callback:null,next:null});e:{var Mn=e,ni=fe;ut=t;var Ms=s;switch(ni.tag){case 1:if(Mn=ni.payload,typeof Mn=="function"){Et=Mn.call(Ms,Et,ut);break e}Et=Mn;break e;case 3:Mn.flags=Mn.flags&-65537|128;case 0:if(Mn=ni.payload,ut=typeof Mn=="function"?Mn.call(Ms,Et,ut):Mn,ut==null)break e;Et=x({},Et,ut);break e;case 2:or=!0}}ut=fe.callback,ut!==null&&(e.flags|=64,gt&&(e.flags|=8192),gt=C.callbacks,gt===null?C.callbacks=[ut]:gt.push(ut))}else gt={lane:ut,tag:fe.tag,payload:fe.payload,callback:fe.callback,next:null},wt===null?(ct=wt=gt,Ae=Et):wt=wt.next=gt,Z|=ut;if(fe=fe.next,fe===null){if(fe=C.shared.pending,fe===null)break;gt=fe,fe=gt.next,gt.next=null,C.lastBaseUpdate=gt,C.shared.pending=null}}while(!0);wt===null&&(Ae=Et),C.baseState=Ae,C.firstBaseUpdate=ct,C.lastBaseUpdate=wt,N===null&&(C.shared.lanes=0),jc|=Z,e.lanes=Z,e.memoizedState=Et}}function mr(e,t){if(typeof e!="function")throw Error(o(191,e));e.call(t)}function Ia(e,t){var s=e.callbacks;if(s!==null)for(e.callbacks=null,e=0;e<s.length;e++)mr(s[e],t)}var Wl=ue(null),Ao=ue(0);function Sl(e,t){e=sc,Te(Ao,e),Te(Wl,t),sc=e|t.baseLanes}function Cu(){Te(Ao,sc),Te(Wl,Wl.current)}function ju(){sc=Ao.current,ye(Wl),ye(Ao)}var ja=ue(null),Ra=null;function ka(e){var t=e.alternate;Te(Ws,Ws.current&1),Te(ja,e),Ra===null&&(t===null||Wl.current!==null||t.memoizedState!==null)&&(Ra=e)}function ku(e){Te(Ws,Ws.current),Te(ja,e),Ra===null&&(Ra=e)}function id(e){e.tag===22?(Te(Ws,Ws.current),Te(ja,e),Ra===null&&(Ra=e)):nl()}function nl(){Te(Ws,Ws.current),Te(ja,ja.current)}function Ar(e){ye(ja),Ra===e&&(Ra=null),ye(Ws)}var Ws=ue(0);function xc(e){for(var t=e;t!==null;){if(t.tag===13){var s=t.memoizedState;if(s!==null&&(s=s.dehydrated,s===null||Ep(s)||Mp(s)))return t}else if(t.tag===19&&(t.memoizedProps.revealOrder==="forwards"||t.memoizedProps.revealOrder==="backwards"||t.memoizedProps.revealOrder==="unstable_legacy-backwards"||t.memoizedProps.revealOrder==="together")){if((t.flags&128)!==0)return t}else if(t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return null;t=t.return}t.sibling.return=t.return,t=t.sibling}return null}var Cl=0,mi=null,us=null,Os=null,nu=!1,uo=!1,Go=!1,iu=0,Do=0,ho=null,Pf=0;function Js(){throw Error(o(321))}function sd(e,t){if(t===null)return!1;for(var s=0;s<t.length&&s<e.length;s++)if(!wr(e[s],t[s]))return!1;return!0}function Eu(e,t,s,l,C,N){return Cl=N,mi=t,t.memoizedState=null,t.updateQueue=null,t.lanes=0,ee.H=e===null||e.memoizedState===null?ji:ai,Go=!1,N=s(l,C),Go=!1,uo&&(N=Mu(t,s,l,C)),Ri(e),N}function Ri(e){ee.H=jn;var t=us!==null&&us.next!==null;if(Cl=0,Os=us=mi=null,nu=!1,Do=0,ho=null,t)throw Error(o(300));e===null||ss||(e=e.dependencies,e!==null&&Zl(e)&&(ss=!0))}function Mu(e,t,s,l){mi=e;var C=0;do{if(uo&&(ho=null),Do=0,uo=!1,25<=C)throw Error(o(301));if(C+=1,Os=us=null,e.updateQueue!=null){var N=e.updateQueue;N.lastEffect=null,N.events=null,N.stores=null,N.memoCache!=null&&(N.memoCache.index=0)}ee.H=ri,N=t(s,l)}while(uo);return N}function rd(){var e=ee.H,t=e.useState()[0];return t=typeof t.then=="function"?Io(t):t,e=e.useState()[0],(us!==null?us.memoizedState:null)!==e&&(mi.flags|=1024),t}function Lu(){var e=iu!==0;return iu=0,e}function su(e,t,s){t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~s}function ru(e){if(nu){for(e=e.memoizedState;e!==null;){var t=e.queue;t!==null&&(t.pending=null),e=e.next}nu=!1}Cl=0,Os=us=mi=null,uo=!1,Do=iu=0,ho=null}function qr(){var e={memoizedState:null,baseState:null,baseQueue:null,queue:null,next:null};return Os===null?mi.memoizedState=Os=e:Os=Os.next=e,Os}function ur(){if(us===null){var e=mi.alternate;e=e!==null?e.memoizedState:null}else e=us.next;var t=Os===null?mi.memoizedState:Os.next;if(t!==null)Os=t,us=e;else{if(e===null)throw mi.alternate===null?Error(o(467)):Error(o(310));us=e,e={memoizedState:us.memoizedState,baseState:us.baseState,baseQueue:us.baseQueue,queue:us.queue,next:null},Os===null?mi.memoizedState=Os=e:Os=Os.next=e}return Os}function Yo(){return{lastEffect:null,events:null,stores:null,memoCache:null}}function Io(e){var t=Do;return Do+=1,ho===null&&(ho=[]),e=ti(ho,e,t),t=mi,(Os===null?t.memoizedState:Os.next)===null&&(t=t.alternate,ee.H=t===null||t.memoizedState===null?ji:ai),e}function Xo(e){if(e!==null&&typeof e=="object"){if(typeof e.then=="function")return Io(e);if(e.$$typeof===p)return Ys(e)}throw Error(o(438,String(e)))}function fo(e){var t=null,s=mi.updateQueue;if(s!==null&&(t=s.memoCache),t==null){var l=mi.alternate;l!==null&&(l=l.updateQueue,l!==null&&(l=l.memoCache,l!=null&&(t={data:l.data.map(function(C){return C.slice()}),index:0})))}if(t==null&&(t={data:[],index:0}),s===null&&(s=Yo(),mi.updateQueue=s),s.memoCache=t,s=t.data[t.index],s===void 0)for(s=t.data[t.index]=Array(e),l=0;l<e;l++)s[l]=oe;return t.index++,s}function il(e,t){return typeof t=="function"?t(e):t}function au(e){var t=ur();return wc(t,us,e)}function wc(e,t,s){var l=e.queue;if(l===null)throw Error(o(311));l.lastRenderedReducer=s;var C=e.baseQueue,N=l.pending;if(N!==null){if(C!==null){var Z=C.next;C.next=N.next,N.next=Z}t.baseQueue=C=N,l.pending=null}if(N=e.baseState,C===null)e.memoizedState=N;else{t=C.next;var fe=Z=null,Ae=null,ct=t,wt=!1;do{var Et=ct.lane&-536870913;if(Et!==ct.lane?(Fi&Et)===Et:(Cl&Et)===Et){var ut=ct.revertLane;if(ut===0)Ae!==null&&(Ae=Ae.next={lane:0,revertLane:0,gesture:null,action:ct.action,hasEagerState:ct.hasEagerState,eagerState:ct.eagerState,next:null}),Et===Ge&&(wt=!0);else if((Cl&ut)===ut){ct=ct.next,ut===Ge&&(wt=!0);continue}else Et={lane:0,revertLane:ct.revertLane,gesture:null,action:ct.action,hasEagerState:ct.hasEagerState,eagerState:ct.eagerState,next:null},Ae===null?(fe=Ae=Et,Z=N):Ae=Ae.next=Et,mi.lanes|=ut,jc|=ut;Et=ct.action,Go&&s(N,Et),N=ct.hasEagerState?ct.eagerState:s(N,Et)}else ut={lane:Et,revertLane:ct.revertLane,gesture:ct.gesture,action:ct.action,hasEagerState:ct.hasEagerState,eagerState:ct.eagerState,next:null},Ae===null?(fe=Ae=ut,Z=N):Ae=Ae.next=ut,mi.lanes|=Et,jc|=Et;ct=ct.next}while(ct!==null&&ct!==t);if(Ae===null?Z=N:Ae.next=fe,!wr(N,e.memoizedState)&&(ss=!0,wt&&(s=Ke,s!==null)))throw s;e.memoizedState=N,e.baseState=Z,e.baseQueue=Ae,l.lastRenderedState=N}return C===null&&(l.lanes=0),[e.memoizedState,l.dispatch]}function Nu(e){var t=ur(),s=t.queue;if(s===null)throw Error(o(311));s.lastRenderedReducer=e;var l=s.dispatch,C=s.pending,N=t.memoizedState;if(C!==null){s.pending=null;var Z=C=C.next;do N=e(N,Z.action),Z=Z.next;while(Z!==C);wr(N,t.memoizedState)||(ss=!0),t.memoizedState=N,t.baseQueue===null&&(t.baseState=N),s.lastRenderedState=N}return[N,l]}function lh(e,t,s){var l=mi,C=ur(),N=Ai;if(N){if(s===void 0)throw Error(o(407));s=s()}else s=t();var Z=!wr((us||C).memoizedState,s);if(Z&&(C.memoizedState=s,ss=!0),C=C.queue,E(jl.bind(null,l,C,e),[e]),C.getSnapshot!==t||Z||Os!==null&&Os.memoizedState.tag&1){if(l.flags|=2048,_c(9,{destroy:void 0},ad.bind(null,l,C,s,t),null),Rs===null)throw Error(o(349));N||(Cl&127)!==0||Kl(l,t,s)}return s}function Kl(e,t,s){e.flags|=16384,e={getSnapshot:t,value:s},t=mi.updateQueue,t===null?(t=Yo(),mi.updateQueue=t,t.stores=[e]):(s=t.stores,s===null?t.stores=[e]:s.push(e))}function ad(e,t,s,l){t.value=s,t.getSnapshot=l,ld(t)&&oh(e)}function jl(e,t,s){return s(function(){ld(t)&&oh(e)})}function ld(e){var t=e.getSnapshot;e=e.value;try{var s=t();return!wr(e,s)}catch{return!0}}function oh(e){var t=Us(e,2);t!==null&&ol(t,e,2)}function od(e){var t=qr();if(typeof e=="function"){var s=e;if(e=s(),Go){Re(!0);try{s()}finally{Re(!1)}}}return t.memoizedState=t.baseState=e,t.queue={pending:null,lanes:0,dispatch:null,lastRenderedReducer:il,lastRenderedState:e},t}function cd(e,t,s,l){return e.baseState=s,wc(e,us,typeof l=="function"?l:il)}function ch(e,t,s,l,C){if(An(e))throw Error(o(485));if(e=t.action,e!==null){var N={payload:C,action:e,next:null,isTransition:!0,status:"pending",value:null,reason:null,listeners:[],then:function(Z){N.listeners.push(Z)}};ee.T!==null?s(!0):N.isTransition=!1,l(N),s=t.pending,s===null?(N.next=t.pending=N,ud(t,N)):(N.next=s.next,t.pending=s.next=N)}}function ud(e,t){var s=t.action,l=t.payload,C=e.state;if(t.isTransition){var N=ee.T,Z={};ee.T=Z;try{var fe=s(C,l),Ae=ee.S;Ae!==null&&Ae(Z,fe),uh(e,t,fe)}catch(ct){dd(e,t,ct)}finally{N!==null&&Z.types!==null&&(N.types=Z.types),ee.T=N}}else try{N=s(C,l),uh(e,t,N)}catch(ct){dd(e,t,ct)}}function uh(e,t,s){s!==null&&typeof s=="object"&&typeof s.then=="function"?s.then(function(l){dh(e,t,l)},function(l){return dd(e,t,l)}):dh(e,t,s)}function dh(e,t,s){t.status="fulfilled",t.value=s,hh(t),e.state=s,t=e.pending,t!==null&&(s=t.next,s===t?e.pending=null:(s=s.next,t.next=s,ud(e,s)))}function dd(e,t,s){var l=e.pending;if(e.pending=null,l!==null){l=l.next;do t.status="rejected",t.reason=s,hh(t),t=t.next;while(t!==l)}e.action=null}function hh(e){e=e.listeners;for(var t=0;t<e.length;t++)(0,e[t])()}function fh(e,t){return t}function ph(e,t){if(Ai){var s=Rs.formState;if(s!==null){e:{var l=mi;if(Ai){if(Ji){t:{for(var C=Ji,N=Tr;C.nodeType!==8;){if(!N){C=null;break t}if(C=Yl(C.nextSibling),C===null){C=null;break t}}N=C.data,C=N==="F!"||N==="F"?C:null}if(C){Ji=Yl(C.nextSibling),l=C.data==="F!";break e}}Fl(l)}l=!1}l&&(t=s[0])}}return s=qr(),s.memoizedState=s.baseState=t,l={pending:null,lanes:0,dispatch:null,lastRenderedReducer:fh,lastRenderedState:t},s.queue=l,s=Ot.bind(null,mi,l),l.dispatch=s,l=od(!1),N=Vn.bind(null,mi,!1,l.queue),l=qr(),C={state:t,dispatch:null,action:e,pending:null},l.queue=C,s=ch.bind(null,mi,C,N,s),C.dispatch=s,l.memoizedState=e,[t,s,!1]}function gh(e){var t=ur();return mh(t,us,e)}function mh(e,t,s){if(t=wc(e,t,fh)[0],e=au(il)[0],typeof t=="object"&&t!==null&&typeof t.then=="function")try{var l=Io(t)}catch(Z){throw Z===Jt?Bn:Z}else l=t;t=ur();var C=t.queue,N=C.dispatch;return s!==t.memoizedState&&(mi.flags|=2048,_c(9,{destroy:void 0},Vf.bind(null,C,s),null)),[l,N,e]}function Vf(e,t){e.action=t}function yh(e){var t=ur(),s=us;if(s!==null)return mh(t,s,e);ur(),t=t.memoizedState,s=ur();var l=s.queue.dispatch;return s.memoizedState=e,[t,l,!1]}function _c(e,t,s,l){return e={tag:e,create:s,deps:l,inst:t,next:null},t=mi.updateQueue,t===null&&(t=Yo(),mi.updateQueue=t),s=t.lastEffect,s===null?t.lastEffect=e.next=e:(l=s.next,s.next=e,e.next=l,t.lastEffect=e),e}function bh(){return ur().memoizedState}function da(e,t,s,l){var C=qr();mi.flags|=e,C.memoizedState=_c(1|t,{destroy:void 0},s,l===void 0?null:l)}function zu(e,t,s,l){var C=ur();l=l===void 0?null:l;var N=C.memoizedState.inst;us!==null&&l!==null&&sd(l,us.memoizedState.deps)?C.memoizedState=_c(t,N,s,l):(mi.flags|=e,C.memoizedState=_c(1|t,N,s,l))}function g(e,t){da(8390656,8,e,t)}function E(e,t){zu(2048,8,e,t)}function D(e){mi.flags|=4;var t=mi.updateQueue;if(t===null)t=Yo(),mi.updateQueue=t,t.events=[e];else{var s=t.events;s===null?t.events=[e]:s.push(e)}}function H(e){var t=ur().memoizedState;return D({ref:t,nextImpl:e}),function(){if((hs&2)!==0)throw Error(o(440));return t.impl.apply(void 0,arguments)}}function P(e,t){return zu(4,2,e,t)}function J(e,t){return zu(4,4,e,t)}function q(e,t){if(typeof t=="function"){e=e();var s=t(e);return function(){typeof s=="function"?s():t(null)}}if(t!=null)return e=e(),t.current=e,function(){t.current=null}}function W(e,t,s){s=s!=null?s.concat([e]):null,zu(4,4,q.bind(null,t,e),s)}function ie(){}function K(e,t){var s=ur();t=t===void 0?null:t;var l=s.memoizedState;return t!==null&&sd(t,l[1])?l[0]:(s.memoizedState=[e,t],e)}function ce(e,t){var s=ur();t=t===void 0?null:t;var l=s.memoizedState;if(t!==null&&sd(t,l[1]))return l[0];if(l=e(),Go){Re(!0);try{e()}finally{Re(!1)}}return s.memoizedState=[l,t],l}function pe(e,t,s){return s===void 0||(Cl&1073741824)!==0&&(Fi&261930)===0?e.memoizedState=t:(e.memoizedState=s,e=Zm(),mi.lanes|=e,jc|=e,s)}function me(e,t,s,l){return wr(s,t)?s:Wl.current!==null?(e=pe(e,s,l),wr(e,t)||(ss=!0),e):(Cl&42)===0||(Cl&1073741824)!==0&&(Fi&261930)===0?(ss=!0,e.memoizedState=s):(e=Zm(),mi.lanes|=e,jc|=e,t)}function je(e,t,s,l,C){var N=ae.p;ae.p=N!==0&&8>N?N:8;var Z=ee.T,fe={};ee.T=fe,Vn(e,!1,t,s);try{var Ae=C(),ct=ee.S;if(ct!==null&&ct(fe,Ae),Ae!==null&&typeof Ae=="object"&&typeof Ae.then=="function"){var wt=jt(Ae,l);an(e,t,wt,Ll(e))}else an(e,t,l,Ll(e))}catch(Et){an(e,t,{then:function(){},status:"rejected",reason:Et},Ll())}finally{ae.p=N,Z!==null&&fe.types!==null&&(Z.types=fe.types),ee.T=Z}}function Le(){}function Qe(e,t,s,l){if(e.tag!==5)throw Error(o(476));var C=Ze(e).queue;je(e,C,t,X,s===null?Le:function(){return it(e),s(l)})}function Ze(e){var t=e.memoizedState;if(t!==null)return t;t={memoizedState:X,baseState:X,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:il,lastRenderedState:X},next:null};var s={};return t.next={memoizedState:s,baseState:s,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:il,lastRenderedState:s},next:null},e.memoizedState=t,e=e.alternate,e!==null&&(e.memoizedState=t),t}function it(e){var t=Ze(e);t.next===null&&(t=e.alternate.memoizedState),an(e,t.next.queue,{},Ll())}function xt(){return Ys(Ed)}function Xe(){return ur().memoizedState}function mt(){return ur().memoizedState}function dt(e){for(var t=e.return;t!==null;){switch(t.tag){case 24:case 3:var s=Ll();e=kr(s);var l=Fr(t,e,s);l!==null&&(ol(l,t,s),Dn(l,t,s)),t={cache:be()},e.payload=t;return}t=t.return}}function Bt(e,t,s){var l=Ll();s={lane:l,revertLane:0,gesture:null,action:s,hasEagerState:!1,eagerState:null,next:null},An(e)?Qt(t,s):(s=oo(e,t,s,l),s!==null&&(ol(s,e,l),Jn(s,t,l)))}function Ot(e,t,s){var l=Ll();an(e,t,s,l)}function an(e,t,s,l){var C={lane:l,revertLane:0,gesture:null,action:s,hasEagerState:!1,eagerState:null,next:null};if(An(e))Qt(t,C);else{var N=e.alternate;if(e.lanes===0&&(N===null||N.lanes===0)&&(N=t.lastRenderedReducer,N!==null))try{var Z=t.lastRenderedState,fe=N(Z,s);if(C.hasEagerState=!0,C.eagerState=fe,wr(fe,Z))return Pl(e,t,C,0),Rs===null&&Mo(),!1}catch{}finally{}if(s=oo(e,t,C,l),s!==null)return ol(s,e,l),Jn(s,t,l),!0}return!1}function Vn(e,t,s,l){if(l={lane:2,revertLane:gp(),gesture:null,action:l,hasEagerState:!1,eagerState:null,next:null},An(e)){if(t)throw Error(o(479))}else t=oo(e,s,l,2),t!==null&&ol(t,e,2)}function An(e){var t=e.alternate;return e===mi||t!==null&&t===mi}function Qt(e,t){uo=nu=!0;var s=e.pending;s===null?t.next=t:(t.next=s.next,s.next=t),e.pending=t}function Jn(e,t,s){if((s&4194048)!==0){var l=t.lanes;l&=e.pendingLanes,s|=l,t.lanes=s,Zn(e,s)}}var jn={readContext:Ys,use:Xo,useCallback:Js,useContext:Js,useEffect:Js,useImperativeHandle:Js,useLayoutEffect:Js,useInsertionEffect:Js,useMemo:Js,useReducer:Js,useRef:Js,useState:Js,useDebugValue:Js,useDeferredValue:Js,useTransition:Js,useSyncExternalStore:Js,useId:Js,useHostTransitionStatus:Js,useFormState:Js,useActionState:Js,useOptimistic:Js,useMemoCache:Js,useCacheRefresh:Js};jn.useEffectEvent=Js;var ji={readContext:Ys,use:Xo,useCallback:function(e,t){return qr().memoizedState=[e,t===void 0?null:t],e},useContext:Ys,useEffect:g,useImperativeHandle:function(e,t,s){s=s!=null?s.concat([e]):null,da(4194308,4,q.bind(null,t,e),s)},useLayoutEffect:function(e,t){return da(4194308,4,e,t)},useInsertionEffect:function(e,t){da(4,2,e,t)},useMemo:function(e,t){var s=qr();t=t===void 0?null:t;var l=e();if(Go){Re(!0);try{e()}finally{Re(!1)}}return s.memoizedState=[l,t],l},useReducer:function(e,t,s){var l=qr();if(s!==void 0){var C=s(t);if(Go){Re(!0);try{s(t)}finally{Re(!1)}}}else C=t;return l.memoizedState=l.baseState=C,e={pending:null,lanes:0,dispatch:null,lastRenderedReducer:e,lastRenderedState:C},l.queue=e,e=e.dispatch=Bt.bind(null,mi,e),[l.memoizedState,e]},useRef:function(e){var t=qr();return e={current:e},t.memoizedState=e},useState:function(e){e=od(e);var t=e.queue,s=Ot.bind(null,mi,t);return t.dispatch=s,[e.memoizedState,s]},useDebugValue:ie,useDeferredValue:function(e,t){var s=qr();return pe(s,e,t)},useTransition:function(){var e=od(!1);return e=je.bind(null,mi,e.queue,!0,!1),qr().memoizedState=e,[!1,e]},useSyncExternalStore:function(e,t,s){var l=mi,C=qr();if(Ai){if(s===void 0)throw Error(o(407));s=s()}else{if(s=t(),Rs===null)throw Error(o(349));(Fi&127)!==0||Kl(l,t,s)}C.memoizedState=s;var N={value:s,getSnapshot:t};return C.queue=N,g(jl.bind(null,l,N,e),[e]),l.flags|=2048,_c(9,{destroy:void 0},ad.bind(null,l,N,s,t),null),s},useId:function(){var e=qr(),t=Rs.identifierPrefix;if(Ai){var s=$r,l=lr;s=(l&~(1<<32-Dt(l)-1)).toString(32)+s,t="_"+t+"R_"+s,s=iu++,0<s&&(t+="H"+s.toString(32)),t+="_"}else s=Pf++,t="_"+t+"r_"+s.toString(32)+"_";return e.memoizedState=t},useHostTransitionStatus:xt,useFormState:ph,useActionState:ph,useOptimistic:function(e){var t=qr();t.memoizedState=t.baseState=e;var s={pending:null,lanes:0,dispatch:null,lastRenderedReducer:null,lastRenderedState:null};return t.queue=s,t=Vn.bind(null,mi,!0,s),s.dispatch=t,[e,t]},useMemoCache:fo,useCacheRefresh:function(){return qr().memoizedState=dt.bind(null,mi)},useEffectEvent:function(e){var t=qr(),s={impl:e};return t.memoizedState=s,function(){if((hs&2)!==0)throw Error(o(440));return s.impl.apply(void 0,arguments)}}},ai={readContext:Ys,use:Xo,useCallback:K,useContext:Ys,useEffect:E,useImperativeHandle:W,useInsertionEffect:P,useLayoutEffect:J,useMemo:ce,useReducer:au,useRef:bh,useState:function(){return au(il)},useDebugValue:ie,useDeferredValue:function(e,t){var s=ur();return me(s,us.memoizedState,e,t)},useTransition:function(){var e=au(il)[0],t=ur().memoizedState;return[typeof e=="boolean"?e:Io(e),t]},useSyncExternalStore:lh,useId:Xe,useHostTransitionStatus:xt,useFormState:gh,useActionState:gh,useOptimistic:function(e,t){var s=ur();return cd(s,us,e,t)},useMemoCache:fo,useCacheRefresh:mt};ai.useEffectEvent=H;var ri={readContext:Ys,use:Xo,useCallback:K,useContext:Ys,useEffect:E,useImperativeHandle:W,useInsertionEffect:P,useLayoutEffect:J,useMemo:ce,useReducer:Nu,useRef:bh,useState:function(){return Nu(il)},useDebugValue:ie,useDeferredValue:function(e,t){var s=ur();return us===null?pe(s,e,t):me(s,us.memoizedState,e,t)},useTransition:function(){var e=Nu(il)[0],t=ur().memoizedState;return[typeof e=="boolean"?e:Io(e),t]},useSyncExternalStore:lh,useId:Xe,useHostTransitionStatus:xt,useFormState:yh,useActionState:yh,useOptimistic:function(e,t){var s=ur();return us!==null?cd(s,us,e,t):(s.baseState=e,[e,s.queue.dispatch])},useMemoCache:fo,useCacheRefresh:mt};ri.useEffectEvent=H;function is(e,t,s,l){t=e.memoizedState,s=s(l,t),s=s==null?t:x({},t,s),e.memoizedState=s,e.lanes===0&&(e.updateQueue.baseState=s)}var Xt={enqueueSetState:function(e,t,s){e=e._reactInternals;var l=Ll(),C=kr(l);C.payload=t,s!=null&&(C.callback=s),t=Fr(e,C,l),t!==null&&(ol(t,e,l),Dn(t,e,l))},enqueueReplaceState:function(e,t,s){e=e._reactInternals;var l=Ll(),C=kr(l);C.tag=1,C.payload=t,s!=null&&(C.callback=s),t=Fr(e,C,l),t!==null&&(ol(t,e,l),Dn(t,e,l))},enqueueForceUpdate:function(e,t){e=e._reactInternals;var s=Ll(),l=kr(s);l.tag=2,t!=null&&(l.callback=t),t=Fr(e,l,s),t!==null&&(ol(t,e,s),Dn(t,e,s))}};function ki(e,t,s,l,C,N,Z){return e=e.stateNode,typeof e.shouldComponentUpdate=="function"?e.shouldComponentUpdate(l,N,Z):t.prototype&&t.prototype.isPureReactComponent?!Ua(s,l)||!Ua(C,N):!0}function ha(e,t,s,l){e=t.state,typeof t.componentWillReceiveProps=="function"&&t.componentWillReceiveProps(s,l),typeof t.UNSAFE_componentWillReceiveProps=="function"&&t.UNSAFE_componentWillReceiveProps(s,l),t.state!==e&&Xt.enqueueReplaceState(t,t.state,null)}function Ks(e,t){var s=t;if("ref"in t){s={};for(var l in t)l!=="ref"&&(s[l]=t[l])}if(e=e.defaultProps){s===t&&(s=x({},s));for(var C in e)s[C]===void 0&&(s[C]=e[C])}return s}function Wn(e){Eo(e)}function Kn(e){console.error(e)}function ln(e){Eo(e)}function ci(e,t){try{var s=e.onUncaughtError;s(t.value,{componentStack:t.stack})}catch(l){setTimeout(function(){throw l})}}function $n(e,t,s){try{var l=e.onCaughtError;l(s.value,{componentStack:s.stack,errorBoundary:t.tag===1?t.stateNode:null})}catch(C){setTimeout(function(){throw C})}}function xi(e,t,s){return s=kr(s),s.tag=3,s.payload={element:null},s.callback=function(){ci(e,t)},s}function zi(e){return e=kr(e),e.tag=3,e}function Bs(e,t,s,l){var C=s.type.getDerivedStateFromError;if(typeof C=="function"){var N=l.value;e.payload=function(){return C(N)},e.callback=function(){$n(t,s,l)}}var Z=s.stateNode;Z!==null&&typeof Z.componentDidCatch=="function"&&(e.callback=function(){$n(t,s,l),typeof C!="function"&&(kc===null?kc=new Set([this]):kc.add(this));var fe=l.stack;this.componentDidCatch(l.value,{componentStack:fe!==null?fe:""})})}function kl(e,t,s,l,C){if(s.flags|=32768,l!==null&&typeof l=="object"&&typeof l.then=="function"){if(t=s.alternate,t!==null&&To(t,s,C,!0),s=ja.current,s!==null){switch(s.tag){case 31:case 13:return Ra===null?zh():s.alternate===null&&yr===0&&(yr=3),s.flags&=-257,s.flags|=65536,s.lanes=C,l===oi?s.flags|=16384:(t=s.updateQueue,t===null?s.updateQueue=new Set([l]):t.add(l),hp(e,l,C)),!1;case 22:return s.flags|=65536,l===oi?s.flags|=16384:(t=s.updateQueue,t===null?(t={transitions:null,markerInstances:null,retryQueue:new Set([l])},s.updateQueue=t):(s=t.retryQueue,s===null?t.retryQueue=new Set([l]):s.add(l)),hp(e,l,C)),!1}throw Error(o(435,s.tag))}return hp(e,l,C),zh(),!1}if(Ai)return t=ja.current,t!==null?((t.flags&65536)===0&&(t.flags|=256),t.flags|=65536,t.lanes=C,l!==Jc&&(e=Error(o(422),{cause:l}),Wo(Qr(e,s)))):(l!==Jc&&(t=Error(o(423),{cause:l}),Wo(Qr(t,s))),e=e.current.alternate,e.flags|=65536,C&=-C,e.lanes|=C,l=Qr(l,s),C=xi(e.stateNode,l,C),Ni(e,C),yr!==4&&(yr=2)),!1;var N=Error(o(520),{cause:l});if(N=Qr(N,s),vd===null?vd=[N]:vd.push(N),yr!==4&&(yr=2),t===null)return!0;l=Qr(l,s),s=t;do{switch(s.tag){case 3:return s.flags|=65536,e=C&-C,s.lanes|=e,e=xi(s.stateNode,l,e),Ni(s,e),!1;case 1:if(t=s.type,N=s.stateNode,(s.flags&128)===0&&(typeof t.getDerivedStateFromError=="function"||N!==null&&typeof N.componentDidCatch=="function"&&(kc===null||!kc.has(N))))return s.flags|=65536,C&=-C,s.lanes|=C,C=zi(C),Bs(C,e,s,l),Ni(s,C),!1}s=s.return}while(s!==null);return!1}var ks=Error(o(461)),ss=!1;function ds(e,t,s,l){t.child=e===null?Is(t,null,s,l):Ds(t,e.child,s,l)}function Gl(e,t,s,l,C){s=s.render;var N=t.ref;if("ref"in l){var Z={};for(var fe in l)fe!=="ref"&&(Z[fe]=l[fe])}else Z=l;return tl(t),l=Eu(e,t,s,Z,N,C),fe=Lu(),e!==null&&!ss?(su(e,t,C),Jo(e,t,C)):(Ai&&fe&&No(t),t.flags|=1,ds(e,t,l,C),t.child)}function Ha(e,t,s,l,C){if(e===null){var N=s.type;return typeof N=="function"&&!Xa(N)&&N.defaultProps===void 0&&s.compare===null?(t.tag=15,t.type=N,vh(e,t,N,l,C)):(e=Ja(s.type,null,l,t,t.mode,C),e.ref=t.ref,e.return=t,t.child=e)}if(N=e.child,!Yf(e,C)){var Z=N.memoizedProps;if(s=s.compare,s=s!==null?s:Ua,s(Z,l)&&e.ref===t.ref)return Jo(e,t,C)}return t.flags|=1,e=Ta(N,l),e.ref=t.ref,e.return=t,t.child=e}function vh(e,t,s,l,C){if(e!==null){var N=e.memoizedProps;if(Ua(N,l)&&e.ref===t.ref)if(ss=!1,t.pendingProps=l=N,Yf(e,C))(e.flags&131072)!==0&&(ss=!0);else return t.lanes=e.lanes,Jo(e,t,C)}return Ff(e,t,s,l,C)}function fm(e,t,s,l){var C=l.children,N=e!==null?e.memoizedState:null;if(e===null&&t.stateNode===null&&(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),l.mode==="hidden"){if((t.flags&128)!==0){if(N=N!==null?N.baseLanes|s:s,e!==null){for(l=t.child=e.child,C=0;l!==null;)C=C|l.lanes|l.childLanes,l=l.sibling;l=C&~N}else l=0,t.child=null;return pm(e,t,N,s,l)}if((s&536870912)!==0)t.memoizedState={baseLanes:0,cachePool:null},e!==null&&It(t,N!==null?N.cachePool:null),N!==null?Sl(t,N):Cu(),id(t);else return l=t.lanes=536870912,pm(e,t,N!==null?N.baseLanes|s:s,s,l)}else N!==null?(It(t,N.cachePool),Sl(t,N),nl(),t.memoizedState=null):(e!==null&&It(t,null),Cu(),nl());return ds(e,t,C,s),t.child}function hd(e,t){return e!==null&&e.tag===22||t.stateNode!==null||(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),t.sibling}function pm(e,t,s,l,C){var N=$t();return N=N===null?null:{parent:re._currentValue,pool:N},t.memoizedState={baseLanes:s,cachePool:N},e!==null&&It(t,null),Cu(),id(t),e!==null&&To(e,t,l,!0),t.childLanes=C,null}function xh(e,t){return t=_h({mode:t.mode,children:t.children},e.mode),t.ref=e.ref,e.child=t,t.return=e,t}function gm(e,t,s){return Ds(t,e.child,null,s),e=xh(t,t.pendingProps),e.flags|=2,Ar(t),t.memoizedState=null,e}function ax(e,t,s){var l=t.pendingProps,C=(t.flags&128)!==0;if(t.flags&=-129,e===null){if(Ai){if(l.mode==="hidden")return e=xh(t,l),t.lanes=536870912,hd(null,e);if(ku(t),(e=Ji)?(e=Ey(e,Tr),e=e!==null&&e.data==="&"?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:Sr!==null?{id:lr,overflow:$r}:null,retryLane:536870912,hydrationErrors:null},s=Xc(e),s.return=t,t.child=s,Cr=t,Ji=null)):e=null,e===null)throw Fl(t);return t.lanes=536870912,null}return xh(t,l)}var N=e.memoizedState;if(N!==null){var Z=N.dehydrated;if(ku(t),C)if(t.flags&256)t.flags&=-257,t=gm(e,t,s);else if(t.memoizedState!==null)t.child=e.child,t.flags|=128,t=null;else throw Error(o(558));else if(ss||To(e,t,s,!1),C=(s&e.childLanes)!==0,ss||C){if(l=Rs,l!==null&&(Z=Ps(l,s),Z!==0&&Z!==N.retryLane))throw N.retryLane=Z,Us(e,Z),ol(l,e,Z),ks;zh(),t=gm(e,t,s)}else e=N.treeContext,Ji=Yl(Z.nextSibling),Cr=t,Ai=!0,Vl=null,Tr=!1,e!==null&&Uo(t,e),t=xh(t,l),t.flags|=4096;return t}return e=Ta(e.child,{mode:l.mode,children:l.children}),e.ref=t.ref,t.child=e,e.return=t,e}function wh(e,t){var s=t.ref;if(s===null)e!==null&&e.ref!==null&&(t.flags|=4194816);else{if(typeof s!="function"&&typeof s!="object")throw Error(o(284));(e===null||e.ref!==s)&&(t.flags|=4194816)}}function Ff(e,t,s,l,C){return tl(t),s=Eu(e,t,s,l,void 0,C),l=Lu(),e!==null&&!ss?(su(e,t,C),Jo(e,t,C)):(Ai&&l&&No(t),t.flags|=1,ds(e,t,s,C),t.child)}function mm(e,t,s,l,C,N){return tl(t),t.updateQueue=null,s=Mu(t,l,s,C),Ri(e),l=Lu(),e!==null&&!ss?(su(e,t,N),Jo(e,t,N)):(Ai&&l&&No(t),t.flags|=1,ds(e,t,s,N),t.child)}function ym(e,t,s,l,C){if(tl(t),t.stateNode===null){var N=ar,Z=s.contextType;typeof Z=="object"&&Z!==null&&(N=Ys(Z)),N=new s(l,N),t.memoizedState=N.state!==null&&N.state!==void 0?N.state:null,N.updater=Xt,t.stateNode=N,N._reactInternals=t,N=t.stateNode,N.props=l,N.state=t.memoizedState,N.refs={},Ca(t),Z=s.contextType,N.context=typeof Z=="object"&&Z!==null?Ys(Z):ar,N.state=t.memoizedState,Z=s.getDerivedStateFromProps,typeof Z=="function"&&(is(t,s,Z,l),N.state=t.memoizedState),typeof s.getDerivedStateFromProps=="function"||typeof N.getSnapshotBeforeUpdate=="function"||typeof N.UNSAFE_componentWillMount!="function"&&typeof N.componentWillMount!="function"||(Z=N.state,typeof N.componentWillMount=="function"&&N.componentWillMount(),typeof N.UNSAFE_componentWillMount=="function"&&N.UNSAFE_componentWillMount(),Z!==N.state&&Xt.enqueueReplaceState(N,N.state,null),ms(t,l,N,C),Gi(),N.state=t.memoizedState),typeof N.componentDidMount=="function"&&(t.flags|=4194308),l=!0}else if(e===null){N=t.stateNode;var fe=t.memoizedProps,Ae=Ks(s,fe);N.props=Ae;var ct=N.context,wt=s.contextType;Z=ar,typeof wt=="object"&&wt!==null&&(Z=Ys(wt));var Et=s.getDerivedStateFromProps;wt=typeof Et=="function"||typeof N.getSnapshotBeforeUpdate=="function",fe=t.pendingProps!==fe,wt||typeof N.UNSAFE_componentWillReceiveProps!="function"&&typeof N.componentWillReceiveProps!="function"||(fe||ct!==Z)&&ha(t,N,l,Z),or=!1;var ut=t.memoizedState;N.state=ut,ms(t,l,N,C),Gi(),ct=t.memoizedState,fe||ut!==ct||or?(typeof Et=="function"&&(is(t,s,Et,l),ct=t.memoizedState),(Ae=or||ki(t,s,Ae,l,ut,ct,Z))?(wt||typeof N.UNSAFE_componentWillMount!="function"&&typeof N.componentWillMount!="function"||(typeof N.componentWillMount=="function"&&N.componentWillMount(),typeof N.UNSAFE_componentWillMount=="function"&&N.UNSAFE_componentWillMount()),typeof N.componentDidMount=="function"&&(t.flags|=4194308)):(typeof N.componentDidMount=="function"&&(t.flags|=4194308),t.memoizedProps=l,t.memoizedState=ct),N.props=l,N.state=ct,N.context=Z,l=Ae):(typeof N.componentDidMount=="function"&&(t.flags|=4194308),l=!1)}else{N=t.stateNode,Hs(e,t),Z=t.memoizedProps,wt=Ks(s,Z),N.props=wt,Et=t.pendingProps,ut=N.context,ct=s.contextType,Ae=ar,typeof ct=="object"&&ct!==null&&(Ae=Ys(ct)),fe=s.getDerivedStateFromProps,(ct=typeof fe=="function"||typeof N.getSnapshotBeforeUpdate=="function")||typeof N.UNSAFE_componentWillReceiveProps!="function"&&typeof N.componentWillReceiveProps!="function"||(Z!==Et||ut!==Ae)&&ha(t,N,l,Ae),or=!1,ut=t.memoizedState,N.state=ut,ms(t,l,N,C),Gi();var gt=t.memoizedState;Z!==Et||ut!==gt||or||e!==null&&e.dependencies!==null&&Zl(e.dependencies)?(typeof fe=="function"&&(is(t,s,fe,l),gt=t.memoizedState),(wt=or||ki(t,s,wt,l,ut,gt,Ae)||e!==null&&e.dependencies!==null&&Zl(e.dependencies))?(ct||typeof N.UNSAFE_componentWillUpdate!="function"&&typeof N.componentWillUpdate!="function"||(typeof N.componentWillUpdate=="function"&&N.componentWillUpdate(l,gt,Ae),typeof N.UNSAFE_componentWillUpdate=="function"&&N.UNSAFE_componentWillUpdate(l,gt,Ae)),typeof N.componentDidUpdate=="function"&&(t.flags|=4),typeof N.getSnapshotBeforeUpdate=="function"&&(t.flags|=1024)):(typeof N.componentDidUpdate!="function"||Z===e.memoizedProps&&ut===e.memoizedState||(t.flags|=4),typeof N.getSnapshotBeforeUpdate!="function"||Z===e.memoizedProps&&ut===e.memoizedState||(t.flags|=1024),t.memoizedProps=l,t.memoizedState=gt),N.props=l,N.state=gt,N.context=Ae,l=wt):(typeof N.componentDidUpdate!="function"||Z===e.memoizedProps&&ut===e.memoizedState||(t.flags|=4),typeof N.getSnapshotBeforeUpdate!="function"||Z===e.memoizedProps&&ut===e.memoizedState||(t.flags|=1024),l=!1)}return N=l,wh(e,t),l=(t.flags&128)!==0,N||l?(N=t.stateNode,s=l&&typeof s.getDerivedStateFromError!="function"?null:N.render(),t.flags|=1,e!==null&&l?(t.child=Ds(t,e.child,null,C),t.child=Ds(t,null,s,C)):ds(e,t,s,C),t.memoizedState=N.state,e=t.child):e=Jo(e,t,C),e}function bm(e,t,s,l){return el(),t.flags|=256,ds(e,t,s,l),t.child}var qf={dehydrated:null,treeContext:null,retryLane:0,hydrationErrors:null};function Zf(e){return{baseLanes:e,cachePool:Kt()}}function Uf(e,t,s){return e=e!==null?e.childLanes&~s:0,t&&(e|=Ml),e}function vm(e,t,s){var l=t.pendingProps,C=!1,N=(t.flags&128)!==0,Z;if((Z=N)||(Z=e!==null&&e.memoizedState===null?!1:(Ws.current&2)!==0),Z&&(C=!0,t.flags&=-129),Z=(t.flags&32)!==0,t.flags&=-33,e===null){if(Ai){if(C?ka(t):nl(),(e=Ji)?(e=Ey(e,Tr),e=e!==null&&e.data!=="&"?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:Sr!==null?{id:lr,overflow:$r}:null,retryLane:536870912,hydrationErrors:null},s=Xc(e),s.return=t,t.child=s,Cr=t,Ji=null)):e=null,e===null)throw Fl(t);return Mp(e)?t.lanes=32:t.lanes=536870912,null}var fe=l.children;return l=l.fallback,C?(nl(),C=t.mode,fe=_h({mode:"hidden",children:fe},C),l=Da(l,C,s,null),fe.return=t,l.return=t,fe.sibling=l,t.child=fe,l=t.child,l.memoizedState=Zf(s),l.childLanes=Uf(e,Z,s),t.memoizedState=qf,hd(null,l)):(ka(t),Wf(t,fe))}var Ae=e.memoizedState;if(Ae!==null&&(fe=Ae.dehydrated,fe!==null)){if(N)t.flags&256?(ka(t),t.flags&=-257,t=Kf(e,t,s)):t.memoizedState!==null?(nl(),t.child=e.child,t.flags|=128,t=null):(nl(),fe=l.fallback,C=t.mode,l=_h({mode:"visible",children:l.children},C),fe=Da(fe,C,s,null),fe.flags|=2,l.return=t,fe.return=t,l.sibling=fe,t.child=l,Ds(t,e.child,null,s),l=t.child,l.memoizedState=Zf(s),l.childLanes=Uf(e,Z,s),t.memoizedState=qf,t=hd(null,l));else if(ka(t),Mp(fe)){if(Z=fe.nextSibling&&fe.nextSibling.dataset,Z)var ct=Z.dgst;Z=ct,l=Error(o(419)),l.stack="",l.digest=Z,Wo({value:l,source:null,stack:null}),t=Kf(e,t,s)}else if(ss||To(e,t,s,!1),Z=(s&e.childLanes)!==0,ss||Z){if(Z=Rs,Z!==null&&(l=Ps(Z,s),l!==0&&l!==Ae.retryLane))throw Ae.retryLane=l,Us(e,l),ol(Z,e,l),ks;Ep(fe)||zh(),t=Kf(e,t,s)}else Ep(fe)?(t.flags|=192,t.child=e.child,t=null):(e=Ae.treeContext,Ji=Yl(fe.nextSibling),Cr=t,Ai=!0,Vl=null,Tr=!1,e!==null&&Uo(t,e),t=Wf(t,l.children),t.flags|=4096);return t}return C?(nl(),fe=l.fallback,C=t.mode,Ae=e.child,ct=Ae.sibling,l=Ta(Ae,{mode:"hidden",children:l.children}),l.subtreeFlags=Ae.subtreeFlags&65011712,ct!==null?fe=Ta(ct,fe):(fe=Da(fe,C,s,null),fe.flags|=2),fe.return=t,l.return=t,l.sibling=fe,t.child=l,hd(null,l),l=t.child,fe=e.child.memoizedState,fe===null?fe=Zf(s):(C=fe.cachePool,C!==null?(Ae=re._currentValue,C=C.parent!==Ae?{parent:Ae,pool:Ae}:C):C=Kt(),fe={baseLanes:fe.baseLanes|s,cachePool:C}),l.memoizedState=fe,l.childLanes=Uf(e,Z,s),t.memoizedState=qf,hd(e.child,l)):(ka(t),s=e.child,e=s.sibling,s=Ta(s,{mode:"visible",children:l.children}),s.return=t,s.sibling=null,e!==null&&(Z=t.deletions,Z===null?(t.deletions=[e],t.flags|=16):Z.push(e)),t.child=s,t.memoizedState=null,s)}function Wf(e,t){return t=_h({mode:"visible",children:t},e.mode),t.return=e,e.child=t}function _h(e,t){return e=js(22,e,null,t),e.lanes=0,e}function Kf(e,t,s){return Ds(t,e.child,null,s),e=Wf(t,t.pendingProps.children),e.flags|=2,t.memoizedState=null,e}function xm(e,t,s){e.lanes|=t;var l=e.alternate;l!==null&&(l.lanes|=t),tu(e.return,t,s)}function Gf(e,t,s,l,C,N){var Z=e.memoizedState;Z===null?e.memoizedState={isBackwards:t,rendering:null,renderingStartTime:0,last:l,tail:s,tailMode:C,treeForkCount:N}:(Z.isBackwards=t,Z.rendering=null,Z.renderingStartTime=0,Z.last=l,Z.tail=s,Z.tailMode=C,Z.treeForkCount=N)}function wm(e,t,s){var l=t.pendingProps,C=l.revealOrder,N=l.tail;l=l.children;var Z=Ws.current,fe=(Z&2)!==0;if(fe?(Z=Z&1|2,t.flags|=128):Z&=1,Te(Ws,Z),ds(e,t,l,s),l=Ai?wa:0,!fe&&e!==null&&(e.flags&128)!==0)e:for(e=t.child;e!==null;){if(e.tag===13)e.memoizedState!==null&&xm(e,s,t);else if(e.tag===19)xm(e,s,t);else if(e.child!==null){e.child.return=e,e=e.child;continue}if(e===t)break e;for(;e.sibling===null;){if(e.return===null||e.return===t)break e;e=e.return}e.sibling.return=e.return,e=e.sibling}switch(C){case"forwards":for(s=t.child,C=null;s!==null;)e=s.alternate,e!==null&&xc(e)===null&&(C=s),s=s.sibling;s=C,s===null?(C=t.child,t.child=null):(C=s.sibling,s.sibling=null),Gf(t,!1,C,s,N,l);break;case"backwards":case"unstable_legacy-backwards":for(s=null,C=t.child,t.child=null;C!==null;){if(e=C.alternate,e!==null&&xc(e)===null){t.child=C;break}e=C.sibling,C.sibling=s,s=C,C=e}Gf(t,!0,s,null,N,l);break;case"together":Gf(t,!1,null,null,void 0,l);break;default:t.memoizedState=null}return t.child}function Jo(e,t,s){if(e!==null&&(t.dependencies=e.dependencies),jc|=t.lanes,(s&t.childLanes)===0)if(e!==null){if(To(e,t,s,!1),(s&t.childLanes)===0)return null}else return null;if(e!==null&&t.child!==e.child)throw Error(o(153));if(t.child!==null){for(e=t.child,s=Ta(e,e.pendingProps),t.child=s,s.return=t;e.sibling!==null;)e=e.sibling,s=s.sibling=Ta(e,e.pendingProps),s.return=t;s.sibling=null}return t.child}function Yf(e,t){return(e.lanes&t)!==0?!0:(e=e.dependencies,!!(e!==null&&Zl(e)))}function lx(e,t,s){switch(t.tag){case 3:de(t,t.stateNode.containerInfo),ql(t,re,e.memoizedState.cache),el();break;case 27:case 5:Ne(t);break;case 4:de(t,t.stateNode.containerInfo);break;case 10:ql(t,t.type,t.memoizedProps.value);break;case 31:if(t.memoizedState!==null)return t.flags|=128,ku(t),null;break;case 13:var l=t.memoizedState;if(l!==null)return l.dehydrated!==null?(ka(t),t.flags|=128,null):(s&t.child.childLanes)!==0?vm(e,t,s):(ka(t),e=Jo(e,t,s),e!==null?e.sibling:null);ka(t);break;case 19:var C=(e.flags&128)!==0;if(l=(s&t.childLanes)!==0,l||(To(e,t,s,!1),l=(s&t.childLanes)!==0),C){if(l)return wm(e,t,s);t.flags|=128}if(C=t.memoizedState,C!==null&&(C.rendering=null,C.tail=null,C.lastEffect=null),Te(Ws,Ws.current),l)break;return null;case 22:return t.lanes=0,fm(e,t,s,t.pendingProps);case 24:ql(t,re,e.memoizedState.cache)}return Jo(e,t,s)}function _m(e,t,s){if(e!==null)if(e.memoizedProps!==t.pendingProps)ss=!0;else{if(!Yf(e,s)&&(t.flags&128)===0)return ss=!1,lx(e,t,s);ss=(e.flags&131072)!==0}else ss=!1,Ai&&(t.flags&1048576)!==0&&zr(t,wa,t.index);switch(t.lanes=0,t.tag){case 16:e:{var l=t.pendingProps;if(e=hn(t.elementType),t.type=e,typeof e=="function")Xa(e)?(l=Ks(e,l),t.tag=1,t=ym(null,t,e,l,s)):(t.tag=0,t=Ff(null,t,e,l,s));else{if(e!=null){var C=e.$$typeof;if(C===M){t.tag=11,t=Gl(null,t,e,l,s);break e}else if(C===R){t.tag=14,t=Ha(null,t,e,l,s);break e}}throw t=ge(e)||e,Error(o(306,t,""))}}return t;case 0:return Ff(e,t,t.type,t.pendingProps,s);case 1:return l=t.type,C=Ks(l,t.pendingProps),ym(e,t,l,C,s);case 3:e:{if(de(t,t.stateNode.containerInfo),e===null)throw Error(o(387));l=t.pendingProps;var N=t.memoizedState;C=N.element,Hs(e,t),ms(t,l,null,s);var Z=t.memoizedState;if(l=Z.cache,ql(t,re,l),l!==N.cache&&Ko(t,[re],s,!0),Gi(),l=Z.element,N.isDehydrated)if(N={element:l,isDehydrated:!1,cache:Z.cache},t.updateQueue.baseState=N,t.memoizedState=N,t.flags&256){t=bm(e,t,l,s);break e}else if(l!==C){C=Qr(Error(o(424)),t),Wo(C),t=bm(e,t,l,s);break e}else{switch(e=t.stateNode.containerInfo,e.nodeType){case 9:e=e.body;break;default:e=e.nodeName==="HTML"?e.ownerDocument.body:e}for(Ji=Yl(e.firstChild),Cr=t,Ai=!0,Vl=null,Tr=!0,s=Is(t,null,l,s),t.child=s;s;)s.flags=s.flags&-3|4096,s=s.sibling}else{if(el(),l===C){t=Jo(e,t,s);break e}ds(e,t,l,s)}t=t.child}return t;case 26:return wh(e,t),e===null?(s=Ay(t.type,null,t.pendingProps,null))?t.memoizedState=s:Ai||(s=t.type,e=t.pendingProps,l=Oh(Ve.current).createElement(s),l[ui]=t,l[Tn]=e,fa(l,s,e),yi(l),t.stateNode=l):t.memoizedState=Ay(t.type,e.memoizedProps,t.pendingProps,e.memoizedState),null;case 27:return Ne(t),e===null&&Ai&&(l=t.stateNode=Ny(t.type,t.pendingProps,Ve.current),Cr=t,Tr=!0,C=Ji,Nc(t.type)?(Lp=C,Ji=Yl(l.firstChild)):Ji=C),ds(e,t,t.pendingProps.children,s),wh(e,t),e===null&&(t.flags|=4194304),t.child;case 5:return e===null&&Ai&&((C=l=Ji)&&(l=Hx(l,t.type,t.pendingProps,Tr),l!==null?(t.stateNode=l,Cr=t,Ji=Yl(l.firstChild),Tr=!1,C=!0):C=!1),C||Fl(t)),Ne(t),C=t.type,N=t.pendingProps,Z=e!==null?e.memoizedProps:null,l=N.children,Cp(C,N)?l=null:Z!==null&&Cp(C,Z)&&(t.flags|=32),t.memoizedState!==null&&(C=Eu(e,t,rd,null,null,s),Ed._currentValue=C),wh(e,t),ds(e,t,l,s),t.child;case 6:return e===null&&Ai&&((e=s=Ji)&&(s=Ox(s,t.pendingProps,Tr),s!==null?(t.stateNode=s,Cr=t,Ji=null,e=!0):e=!1),e||Fl(t)),null;case 13:return vm(e,t,s);case 4:return de(t,t.stateNode.containerInfo),l=t.pendingProps,e===null?t.child=Ds(t,null,l,s):ds(e,t,l,s),t.child;case 11:return Gl(e,t,t.type,t.pendingProps,s);case 7:return ds(e,t,t.pendingProps,s),t.child;case 8:return ds(e,t,t.pendingProps.children,s),t.child;case 12:return ds(e,t,t.pendingProps.children,s),t.child;case 10:return l=t.pendingProps,ql(t,t.type,l.value),ds(e,t,l.children,s),t.child;case 9:return C=t.type._context,l=t.pendingProps.children,tl(t),C=Ys(C),l=l(C),t.flags|=1,ds(e,t,l,s),t.child;case 14:return Ha(e,t,t.type,t.pendingProps,s);case 15:return vh(e,t,t.type,t.pendingProps,s);case 19:return wm(e,t,s);case 31:return ax(e,t,s);case 22:return fm(e,t,s,t.pendingProps);case 24:return tl(t),l=Ys(re),e===null?(C=$t(),C===null&&(C=Rs,N=be(),C.pooledCache=N,N.refCount++,N!==null&&(C.pooledCacheLanes|=s),C=N),t.memoizedState={parent:l,cache:C},Ca(t),ql(t,re,C)):((e.lanes&s)!==0&&(Hs(e,t),ms(t,null,null,s),Gi()),C=e.memoizedState,N=t.memoizedState,C.parent!==l?(C={parent:l,cache:l},t.memoizedState=C,t.lanes===0&&(t.memoizedState=t.updateQueue.baseState=C),ql(t,re,l)):(l=N.cache,ql(t,re,l),l!==C.cache&&Ko(t,[re],s,!0))),ds(e,t,t.pendingProps.children,s),t.child;case 29:throw t.pendingProps}throw Error(o(156,t.tag))}function Qo(e){e.flags|=4}function Xf(e,t,s,l,C){if((t=(e.mode&32)!==0)&&(t=!1),t){if(e.flags|=16777216,(C&335544128)===C)if(e.stateNode.complete)e.flags|=8192;else if(Gm())e.flags|=8192;else throw gn=oi,tn}else e.flags&=-16777217}function Sm(e,t){if(t.type!=="stylesheet"||(t.state.loading&4)!==0)e.flags&=-16777217;else if(e.flags|=16777216,!Oy(t))if(Gm())e.flags|=8192;else throw gn=oi,tn}function Sh(e,t){t!==null&&(e.flags|=4),e.flags&16384&&(t=e.tag!==22?hr():536870912,e.lanes|=t,Iu|=t)}function fd(e,t){if(!Ai)switch(e.tailMode){case"hidden":t=e.tail;for(var s=null;t!==null;)t.alternate!==null&&(s=t),t=t.sibling;s===null?e.tail=null:s.sibling=null;break;case"collapsed":s=e.tail;for(var l=null;s!==null;)s.alternate!==null&&(l=s),s=s.sibling;l===null?t||e.tail===null?e.tail=null:e.tail.sibling=null:l.sibling=null}}function Gs(e){var t=e.alternate!==null&&e.alternate.child===e.child,s=0,l=0;if(t)for(var C=e.child;C!==null;)s|=C.lanes|C.childLanes,l|=C.subtreeFlags&65011712,l|=C.flags&65011712,C.return=e,C=C.sibling;else for(C=e.child;C!==null;)s|=C.lanes|C.childLanes,l|=C.subtreeFlags,l|=C.flags,C.return=e,C=C.sibling;return e.subtreeFlags|=l,e.childLanes=s,t}function ox(e,t,s){var l=t.pendingProps;switch(wl(t),t.tag){case 16:case 15:case 0:case 11:case 7:case 8:case 12:case 9:case 14:return Gs(t),null;case 1:return Gs(t),null;case 3:return s=t.stateNode,l=null,e!==null&&(l=e.memoizedState.cache),t.memoizedState.cache!==l&&(t.flags|=2048),jr(re),Je(),s.pendingContext&&(s.context=s.pendingContext,s.pendingContext=null),(e===null||e.child===null)&&(zo(t)?Qo(t):e===null||e.memoizedState.isDehydrated&&(t.flags&256)===0||(t.flags|=1024,eu())),Gs(t),null;case 26:var C=t.type,N=t.memoizedState;return e===null?(Qo(t),N!==null?(Gs(t),Sm(t,N)):(Gs(t),Xf(t,C,null,l,s))):N?N!==e.memoizedState?(Qo(t),Gs(t),Sm(t,N)):(Gs(t),t.flags&=-16777217):(e=e.memoizedProps,e!==l&&Qo(t),Gs(t),Xf(t,C,e,l,s)),null;case 27:if(bt(t),s=Ve.current,C=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==l&&Qo(t);else{if(!l){if(t.stateNode===null)throw Error(o(166));return Gs(t),null}e=te.current,zo(t)?Su(t):(e=Ny(C,l,s),t.stateNode=e,Qo(t))}return Gs(t),null;case 5:if(bt(t),C=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==l&&Qo(t);else{if(!l){if(t.stateNode===null)throw Error(o(166));return Gs(t),null}if(N=te.current,zo(t))Su(t);else{var Z=Oh(Ve.current);switch(N){case 1:N=Z.createElementNS("http://www.w3.org/2000/svg",C);break;case 2:N=Z.createElementNS("http://www.w3.org/1998/Math/MathML",C);break;default:switch(C){case"svg":N=Z.createElementNS("http://www.w3.org/2000/svg",C);break;case"math":N=Z.createElementNS("http://www.w3.org/1998/Math/MathML",C);break;case"script":N=Z.createElement("div"),N.innerHTML="<script><\/script>",N=N.removeChild(N.firstChild);break;case"select":N=typeof l.is=="string"?Z.createElement("select",{is:l.is}):Z.createElement("select"),l.multiple?N.multiple=!0:l.size&&(N.size=l.size);break;default:N=typeof l.is=="string"?Z.createElement(C,{is:l.is}):Z.createElement(C)}}N[ui]=t,N[Tn]=l;e:for(Z=t.child;Z!==null;){if(Z.tag===5||Z.tag===6)N.appendChild(Z.stateNode);else if(Z.tag!==4&&Z.tag!==27&&Z.child!==null){Z.child.return=Z,Z=Z.child;continue}if(Z===t)break e;for(;Z.sibling===null;){if(Z.return===null||Z.return===t)break e;Z=Z.return}Z.sibling.return=Z.return,Z=Z.sibling}t.stateNode=N;e:switch(fa(N,C,l),C){case"button":case"input":case"select":case"textarea":l=!!l.autoFocus;break e;case"img":l=!0;break e;default:l=!1}l&&Qo(t)}}return Gs(t),Xf(t,t.type,e===null?null:e.memoizedProps,t.pendingProps,s),null;case 6:if(e&&t.stateNode!=null)e.memoizedProps!==l&&Qo(t);else{if(typeof l!="string"&&t.stateNode===null)throw Error(o(166));if(e=Ve.current,zo(t)){if(e=t.stateNode,s=t.memoizedProps,l=null,C=Cr,C!==null)switch(C.tag){case 27:case 5:l=C.memoizedProps}e[ui]=t,e=!!(e.nodeValue===s||l!==null&&l.suppressHydrationWarning===!0||vy(e.nodeValue,s)),e||Fl(t,!0)}else e=Oh(e).createTextNode(l),e[ui]=t,t.stateNode=e}return Gs(t),null;case 31:if(s=t.memoizedState,e===null||e.memoizedState!==null){if(l=zo(t),s!==null){if(e===null){if(!l)throw Error(o(318));if(e=t.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(o(557));e[ui]=t}else el(),(t.flags&128)===0&&(t.memoizedState=null),t.flags|=4;Gs(t),e=!1}else s=eu(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=s),e=!0;if(!e)return t.flags&256?(Ar(t),t):(Ar(t),null);if((t.flags&128)!==0)throw Error(o(558))}return Gs(t),null;case 13:if(l=t.memoizedState,e===null||e.memoizedState!==null&&e.memoizedState.dehydrated!==null){if(C=zo(t),l!==null&&l.dehydrated!==null){if(e===null){if(!C)throw Error(o(318));if(C=t.memoizedState,C=C!==null?C.dehydrated:null,!C)throw Error(o(317));C[ui]=t}else el(),(t.flags&128)===0&&(t.memoizedState=null),t.flags|=4;Gs(t),C=!1}else C=eu(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=C),C=!0;if(!C)return t.flags&256?(Ar(t),t):(Ar(t),null)}return Ar(t),(t.flags&128)!==0?(t.lanes=s,t):(s=l!==null,e=e!==null&&e.memoizedState!==null,s&&(l=t.child,C=null,l.alternate!==null&&l.alternate.memoizedState!==null&&l.alternate.memoizedState.cachePool!==null&&(C=l.alternate.memoizedState.cachePool.pool),N=null,l.memoizedState!==null&&l.memoizedState.cachePool!==null&&(N=l.memoizedState.cachePool.pool),N!==C&&(l.flags|=2048)),s!==e&&s&&(t.child.flags|=8192),Sh(t,t.updateQueue),Gs(t),null);case 4:return Je(),e===null&&vp(t.stateNode.containerInfo),Gs(t),null;case 10:return jr(t.type),Gs(t),null;case 19:if(ye(Ws),l=t.memoizedState,l===null)return Gs(t),null;if(C=(t.flags&128)!==0,N=l.rendering,N===null)if(C)fd(l,!1);else{if(yr!==0||e!==null&&(e.flags&128)!==0)for(e=t.child;e!==null;){if(N=xc(e),N!==null){for(t.flags|=128,fd(l,!1),e=N.updateQueue,t.updateQueue=e,Sh(t,e),t.subtreeFlags=0,e=s,s=t.child;s!==null;)Aa(s,e),s=s.sibling;return Te(Ws,Ws.current&1|2),Ai&&Qa(t,l.treeForkCount),t.child}e=e.sibling}l.tail!==null&&Rt()>Mh&&(t.flags|=128,C=!0,fd(l,!1),t.lanes=4194304)}else{if(!C)if(e=xc(N),e!==null){if(t.flags|=128,C=!0,e=e.updateQueue,t.updateQueue=e,Sh(t,e),fd(l,!0),l.tail===null&&l.tailMode==="hidden"&&!N.alternate&&!Ai)return Gs(t),null}else 2*Rt()-l.renderingStartTime>Mh&&s!==536870912&&(t.flags|=128,C=!0,fd(l,!1),t.lanes=4194304);l.isBackwards?(N.sibling=t.child,t.child=N):(e=l.last,e!==null?e.sibling=N:t.child=N,l.last=N)}return l.tail!==null?(e=l.tail,l.rendering=e,l.tail=e.sibling,l.renderingStartTime=Rt(),e.sibling=null,s=Ws.current,Te(Ws,C?s&1|2:s&1),Ai&&Qa(t,l.treeForkCount),e):(Gs(t),null);case 22:case 23:return Ar(t),ju(),l=t.memoizedState!==null,e!==null?e.memoizedState!==null!==l&&(t.flags|=8192):l&&(t.flags|=8192),l?(s&536870912)!==0&&(t.flags&128)===0&&(Gs(t),t.subtreeFlags&6&&(t.flags|=8192)):Gs(t),s=t.updateQueue,s!==null&&Sh(t,s.retryQueue),s=null,e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(s=e.memoizedState.cachePool.pool),l=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(l=t.memoizedState.cachePool.pool),l!==s&&(t.flags|=2048),e!==null&&ye(Vt),null;case 24:return s=null,e!==null&&(s=e.memoizedState.cache),t.memoizedState.cache!==s&&(t.flags|=2048),jr(re),Gs(t),null;case 25:return null;case 30:return null}throw Error(o(156,t.tag))}function cx(e,t){switch(wl(t),t.tag){case 1:return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 3:return jr(re),Je(),e=t.flags,(e&65536)!==0&&(e&128)===0?(t.flags=e&-65537|128,t):null;case 26:case 27:case 5:return bt(t),null;case 31:if(t.memoizedState!==null){if(Ar(t),t.alternate===null)throw Error(o(340));el()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 13:if(Ar(t),e=t.memoizedState,e!==null&&e.dehydrated!==null){if(t.alternate===null)throw Error(o(340));el()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 19:return ye(Ws),null;case 4:return Je(),null;case 10:return jr(t.type),null;case 22:case 23:return Ar(t),ju(),e!==null&&ye(Vt),e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 24:return jr(re),null;case 25:return null;default:return null}}function Cm(e,t){switch(wl(t),t.tag){case 3:jr(re),Je();break;case 26:case 27:case 5:bt(t);break;case 4:Je();break;case 31:t.memoizedState!==null&&Ar(t);break;case 13:Ar(t);break;case 19:ye(Ws);break;case 10:jr(t.type);break;case 22:case 23:Ar(t),ju(),e!==null&&ye(Vt);break;case 24:jr(re)}}function pd(e,t){try{var s=t.updateQueue,l=s!==null?s.lastEffect:null;if(l!==null){var C=l.next;s=C;do{if((s.tag&e)===e){l=void 0;var N=s.create,Z=s.inst;l=N(),Z.destroy=l}s=s.next}while(s!==C)}}catch(fe){ws(t,t.return,fe)}}function Sc(e,t,s){try{var l=t.updateQueue,C=l!==null?l.lastEffect:null;if(C!==null){var N=C.next;l=N;do{if((l.tag&e)===e){var Z=l.inst,fe=Z.destroy;if(fe!==void 0){Z.destroy=void 0,C=t;var Ae=s,ct=fe;try{ct()}catch(wt){ws(C,Ae,wt)}}}l=l.next}while(l!==N)}}catch(wt){ws(t,t.return,wt)}}function jm(e){var t=e.updateQueue;if(t!==null){var s=e.stateNode;try{Ia(t,s)}catch(l){ws(e,e.return,l)}}}function km(e,t,s){s.props=Ks(e.type,e.memoizedProps),s.state=e.memoizedState;try{s.componentWillUnmount()}catch(l){ws(e,t,l)}}function gd(e,t){try{var s=e.ref;if(s!==null){switch(e.tag){case 26:case 27:case 5:var l=e.stateNode;break;case 30:l=e.stateNode;break;default:l=e.stateNode}typeof s=="function"?e.refCleanup=s(l):s.current=l}}catch(C){ws(e,t,C)}}function Ro(e,t){var s=e.ref,l=e.refCleanup;if(s!==null)if(typeof l=="function")try{l()}catch(C){ws(e,t,C)}finally{e.refCleanup=null,e=e.alternate,e!=null&&(e.refCleanup=null)}else if(typeof s=="function")try{s(null)}catch(C){ws(e,t,C)}else s.current=null}function Em(e){var t=e.type,s=e.memoizedProps,l=e.stateNode;try{e:switch(t){case"button":case"input":case"select":case"textarea":s.autoFocus&&l.focus();break e;case"img":s.src?l.src=s.src:s.srcSet&&(l.srcset=s.srcSet)}}catch(C){ws(e,e.return,C)}}function Jf(e,t,s){try{var l=e.stateNode;zx(l,e.type,s,t),l[Tn]=t}catch(C){ws(e,e.return,C)}}function Mm(e){return e.tag===5||e.tag===3||e.tag===26||e.tag===27&&Nc(e.type)||e.tag===4}function Qf(e){e:for(;;){for(;e.sibling===null;){if(e.return===null||Mm(e.return))return null;e=e.return}for(e.sibling.return=e.return,e=e.sibling;e.tag!==5&&e.tag!==6&&e.tag!==18;){if(e.tag===27&&Nc(e.type)||e.flags&2||e.child===null||e.tag===4)continue e;e.child.return=e,e=e.child}if(!(e.flags&2))return e.stateNode}}function ep(e,t,s){var l=e.tag;if(l===5||l===6)e=e.stateNode,t?(s.nodeType===9?s.body:s.nodeName==="HTML"?s.ownerDocument.body:s).insertBefore(e,t):(t=s.nodeType===9?s.body:s.nodeName==="HTML"?s.ownerDocument.body:s,t.appendChild(e),s=s._reactRootContainer,s!=null||t.onclick!==null||(t.onclick=cs));else if(l!==4&&(l===27&&Nc(e.type)&&(s=e.stateNode,t=null),e=e.child,e!==null))for(ep(e,t,s),e=e.sibling;e!==null;)ep(e,t,s),e=e.sibling}function Ch(e,t,s){var l=e.tag;if(l===5||l===6)e=e.stateNode,t?s.insertBefore(e,t):s.appendChild(e);else if(l!==4&&(l===27&&Nc(e.type)&&(s=e.stateNode),e=e.child,e!==null))for(Ch(e,t,s),e=e.sibling;e!==null;)Ch(e,t,s),e=e.sibling}function Lm(e){var t=e.stateNode,s=e.memoizedProps;try{for(var l=e.type,C=t.attributes;C.length;)t.removeAttributeNode(C[0]);fa(t,l,s),t[ui]=e,t[Tn]=s}catch(N){ws(e,e.return,N)}}var ec=!1,Dr=!1,tp=!1,Nm=typeof WeakSet=="function"?WeakSet:Set,ea=null;function ux(e,t){if(e=e.containerInfo,_p=Zh,e=_r(e),Wa(e)){if("selectionStart"in e)var s={start:e.selectionStart,end:e.selectionEnd};else e:{s=(s=e.ownerDocument)&&s.defaultView||window;var l=s.getSelection&&s.getSelection();if(l&&l.rangeCount!==0){s=l.anchorNode;var C=l.anchorOffset,N=l.focusNode;l=l.focusOffset;try{s.nodeType,N.nodeType}catch{s=null;break e}var Z=0,fe=-1,Ae=-1,ct=0,wt=0,Et=e,ut=null;t:for(;;){for(var gt;Et!==s||C!==0&&Et.nodeType!==3||(fe=Z+C),Et!==N||l!==0&&Et.nodeType!==3||(Ae=Z+l),Et.nodeType===3&&(Z+=Et.nodeValue.length),(gt=Et.firstChild)!==null;)ut=Et,Et=gt;for(;;){if(Et===e)break t;if(ut===s&&++ct===C&&(fe=Z),ut===N&&++wt===l&&(Ae=Z),(gt=Et.nextSibling)!==null)break;Et=ut,ut=Et.parentNode}Et=gt}s=fe===-1||Ae===-1?null:{start:fe,end:Ae}}else s=null}s=s||{start:0,end:0}}else s=null;for(Sp={focusedElem:e,selectionRange:s},Zh=!1,ea=t;ea!==null;)if(t=ea,e=t.child,(t.subtreeFlags&1028)!==0&&e!==null)e.return=t,ea=e;else for(;ea!==null;){switch(t=ea,N=t.alternate,e=t.flags,t.tag){case 0:if((e&4)!==0&&(e=t.updateQueue,e=e!==null?e.events:null,e!==null))for(s=0;s<e.length;s++)C=e[s],C.ref.impl=C.nextImpl;break;case 11:case 15:break;case 1:if((e&1024)!==0&&N!==null){e=void 0,s=t,C=N.memoizedProps,N=N.memoizedState,l=s.stateNode;try{var Mn=Ks(s.type,C);e=l.getSnapshotBeforeUpdate(Mn,N),l.__reactInternalSnapshotBeforeUpdate=e}catch(ni){ws(s,s.return,ni)}}break;case 3:if((e&1024)!==0){if(e=t.stateNode.containerInfo,s=e.nodeType,s===9)kp(e);else if(s===1)switch(e.nodeName){case"HEAD":case"HTML":case"BODY":kp(e);break;default:e.textContent=""}}break;case 5:case 26:case 27:case 6:case 4:case 17:break;default:if((e&1024)!==0)throw Error(o(163))}if(e=t.sibling,e!==null){e.return=t.return,ea=e;break}ea=t.return}}function zm(e,t,s){var l=s.flags;switch(s.tag){case 0:case 11:case 15:nc(e,s),l&4&&pd(5,s);break;case 1:if(nc(e,s),l&4)if(e=s.stateNode,t===null)try{e.componentDidMount()}catch(Z){ws(s,s.return,Z)}else{var C=Ks(s.type,t.memoizedProps);t=t.memoizedState;try{e.componentDidUpdate(C,t,e.__reactInternalSnapshotBeforeUpdate)}catch(Z){ws(s,s.return,Z)}}l&64&&jm(s),l&512&&gd(s,s.return);break;case 3:if(nc(e,s),l&64&&(e=s.updateQueue,e!==null)){if(t=null,s.child!==null)switch(s.child.tag){case 27:case 5:t=s.child.stateNode;break;case 1:t=s.child.stateNode}try{Ia(e,t)}catch(Z){ws(s,s.return,Z)}}break;case 27:t===null&&l&4&&Lm(s);case 26:case 5:nc(e,s),t===null&&l&4&&Em(s),l&512&&gd(s,s.return);break;case 12:nc(e,s);break;case 31:nc(e,s),l&4&&Dm(e,s);break;case 13:nc(e,s),l&4&&Im(e,s),l&64&&(e=s.memoizedState,e!==null&&(e=e.dehydrated,e!==null&&(s=vx.bind(null,s),Bx(e,s))));break;case 22:if(l=s.memoizedState!==null||ec,!l){t=t!==null&&t.memoizedState!==null||Dr,C=ec;var N=Dr;ec=l,(Dr=t)&&!N?ic(e,s,(s.subtreeFlags&8772)!==0):nc(e,s),ec=C,Dr=N}break;case 30:break;default:nc(e,s)}}function Tm(e){var t=e.alternate;t!==null&&(e.alternate=null,Tm(t)),e.child=null,e.deletions=null,e.sibling=null,e.tag===5&&(t=e.stateNode,t!==null&&di(t)),e.stateNode=null,e.return=null,e.dependencies=null,e.memoizedProps=null,e.memoizedState=null,e.pendingProps=null,e.stateNode=null,e.updateQueue=null}var Qs=null,sl=!1;function tc(e,t,s){for(s=s.child;s!==null;)Am(e,t,s),s=s.sibling}function Am(e,t,s){if(nn&&typeof nn.onCommitFiberUnmount=="function")try{nn.onCommitFiberUnmount(zt,s)}catch{}switch(s.tag){case 26:Dr||Ro(s,t),tc(e,t,s),s.memoizedState?s.memoizedState.count--:s.stateNode&&(s=s.stateNode,s.parentNode.removeChild(s));break;case 27:Dr||Ro(s,t);var l=Qs,C=sl;Nc(s.type)&&(Qs=s.stateNode,sl=!1),tc(e,t,s),Cd(s.stateNode),Qs=l,sl=C;break;case 5:Dr||Ro(s,t);case 6:if(l=Qs,C=sl,Qs=null,tc(e,t,s),Qs=l,sl=C,Qs!==null)if(sl)try{(Qs.nodeType===9?Qs.body:Qs.nodeName==="HTML"?Qs.ownerDocument.body:Qs).removeChild(s.stateNode)}catch(N){ws(s,t,N)}else try{Qs.removeChild(s.stateNode)}catch(N){ws(s,t,N)}break;case 18:Qs!==null&&(sl?(e=Qs,jy(e.nodeType===9?e.body:e.nodeName==="HTML"?e.ownerDocument.body:e,s.stateNode),Fu(e)):jy(Qs,s.stateNode));break;case 4:l=Qs,C=sl,Qs=s.stateNode.containerInfo,sl=!0,tc(e,t,s),Qs=l,sl=C;break;case 0:case 11:case 14:case 15:Sc(2,s,t),Dr||Sc(4,s,t),tc(e,t,s);break;case 1:Dr||(Ro(s,t),l=s.stateNode,typeof l.componentWillUnmount=="function"&&km(s,t,l)),tc(e,t,s);break;case 21:tc(e,t,s);break;case 22:Dr=(l=Dr)||s.memoizedState!==null,tc(e,t,s),Dr=l;break;default:tc(e,t,s)}}function Dm(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null))){e=e.dehydrated;try{Fu(e)}catch(s){ws(t,t.return,s)}}}function Im(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null&&(e=e.dehydrated,e!==null))))try{Fu(e)}catch(s){ws(t,t.return,s)}}function dx(e){switch(e.tag){case 31:case 13:case 19:var t=e.stateNode;return t===null&&(t=e.stateNode=new Nm),t;case 22:return e=e.stateNode,t=e._retryCache,t===null&&(t=e._retryCache=new Nm),t;default:throw Error(o(435,e.tag))}}function jh(e,t){var s=dx(e);t.forEach(function(l){if(!s.has(l)){s.add(l);var C=xx.bind(null,e,l);l.then(C,C)}})}function rl(e,t){var s=t.deletions;if(s!==null)for(var l=0;l<s.length;l++){var C=s[l],N=e,Z=t,fe=Z;e:for(;fe!==null;){switch(fe.tag){case 27:if(Nc(fe.type)){Qs=fe.stateNode,sl=!1;break e}break;case 5:Qs=fe.stateNode,sl=!1;break e;case 3:case 4:Qs=fe.stateNode.containerInfo,sl=!0;break e}fe=fe.return}if(Qs===null)throw Error(o(160));Am(N,Z,C),Qs=null,sl=!1,N=C.alternate,N!==null&&(N.return=null),C.return=null}if(t.subtreeFlags&13886)for(t=t.child;t!==null;)Rm(t,e),t=t.sibling}var po=null;function Rm(e,t){var s=e.alternate,l=e.flags;switch(e.tag){case 0:case 11:case 14:case 15:rl(t,e),al(e),l&4&&(Sc(3,e,e.return),pd(3,e),Sc(5,e,e.return));break;case 1:rl(t,e),al(e),l&512&&(Dr||s===null||Ro(s,s.return)),l&64&&ec&&(e=e.updateQueue,e!==null&&(l=e.callbacks,l!==null&&(s=e.shared.hiddenCallbacks,e.shared.hiddenCallbacks=s===null?l:s.concat(l))));break;case 26:var C=po;if(rl(t,e),al(e),l&512&&(Dr||s===null||Ro(s,s.return)),l&4){var N=s!==null?s.memoizedState:null;if(l=e.memoizedState,s===null)if(l===null)if(e.stateNode===null){e:{l=e.type,s=e.memoizedProps,C=C.ownerDocument||C;t:switch(l){case"title":N=C.getElementsByTagName("title")[0],(!N||N[Ti]||N[ui]||N.namespaceURI==="http://www.w3.org/2000/svg"||N.hasAttribute("itemprop"))&&(N=C.createElement(l),C.head.insertBefore(N,C.querySelector("head > title"))),fa(N,l,s),N[ui]=e,yi(N),l=N;break e;case"link":var Z=Ry("link","href",C).get(l+(s.href||""));if(Z){for(var fe=0;fe<Z.length;fe++)if(N=Z[fe],N.getAttribute("href")===(s.href==null||s.href===""?null:s.href)&&N.getAttribute("rel")===(s.rel==null?null:s.rel)&&N.getAttribute("title")===(s.title==null?null:s.title)&&N.getAttribute("crossorigin")===(s.crossOrigin==null?null:s.crossOrigin)){Z.splice(fe,1);break t}}N=C.createElement(l),fa(N,l,s),C.head.appendChild(N);break;case"meta":if(Z=Ry("meta","content",C).get(l+(s.content||""))){for(fe=0;fe<Z.length;fe++)if(N=Z[fe],N.getAttribute("content")===(s.content==null?null:""+s.content)&&N.getAttribute("name")===(s.name==null?null:s.name)&&N.getAttribute("property")===(s.property==null?null:s.property)&&N.getAttribute("http-equiv")===(s.httpEquiv==null?null:s.httpEquiv)&&N.getAttribute("charset")===(s.charSet==null?null:s.charSet)){Z.splice(fe,1);break t}}N=C.createElement(l),fa(N,l,s),C.head.appendChild(N);break;default:throw Error(o(468,l))}N[ui]=e,yi(N),l=N}e.stateNode=l}else Hy(C,e.type,e.stateNode);else e.stateNode=Iy(C,l,e.memoizedProps);else N!==l?(N===null?s.stateNode!==null&&(s=s.stateNode,s.parentNode.removeChild(s)):N.count--,l===null?Hy(C,e.type,e.stateNode):Iy(C,l,e.memoizedProps)):l===null&&e.stateNode!==null&&Jf(e,e.memoizedProps,s.memoizedProps)}break;case 27:rl(t,e),al(e),l&512&&(Dr||s===null||Ro(s,s.return)),s!==null&&l&4&&Jf(e,e.memoizedProps,s.memoizedProps);break;case 5:if(rl(t,e),al(e),l&512&&(Dr||s===null||Ro(s,s.return)),e.flags&32){C=e.stateNode;try{Nt(C,"")}catch(Mn){ws(e,e.return,Mn)}}l&4&&e.stateNode!=null&&(C=e.memoizedProps,Jf(e,C,s!==null?s.memoizedProps:C)),l&1024&&(tp=!0);break;case 6:if(rl(t,e),al(e),l&4){if(e.stateNode===null)throw Error(o(162));l=e.memoizedProps,s=e.stateNode;try{s.nodeValue=l}catch(Mn){ws(e,e.return,Mn)}}break;case 3:if(Ph=null,C=po,po=Bh(t.containerInfo),rl(t,e),po=C,al(e),l&4&&s!==null&&s.memoizedState.isDehydrated)try{Fu(t.containerInfo)}catch(Mn){ws(e,e.return,Mn)}tp&&(tp=!1,Hm(e));break;case 4:l=po,po=Bh(e.stateNode.containerInfo),rl(t,e),al(e),po=l;break;case 12:rl(t,e),al(e);break;case 31:rl(t,e),al(e),l&4&&(l=e.updateQueue,l!==null&&(e.updateQueue=null,jh(e,l)));break;case 13:rl(t,e),al(e),e.child.flags&8192&&e.memoizedState!==null!=(s!==null&&s.memoizedState!==null)&&(Eh=Rt()),l&4&&(l=e.updateQueue,l!==null&&(e.updateQueue=null,jh(e,l)));break;case 22:C=e.memoizedState!==null;var Ae=s!==null&&s.memoizedState!==null,ct=ec,wt=Dr;if(ec=ct||C,Dr=wt||Ae,rl(t,e),Dr=wt,ec=ct,al(e),l&8192)e:for(t=e.stateNode,t._visibility=C?t._visibility&-2:t._visibility|1,C&&(s===null||Ae||ec||Dr||lu(e)),s=null,t=e;;){if(t.tag===5||t.tag===26){if(s===null){Ae=s=t;try{if(N=Ae.stateNode,C)Z=N.style,typeof Z.setProperty=="function"?Z.setProperty("display","none","important"):Z.display="none";else{fe=Ae.stateNode;var Et=Ae.memoizedProps.style,ut=Et!=null&&Et.hasOwnProperty("display")?Et.display:null;fe.style.display=ut==null||typeof ut=="boolean"?"":(""+ut).trim()}}catch(Mn){ws(Ae,Ae.return,Mn)}}}else if(t.tag===6){if(s===null){Ae=t;try{Ae.stateNode.nodeValue=C?"":Ae.memoizedProps}catch(Mn){ws(Ae,Ae.return,Mn)}}}else if(t.tag===18){if(s===null){Ae=t;try{var gt=Ae.stateNode;C?ky(gt,!0):ky(Ae.stateNode,!1)}catch(Mn){ws(Ae,Ae.return,Mn)}}}else if((t.tag!==22&&t.tag!==23||t.memoizedState===null||t===e)&&t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break e;for(;t.sibling===null;){if(t.return===null||t.return===e)break e;s===t&&(s=null),t=t.return}s===t&&(s=null),t.sibling.return=t.return,t=t.sibling}l&4&&(l=e.updateQueue,l!==null&&(s=l.retryQueue,s!==null&&(l.retryQueue=null,jh(e,s))));break;case 19:rl(t,e),al(e),l&4&&(l=e.updateQueue,l!==null&&(e.updateQueue=null,jh(e,l)));break;case 30:break;case 21:break;default:rl(t,e),al(e)}}function al(e){var t=e.flags;if(t&2){try{for(var s,l=e.return;l!==null;){if(Mm(l)){s=l;break}l=l.return}if(s==null)throw Error(o(160));switch(s.tag){case 27:var C=s.stateNode,N=Qf(e);Ch(e,N,C);break;case 5:var Z=s.stateNode;s.flags&32&&(Nt(Z,""),s.flags&=-33);var fe=Qf(e);Ch(e,fe,Z);break;case 3:case 4:var Ae=s.stateNode.containerInfo,ct=Qf(e);ep(e,ct,Ae);break;default:throw Error(o(161))}}catch(wt){ws(e,e.return,wt)}e.flags&=-3}t&4096&&(e.flags&=-4097)}function Hm(e){if(e.subtreeFlags&1024)for(e=e.child;e!==null;){var t=e;Hm(t),t.tag===5&&t.flags&1024&&t.stateNode.reset(),e=e.sibling}}function nc(e,t){if(t.subtreeFlags&8772)for(t=t.child;t!==null;)zm(e,t.alternate,t),t=t.sibling}function lu(e){for(e=e.child;e!==null;){var t=e;switch(t.tag){case 0:case 11:case 14:case 15:Sc(4,t,t.return),lu(t);break;case 1:Ro(t,t.return);var s=t.stateNode;typeof s.componentWillUnmount=="function"&&km(t,t.return,s),lu(t);break;case 27:Cd(t.stateNode);case 26:case 5:Ro(t,t.return),lu(t);break;case 22:t.memoizedState===null&&lu(t);break;case 30:lu(t);break;default:lu(t)}e=e.sibling}}function ic(e,t,s){for(s=s&&(t.subtreeFlags&8772)!==0,t=t.child;t!==null;){var l=t.alternate,C=e,N=t,Z=N.flags;switch(N.tag){case 0:case 11:case 15:ic(C,N,s),pd(4,N);break;case 1:if(ic(C,N,s),l=N,C=l.stateNode,typeof C.componentDidMount=="function")try{C.componentDidMount()}catch(ct){ws(l,l.return,ct)}if(l=N,C=l.updateQueue,C!==null){var fe=l.stateNode;try{var Ae=C.shared.hiddenCallbacks;if(Ae!==null)for(C.shared.hiddenCallbacks=null,C=0;C<Ae.length;C++)mr(Ae[C],fe)}catch(ct){ws(l,l.return,ct)}}s&&Z&64&&jm(N),gd(N,N.return);break;case 27:Lm(N);case 26:case 5:ic(C,N,s),s&&l===null&&Z&4&&Em(N),gd(N,N.return);break;case 12:ic(C,N,s);break;case 31:ic(C,N,s),s&&Z&4&&Dm(C,N);break;case 13:ic(C,N,s),s&&Z&4&&Im(C,N);break;case 22:N.memoizedState===null&&ic(C,N,s),gd(N,N.return);break;case 30:break;default:ic(C,N,s)}t=t.sibling}}function np(e,t){var s=null;e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(s=e.memoizedState.cachePool.pool),e=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(e=t.memoizedState.cachePool.pool),e!==s&&(e!=null&&e.refCount++,s!=null&&Ce(s))}function ip(e,t){e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&Ce(e))}function go(e,t,s,l){if(t.subtreeFlags&10256)for(t=t.child;t!==null;)Om(e,t,s,l),t=t.sibling}function Om(e,t,s,l){var C=t.flags;switch(t.tag){case 0:case 11:case 15:go(e,t,s,l),C&2048&&pd(9,t);break;case 1:go(e,t,s,l);break;case 3:go(e,t,s,l),C&2048&&(e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&Ce(e)));break;case 12:if(C&2048){go(e,t,s,l),e=t.stateNode;try{var N=t.memoizedProps,Z=N.id,fe=N.onPostCommit;typeof fe=="function"&&fe(Z,t.alternate===null?"mount":"update",e.passiveEffectDuration,-0)}catch(Ae){ws(t,t.return,Ae)}}else go(e,t,s,l);break;case 31:go(e,t,s,l);break;case 13:go(e,t,s,l);break;case 23:break;case 22:N=t.stateNode,Z=t.alternate,t.memoizedState!==null?N._visibility&2?go(e,t,s,l):md(e,t):N._visibility&2?go(e,t,s,l):(N._visibility|=2,Tu(e,t,s,l,(t.subtreeFlags&10256)!==0||!1)),C&2048&&np(Z,t);break;case 24:go(e,t,s,l),C&2048&&ip(t.alternate,t);break;default:go(e,t,s,l)}}function Tu(e,t,s,l,C){for(C=C&&((t.subtreeFlags&10256)!==0||!1),t=t.child;t!==null;){var N=e,Z=t,fe=s,Ae=l,ct=Z.flags;switch(Z.tag){case 0:case 11:case 15:Tu(N,Z,fe,Ae,C),pd(8,Z);break;case 23:break;case 22:var wt=Z.stateNode;Z.memoizedState!==null?wt._visibility&2?Tu(N,Z,fe,Ae,C):md(N,Z):(wt._visibility|=2,Tu(N,Z,fe,Ae,C)),C&&ct&2048&&np(Z.alternate,Z);break;case 24:Tu(N,Z,fe,Ae,C),C&&ct&2048&&ip(Z.alternate,Z);break;default:Tu(N,Z,fe,Ae,C)}t=t.sibling}}function md(e,t){if(t.subtreeFlags&10256)for(t=t.child;t!==null;){var s=e,l=t,C=l.flags;switch(l.tag){case 22:md(s,l),C&2048&&np(l.alternate,l);break;case 24:md(s,l),C&2048&&ip(l.alternate,l);break;default:md(s,l)}t=t.sibling}}var yd=8192;function Au(e,t,s){if(e.subtreeFlags&yd)for(e=e.child;e!==null;)Bm(e,t,s),e=e.sibling}function Bm(e,t,s){switch(e.tag){case 26:Au(e,t,s),e.flags&yd&&e.memoizedState!==null&&Xx(s,po,e.memoizedState,e.memoizedProps);break;case 5:Au(e,t,s);break;case 3:case 4:var l=po;po=Bh(e.stateNode.containerInfo),Au(e,t,s),po=l;break;case 22:e.memoizedState===null&&(l=e.alternate,l!==null&&l.memoizedState!==null?(l=yd,yd=16777216,Au(e,t,s),yd=l):Au(e,t,s));break;default:Au(e,t,s)}}function $m(e){var t=e.alternate;if(t!==null&&(e=t.child,e!==null)){t.child=null;do t=e.sibling,e.sibling=null,e=t;while(e!==null)}}function bd(e){var t=e.deletions;if((e.flags&16)!==0){if(t!==null)for(var s=0;s<t.length;s++){var l=t[s];ea=l,Vm(l,e)}$m(e)}if(e.subtreeFlags&10256)for(e=e.child;e!==null;)Pm(e),e=e.sibling}function Pm(e){switch(e.tag){case 0:case 11:case 15:bd(e),e.flags&2048&&Sc(9,e,e.return);break;case 3:bd(e);break;case 12:bd(e);break;case 22:var t=e.stateNode;e.memoizedState!==null&&t._visibility&2&&(e.return===null||e.return.tag!==13)?(t._visibility&=-3,kh(e)):bd(e);break;default:bd(e)}}function kh(e){var t=e.deletions;if((e.flags&16)!==0){if(t!==null)for(var s=0;s<t.length;s++){var l=t[s];ea=l,Vm(l,e)}$m(e)}for(e=e.child;e!==null;){switch(t=e,t.tag){case 0:case 11:case 15:Sc(8,t,t.return),kh(t);break;case 22:s=t.stateNode,s._visibility&2&&(s._visibility&=-3,kh(t));break;default:kh(t)}e=e.sibling}}function Vm(e,t){for(;ea!==null;){var s=ea;switch(s.tag){case 0:case 11:case 15:Sc(8,s,t);break;case 23:case 22:if(s.memoizedState!==null&&s.memoizedState.cachePool!==null){var l=s.memoizedState.cachePool.pool;l!=null&&l.refCount++}break;case 24:Ce(s.memoizedState.cache)}if(l=s.child,l!==null)l.return=s,ea=l;else e:for(s=e;ea!==null;){l=ea;var C=l.sibling,N=l.return;if(Tm(l),l===s){ea=null;break e}if(C!==null){C.return=N,ea=C;break e}ea=N}}}var hx={getCacheForType:function(e){var t=Ys(re),s=t.data.get(e);return s===void 0&&(s=e(),t.data.set(e,s)),s},cacheSignal:function(){return Ys(re).controller.signal}},fx=typeof WeakMap=="function"?WeakMap:Map,hs=0,Rs=null,Hi=null,Fi=0,xs=0,El=null,Cc=!1,Du=!1,sp=!1,sc=0,yr=0,jc=0,ou=0,rp=0,Ml=0,Iu=0,vd=null,ll=null,ap=!1,Eh=0,Fm=0,Mh=1/0,Lh=null,kc=null,Zr=0,Ec=null,Ru=null,rc=0,lp=0,op=null,qm=null,xd=0,cp=null;function Ll(){return(hs&2)!==0&&Fi!==0?Fi&-Fi:ee.T!==null?gp():Ut()}function Zm(){if(Ml===0)if((Fi&536870912)===0||Ai){var e=zn;zn<<=1,(zn&3932160)===0&&(zn=262144),Ml=e}else Ml=536870912;return e=ja.current,e!==null&&(e.flags|=32),Ml}function ol(e,t,s){(e===Rs&&(xs===2||xs===9)||e.cancelPendingCommit!==null)&&(Hu(e,0),Mc(e,Fi,Ml,!1)),qn(e,s),((hs&2)===0||e!==Rs)&&(e===Rs&&((hs&2)===0&&(ou|=s),yr===4&&Mc(e,Fi,Ml,!1)),Ho(e))}function Um(e,t,s){if((hs&6)!==0)throw Error(o(327));var l=!s&&(t&127)===0&&(t&e.expiredLanes)===0||Rn(e,t),C=l?mx(e,t):dp(e,t,!0),N=l;do{if(C===0){Du&&!l&&Mc(e,t,0,!1);break}else{if(s=e.current.alternate,N&&!px(s)){C=dp(e,t,!1),N=!1;continue}if(C===2){if(N=t,e.errorRecoveryDisabledLanes&N)var Z=0;else Z=e.pendingLanes&-536870913,Z=Z!==0?Z:Z&536870912?536870912:0;if(Z!==0){t=Z;e:{var fe=e;C=vd;var Ae=fe.current.memoizedState.isDehydrated;if(Ae&&(Hu(fe,Z).flags|=256),Z=dp(fe,Z,!1),Z!==2){if(sp&&!Ae){fe.errorRecoveryDisabledLanes|=N,ou|=N,C=4;break e}N=ll,ll=C,N!==null&&(ll===null?ll=N:ll.push.apply(ll,N))}C=Z}if(N=!1,C!==2)continue}}if(C===1){Hu(e,0),Mc(e,t,0,!0);break}e:{switch(l=e,N=C,N){case 0:case 1:throw Error(o(345));case 4:if((t&4194048)!==t)break;case 6:Mc(l,t,Ml,!Cc);break e;case 2:ll=null;break;case 3:case 5:break;default:throw Error(o(329))}if((t&62914560)===t&&(C=Eh+300-Rt(),10<C)){if(Mc(l,t,Ml,!Cc),ii(l,0,!0)!==0)break e;rc=t,l.timeoutHandle=Sy(Wm.bind(null,l,s,ll,Lh,ap,t,Ml,ou,Iu,Cc,N,"Throttled",-0,0),C);break e}Wm(l,s,ll,Lh,ap,t,Ml,ou,Iu,Cc,N,null,-0,0)}}break}while(!0);Ho(e)}function Wm(e,t,s,l,C,N,Z,fe,Ae,ct,wt,Et,ut,gt){if(e.timeoutHandle=-1,Et=t.subtreeFlags,Et&8192||(Et&16785408)===16785408){Et={stylesheets:null,count:0,imgCount:0,imgBytes:0,suspenseyImages:[],waitingForImages:!0,waitingForViewTransition:!1,unsuspend:cs},Bm(t,N,Et);var Mn=(N&62914560)===N?Eh-Rt():(N&4194048)===N?Fm-Rt():0;if(Mn=Jx(Et,Mn),Mn!==null){rc=N,e.cancelPendingCommit=Mn(ty.bind(null,e,t,N,s,l,C,Z,fe,Ae,wt,Et,null,ut,gt)),Mc(e,N,Z,!ct);return}}ty(e,t,N,s,l,C,Z,fe,Ae)}function px(e){for(var t=e;;){var s=t.tag;if((s===0||s===11||s===15)&&t.flags&16384&&(s=t.updateQueue,s!==null&&(s=s.stores,s!==null)))for(var l=0;l<s.length;l++){var C=s[l],N=C.getSnapshot;C=C.value;try{if(!wr(N(),C))return!1}catch{return!1}}if(s=t.child,t.subtreeFlags&16384&&s!==null)s.return=t,t=s;else{if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return!0;t=t.return}t.sibling.return=t.return,t=t.sibling}}return!0}function Mc(e,t,s,l){t&=~rp,t&=~ou,e.suspendedLanes|=t,e.pingedLanes&=~t,l&&(e.warmLanes|=t),l=e.expirationTimes;for(var C=t;0<C;){var N=31-Dt(C),Z=1<<N;l[N]=-1,C&=~Z}s!==0&&ys(e,s,t)}function Nh(){return(hs&6)===0?(wd(0),!1):!0}function up(){if(Hi!==null){if(xs===0)var e=Hi.return;else e=Hi,Pr=_l=null,ru(e),Sa=null,gs=0,e=Hi;for(;e!==null;)Cm(e.alternate,e),e=e.return;Hi=null}}function Hu(e,t){var s=e.timeoutHandle;s!==-1&&(e.timeoutHandle=-1,Dx(s)),s=e.cancelPendingCommit,s!==null&&(e.cancelPendingCommit=null,s()),rc=0,up(),Rs=e,Hi=s=Ta(e.current,null),Fi=t,xs=0,El=null,Cc=!1,Du=Rn(e,t),sp=!1,Iu=Ml=rp=ou=jc=yr=0,ll=vd=null,ap=!1,(t&8)!==0&&(t|=t&32);var l=e.entangledLanes;if(l!==0)for(e=e.entanglements,l&=t;0<l;){var C=31-Dt(l),N=1<<C;t|=e[C],l&=~N}return sc=t,Mo(),s}function Km(e,t){mi=null,ee.H=jn,t===Jt||t===Bn?(t=kn(),xs=3):t===tn?(t=kn(),xs=4):xs=t===ks?8:t!==null&&typeof t=="object"&&typeof t.then=="function"?6:1,El=t,Hi===null&&(yr=1,ci(e,Qr(t,e.current)))}function Gm(){var e=ja.current;return e===null?!0:(Fi&4194048)===Fi?Ra===null:(Fi&62914560)===Fi||(Fi&536870912)!==0?e===Ra:!1}function Ym(){var e=ee.H;return ee.H=jn,e===null?jn:e}function Xm(){var e=ee.A;return ee.A=hx,e}function zh(){yr=4,Cc||(Fi&4194048)!==Fi&&ja.current!==null||(Du=!0),(jc&134217727)===0&&(ou&134217727)===0||Rs===null||Mc(Rs,Fi,Ml,!1)}function dp(e,t,s){var l=hs;hs|=2;var C=Ym(),N=Xm();(Rs!==e||Fi!==t)&&(Lh=null,Hu(e,t)),t=!1;var Z=yr;e:do try{if(xs!==0&&Hi!==null){var fe=Hi,Ae=El;switch(xs){case 8:up(),Z=6;break e;case 3:case 2:case 9:case 6:ja.current===null&&(t=!0);var ct=xs;if(xs=0,El=null,Ou(e,fe,Ae,ct),s&&Du){Z=0;break e}break;default:ct=xs,xs=0,El=null,Ou(e,fe,Ae,ct)}}gx(),Z=yr;break}catch(wt){Km(e,wt)}while(!0);return t&&e.shellSuspendCounter++,Pr=_l=null,hs=l,ee.H=C,ee.A=N,Hi===null&&(Rs=null,Fi=0,Mo()),Z}function gx(){for(;Hi!==null;)Jm(Hi)}function mx(e,t){var s=hs;hs|=2;var l=Ym(),C=Xm();Rs!==e||Fi!==t?(Lh=null,Mh=Rt()+500,Hu(e,t)):Du=Rn(e,t);e:do try{if(xs!==0&&Hi!==null){t=Hi;var N=El;t:switch(xs){case 1:xs=0,El=null,Ou(e,t,N,1);break;case 2:case 9:if(gi(N)){xs=0,El=null,Qm(t);break}t=function(){xs!==2&&xs!==9||Rs!==e||(xs=7),Ho(e)},N.then(t,t);break e;case 3:xs=7;break e;case 4:xs=5;break e;case 7:gi(N)?(xs=0,El=null,Qm(t)):(xs=0,El=null,Ou(e,t,N,7));break;case 5:var Z=null;switch(Hi.tag){case 26:Z=Hi.memoizedState;case 5:case 27:var fe=Hi;if(Z?Oy(Z):fe.stateNode.complete){xs=0,El=null;var Ae=fe.sibling;if(Ae!==null)Hi=Ae;else{var ct=fe.return;ct!==null?(Hi=ct,Th(ct)):Hi=null}break t}}xs=0,El=null,Ou(e,t,N,5);break;case 6:xs=0,El=null,Ou(e,t,N,6);break;case 8:up(),yr=6;break e;default:throw Error(o(462))}}yx();break}catch(wt){Km(e,wt)}while(!0);return Pr=_l=null,ee.H=l,ee.A=C,hs=s,Hi!==null?0:(Rs=null,Fi=0,Mo(),yr)}function yx(){for(;Hi!==null&&!He();)Jm(Hi)}function Jm(e){var t=_m(e.alternate,e,sc);e.memoizedProps=e.pendingProps,t===null?Th(e):Hi=t}function Qm(e){var t=e,s=t.alternate;switch(t.tag){case 15:case 0:t=mm(s,t,t.pendingProps,t.type,void 0,Fi);break;case 11:t=mm(s,t,t.pendingProps,t.type.render,t.ref,Fi);break;case 5:ru(t);default:Cm(s,t),t=Hi=Aa(t,sc),t=_m(s,t,sc)}e.memoizedProps=e.pendingProps,t===null?Th(e):Hi=t}function Ou(e,t,s,l){Pr=_l=null,ru(t),Sa=null,gs=0;var C=t.return;try{if(kl(e,C,t,s,Fi)){yr=1,ci(e,Qr(s,e.current)),Hi=null;return}}catch(N){if(C!==null)throw Hi=C,N;yr=1,ci(e,Qr(s,e.current)),Hi=null;return}t.flags&32768?(Ai||l===1?e=!0:Du||(Fi&536870912)!==0?e=!1:(Cc=e=!0,(l===2||l===9||l===3||l===6)&&(l=ja.current,l!==null&&l.tag===13&&(l.flags|=16384))),ey(t,e)):Th(t)}function Th(e){var t=e;do{if((t.flags&32768)!==0){ey(t,Cc);return}e=t.return;var s=ox(t.alternate,t,sc);if(s!==null){Hi=s;return}if(t=t.sibling,t!==null){Hi=t;return}Hi=t=e}while(t!==null);yr===0&&(yr=5)}function ey(e,t){do{var s=cx(e.alternate,e);if(s!==null){s.flags&=32767,Hi=s;return}if(s=e.return,s!==null&&(s.flags|=32768,s.subtreeFlags=0,s.deletions=null),!t&&(e=e.sibling,e!==null)){Hi=e;return}Hi=e=s}while(e!==null);yr=6,Hi=null}function ty(e,t,s,l,C,N,Z,fe,Ae){e.cancelPendingCommit=null;do Ah();while(Zr!==0);if((hs&6)!==0)throw Error(o(327));if(t!==null){if(t===e.current)throw Error(o(177));if(N=t.lanes|t.childLanes,N|=vc,ls(e,s,N,Z,fe,Ae),e===Rs&&(Hi=Rs=null,Fi=0),Ru=t,Ec=e,rc=s,lp=N,op=C,qm=l,(t.subtreeFlags&10256)!==0||(t.flags&10256)!==0?(e.callbackNode=null,e.callbackPriority=0,wx(yt,function(){return ay(),null})):(e.callbackNode=null,e.callbackPriority=0),l=(t.flags&13878)!==0,(t.subtreeFlags&13878)!==0||l){l=ee.T,ee.T=null,C=ae.p,ae.p=2,Z=hs,hs|=4;try{ux(e,t,s)}finally{hs=Z,ae.p=C,ee.T=l}}Zr=1,ny(),iy(),sy()}}function ny(){if(Zr===1){Zr=0;var e=Ec,t=Ru,s=(t.flags&13878)!==0;if((t.subtreeFlags&13878)!==0||s){s=ee.T,ee.T=null;var l=ae.p;ae.p=2;var C=hs;hs|=4;try{Rm(t,e);var N=Sp,Z=_r(e.containerInfo),fe=N.focusedElem,Ae=N.selectionRange;if(Z!==fe&&fe&&fe.ownerDocument&&Bl(fe.ownerDocument.documentElement,fe)){if(Ae!==null&&Wa(fe)){var ct=Ae.start,wt=Ae.end;if(wt===void 0&&(wt=ct),"selectionStart"in fe)fe.selectionStart=ct,fe.selectionEnd=Math.min(wt,fe.value.length);else{var Et=fe.ownerDocument||document,ut=Et&&Et.defaultView||window;if(ut.getSelection){var gt=ut.getSelection(),Mn=fe.textContent.length,ni=Math.min(Ae.start,Mn),Ms=Ae.end===void 0?ni:Math.min(Ae.end,Mn);!gt.extend&&ni>Ms&&(Z=Ms,Ms=ni,ni=Z);var tt=mc(fe,ni),Fe=mc(fe,Ms);if(tt&&Fe&&(gt.rangeCount!==1||gt.anchorNode!==tt.node||gt.anchorOffset!==tt.offset||gt.focusNode!==Fe.node||gt.focusOffset!==Fe.offset)){var ot=Et.createRange();ot.setStart(tt.node,tt.offset),gt.removeAllRanges(),ni>Ms?(gt.addRange(ot),gt.extend(Fe.node,Fe.offset)):(ot.setEnd(Fe.node,Fe.offset),gt.addRange(ot))}}}}for(Et=[],gt=fe;gt=gt.parentNode;)gt.nodeType===1&&Et.push({element:gt,left:gt.scrollLeft,top:gt.scrollTop});for(typeof fe.focus=="function"&&fe.focus(),fe=0;fe<Et.length;fe++){var St=Et[fe];St.element.scrollLeft=St.left,St.element.scrollTop=St.top}}Zh=!!_p,Sp=_p=null}finally{hs=C,ae.p=l,ee.T=s}}e.current=t,Zr=2}}function iy(){if(Zr===2){Zr=0;var e=Ec,t=Ru,s=(t.flags&8772)!==0;if((t.subtreeFlags&8772)!==0||s){s=ee.T,ee.T=null;var l=ae.p;ae.p=2;var C=hs;hs|=4;try{zm(e,t.alternate,t)}finally{hs=C,ae.p=l,ee.T=s}}Zr=3}}function sy(){if(Zr===4||Zr===3){Zr=0,cn();var e=Ec,t=Ru,s=rc,l=qm;(t.subtreeFlags&10256)!==0||(t.flags&10256)!==0?Zr=5:(Zr=0,Ru=Ec=null,ry(e,e.pendingLanes));var C=e.pendingLanes;if(C===0&&(kc=null),lt(s),t=t.stateNode,nn&&typeof nn.onCommitFiberRoot=="function")try{nn.onCommitFiberRoot(zt,t,void 0,(t.current.flags&128)===128)}catch{}if(l!==null){t=ee.T,C=ae.p,ae.p=2,ee.T=null;try{for(var N=e.onRecoverableError,Z=0;Z<l.length;Z++){var fe=l[Z];N(fe.value,{componentStack:fe.stack})}}finally{ee.T=t,ae.p=C}}(rc&3)!==0&&Ah(),Ho(e),C=e.pendingLanes,(s&261930)!==0&&(C&42)!==0?e===cp?xd++:(xd=0,cp=e):xd=0,wd(0)}}function ry(e,t){(e.pooledCacheLanes&=t)===0&&(t=e.pooledCache,t!=null&&(e.pooledCache=null,Ce(t)))}function Ah(){return ny(),iy(),sy(),ay()}function ay(){if(Zr!==5)return!1;var e=Ec,t=lp;lp=0;var s=lt(rc),l=ee.T,C=ae.p;try{ae.p=32>s?32:s,ee.T=null,s=op,op=null;var N=Ec,Z=rc;if(Zr=0,Ru=Ec=null,rc=0,(hs&6)!==0)throw Error(o(331));var fe=hs;if(hs|=4,Pm(N.current),Om(N,N.current,Z,s),hs=fe,wd(0,!1),nn&&typeof nn.onPostCommitFiberRoot=="function")try{nn.onPostCommitFiberRoot(zt,N)}catch{}return!0}finally{ae.p=C,ee.T=l,ry(e,t)}}function ly(e,t,s){t=Qr(s,t),t=xi(e.stateNode,t,2),e=Fr(e,t,2),e!==null&&(qn(e,2),Ho(e))}function ws(e,t,s){if(e.tag===3)ly(e,e,s);else for(;t!==null;){if(t.tag===3){ly(t,e,s);break}else if(t.tag===1){var l=t.stateNode;if(typeof t.type.getDerivedStateFromError=="function"||typeof l.componentDidCatch=="function"&&(kc===null||!kc.has(l))){e=Qr(s,e),s=zi(2),l=Fr(t,s,2),l!==null&&(Bs(s,l,t,e),qn(l,2),Ho(l));break}}t=t.return}}function hp(e,t,s){var l=e.pingCache;if(l===null){l=e.pingCache=new fx;var C=new Set;l.set(t,C)}else C=l.get(t),C===void 0&&(C=new Set,l.set(t,C));C.has(s)||(sp=!0,C.add(s),e=bx.bind(null,e,t,s),t.then(e,e))}function bx(e,t,s){var l=e.pingCache;l!==null&&l.delete(t),e.pingedLanes|=e.suspendedLanes&s,e.warmLanes&=~s,Rs===e&&(Fi&s)===s&&(yr===4||yr===3&&(Fi&62914560)===Fi&&300>Rt()-Eh?(hs&2)===0&&Hu(e,0):rp|=s,Iu===Fi&&(Iu=0)),Ho(e)}function oy(e,t){t===0&&(t=hr()),e=Us(e,t),e!==null&&(qn(e,t),Ho(e))}function vx(e){var t=e.memoizedState,s=0;t!==null&&(s=t.retryLane),oy(e,s)}function xx(e,t){var s=0;switch(e.tag){case 31:case 13:var l=e.stateNode,C=e.memoizedState;C!==null&&(s=C.retryLane);break;case 19:l=e.stateNode;break;case 22:l=e.stateNode._retryCache;break;default:throw Error(o(314))}l!==null&&l.delete(t),oy(e,s)}function wx(e,t){return Hn(e,t)}var Dh=null,Bu=null,fp=!1,Ih=!1,pp=!1,Lc=0;function Ho(e){e!==Bu&&e.next===null&&(Bu===null?Dh=Bu=e:Bu=Bu.next=e),Ih=!0,fp||(fp=!0,Sx())}function wd(e,t){if(!pp&&Ih){pp=!0;do for(var s=!1,l=Dh;l!==null;){if(e!==0){var C=l.pendingLanes;if(C===0)var N=0;else{var Z=l.suspendedLanes,fe=l.pingedLanes;N=(1<<31-Dt(42|e)+1)-1,N&=C&~(Z&~fe),N=N&201326741?N&201326741|1:N?N|2:0}N!==0&&(s=!0,hy(l,N))}else N=Fi,N=ii(l,l===Rs?N:0,l.cancelPendingCommit!==null||l.timeoutHandle!==-1),(N&3)===0||Rn(l,N)||(s=!0,hy(l,N));l=l.next}while(s);pp=!1}}function _x(){cy()}function cy(){Ih=fp=!1;var e=0;Lc!==0&&Ax()&&(e=Lc);for(var t=Rt(),s=null,l=Dh;l!==null;){var C=l.next,N=uy(l,t);N===0?(l.next=null,s===null?Dh=C:s.next=C,C===null&&(Bu=s)):(s=l,(e!==0||(N&3)!==0)&&(Ih=!0)),l=C}Zr!==0&&Zr!==5||wd(e),Lc!==0&&(Lc=0)}function uy(e,t){for(var s=e.suspendedLanes,l=e.pingedLanes,C=e.expirationTimes,N=e.pendingLanes&-62914561;0<N;){var Z=31-Dt(N),fe=1<<Z,Ae=C[Z];Ae===-1?((fe&s)===0||(fe&l)!==0)&&(C[Z]=Qn(fe,t)):Ae<=t&&(e.expiredLanes|=fe),N&=~fe}if(t=Rs,s=Fi,s=ii(e,e===t?s:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),l=e.callbackNode,s===0||e===t&&(xs===2||xs===9)||e.cancelPendingCommit!==null)return l!==null&&l!==null&&ht(l),e.callbackNode=null,e.callbackPriority=0;if((s&3)===0||Rn(e,s)){if(t=s&-s,t===e.callbackPriority)return t;switch(l!==null&&ht(l),lt(s)){case 2:case 8:s=Me;break;case 32:s=yt;break;case 268435456:s=Gt;break;default:s=yt}return l=dy.bind(null,e),s=Hn(s,l),e.callbackPriority=t,e.callbackNode=s,t}return l!==null&&l!==null&&ht(l),e.callbackPriority=2,e.callbackNode=null,2}function dy(e,t){if(Zr!==0&&Zr!==5)return e.callbackNode=null,e.callbackPriority=0,null;var s=e.callbackNode;if(Ah()&&e.callbackNode!==s)return null;var l=Fi;return l=ii(e,e===Rs?l:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),l===0?null:(Um(e,l,t),uy(e,Rt()),e.callbackNode!=null&&e.callbackNode===s?dy.bind(null,e):null)}function hy(e,t){if(Ah())return null;Um(e,t,!0)}function Sx(){Ix(function(){(hs&6)!==0?Hn(yn,_x):cy()})}function gp(){if(Lc===0){var e=Ge;e===0&&(e=mn,mn<<=1,(mn&261888)===0&&(mn=256)),Lc=e}return Lc}function fy(e){return e==null||typeof e=="symbol"||typeof e=="boolean"?null:typeof e=="function"?e:os(""+e)}function py(e,t){var s=t.ownerDocument.createElement("input");return s.name=t.name,s.value=t.value,e.id&&s.setAttribute("form",e.id),t.parentNode.insertBefore(s,t),e=new FormData(e),s.parentNode.removeChild(s),e}function Cx(e,t,s,l,C){if(t==="submit"&&s&&s.stateNode===C){var N=fy((C[Tn]||null).action),Z=l.submitter;Z&&(t=(t=Z[Tn]||null)?fy(t.formAction):Z.getAttribute("formAction"),t!==null&&(N=t,Z=null));var fe=new gr("action","action",null,l,C);e.push({event:fe,listeners:[{instance:null,listener:function(){if(l.defaultPrevented){if(Lc!==0){var Ae=Z?py(C,Z):new FormData(C);Qe(s,{pending:!0,data:Ae,method:C.method,action:N},null,Ae)}}else typeof N=="function"&&(fe.preventDefault(),Ae=Z?py(C,Z):new FormData(C),Qe(s,{pending:!0,data:Ae,method:C.method,action:N},N,Ae))},currentTarget:C}]})}}for(var mp=0;mp<bc.length;mp++){var yp=bc[mp],jx=yp.toLowerCase(),kx=yp[0].toUpperCase()+yp.slice(1);Xr(jx,"on"+kx)}Xr(Vo,"onAnimationEnd"),Xr(Fo,"onAnimationIteration"),Xr(Gc,"onAnimationStart"),Xr("dblclick","onDoubleClick"),Xr("focusin","onFocus"),Xr("focusout","onBlur"),Xr(Yc,"onTransitionRun"),Xr(Zs,"onTransitionStart"),Xr(Vi,"onTransitionCancel"),Xr(qo,"onTransitionEnd"),En("onMouseEnter",["mouseout","mouseover"]),En("onMouseLeave",["mouseout","mouseover"]),En("onPointerEnter",["pointerout","pointerover"]),En("onPointerLeave",["pointerout","pointerover"]),fs("onChange","change click focusin focusout input keydown keyup selectionchange".split(" ")),fs("onSelect","focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")),fs("onBeforeInput",["compositionend","keypress","textInput","paste"]),fs("onCompositionEnd","compositionend focusout keydown keypress keyup mousedown".split(" ")),fs("onCompositionStart","compositionstart focusout keydown keypress keyup mousedown".split(" ")),fs("onCompositionUpdate","compositionupdate focusout keydown keypress keyup mousedown".split(" "));var _d="abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(" "),Ex=new Set("beforetoggle cancel close invalid load scroll scrollend toggle".split(" ").concat(_d));function gy(e,t){t=(t&4)!==0;for(var s=0;s<e.length;s++){var l=e[s],C=l.event;l=l.listeners;e:{var N=void 0;if(t)for(var Z=l.length-1;0<=Z;Z--){var fe=l[Z],Ae=fe.instance,ct=fe.currentTarget;if(fe=fe.listener,Ae!==N&&C.isPropagationStopped())break e;N=fe,C.currentTarget=ct;try{N(C)}catch(wt){Eo(wt)}C.currentTarget=null,N=Ae}else for(Z=0;Z<l.length;Z++){if(fe=l[Z],Ae=fe.instance,ct=fe.currentTarget,fe=fe.listener,Ae!==N&&C.isPropagationStopped())break e;N=fe,C.currentTarget=ct;try{N(C)}catch(wt){Eo(wt)}C.currentTarget=null,N=Ae}}}}function Oi(e,t){var s=t[li];s===void 0&&(s=t[li]=new Set);var l=e+"__bubble";s.has(l)||(my(t,e,2,!1),s.add(l))}function bp(e,t,s){var l=0;t&&(l|=4),my(s,e,l,t)}var Rh="_reactListening"+Math.random().toString(36).slice(2);function vp(e){if(!e[Rh]){e[Rh]=!0,ta.forEach(function(s){s!=="selectionchange"&&(Ex.has(s)||bp(s,!1,e),bp(s,!0,e))});var t=e.nodeType===9?e:e.ownerDocument;t===null||t[Rh]||(t[Rh]=!0,bp("selectionchange",!1,t))}}function my(e,t,s,l){switch(Zy(t)){case 2:var C=tw;break;case 8:C=nw;break;default:C=Dp}s=C.bind(null,t,s,e),C=void 0,!Ba||t!=="touchstart"&&t!=="touchmove"&&t!=="wheel"||(C=!0),l?C!==void 0?e.addEventListener(t,s,{capture:!0,passive:C}):e.addEventListener(t,s,!0):C!==void 0?e.addEventListener(t,s,{passive:C}):e.addEventListener(t,s,!1)}function xp(e,t,s,l,C){var N=l;if((t&1)===0&&(t&2)===0&&l!==null)e:for(;;){if(l===null)return;var Z=l.tag;if(Z===3||Z===4){var fe=l.stateNode.containerInfo;if(fe===C)break;if(Z===4)for(Z=l.return;Z!==null;){var Ae=Z.tag;if((Ae===3||Ae===4)&&Z.stateNode.containerInfo===C)return;Z=Z.return}for(;fe!==null;){if(Z=Ns(fe),Z===null)return;if(Ae=Z.tag,Ae===5||Ae===6||Ae===26||Ae===27){l=N=Z;continue e}fe=fe.parentNode}}l=l.return}fr(function(){var ct=N,wt=Pi(s),Et=[];e:{var ut=Ya.get(e);if(ut!==void 0){var gt=gr,Mn=e;switch(e){case"keypress":if(Fs(s)===0)break e;case"keydown":case"keyup":gt=ft;break;case"focusin":Mn="focus",gt=Br;break;case"focusout":Mn="blur",gt=Br;break;case"beforeblur":case"afterblur":gt=Br;break;case"click":if(s.button===2)break e;case"auxclick":case"dblclick":case"mousedown":case"mousemove":case"mouseup":case"mouseout":case"mouseover":case"contextmenu":gt=Va;break;case"drag":case"dragend":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"dragstart":case"drop":gt=io;break;case"touchcancel":case"touchend":case"touchmove":case"touchstart":gt=ke;break;case Vo:case Fo:case Gc:gt=ro;break;case qo:gt=Ee;break;case"scroll":case"scrollend":gt=Pa;break;case"wheel":gt=Be;break;case"copy":case"cut":case"paste":gt=La;break;case"gotpointercapture":case"lostpointercapture":case"pointercancel":case"pointerdown":case"pointermove":case"pointerout":case"pointerover":case"pointerup":gt=ne;break;case"toggle":case"beforetoggle":gt=pt}var ni=(t&4)!==0,Ms=!ni&&(e==="scroll"||e==="scrollend"),tt=ni?ut!==null?ut+"Capture":null:ut;ni=[];for(var Fe=ct,ot;Fe!==null;){var St=Fe;if(ot=St.stateNode,St=St.tag,St!==5&&St!==26&&St!==27||ot===null||tt===null||(St=pr(Fe,tt),St!=null&&ni.push(Sd(Fe,St,ot))),Ms)break;Fe=Fe.return}0<ni.length&&(ut=new gt(ut,Mn,null,s,wt),Et.push({event:ut,listeners:ni}))}}if((t&7)===0){e:{if(ut=e==="mouseover"||e==="pointerover",gt=e==="mouseout"||e==="pointerout",ut&&s!==$i&&(Mn=s.relatedTarget||s.fromElement)&&(Ns(Mn)||Mn[bi]))break e;if((gt||ut)&&(ut=wt.window===wt?wt:(ut=wt.ownerDocument)?ut.defaultView||ut.parentWindow:window,gt?(Mn=s.relatedTarget||s.toElement,gt=ct,Mn=Mn?Ns(Mn):null,Mn!==null&&(Ms=b(Mn),ni=Mn.tag,Mn!==Ms||ni!==5&&ni!==27&&ni!==6)&&(Mn=null)):(gt=null,Mn=ct),gt!==Mn)){if(ni=Va,St="onMouseLeave",tt="onMouseEnter",Fe="mouse",(e==="pointerout"||e==="pointerover")&&(ni=ne,St="onPointerLeave",tt="onPointerEnter",Fe="pointer"),Ms=gt==null?ut:Vs(gt),ot=Mn==null?ut:Vs(Mn),ut=new ni(St,Fe+"leave",gt,s,wt),ut.target=Ms,ut.relatedTarget=ot,St=null,Ns(wt)===ct&&(ni=new ni(tt,Fe+"enter",Mn,s,wt),ni.target=ot,ni.relatedTarget=Ms,St=ni),Ms=St,gt&&Mn)t:{for(ni=Mx,tt=gt,Fe=Mn,ot=0,St=tt;St;St=ni(St))ot++;St=0;for(var Fn=Fe;Fn;Fn=ni(Fn))St++;for(;0<ot-St;)tt=ni(tt),ot--;for(;0<St-ot;)Fe=ni(Fe),St--;for(;ot--;){if(tt===Fe||Fe!==null&&tt===Fe.alternate){ni=tt;break t}tt=ni(tt),Fe=ni(Fe)}ni=null}else ni=null;gt!==null&&yy(Et,ut,gt,ni,!1),Mn!==null&&Ms!==null&&yy(Et,Ms,Mn,ni,!0)}}e:{if(ut=ct?Vs(ct):window,gt=ut.nodeName&&ut.nodeName.toLowerCase(),gt==="select"||gt==="input"&&ut.type==="file")var rs=Na;else if(oa(ut))if(Uc)rs=wi;else{rs=gc;var In=yl}else gt=ut.nodeName,!gt||gt.toLowerCase()!=="input"||ut.type!=="checkbox"&&ut.type!=="radio"?ct&&Zi(ct.elementType)&&(rs=Na):rs=va;if(rs&&(rs=rs(e,ct))){ca(Et,rs,s,wt);break e}In&&In(e,ut,ct),e==="focusout"&&ct&&ut.type==="number"&&ct.memoizedProps.value!=null&&Ci(ut,"number",ut.value)}switch(In=ct?Vs(ct):window,e){case"focusin":(oa(In)||In.contentEditable==="true")&&(ao=In,bl=ct,Ka=null);break;case"focusout":Ka=bl=ao=null;break;case"mousedown":Po=!0;break;case"contextmenu":case"mouseup":case"dragend":Po=!1,Kc(Et,s,wt);break;case"selectionchange":if(yc)break;case"keydown":case"keyup":Kc(Et,s,wt)}var Ei;if(rt)e:{switch(e){case"compositionstart":var qi="onCompositionStart";break e;case"compositionend":qi="onCompositionEnd";break e;case"compositionupdate":qi="onCompositionUpdate";break e}qi=void 0}else Di?vi(e,s)&&(qi="onCompositionEnd"):e==="keydown"&&s.keyCode===229&&(qi="onCompositionStart");qi&&(Wt&&s.locale!=="ko"&&(Di||qi!=="onCompositionStart"?qi==="onCompositionEnd"&&Di&&(Ei=ia()):(Kr=wt,Rr="value"in Kr?Kr.value:Kr.textContent,Di=!0)),In=Hh(ct,qi),0<In.length&&(qi=new Rl(qi,e,null,s,wt),Et.push({event:qi,listeners:In}),Ei?qi.data=Ei:(Ei=Li(s),Ei!==null&&(qi.data=Ei)))),(Ei=Pt?aa(e,s):la(e,s))&&(qi=Hh(ct,"onBeforeInput"),0<qi.length&&(In=new Rl("onBeforeInput","beforeinput",null,s,wt),Et.push({event:In,listeners:qi}),In.data=Ei)),Cx(Et,e,ct,s,wt)}gy(Et,t)})}function Sd(e,t,s){return{instance:e,listener:t,currentTarget:s}}function Hh(e,t){for(var s=t+"Capture",l=[];e!==null;){var C=e,N=C.stateNode;if(C=C.tag,C!==5&&C!==26&&C!==27||N===null||(C=pr(e,s),C!=null&&l.unshift(Sd(e,C,N)),C=pr(e,t),C!=null&&l.push(Sd(e,C,N))),e.tag===3)return l;e=e.return}return[]}function Mx(e){if(e===null)return null;do e=e.return;while(e&&e.tag!==5&&e.tag!==27);return e||null}function yy(e,t,s,l,C){for(var N=t._reactName,Z=[];s!==null&&s!==l;){var fe=s,Ae=fe.alternate,ct=fe.stateNode;if(fe=fe.tag,Ae!==null&&Ae===l)break;fe!==5&&fe!==26&&fe!==27||ct===null||(Ae=ct,C?(ct=pr(s,N),ct!=null&&Z.unshift(Sd(s,ct,Ae))):C||(ct=pr(s,N),ct!=null&&Z.push(Sd(s,ct,Ae)))),s=s.return}Z.length!==0&&e.push({event:t,listeners:Z})}var Lx=/\r\n?/g,Nx=/\u0000|\uFFFD/g;function by(e){return(typeof e=="string"?e:""+e).replace(Lx,`
 `).replace(Nx,"")}function vy(e,t){return t=by(t),by(e)===t}function Es(e,t,s,l,C,N){switch(s){case"children":typeof l=="string"?t==="body"||t==="textarea"&&l===""||Nt(e,l):(typeof l=="number"||typeof l=="bigint")&&t!=="body"&&Nt(e,""+l);break;case"className":Tt(e,"class",l);break;case"tabIndex":Tt(e,"tabindex",l);break;case"dir":case"role":case"viewBox":case"width":case"height":Tt(e,s,l);break;case"style":Ma(e,l,N);break;case"data":if(t!=="object"){Tt(e,"data",l);break}case"src":case"href":if(l===""&&(t!=="a"||s!=="href")){e.removeAttribute(s);break}if(l==null||typeof l=="function"||typeof l=="symbol"||typeof l=="boolean"){e.removeAttribute(s);break}l=os(""+l),e.setAttribute(s,l);break;case"action":case"formAction":if(typeof l=="function"){e.setAttribute(s,"javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')");break}else typeof N=="function"&&(s==="formAction"?(t!=="input"&&Es(e,t,"name",C.name,C,null),Es(e,t,"formEncType",C.formEncType,C,null),Es(e,t,"formMethod",C.formMethod,C,null),Es(e,t,"formTarget",C.formTarget,C,null)):(Es(e,t,"encType",C.encType,C,null),Es(e,t,"method",C.method,C,null),Es(e,t,"target",C.target,C,null)));if(l==null||typeof l=="symbol"||typeof l=="boolean"){e.removeAttribute(s);break}l=os(""+l),e.setAttribute(s,l);break;case"onClick":l!=null&&(e.onclick=cs);break;case"onScroll":l!=null&&Oi("scroll",e);break;case"onScrollEnd":l!=null&&Oi("scrollend",e);break;case"dangerouslySetInnerHTML":if(l!=null){if(typeof l!="object"||!("__html"in l))throw Error(o(61));if(s=l.__html,s!=null){if(C.children!=null)throw Error(o(60));e.innerHTML=s}}break;case"multiple":e.multiple=l&&typeof l!="function"&&typeof l!="symbol";break;case"muted":e.muted=l&&typeof l!="function"&&typeof l!="symbol";break;case"suppressContentEditableWarning":case"suppressHydrationWarning":case"defaultValue":case"defaultChecked":case"innerHTML":case"ref":break;case"autoFocus":break;case"xlinkHref":if(l==null||typeof l=="function"||typeof l=="boolean"||typeof l=="symbol"){e.removeAttribute("xlink:href");break}s=os(""+l),e.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",s);break;case"contentEditable":case"spellCheck":case"draggable":case"value":case"autoReverse":case"externalResourcesRequired":case"focusable":case"preserveAlpha":l!=null&&typeof l!="function"&&typeof l!="symbol"?e.setAttribute(s,""+l):e.removeAttribute(s);break;case"inert":case"allowFullScreen":case"async":case"autoPlay":case"controls":case"default":case"defer":case"disabled":case"disablePictureInPicture":case"disableRemotePlayback":case"formNoValidate":case"hidden":case"loop":case"noModule":case"noValidate":case"open":case"playsInline":case"readOnly":case"required":case"reversed":case"scoped":case"seamless":case"itemScope":l&&typeof l!="function"&&typeof l!="symbol"?e.setAttribute(s,""):e.removeAttribute(s);break;case"capture":case"download":l===!0?e.setAttribute(s,""):l!==!1&&l!=null&&typeof l!="function"&&typeof l!="symbol"?e.setAttribute(s,l):e.removeAttribute(s);break;case"cols":case"rows":case"size":case"span":l!=null&&typeof l!="function"&&typeof l!="symbol"&&!isNaN(l)&&1<=l?e.setAttribute(s,l):e.removeAttribute(s);break;case"rowSpan":case"start":l==null||typeof l=="function"||typeof l=="symbol"||isNaN(l)?e.removeAttribute(s):e.setAttribute(s,l);break;case"popover":Oi("beforetoggle",e),Oi("toggle",e),Ye(e,"popover",l);break;case"xlinkActuate":rn(e,"http://www.w3.org/1999/xlink","xlink:actuate",l);break;case"xlinkArcrole":rn(e,"http://www.w3.org/1999/xlink","xlink:arcrole",l);break;case"xlinkRole":rn(e,"http://www.w3.org/1999/xlink","xlink:role",l);break;case"xlinkShow":rn(e,"http://www.w3.org/1999/xlink","xlink:show",l);break;case"xlinkTitle":rn(e,"http://www.w3.org/1999/xlink","xlink:title",l);break;case"xlinkType":rn(e,"http://www.w3.org/1999/xlink","xlink:type",l);break;case"xmlBase":rn(e,"http://www.w3.org/XML/1998/namespace","xml:base",l);break;case"xmlLang":rn(e,"http://www.w3.org/XML/1998/namespace","xml:lang",l);break;case"xmlSpace":rn(e,"http://www.w3.org/XML/1998/namespace","xml:space",l);break;case"is":Ye(e,"is",l);break;case"innerText":case"textContent":break;default:(!(2<s.length)||s[0]!=="o"&&s[0]!=="O"||s[1]!=="n"&&s[1]!=="N")&&(s=na.get(s)||s,Ye(e,s,l))}}function wp(e,t,s,l,C,N){switch(s){case"style":Ma(e,l,N);break;case"dangerouslySetInnerHTML":if(l!=null){if(typeof l!="object"||!("__html"in l))throw Error(o(61));if(s=l.__html,s!=null){if(C.children!=null)throw Error(o(60));e.innerHTML=s}}break;case"children":typeof l=="string"?Nt(e,l):(typeof l=="number"||typeof l=="bigint")&&Nt(e,""+l);break;case"onScroll":l!=null&&Oi("scroll",e);break;case"onScrollEnd":l!=null&&Oi("scrollend",e);break;case"onClick":l!=null&&(e.onclick=cs);break;case"suppressContentEditableWarning":case"suppressHydrationWarning":case"innerHTML":case"ref":break;case"innerText":case"textContent":break;default:if(!Mi.hasOwnProperty(s))e:{if(s[0]==="o"&&s[1]==="n"&&(C=s.endsWith("Capture"),t=s.slice(2,C?s.length-7:void 0),N=e[Tn]||null,N=N!=null?N[s]:null,typeof N=="function"&&e.removeEventListener(t,N,C),typeof l=="function")){typeof N!="function"&&N!==null&&(s in e?e[s]=null:e.hasAttribute(s)&&e.removeAttribute(s)),e.addEventListener(t,l,C);break e}s in e?e[s]=l:l===!0?e.setAttribute(s,""):Ye(e,s,l)}}}function fa(e,t,s){switch(t){case"div":case"span":case"svg":case"path":case"a":case"g":case"p":case"li":break;case"img":Oi("error",e),Oi("load",e);var l=!1,C=!1,N;for(N in s)if(s.hasOwnProperty(N)){var Z=s[N];if(Z!=null)switch(N){case"src":l=!0;break;case"srcSet":C=!0;break;case"children":case"dangerouslySetInnerHTML":throw Error(o(137,t));default:Es(e,t,N,Z,s,null)}}C&&Es(e,t,"srcSet",s.srcSet,s,null),l&&Es(e,t,"src",s.src,s,null);return;case"input":Oi("invalid",e);var fe=N=Z=C=null,Ae=null,ct=null;for(l in s)if(s.hasOwnProperty(l)){var wt=s[l];if(wt!=null)switch(l){case"name":C=wt;break;case"type":Z=wt;break;case"checked":Ae=wt;break;case"defaultChecked":ct=wt;break;case"value":N=wt;break;case"defaultValue":fe=wt;break;case"children":case"dangerouslySetInnerHTML":if(wt!=null)throw Error(o(137,t));break;default:Es(e,t,l,wt,s,null)}}ei(e,N,fe,Ae,ct,Z,C,!1);return;case"select":Oi("invalid",e),l=Z=N=null;for(C in s)if(s.hasOwnProperty(C)&&(fe=s[C],fe!=null))switch(C){case"value":N=fe;break;case"defaultValue":Z=fe;break;case"multiple":l=fe;default:Es(e,t,C,fe,s,null)}t=N,s=Z,e.multiple=!!l,t!=null?en(e,!!l,t,!1):s!=null&&en(e,!!l,s,!0);return;case"textarea":Oi("invalid",e),N=C=l=null;for(Z in s)if(s.hasOwnProperty(Z)&&(fe=s[Z],fe!=null))switch(Z){case"value":l=fe;break;case"defaultValue":C=fe;break;case"children":N=fe;break;case"dangerouslySetInnerHTML":if(fe!=null)throw Error(o(91));break;default:Es(e,t,Z,fe,s,null)}Lr(e,l,C,N);return;case"option":for(Ae in s)if(s.hasOwnProperty(Ae)&&(l=s[Ae],l!=null))switch(Ae){case"selected":e.selected=l&&typeof l!="function"&&typeof l!="symbol";break;default:Es(e,t,Ae,l,s,null)}return;case"dialog":Oi("beforetoggle",e),Oi("toggle",e),Oi("cancel",e),Oi("close",e);break;case"iframe":case"object":Oi("load",e);break;case"video":case"audio":for(l=0;l<_d.length;l++)Oi(_d[l],e);break;case"image":Oi("error",e),Oi("load",e);break;case"details":Oi("toggle",e);break;case"embed":case"source":case"link":Oi("error",e),Oi("load",e);case"area":case"base":case"br":case"col":case"hr":case"keygen":case"meta":case"param":case"track":case"wbr":case"menuitem":for(ct in s)if(s.hasOwnProperty(ct)&&(l=s[ct],l!=null))switch(ct){case"children":case"dangerouslySetInnerHTML":throw Error(o(137,t));default:Es(e,t,ct,l,s,null)}return;default:if(Zi(t)){for(wt in s)s.hasOwnProperty(wt)&&(l=s[wt],l!==void 0&&wp(e,t,wt,l,s,void 0));return}}for(fe in s)s.hasOwnProperty(fe)&&(l=s[fe],l!=null&&Es(e,t,fe,l,s,null))}function zx(e,t,s,l){switch(t){case"div":case"span":case"svg":case"path":case"a":case"g":case"p":case"li":break;case"input":var C=null,N=null,Z=null,fe=null,Ae=null,ct=null,wt=null;for(gt in s){var Et=s[gt];if(s.hasOwnProperty(gt)&&Et!=null)switch(gt){case"checked":break;case"value":break;case"defaultValue":Ae=Et;default:l.hasOwnProperty(gt)||Es(e,t,gt,null,l,Et)}}for(var ut in l){var gt=l[ut];if(Et=s[ut],l.hasOwnProperty(ut)&&(gt!=null||Et!=null))switch(ut){case"type":N=gt;break;case"name":C=gt;break;case"checked":ct=gt;break;case"defaultChecked":wt=gt;break;case"value":Z=gt;break;case"defaultValue":fe=gt;break;case"children":case"dangerouslySetInnerHTML":if(gt!=null)throw Error(o(137,t));break;default:gt!==Et&&Es(e,t,ut,gt,l,Et)}}Cn(e,Z,fe,Ae,ct,wt,N,C);return;case"select":gt=Z=fe=ut=null;for(N in s)if(Ae=s[N],s.hasOwnProperty(N)&&Ae!=null)switch(N){case"value":break;case"multiple":gt=Ae;default:l.hasOwnProperty(N)||Es(e,t,N,null,l,Ae)}for(C in l)if(N=l[C],Ae=s[C],l.hasOwnProperty(C)&&(N!=null||Ae!=null))switch(C){case"value":ut=N;break;case"defaultValue":fe=N;break;case"multiple":Z=N;default:N!==Ae&&Es(e,t,C,N,l,Ae)}t=fe,s=Z,l=gt,ut!=null?en(e,!!s,ut,!1):!!l!=!!s&&(t!=null?en(e,!!s,t,!0):en(e,!!s,s?[]:"",!1));return;case"textarea":gt=ut=null;for(fe in s)if(C=s[fe],s.hasOwnProperty(fe)&&C!=null&&!l.hasOwnProperty(fe))switch(fe){case"value":break;case"children":break;default:Es(e,t,fe,null,l,C)}for(Z in l)if(C=l[Z],N=s[Z],l.hasOwnProperty(Z)&&(C!=null||N!=null))switch(Z){case"value":ut=C;break;case"defaultValue":gt=C;break;case"children":break;case"dangerouslySetInnerHTML":if(C!=null)throw Error(o(91));break;default:C!==N&&Es(e,t,Z,C,l,N)}Bi(e,ut,gt);return;case"option":for(var Mn in s)if(ut=s[Mn],s.hasOwnProperty(Mn)&&ut!=null&&!l.hasOwnProperty(Mn))switch(Mn){case"selected":e.selected=!1;break;default:Es(e,t,Mn,null,l,ut)}for(Ae in l)if(ut=l[Ae],gt=s[Ae],l.hasOwnProperty(Ae)&&ut!==gt&&(ut!=null||gt!=null))switch(Ae){case"selected":e.selected=ut&&typeof ut!="function"&&typeof ut!="symbol";break;default:Es(e,t,Ae,ut,l,gt)}return;case"img":case"link":case"area":case"base":case"br":case"col":case"embed":case"hr":case"keygen":case"meta":case"param":case"source":case"track":case"wbr":case"menuitem":for(var ni in s)ut=s[ni],s.hasOwnProperty(ni)&&ut!=null&&!l.hasOwnProperty(ni)&&Es(e,t,ni,null,l,ut);for(ct in l)if(ut=l[ct],gt=s[ct],l.hasOwnProperty(ct)&&ut!==gt&&(ut!=null||gt!=null))switch(ct){case"children":case"dangerouslySetInnerHTML":if(ut!=null)throw Error(o(137,t));break;default:Es(e,t,ct,ut,l,gt)}return;default:if(Zi(t)){for(var Ms in s)ut=s[Ms],s.hasOwnProperty(Ms)&&ut!==void 0&&!l.hasOwnProperty(Ms)&&wp(e,t,Ms,void 0,l,ut);for(wt in l)ut=l[wt],gt=s[wt],!l.hasOwnProperty(wt)||ut===gt||ut===void 0&&gt===void 0||wp(e,t,wt,ut,l,gt);return}}for(var tt in s)ut=s[tt],s.hasOwnProperty(tt)&&ut!=null&&!l.hasOwnProperty(tt)&&Es(e,t,tt,null,l,ut);for(Et in l)ut=l[Et],gt=s[Et],!l.hasOwnProperty(Et)||ut===gt||ut==null&&gt==null||Es(e,t,Et,ut,l,gt)}function xy(e){switch(e){case"css":case"script":case"font":case"img":case"image":case"input":case"link":return!0;default:return!1}}function Tx(){if(typeof performance.getEntriesByType=="function"){for(var e=0,t=0,s=performance.getEntriesByType("resource"),l=0;l<s.length;l++){var C=s[l],N=C.transferSize,Z=C.initiatorType,fe=C.duration;if(N&&fe&&xy(Z)){for(Z=0,fe=C.responseEnd,l+=1;l<s.length;l++){var Ae=s[l],ct=Ae.startTime;if(ct>fe)break;var wt=Ae.transferSize,Et=Ae.initiatorType;wt&&xy(Et)&&(Ae=Ae.responseEnd,Z+=wt*(Ae<fe?1:(fe-ct)/(Ae-ct)))}if(--l,t+=8*(N+Z)/(C.duration/1e3),e++,10<e)break}}if(0<e)return t/e/1e6}return navigator.connection&&(e=navigator.connection.downlink,typeof e=="number")?e:5}var _p=null,Sp=null;function Oh(e){return e.nodeType===9?e:e.ownerDocument}function wy(e){switch(e){case"http://www.w3.org/2000/svg":return 1;case"http://www.w3.org/1998/Math/MathML":return 2;default:return 0}}function _y(e,t){if(e===0)switch(t){case"svg":return 1;case"math":return 2;default:return 0}return e===1&&t==="foreignObject"?0:e}function Cp(e,t){return e==="textarea"||e==="noscript"||typeof t.children=="string"||typeof t.children=="number"||typeof t.children=="bigint"||typeof t.dangerouslySetInnerHTML=="object"&&t.dangerouslySetInnerHTML!==null&&t.dangerouslySetInnerHTML.__html!=null}var jp=null;function Ax(){var e=window.event;return e&&e.type==="popstate"?e===jp?!1:(jp=e,!0):(jp=null,!1)}var Sy=typeof setTimeout=="function"?setTimeout:void 0,Dx=typeof clearTimeout=="function"?clearTimeout:void 0,Cy=typeof Promise=="function"?Promise:void 0,Ix=typeof queueMicrotask=="function"?queueMicrotask:typeof Cy<"u"?function(e){return Cy.resolve(null).then(e).catch(Rx)}:Sy;function Rx(e){setTimeout(function(){throw e})}function Nc(e){return e==="head"}function jy(e,t){var s=t,l=0;do{var C=s.nextSibling;if(e.removeChild(s),C&&C.nodeType===8)if(s=C.data,s==="/$"||s==="/&"){if(l===0){e.removeChild(C),Fu(t);return}l--}else if(s==="$"||s==="$?"||s==="$~"||s==="$!"||s==="&")l++;else if(s==="html")Cd(e.ownerDocument.documentElement);else if(s==="head"){s=e.ownerDocument.head,Cd(s);for(var N=s.firstChild;N;){var Z=N.nextSibling,fe=N.nodeName;N[Ti]||fe==="SCRIPT"||fe==="STYLE"||fe==="LINK"&&N.rel.toLowerCase()==="stylesheet"||s.removeChild(N),N=Z}}else s==="body"&&Cd(e.ownerDocument.body);s=C}while(s);Fu(t)}function ky(e,t){var s=e;e=0;do{var l=s.nextSibling;if(s.nodeType===1?t?(s._stashedDisplay=s.style.display,s.style.display="none"):(s.style.display=s._stashedDisplay||"",s.getAttribute("style")===""&&s.removeAttribute("style")):s.nodeType===3&&(t?(s._stashedText=s.nodeValue,s.nodeValue=""):s.nodeValue=s._stashedText||""),l&&l.nodeType===8)if(s=l.data,s==="/$"){if(e===0)break;e--}else s!=="$"&&s!=="$?"&&s!=="$~"&&s!=="$!"||e++;s=l}while(s)}function kp(e){var t=e.firstChild;for(t&&t.nodeType===10&&(t=t.nextSibling);t;){var s=t;switch(t=t.nextSibling,s.nodeName){case"HTML":case"HEAD":case"BODY":kp(s),di(s);continue;case"SCRIPT":case"STYLE":continue;case"LINK":if(s.rel.toLowerCase()==="stylesheet")continue}e.removeChild(s)}}function Hx(e,t,s,l){for(;e.nodeType===1;){var C=s;if(e.nodeName.toLowerCase()!==t.toLowerCase()){if(!l&&(e.nodeName!=="INPUT"||e.type!=="hidden"))break}else if(l){if(!e[Ti])switch(t){case"meta":if(!e.hasAttribute("itemprop"))break;return e;case"link":if(N=e.getAttribute("rel"),N==="stylesheet"&&e.hasAttribute("data-precedence"))break;if(N!==C.rel||e.getAttribute("href")!==(C.href==null||C.href===""?null:C.href)||e.getAttribute("crossorigin")!==(C.crossOrigin==null?null:C.crossOrigin)||e.getAttribute("title")!==(C.title==null?null:C.title))break;return e;case"style":if(e.hasAttribute("data-precedence"))break;return e;case"script":if(N=e.getAttribute("src"),(N!==(C.src==null?null:C.src)||e.getAttribute("type")!==(C.type==null?null:C.type)||e.getAttribute("crossorigin")!==(C.crossOrigin==null?null:C.crossOrigin))&&N&&e.hasAttribute("async")&&!e.hasAttribute("itemprop"))break;return e;default:return e}}else if(t==="input"&&e.type==="hidden"){var N=C.name==null?null:""+C.name;if(C.type==="hidden"&&e.getAttribute("name")===N)return e}else return e;if(e=Yl(e.nextSibling),e===null)break}return null}function Ox(e,t,s){if(t==="")return null;for(;e.nodeType!==3;)if((e.nodeType!==1||e.nodeName!=="INPUT"||e.type!=="hidden")&&!s||(e=Yl(e.nextSibling),e===null))return null;return e}function Ey(e,t){for(;e.nodeType!==8;)if((e.nodeType!==1||e.nodeName!=="INPUT"||e.type!=="hidden")&&!t||(e=Yl(e.nextSibling),e===null))return null;return e}function Ep(e){return e.data==="$?"||e.data==="$~"}function Mp(e){return e.data==="$!"||e.data==="$?"&&e.ownerDocument.readyState!=="loading"}function Bx(e,t){var s=e.ownerDocument;if(e.data==="$~")e._reactRetry=t;else if(e.data!=="$?"||s.readyState!=="loading")t();else{var l=function(){t(),s.removeEventListener("DOMContentLoaded",l)};s.addEventListener("DOMContentLoaded",l),e._reactRetry=l}}function Yl(e){for(;e!=null;e=e.nextSibling){var t=e.nodeType;if(t===1||t===3)break;if(t===8){if(t=e.data,t==="$"||t==="$!"||t==="$?"||t==="$~"||t==="&"||t==="F!"||t==="F")break;if(t==="/$"||t==="/&")return null}}return e}var Lp=null;function My(e){e=e.nextSibling;for(var t=0;e;){if(e.nodeType===8){var s=e.data;if(s==="/$"||s==="/&"){if(t===0)return Yl(e.nextSibling);t--}else s!=="$"&&s!=="$!"&&s!=="$?"&&s!=="$~"&&s!=="&"||t++}e=e.nextSibling}return null}function Ly(e){e=e.previousSibling;for(var t=0;e;){if(e.nodeType===8){var s=e.data;if(s==="$"||s==="$!"||s==="$?"||s==="$~"||s==="&"){if(t===0)return e;t--}else s!=="/$"&&s!=="/&"||t++}e=e.previousSibling}return null}function Ny(e,t,s){switch(t=Oh(s),e){case"html":if(e=t.documentElement,!e)throw Error(o(452));return e;case"head":if(e=t.head,!e)throw Error(o(453));return e;case"body":if(e=t.body,!e)throw Error(o(454));return e;default:throw Error(o(451))}}function Cd(e){for(var t=e.attributes;t.length;)e.removeAttributeNode(t[0]);di(e)}var Xl=new Map,zy=new Set;function Bh(e){return typeof e.getRootNode=="function"?e.getRootNode():e.nodeType===9?e:e.ownerDocument}var ac=ae.d;ae.d={f:$x,r:Px,D:Vx,C:Fx,L:qx,m:Zx,X:Wx,S:Ux,M:Kx};function $x(){var e=ac.f(),t=Nh();return e||t}function Px(e){var t=Ii(e);t!==null&&t.tag===5&&t.type==="form"?it(t):ac.r(e)}var $u=typeof document>"u"?null:document;function Ty(e,t,s){var l=$u;if(l&&typeof t=="string"&&t){var C=dn(t);C='link[rel="'+e+'"][href="'+C+'"]',typeof s=="string"&&(C+='[crossorigin="'+s+'"]'),zy.has(C)||(zy.add(C),e={rel:e,crossOrigin:s,href:t},l.querySelector(C)===null&&(t=l.createElement("link"),fa(t,"link",e),yi(t),l.head.appendChild(t)))}}function Vx(e){ac.D(e),Ty("dns-prefetch",e,null)}function Fx(e,t){ac.C(e,t),Ty("preconnect",e,t)}function qx(e,t,s){ac.L(e,t,s);var l=$u;if(l&&e&&t){var C='link[rel="preload"][as="'+dn(t)+'"]';t==="image"&&s&&s.imageSrcSet?(C+='[imagesrcset="'+dn(s.imageSrcSet)+'"]',typeof s.imageSizes=="string"&&(C+='[imagesizes="'+dn(s.imageSizes)+'"]')):C+='[href="'+dn(e)+'"]';var N=C;switch(t){case"style":N=Pu(e);break;case"script":N=Vu(e)}Xl.has(N)||(e=x({rel:"preload",href:t==="image"&&s&&s.imageSrcSet?void 0:e,as:t},s),Xl.set(N,e),l.querySelector(C)!==null||t==="style"&&l.querySelector(jd(N))||t==="script"&&l.querySelector(kd(N))||(t=l.createElement("link"),fa(t,"link",e),yi(t),l.head.appendChild(t)))}}function Zx(e,t){ac.m(e,t);var s=$u;if(s&&e){var l=t&&typeof t.as=="string"?t.as:"script",C='link[rel="modulepreload"][as="'+dn(l)+'"][href="'+dn(e)+'"]',N=C;switch(l){case"audioworklet":case"paintworklet":case"serviceworker":case"sharedworker":case"worker":case"script":N=Vu(e)}if(!Xl.has(N)&&(e=x({rel:"modulepreload",href:e},t),Xl.set(N,e),s.querySelector(C)===null)){switch(l){case"audioworklet":case"paintworklet":case"serviceworker":case"sharedworker":case"worker":case"script":if(s.querySelector(kd(N)))return}l=s.createElement("link"),fa(l,"link",e),yi(l),s.head.appendChild(l)}}}function Ux(e,t,s){ac.S(e,t,s);var l=$u;if(l&&e){var C=Mr(l).hoistableStyles,N=Pu(e);t=t||"default";var Z=C.get(N);if(!Z){var fe={loading:0,preload:null};if(Z=l.querySelector(jd(N)))fe.loading=5;else{e=x({rel:"stylesheet",href:e,"data-precedence":t},s),(s=Xl.get(N))&&Np(e,s);var Ae=Z=l.createElement("link");yi(Ae),fa(Ae,"link",e),Ae._p=new Promise(function(ct,wt){Ae.onload=ct,Ae.onerror=wt}),Ae.addEventListener("load",function(){fe.loading|=1}),Ae.addEventListener("error",function(){fe.loading|=2}),fe.loading|=4,$h(Z,t,l)}Z={type:"stylesheet",instance:Z,count:1,state:fe},C.set(N,Z)}}}function Wx(e,t){ac.X(e,t);var s=$u;if(s&&e){var l=Mr(s).hoistableScripts,C=Vu(e),N=l.get(C);N||(N=s.querySelector(kd(C)),N||(e=x({src:e,async:!0},t),(t=Xl.get(C))&&zp(e,t),N=s.createElement("script"),yi(N),fa(N,"link",e),s.head.appendChild(N)),N={type:"script",instance:N,count:1,state:null},l.set(C,N))}}function Kx(e,t){ac.M(e,t);var s=$u;if(s&&e){var l=Mr(s).hoistableScripts,C=Vu(e),N=l.get(C);N||(N=s.querySelector(kd(C)),N||(e=x({src:e,async:!0,type:"module"},t),(t=Xl.get(C))&&zp(e,t),N=s.createElement("script"),yi(N),fa(N,"link",e),s.head.appendChild(N)),N={type:"script",instance:N,count:1,state:null},l.set(C,N))}}function Ay(e,t,s,l){var C=(C=Ve.current)?Bh(C):null;if(!C)throw Error(o(446));switch(e){case"meta":case"title":return null;case"style":return typeof s.precedence=="string"&&typeof s.href=="string"?(t=Pu(s.href),s=Mr(C).hoistableStyles,l=s.get(t),l||(l={type:"style",instance:null,count:0,state:null},s.set(t,l)),l):{type:"void",instance:null,count:0,state:null};case"link":if(s.rel==="stylesheet"&&typeof s.href=="string"&&typeof s.precedence=="string"){e=Pu(s.href);var N=Mr(C).hoistableStyles,Z=N.get(e);if(Z||(C=C.ownerDocument||C,Z={type:"stylesheet",instance:null,count:0,state:{loading:0,preload:null}},N.set(e,Z),(N=C.querySelector(jd(e)))&&!N._p&&(Z.instance=N,Z.state.loading=5),Xl.has(e)||(s={rel:"preload",as:"style",href:s.href,crossOrigin:s.crossOrigin,integrity:s.integrity,media:s.media,hrefLang:s.hrefLang,referrerPolicy:s.referrerPolicy},Xl.set(e,s),N||Gx(C,e,s,Z.state))),t&&l===null)throw Error(o(528,""));return Z}if(t&&l!==null)throw Error(o(529,""));return null;case"script":return t=s.async,s=s.src,typeof s=="string"&&t&&typeof t!="function"&&typeof t!="symbol"?(t=Vu(s),s=Mr(C).hoistableScripts,l=s.get(t),l||(l={type:"script",instance:null,count:0,state:null},s.set(t,l)),l):{type:"void",instance:null,count:0,state:null};default:throw Error(o(444,e))}}function Pu(e){return'href="'+dn(e)+'"'}function jd(e){return'link[rel="stylesheet"]['+e+"]"}function Dy(e){return x({},e,{"data-precedence":e.precedence,precedence:null})}function Gx(e,t,s,l){e.querySelector('link[rel="preload"][as="style"]['+t+"]")?l.loading=1:(t=e.createElement("link"),l.preload=t,t.addEventListener("load",function(){return l.loading|=1}),t.addEventListener("error",function(){return l.loading|=2}),fa(t,"link",s),yi(t),e.head.appendChild(t))}function Vu(e){return'[src="'+dn(e)+'"]'}function kd(e){return"script[async]"+e}function Iy(e,t,s){if(t.count++,t.instance===null)switch(t.type){case"style":var l=e.querySelector('style[data-href~="'+dn(s.href)+'"]');if(l)return t.instance=l,yi(l),l;var C=x({},s,{"data-href":s.href,"data-precedence":s.precedence,href:null,precedence:null});return l=(e.ownerDocument||e).createElement("style"),yi(l),fa(l,"style",C),$h(l,s.precedence,e),t.instance=l;case"stylesheet":C=Pu(s.href);var N=e.querySelector(jd(C));if(N)return t.state.loading|=4,t.instance=N,yi(N),N;l=Dy(s),(C=Xl.get(C))&&Np(l,C),N=(e.ownerDocument||e).createElement("link"),yi(N);var Z=N;return Z._p=new Promise(function(fe,Ae){Z.onload=fe,Z.onerror=Ae}),fa(N,"link",l),t.state.loading|=4,$h(N,s.precedence,e),t.instance=N;case"script":return N=Vu(s.src),(C=e.querySelector(kd(N)))?(t.instance=C,yi(C),C):(l=s,(C=Xl.get(N))&&(l=x({},s),zp(l,C)),e=e.ownerDocument||e,C=e.createElement("script"),yi(C),fa(C,"link",l),e.head.appendChild(C),t.instance=C);case"void":return null;default:throw Error(o(443,t.type))}else t.type==="stylesheet"&&(t.state.loading&4)===0&&(l=t.instance,t.state.loading|=4,$h(l,s.precedence,e));return t.instance}function $h(e,t,s){for(var l=s.querySelectorAll('link[rel="stylesheet"][data-precedence],style[data-precedence]'),C=l.length?l[l.length-1]:null,N=C,Z=0;Z<l.length;Z++){var fe=l[Z];if(fe.dataset.precedence===t)N=fe;else if(N!==C)break}N?N.parentNode.insertBefore(e,N.nextSibling):(t=s.nodeType===9?s.head:s,t.insertBefore(e,t.firstChild))}function Np(e,t){e.crossOrigin==null&&(e.crossOrigin=t.crossOrigin),e.referrerPolicy==null&&(e.referrerPolicy=t.referrerPolicy),e.title==null&&(e.title=t.title)}function zp(e,t){e.crossOrigin==null&&(e.crossOrigin=t.crossOrigin),e.referrerPolicy==null&&(e.referrerPolicy=t.referrerPolicy),e.integrity==null&&(e.integrity=t.integrity)}var Ph=null;function Ry(e,t,s){if(Ph===null){var l=new Map,C=Ph=new Map;C.set(s,l)}else C=Ph,l=C.get(s),l||(l=new Map,C.set(s,l));if(l.has(e))return l;for(l.set(e,null),s=s.getElementsByTagName(e),C=0;C<s.length;C++){var N=s[C];if(!(N[Ti]||N[ui]||e==="link"&&N.getAttribute("rel")==="stylesheet")&&N.namespaceURI!=="http://www.w3.org/2000/svg"){var Z=N.getAttribute(t)||"";Z=e+Z;var fe=l.get(Z);fe?fe.push(N):l.set(Z,[N])}}return l}function Hy(e,t,s){e=e.ownerDocument||e,e.head.insertBefore(s,t==="title"?e.querySelector("head > title"):null)}function Yx(e,t,s){if(s===1||t.itemProp!=null)return!1;switch(e){case"meta":case"title":return!0;case"style":if(typeof t.precedence!="string"||typeof t.href!="string"||t.href==="")break;return!0;case"link":if(typeof t.rel!="string"||typeof t.href!="string"||t.href===""||t.onLoad||t.onError)break;switch(t.rel){case"stylesheet":return e=t.disabled,typeof t.precedence=="string"&&e==null;default:return!0}case"script":if(t.async&&typeof t.async!="function"&&typeof t.async!="symbol"&&!t.onLoad&&!t.onError&&t.src&&typeof t.src=="string")return!0}return!1}function Oy(e){return!(e.type==="stylesheet"&&(e.state.loading&3)===0)}function Xx(e,t,s,l){if(s.type==="stylesheet"&&(typeof l.media!="string"||matchMedia(l.media).matches!==!1)&&(s.state.loading&4)===0){if(s.instance===null){var C=Pu(l.href),N=t.querySelector(jd(C));if(N){t=N._p,t!==null&&typeof t=="object"&&typeof t.then=="function"&&(e.count++,e=Vh.bind(e),t.then(e,e)),s.state.loading|=4,s.instance=N,yi(N);return}N=t.ownerDocument||t,l=Dy(l),(C=Xl.get(C))&&Np(l,C),N=N.createElement("link"),yi(N);var Z=N;Z._p=new Promise(function(fe,Ae){Z.onload=fe,Z.onerror=Ae}),fa(N,"link",l),s.instance=N}e.stylesheets===null&&(e.stylesheets=new Map),e.stylesheets.set(s,t),(t=s.state.preload)&&(s.state.loading&3)===0&&(e.count++,s=Vh.bind(e),t.addEventListener("load",s),t.addEventListener("error",s))}}var Tp=0;function Jx(e,t){return e.stylesheets&&e.count===0&&qh(e,e.stylesheets),0<e.count||0<e.imgCount?function(s){var l=setTimeout(function(){if(e.stylesheets&&qh(e,e.stylesheets),e.unsuspend){var N=e.unsuspend;e.unsuspend=null,N()}},6e4+t);0<e.imgBytes&&Tp===0&&(Tp=62500*Tx());var C=setTimeout(function(){if(e.waitingForImages=!1,e.count===0&&(e.stylesheets&&qh(e,e.stylesheets),e.unsuspend)){var N=e.unsuspend;e.unsuspend=null,N()}},(e.imgBytes>Tp?50:800)+t);return e.unsuspend=s,function(){e.unsuspend=null,clearTimeout(l),clearTimeout(C)}}:null}function Vh(){if(this.count--,this.count===0&&(this.imgCount===0||!this.waitingForImages)){if(this.stylesheets)qh(this,this.stylesheets);else if(this.unsuspend){var e=this.unsuspend;this.unsuspend=null,e()}}}var Fh=null;function qh(e,t){e.stylesheets=null,e.unsuspend!==null&&(e.count++,Fh=new Map,t.forEach(Qx,e),Fh=null,Vh.call(e))}function Qx(e,t){if(!(t.state.loading&4)){var s=Fh.get(e);if(s)var l=s.get(null);else{s=new Map,Fh.set(e,s);for(var C=e.querySelectorAll("link[data-precedence],style[data-precedence]"),N=0;N<C.length;N++){var Z=C[N];(Z.nodeName==="LINK"||Z.getAttribute("media")!=="not all")&&(s.set(Z.dataset.precedence,Z),l=Z)}l&&s.set(null,l)}C=t.instance,Z=C.getAttribute("data-precedence"),N=s.get(Z)||l,N===l&&s.set(null,C),s.set(Z,C),this.count++,l=Vh.bind(this),C.addEventListener("load",l),C.addEventListener("error",l),N?N.parentNode.insertBefore(C,N.nextSibling):(e=e.nodeType===9?e.head:e,e.insertBefore(C,e.firstChild)),t.state.loading|=4}}var Ed={$$typeof:p,Provider:null,Consumer:null,_currentValue:X,_currentValue2:X,_threadCount:0};function ew(e,t,s,l,C,N,Z,fe,Ae){this.tag=1,this.containerInfo=e,this.pingCache=this.current=this.pendingChildren=null,this.timeoutHandle=-1,this.callbackNode=this.next=this.pendingContext=this.context=this.cancelPendingCommit=null,this.callbackPriority=0,this.expirationTimes=vn(-1),this.entangledLanes=this.shellSuspendCounter=this.errorRecoveryDisabledLanes=this.expiredLanes=this.warmLanes=this.pingedLanes=this.suspendedLanes=this.pendingLanes=0,this.entanglements=vn(0),this.hiddenUpdates=vn(null),this.identifierPrefix=l,this.onUncaughtError=C,this.onCaughtError=N,this.onRecoverableError=Z,this.pooledCache=null,this.pooledCacheLanes=0,this.formState=Ae,this.incompleteTransitions=new Map}function By(e,t,s,l,C,N,Z,fe,Ae,ct,wt,Et){return e=new ew(e,t,s,Z,Ae,ct,wt,Et,fe),t=1,N===!0&&(t|=24),N=js(3,null,null,t),e.current=N,N.stateNode=e,t=be(),t.refCount++,e.pooledCache=t,t.refCount++,N.memoizedState={element:l,isDehydrated:s,cache:t},Ca(N),e}function $y(e){return e?(e=ar,e):ar}function Py(e,t,s,l,C,N){C=$y(C),l.context===null?l.context=C:l.pendingContext=C,l=kr(t),l.payload={element:s},N=N===void 0?null:N,N!==null&&(l.callback=N),s=Fr(e,l,t),s!==null&&(ol(s,e,t),Dn(s,e,t))}function Vy(e,t){if(e=e.memoizedState,e!==null&&e.dehydrated!==null){var s=e.retryLane;e.retryLane=s!==0&&s<t?s:t}}function Ap(e,t){Vy(e,t),(e=e.alternate)&&Vy(e,t)}function Fy(e){if(e.tag===13||e.tag===31){var t=Us(e,67108864);t!==null&&ol(t,e,67108864),Ap(e,67108864)}}function qy(e){if(e.tag===13||e.tag===31){var t=Ll();t=sr(t);var s=Us(e,t);s!==null&&ol(s,e,t),Ap(e,t)}}var Zh=!0;function tw(e,t,s,l){var C=ee.T;ee.T=null;var N=ae.p;try{ae.p=2,Dp(e,t,s,l)}finally{ae.p=N,ee.T=C}}function nw(e,t,s,l){var C=ee.T;ee.T=null;var N=ae.p;try{ae.p=8,Dp(e,t,s,l)}finally{ae.p=N,ee.T=C}}function Dp(e,t,s,l){if(Zh){var C=Ip(l);if(C===null)xp(e,t,l,Uh,s),Uy(e,l);else if(sw(C,e,t,s,l))l.stopPropagation();else if(Uy(e,l),t&4&&-1<iw.indexOf(e)){for(;C!==null;){var N=Ii(C);if(N!==null)switch(N.tag){case 3:if(N=N.stateNode,N.current.memoizedState.isDehydrated){var Z=bn(N.pendingLanes);if(Z!==0){var fe=N;for(fe.pendingLanes|=2,fe.entangledLanes|=2;Z;){var Ae=1<<31-Dt(Z);fe.entanglements[1]|=Ae,Z&=~Ae}Ho(N),(hs&6)===0&&(Mh=Rt()+500,wd(0))}}break;case 31:case 13:fe=Us(N,2),fe!==null&&ol(fe,N,2),Nh(),Ap(N,2)}if(N=Ip(l),N===null&&xp(e,t,l,Uh,s),N===C)break;C=N}C!==null&&l.stopPropagation()}else xp(e,t,l,null,s)}}function Ip(e){return e=Pi(e),Rp(e)}var Uh=null;function Rp(e){if(Uh=null,e=Ns(e),e!==null){var t=b(e);if(t===null)e=null;else{var s=t.tag;if(s===13){if(e=w(t),e!==null)return e;e=null}else if(s===31){if(e=u(t),e!==null)return e;e=null}else if(s===3){if(t.stateNode.current.memoizedState.isDehydrated)return t.tag===3?t.stateNode.containerInfo:null;e=null}else t!==e&&(e=null)}}return Uh=e,null}function Zy(e){switch(e){case"beforetoggle":case"cancel":case"click":case"close":case"contextmenu":case"copy":case"cut":case"auxclick":case"dblclick":case"dragend":case"dragstart":case"drop":case"focusin":case"focusout":case"input":case"invalid":case"keydown":case"keypress":case"keyup":case"mousedown":case"mouseup":case"paste":case"pause":case"play":case"pointercancel":case"pointerdown":case"pointerup":case"ratechange":case"reset":case"resize":case"seeked":case"submit":case"toggle":case"touchcancel":case"touchend":case"touchstart":case"volumechange":case"change":case"selectionchange":case"textInput":case"compositionstart":case"compositionend":case"compositionupdate":case"beforeblur":case"afterblur":case"beforeinput":case"blur":case"fullscreenchange":case"focus":case"hashchange":case"popstate":case"select":case"selectstart":return 2;case"drag":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"mousemove":case"mouseout":case"mouseover":case"pointermove":case"pointerout":case"pointerover":case"scroll":case"touchmove":case"wheel":case"mouseenter":case"mouseleave":case"pointerenter":case"pointerleave":return 8;case"message":switch(Pn()){case yn:return 2;case Me:return 8;case yt:case Lt:return 32;case Gt:return 268435456;default:return 32}default:return 32}}var Hp=!1,zc=null,Tc=null,Ac=null,Md=new Map,Ld=new Map,Dc=[],iw="mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset".split(" ");function Uy(e,t){switch(e){case"focusin":case"focusout":zc=null;break;case"dragenter":case"dragleave":Tc=null;break;case"mouseover":case"mouseout":Ac=null;break;case"pointerover":case"pointerout":Md.delete(t.pointerId);break;case"gotpointercapture":case"lostpointercapture":Ld.delete(t.pointerId)}}function Nd(e,t,s,l,C,N){return e===null||e.nativeEvent!==N?(e={blockedOn:t,domEventName:s,eventSystemFlags:l,nativeEvent:N,targetContainers:[C]},t!==null&&(t=Ii(t),t!==null&&Fy(t)),e):(e.eventSystemFlags|=l,t=e.targetContainers,C!==null&&t.indexOf(C)===-1&&t.push(C),e)}function sw(e,t,s,l,C){switch(t){case"focusin":return zc=Nd(zc,e,t,s,l,C),!0;case"dragenter":return Tc=Nd(Tc,e,t,s,l,C),!0;case"mouseover":return Ac=Nd(Ac,e,t,s,l,C),!0;case"pointerover":var N=C.pointerId;return Md.set(N,Nd(Md.get(N)||null,e,t,s,l,C)),!0;case"gotpointercapture":return N=C.pointerId,Ld.set(N,Nd(Ld.get(N)||null,e,t,s,l,C)),!0}return!1}function Wy(e){var t=Ns(e.target);if(t!==null){var s=b(t);if(s!==null){if(t=s.tag,t===13){if(t=w(s),t!==null){e.blockedOn=t,_n(e.priority,function(){qy(s)});return}}else if(t===31){if(t=u(s),t!==null){e.blockedOn=t,_n(e.priority,function(){qy(s)});return}}else if(t===3&&s.stateNode.current.memoizedState.isDehydrated){e.blockedOn=s.tag===3?s.stateNode.containerInfo:null;return}}}e.blockedOn=null}function Wh(e){if(e.blockedOn!==null)return!1;for(var t=e.targetContainers;0<t.length;){var s=Ip(e.nativeEvent);if(s===null){s=e.nativeEvent;var l=new s.constructor(s.type,s);$i=l,s.target.dispatchEvent(l),$i=null}else return t=Ii(s),t!==null&&Fy(t),e.blockedOn=s,!1;t.shift()}return!0}function Ky(e,t,s){Wh(e)&&s.delete(t)}function rw(){Hp=!1,zc!==null&&Wh(zc)&&(zc=null),Tc!==null&&Wh(Tc)&&(Tc=null),Ac!==null&&Wh(Ac)&&(Ac=null),Md.forEach(Ky),Ld.forEach(Ky)}function Kh(e,t){e.blockedOn===t&&(e.blockedOn=null,Hp||(Hp=!0,n.unstable_scheduleCallback(n.unstable_NormalPriority,rw)))}var Gh=null;function Gy(e){Gh!==e&&(Gh=e,n.unstable_scheduleCallback(n.unstable_NormalPriority,function(){Gh===e&&(Gh=null);for(var t=0;t<e.length;t+=3){var s=e[t],l=e[t+1],C=e[t+2];if(typeof l!="function"){if(Rp(l||s)===null)continue;break}var N=Ii(s);N!==null&&(e.splice(t,3),t-=3,Qe(N,{pending:!0,data:C,method:s.method,action:l},l,C))}}))}function Fu(e){function t(Ae){return Kh(Ae,e)}zc!==null&&Kh(zc,e),Tc!==null&&Kh(Tc,e),Ac!==null&&Kh(Ac,e),Md.forEach(t),Ld.forEach(t);for(var s=0;s<Dc.length;s++){var l=Dc[s];l.blockedOn===e&&(l.blockedOn=null)}for(;0<Dc.length&&(s=Dc[0],s.blockedOn===null);)Wy(s),s.blockedOn===null&&Dc.shift();if(s=(e.ownerDocument||e).$$reactFormReplay,s!=null)for(l=0;l<s.length;l+=3){var C=s[l],N=s[l+1],Z=C[Tn]||null;if(typeof N=="function")Z||Gy(s);else if(Z){var fe=null;if(N&&N.hasAttribute("formAction")){if(C=N,Z=N[Tn]||null)fe=Z.formAction;else if(Rp(C)!==null)continue}else fe=Z.action;typeof fe=="function"?s[l+1]=fe:(s.splice(l,3),l-=3),Gy(s)}}}function Yy(){function e(N){N.canIntercept&&N.info==="react-transition"&&N.intercept({handler:function(){return new Promise(function(Z){return C=Z})},focusReset:"manual",scroll:"manual"})}function t(){C!==null&&(C(),C=null),l||setTimeout(s,20)}function s(){if(!l&&!navigation.transition){var N=navigation.currentEntry;N&&N.url!=null&&navigation.navigate(N.url,{state:N.getState(),info:"react-transition",history:"replace"})}}if(typeof navigation=="object"){var l=!1,C=null;return navigation.addEventListener("navigate",e),navigation.addEventListener("navigatesuccess",t),navigation.addEventListener("navigateerror",t),setTimeout(s,100),function(){l=!0,navigation.removeEventListener("navigate",e),navigation.removeEventListener("navigatesuccess",t),navigation.removeEventListener("navigateerror",t),C!==null&&(C(),C=null)}}}function Op(e){this._internalRoot=e}Yh.prototype.render=Op.prototype.render=function(e){var t=this._internalRoot;if(t===null)throw Error(o(409));var s=t.current,l=Ll();Py(s,l,e,t,null,null)},Yh.prototype.unmount=Op.prototype.unmount=function(){var e=this._internalRoot;if(e!==null){this._internalRoot=null;var t=e.containerInfo;Py(e.current,2,null,e,null,null),Nh(),t[bi]=null}};function Yh(e){this._internalRoot=e}Yh.prototype.unstable_scheduleHydration=function(e){if(e){var t=Ut();e={blockedOn:null,target:e,priority:t};for(var s=0;s<Dc.length&&t!==0&&t<Dc[s].priority;s++);Dc.splice(s,0,e),s===0&&Wy(e)}};var Xy=i.version;if(Xy!=="19.2.4")throw Error(o(527,Xy,"19.2.4"));ae.findDOMNode=function(e){var t=e._reactInternals;if(t===void 0)throw typeof e.render=="function"?Error(o(188)):(e=Object.keys(e).join(","),Error(o(268,e)));return e=f(t),e=e!==null?S(e):null,e=e===null?null:e.stateNode,e};var aw={bundleType:0,version:"19.2.4",rendererPackageName:"react-dom",currentDispatcherRef:ee,reconcilerVersion:"19.2.4"};if(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__<"u"){var Xh=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(!Xh.isDisabled&&Xh.supportsFiber)try{zt=Xh.inject(aw),nn=Xh}catch{}}return Id.createRoot=function(e,t){if(!h(e))throw Error(o(299));var s=!1,l="",C=Wn,N=Kn,Z=ln;return t!=null&&(t.unstable_strictMode===!0&&(s=!0),t.identifierPrefix!==void 0&&(l=t.identifierPrefix),t.onUncaughtError!==void 0&&(C=t.onUncaughtError),t.onCaughtError!==void 0&&(N=t.onCaughtError),t.onRecoverableError!==void 0&&(Z=t.onRecoverableError)),t=By(e,1,!1,null,null,s,l,null,C,N,Z,Yy),e[bi]=t.current,vp(e),new Op(t)},Id.hydrateRoot=function(e,t,s){if(!h(e))throw Error(o(299));var l=!1,C="",N=Wn,Z=Kn,fe=ln,Ae=null;return s!=null&&(s.unstable_strictMode===!0&&(l=!0),s.identifierPrefix!==void 0&&(C=s.identifierPrefix),s.onUncaughtError!==void 0&&(N=s.onUncaughtError),s.onCaughtError!==void 0&&(Z=s.onCaughtError),s.onRecoverableError!==void 0&&(fe=s.onRecoverableError),s.formState!==void 0&&(Ae=s.formState)),t=By(e,1,!0,t,s??null,l,C,Ae,N,Z,fe,Yy),t.context=$y(null),s=t.current,l=Ll(),l=sr(l),C=kr(l),C.callback=null,Fr(s,C,l),s=l,t.current.lanes=s,qn(t,s),Ho(t),e[bi]=t.current,vp(e),new Yh(t)},Id.version="19.2.4",Id}var gb;function eC(){if(gb)return Wp.exports;gb=1;function n(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>"u"||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!="function"))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(n)}catch(i){console.error(i)}}return n(),Wp.exports=Q2(),Wp.exports}var tC=eC();const nC=ow(tC);var gu=Zv();function rm(n){return n==="macos"}function iC(n){return rm(n)?"Cmd":"Ctrl"}function sC(n){return rm(n)?"Cmd+Shift+Z":"Ctrl+Y"}const Uv=""+new URL("YcideLogo-B0ff98DW.png",import.meta.url).href,mb=["eycTable.flowLines"];function Wv(n){var o;const i=new Set,a=[];for(const h of n)for(const b of((o=h.contributes)==null?void 0:o.renderers)??[])i.has(b.id)||(i.add(b.id),a.push({...b,pluginId:h.id}));return a}function Kv(n,i){return i.filter(a=>a.surfaces.includes(n))}function rC(n,i,a){const o=Kv(n,i);if(a){const h=o.find(b=>b.id===a);if(h)return h}return o[0]??null}const Gv={"workspace:read":"读取当前项目里的文件和打开的文档","workspace:write":"写入当前项目里的文件","documents:write":"修改编辑器里打开的文档","fs:any":"读写电脑上的任意文件","process:spawn":"启动其他程序",terminal:"使用内置终端","secrets:own":"保存和读取自己的密钥（与其他插件隔离）","ai:invoke":"调用 AI 模型（会消耗你的额度）","workbench:commands":"执行 IDE 菜单里的功能（如保存、编译、运行）"},Yv="runtime:executable",aC=/^(\*|(\*\.)?[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+)$/;function lC(n){return typeof n!="string"?!1:n.startsWith("net:")?aC.test(n.slice(4)):Object.prototype.hasOwnProperty.call(Gv,n)}function oC(n){if(n===Yv)return"以原生程序运行（不受上述权限限制，相当于普通软件）";if(n==="net:*")return"访问任意网站";if(n.startsWith("net:")){const i=n.slice(4);return i.startsWith("*.")?`访问 ${i.slice(2)} 及其子域名`:`访问 ${i}`}return Gv[n]??n}function cC(n){return n==="fs:any"||n==="net:*"||n==="process:spawn"||n===Yv}function uC(n){const i=[];let a=0;for(;a<n.length;){const o=n[a];if(/\s/.test(o)){a++;continue}const h=n.slice(a,a+2);if(h==="&&"||h==="||"||h==="=="||h==="!="){i.push({type:"op",text:h}),a+=2;continue}if(o==="!"||o==="("||o===")"){i.push({type:"op",text:o}),a++;continue}if(o==="'"||o==='"'){const u=n.indexOf(o,a+1);if(u<0)throw new Error("字符串缺少结束引号");i.push({type:"string",text:n.slice(a+1,u)}),a=u+1;continue}const b=/^-?\d+(\.\d+)?/.exec(n.slice(a));if(b){i.push({type:"number",value:Number(b[0])}),a+=b[0].length;continue}const w=/^[A-Za-z_一-龥][\w.:\-一-龥]*/.exec(n.slice(a));if(w){i.push({type:"ident",text:w[0]}),a+=w[0].length;continue}throw new Error(`无法识别的字符「${o}」`)}return i}class dC{constructor(i){this.tokens=i,this.pos=0}parse(){const i=this.parseOr();if(this.pos<this.tokens.length)throw new Error("表达式末尾有多余内容");return i}peekOp(i){const a=this.tokens[this.pos];return!!a&&a.type==="op"&&a.text===i}parseOr(){let i=this.parseAnd();for(;this.peekOp("||");)this.pos++,i={kind:"or",left:i,right:this.parseAnd()};return i}parseAnd(){let i=this.parseUnary();for(;this.peekOp("&&");)this.pos++,i={kind:"and",left:i,right:this.parseUnary()};return i}parseUnary(){return this.peekOp("!")?(this.pos++,{kind:"not",operand:this.parseUnary()}):this.parsePrimary()}parsePrimary(){const i=this.tokens[this.pos];if(!i)throw new Error("表达式不完整");if(i.type==="op"&&i.text==="("){this.pos++;const a=this.parseOr();if(!this.peekOp(")"))throw new Error("缺少右括号");return this.pos++,a}if(i.type!=="ident")throw new Error("此处需要上下文键");if(this.pos++,i.text==="true"||i.text==="false")return{kind:"const",value:i.text==="true"};if(this.peekOp("==")||this.peekOp("!=")){const a=this.tokens[this.pos].text;this.pos++;const o=this.tokens[this.pos];if(!o||o.type==="op")throw new Error("比较运算符后缺少值");this.pos++;let h;return o.type==="number"?h=o.value:o.type==="string"?h=o.text:h=o.text==="true"?!0:o.text==="false"?!1:o.text,{kind:a==="=="?"eq":"ne",name:i.text,value:h}}return{kind:"key",name:i.text}}}const yb=new Map;function Xv(n){const i=yb.get(n);if(i)return i;const a=new dC(uC(n)).parse();return yb.set(n,a),a}function bb(n,i){return n===i?!0:n==null||i===null||i===void 0?!1:String(n)===String(i)}function Ju(n,i){switch(n.kind){case"const":return n.value;case"key":return!!i[n.name];case"not":return!Ju(n.operand,i);case"and":return Ju(n.left,i)&&Ju(n.right,i);case"or":return Ju(n.left,i)||Ju(n.right,i);case"eq":return bb(i[n.name],n.value);case"ne":return!bb(i[n.name],n.value)}}function $g(n,i){if(!n||!n.trim())return!0;try{return Ju(Xv(n),i)}catch{return!1}}const hC={delete:"Delete",del:"Delete",backspace:"Backspace",enter:"Enter",return:"Enter",escape:"Escape",esc:"Escape",tab:"Tab",space:"Space",insert:"Insert",home:"Home",end:"End",pageup:"PageUp",pagedown:"PageDown",up:"ArrowUp",down:"ArrowDown",left:"ArrowLeft",right:"ArrowRight"};function Jv(n){return/^[a-z]$/i.test(n)?n.toUpperCase():/^[0-9]$/.test(n)?n:/^f([1-9]|1[0-9]|2[0-4])$/i.test(n)?n.toUpperCase():hC[n.toLowerCase()]??null}const Xp=new Map;function am(n){if(Xp.has(n))return Xp.get(n)??null;const i=n.split("+").map(b=>b.trim()).filter(Boolean),a={cmdOrCtrl:!1,ctrl:!1,cmd:!1,alt:!1,shift:!1,key:""};let o=i.length>0;i.forEach((b,w)=>{const u=b.toLowerCase(),c=w===i.length-1;if(u==="cmdorctrl"||u==="commandorcontrol")a.cmdOrCtrl=!0;else if(u==="ctrl"||u==="control")a.ctrl=!0;else if(u==="cmd"||u==="command"||u==="meta"||u==="super")a.cmd=!0;else if(u==="alt"||u==="option")a.alt=!0;else if(u==="shift")a.shift=!0;else if(c){const f=Jv(b);f?a.key=f:o=!1}else o=!1}),a.key||(o=!1);const h=o?a:null;return Xp.set(n,h),h}function fC(n){const i=/^Key([A-Z])$/.exec(n.code);if(i)return i[1];const a=/^Digit([0-9])$/.exec(n.code);return a?a[1]:n.key===" "?"Space":Jv(n.key)??n.key}function pC(n,i){return fC(i)!==n.key||i.altKey!==n.alt||i.shiftKey!==n.shift?!1:n.cmdOrCtrl?i.ctrlKey||i.metaKey:!(i.ctrlKey!==n.ctrl||i.metaKey!==n.cmd)}function gC(n,i){const a=am(n);if(!a)return n;const o=[],h=n.split("+").map(b=>b.trim().toLowerCase());for(const b of h)b==="cmdorctrl"||b==="commandorcontrol"?o.push(i==="macos"?"Cmd":"Ctrl"):b==="ctrl"||b==="control"?o.push("Ctrl"):b==="cmd"||b==="command"||b==="meta"||b==="super"?o.push("Cmd"):b==="alt"||b==="option"?o.push("Alt"):b==="shift"&&o.push("Shift");return o.push(a.key),o.join("+")}const vb=["aiDeepseekApiKey","aiGlmApiKey"];function mC(n,i){return`${n}:${i}`}function Mf(n){var o;const i=new Set,a=[];for(const h of n){const b=((o=h.contributes)==null?void 0:o.aiProviders)??[];for(const w of b){const u=h.builtin&&w.apiKeySetting?{kind:"setting",setting:w.apiKeySetting}:{kind:"provider",key:mC(h.id,w.id)};for(const c of w.models)i.has(c.id)||(i.add(c.id),a.push({id:c.id,label:c.label,model:c.model,endpoint:w.endpoint,envKey:w.envKey,providerId:w.id,providerLabel:w.label,pluginId:h.id,apiKey:u}))}}return a}function yC(n){const i=new Map;for(const a of Mf(n))a.apiKey.kind!=="provider"||i.has(a.apiKey.key)||i.set(a.apiKey.key,{key:a.apiKey.key,label:a.providerLabel,pluginId:a.pluginId,envKey:a.envKey});return[...i.values()]}function bC(n){var o;const i=new Set,a=[];for(const h of n)for(const b of((o=h.contributes)==null?void 0:o.aiTools)??[])i.has(b.name)||(i.add(b.name),a.push({...b,risk:b.risk??"read",pluginId:h.id,builtin:!!h.builtin}));return a}const vC=/^[a-z0-9][a-z0-9-]*\.[a-z0-9][a-z0-9-]*$/,xC=/^(windows|linux|macos)(-(x64|x86|arm64))?$/;function Er(n){return typeof n=="object"&&n!==null&&!Array.isArray(n)}function Si(n){return typeof n=="string"&&n.trim().length>0}function ef(n){return/^([a-zA-Z]:|[\\/])/.test(n)?!1:!n.split(/[\\/]+/).some(i=>i==="..")}function Jp(n,i,a){if(n!==void 0){if(typeof n!="string"){a.push(`${i}: when 表达式必须是字符串`);return}try{Xv(n)}catch(o){a.push(`${i}: when 表达式无效（${o.message}）`)}}}function tf(n,i,a){n!==void 0&&(typeof n!="string"||!am(n))&&a.push(`${i}: 无法识别的按键「${String(n)}」`)}function wC(n){const i=[];if(!Er(n))return{ok:!1,errors:["清单必须是 JSON 对象"]};const a=n.id;if((!Si(a)||!vC.test(a))&&i.push(`id「${String(a)}」不符合「发布者.名称」格式（小写英文、数字、短横线）`),Si(n.displayName)||i.push("缺少 displayName"),Si(n.version)||i.push("缺少 version"),Si(n.publisher)?Si(a)&&!a.startsWith(`${n.publisher}.`)&&i.push(`id「${a}」必须以发布者「${n.publisher}.」开头`):i.push("缺少 publisher"),n.platforms!==void 0&&(!Array.isArray(n.platforms)||n.platforms.some(h=>typeof h!="string"||!xC.test(h)))&&i.push("platforms 只能包含 windows / linux / macos（可带 -x64 / -x86 / -arm64 后缀）"),n.hosts!==void 0&&(!Array.isArray(n.hosts)||n.hosts.some(h=>h!=="electron"&&h!=="native"))&&i.push("hosts 只能包含 electron / native"),n.dependencies!==void 0&&(!Er(n.dependencies)||Object.values(n.dependencies).some(h=>typeof h!="string"))&&i.push("dependencies 必须是「插件ID → 版本范围」的对象"),n.publisher==="ycide"&&!n.builtin&&i.push("发布者 ycide 保留给官方内置插件"),n.runtime!==void 0){const h=n.runtime;!Er(h)||h.type!=="node"&&h.type!=="executable"&&h.type!=="none"?i.push("runtime.type 只能是 node / executable / none"):h.type==="node"&&(!Si(h.main)||!ef(h.main))?i.push("runtime.type 为 node 时需要插件目录内的 runtime.main"):h.type==="executable"&&((!Si(h.command)||!ef(h.command))&&i.push("runtime.type 为 executable 时需要插件目录内的 runtime.command"),h.args!==void 0&&(!Array.isArray(h.args)||h.args.some(b=>typeof b!="string"))&&i.push("runtime.args 必须是字符串数组"))}if(n.permissions!==void 0)if(!Array.isArray(n.permissions))i.push("permissions 必须是数组");else{const h=n.permissions.filter(b=>!lC(b));h.length>0&&i.push(`未知的权限：${h.map(String).join("、")}`)}const o=n.contributes;if(o!==void 0&&!Er(o))i.push("contributes 必须是对象");else if(o){const h=new Set;if(o.commands!==void 0&&(Array.isArray(o.commands)?o.commands.forEach((b,w)=>{const u=`contributes.commands[${w}]`;if(!Er(b)||!Si(b.id)||!Si(b.title)){i.push(`${u}: 需要 id 和 title`);return}h.has(b.id)&&i.push(`${u}: 命令 ${b.id} 重复声明`),h.add(b.id),Jp(b.enablement,u,i)}):i.push("contributes.commands 必须是数组")),o.menubarMenus!==void 0&&(Array.isArray(o.menubarMenus)?o.menubarMenus.forEach((b,w)=>{(!Er(b)||!Si(b.id)||!Si(b.title)||typeof b.order!="number")&&i.push(`contributes.menubarMenus[${w}]: 需要 id、title 和数字 order`)}):i.push("contributes.menubarMenus 必须是数组")),o.menus!==void 0)if(!Er(o.menus))i.push("contributes.menus 必须是对象");else for(const[b,w]of Object.entries(o.menus)){if(!/^menubar\/[a-z0-9-]+$/.test(b)){i.push(`contributes.menus: 不支持的菜单位置「${b}」`);continue}if(!Array.isArray(w)){i.push(`contributes.menus["${b}"] 必须是数组`);continue}w.forEach((u,c)=>{const f=`contributes.menus["${b}"][${c}]`;if(!Er(u)){i.push(`${f}: 必须是对象`);return}const S=Si(u.command),x=Si(u.submenu);S===x&&i.push(`${f}: command 与 submenu 必须且只能有一个`),x&&!Si(u.title)&&i.push(`${f}: 动态子菜单需要 title`),u.group!==void 0&&(typeof u.group!="string"||!/^[^@]+(@\d+)?$/.test(u.group))&&i.push(`${f}: group 格式应为「组名@序号」`),Jp(u.when,f,i)})}o.keybindings!==void 0&&(Array.isArray(o.keybindings)?o.keybindings.forEach((b,w)=>{const u=`contributes.keybindings[${w}]`;if(!Er(b)||!Si(b.command)||!Si(b.key)){i.push(`${u}: 需要 command 和 key`);return}tf(b.key,u,i),tf(b.mac,`${u}.mac`,i),tf(b.win,`${u}.win`,i),tf(b.linux,`${u}.linux`,i),Jp(b.when,u,i),b.args!==void 0&&!Array.isArray(b.args)&&i.push(`${u}: args 必须是数组`)}):i.push("contributes.keybindings 必须是数组")),o.aiProviders!==void 0&&(Array.isArray(o.aiProviders)?o.aiProviders.forEach((b,w)=>{const u=`contributes.aiProviders[${w}]`;if(!Er(b)||!Si(b.id)||!Si(b.label)||!Si(b.endpoint)){i.push(`${u}: 需要 id、label 和 endpoint`);return}if(/^https?:\/\//i.test(b.endpoint)||i.push(`${u}: endpoint 必须是 http / https 地址`),b.envKey!==void 0&&!Si(b.envKey)&&i.push(`${u}: envKey 必须是字符串`),b.apiKeySetting!==void 0&&!vb.includes(b.apiKeySetting)&&i.push(`${u}: apiKeySetting 只能是 ${vb.join(" / ")}`),!Array.isArray(b.models)||b.models.length===0){i.push(`${u}: models 必须是非空数组`);return}b.models.forEach((c,f)=>{(!Er(c)||!Si(c.id)||!Si(c.label)||!Si(c.model))&&i.push(`${u}.models[${f}]: 需要 id、label 和 model`)})}):i.push("contributes.aiProviders 必须是数组")),o.aiTools!==void 0&&(Array.isArray(o.aiTools)?o.aiTools.forEach((b,w)=>{const u=`contributes.aiTools[${w}]`;if(!Er(b)||!Si(b.name)||!Si(b.description)||!Si(b.command)){i.push(`${u}: 需要 name、description 和 command`);return}/^[a-zA-Z_][a-zA-Z0-9_-]{0,63}$/.test(b.name)||i.push(`${u}: name 只能用英文字母、数字、下划线和短横线`),b.risk!==void 0&&!["read","write","exec"].includes(String(b.risk))&&i.push(`${u}: risk 只能是 read / write / exec`),b.parameters!==void 0&&!Er(b.parameters)&&i.push(`${u}: parameters 必须是 JSON Schema 对象`)}):i.push("contributes.aiTools 必须是数组")),o.compilers!==void 0&&(Array.isArray(o.compilers)?o.compilers.forEach((b,w)=>{const u=`contributes.compilers[${w}]`;if(!Er(b)||!Si(b.id)||!Si(b.displayName)){i.push(`${u}: 需要 id 和 displayName`);return}for(const c of["targets","acceptsImplementations"]){const f=b[c];f!==void 0&&(!Array.isArray(f)||f.some(S=>!Si(S)))&&i.push(`${u}: ${c} 必须是字符串数组`)}b.commands!==void 0?(!Er(b.commands)||!Si(b.commands.build))&&i.push(`${u}: commands.build 必须是命令 ID`):n.builtin||i.push(`${u}: 第三方编译器必须提供 commands.build`)}):i.push("contributes.compilers 必须是数组")),o.languages!==void 0&&(!Array.isArray(o.languages)||o.languages.some(b=>!Er(b)||!Si(b.id)))&&i.push("contributes.languages 必须是 [{ id, aliases?, extensions? }] 数组"),o.editors!==void 0&&(Array.isArray(o.editors)?o.editors.forEach((b,w)=>{const u=`contributes.editors[${w}]`;if(!Er(b)||!Si(b.id)||!Si(b.displayName)){i.push(`${u}: 需要 id 和 displayName`);return}(!Array.isArray(b.languages)||b.languages.length===0||b.languages.some(f=>!Si(f)))&&i.push(`${u}: languages 必须是非空字符串数组`),b.priority!==void 0&&b.priority!=="default"&&b.priority!=="option"&&i.push(`${u}: priority 只能是 default / option`);const c=b.ui;!Er(c)||c.type!=="builtin"&&c.type!=="web"?i.push(`${u}: ui.type 只能是 builtin / web`):c.type==="builtin"?(n.builtin||i.push(`${u}: 只有内置插件可以使用 builtin 编辑器`),Si(c.component)||i.push(`${u}: builtin 编辑器需要 ui.component`)):(!Si(c.entry)||!ef(c.entry))&&i.push(`${u}: web 编辑器需要插件目录内的 ui.entry`)}):i.push("contributes.editors 必须是数组")),o.renderers!==void 0&&(Array.isArray(o.renderers)?o.renderers.forEach((b,w)=>{const u=`contributes.renderers[${w}]`;if(!Er(b)||!Si(b.id)||!Si(b.displayName)){i.push(`${u}: 需要 id 和 displayName`);return}n.builtin||i.push(`${u}: 渲染后端直接操作编辑器界面，只有内置插件可以提供`),(!Array.isArray(b.surfaces)||b.surfaces.length===0||b.surfaces.some(c=>!mb.includes(c)))&&i.push(`${u}: surfaces 必须是非空数组，可选 ${mb.join(" / ")}`),Si(b.implementation)||i.push(`${u}: 需要 implementation`)}):i.push("contributes.renderers 必须是数组")),o.libraries!==void 0&&(!Array.isArray(o.libraries)||o.libraries.some(b=>!Er(b)||!Si(b.name)))&&i.push("contributes.libraries 必须是 [{ name }] 数组"),o.themes!==void 0&&(Array.isArray(o.themes)?o.themes.forEach((b,w)=>{!Er(b)||!Si(b.id)||!Si(b.path)?i.push(`contributes.themes[${w}]: 需要 id 和 path`):ef(b.path)||i.push(`contributes.themes[${w}]: path 必须是插件目录内的相对路径`)}):i.push("contributes.themes 必须是数组"))}return i.length>0?{ok:!1,errors:i}:{ok:!0,manifest:n}}function _C(n,i,a){const o=n.platforms;return!o||o.length===0?!0:o.some(h=>{const[b,w]=h.split("-");return b!==i?!1:!w||!a||w===a})}function SC(n,i){const a=n.hosts;return!a||a.length===0||a.includes(i)}function CC(n,i){var x,j,T;const a=new Map,o=[];for(const z of n){if(z.error){const p=(x=z.manifest)==null?void 0:x.id;o.push({id:typeof p=="string"?p:"(未知)",status:"error",reason:z.error,source:z.source});continue}const _=wC(z.manifest);if(!_.ok){const p=(j=z.manifest)==null?void 0:j.id;o.push({id:typeof p=="string"?p:"(未知)",status:"error",reason:`清单无效：${_.errors.join("；")}`,source:z.source});continue}const v=_.manifest;if(a.has(v.id)){o.push({id:v.id,status:"error",reason:`插件 ID 与 ${a.get(v.id).source} 重复，已忽略`,manifest:v,source:z.source});continue}let m="enabled",y;_C(v,i.platform,i.arch)?SC(v,i.host)?(T=i.disabled)!=null&&T.has(v.id)&&(m="disabled",y="已停用"):(m="unavailable",y=`当前宿主不可用（仅支持 ${v.hosts.join("、")}）`):(m="unavailable",y=`当前平台不可用（仅支持 ${v.platforms.join("、")}）`),a.set(v.id,{id:v.id,status:m,reason:y,manifest:v,source:z.source,dir:z.dir})}let h=!0;for(;h;){h=!1;for(const z of a.values())if(z.status==="enabled")for(const _ of Object.keys(z.manifest.dependencies??{})){const v=a.get(_);if(!v)z.status="unavailable",z.reason=`缺少依赖插件 ${_}`;else if(v.status!=="enabled")z.status="unavailable",z.reason=v.status==="disabled"?`依赖插件 ${_} 已停用`:`依赖插件 ${_} 不可用`;else continue;h=!0;break}}const b=[],w=new Map,u=(z,_)=>{const v=w.get(z.id);if(v==="done")return z.status==="enabled";if(v==="visiting"){const y=_.slice(_.indexOf(z.id));for(const p of y){const M=a.get(p);M.status="unavailable",M.reason=`存在循环依赖：${[...y,z.id].join(" → ")}`}return!1}w.set(z.id,"visiting");let m=!0;for(const y of Object.keys(z.manifest.dependencies??{})){const p=a.get(y);(!p||!u(p,[..._,z.id]))&&(m=!1)}return w.set(z.id,"done"),!m&&z.status==="enabled"&&(z.status="unavailable",z.reason=z.reason??"依赖插件不可用"),z.status==="enabled"&&b.push(z),z.status==="enabled"};for(const z of a.values())z.status==="enabled"&&u(z,[]);const c=new Set(b.filter(z=>z.status==="enabled").map(z=>z.id)),f=b.filter(z=>c.has(z.id)),S=[...a.values()].filter(z=>!c.has(z.id));return{plugins:[...f,...S,...o],enabled:f.map(z=>z.manifest)}}const jC="~default";function kC(n){if(!n)return{groupName:jC,groupOrder:Number.MAX_SAFE_INTEGER};const i=n.lastIndexOf("@");return i<0?{groupName:n,groupOrder:Number.MAX_SAFE_INTEGER}:{groupName:n.slice(0,i),groupOrder:Number(n.slice(i+1))}}function Qv(n){var c;const i=new Map,a=new Map,o=[],h=[];for(const f of n){const S=f.contributes;if(S){for(const x of S.commands??[]){const j=i.get(x.id);if(j){h.push(`命令 ${x.id} 已由 ${j.pluginId} 声明，${f.id} 的声明被忽略`);continue}i.set(x.id,{...x,pluginId:f.id})}for(const x of S.menubarMenus??[]){const j=a.get(x.id);if(j){h.push(`顶层菜单 ${x.id} 已由 ${j.pluginId} 声明，${f.id} 的声明被忽略`);continue}a.set(x.id,{...x,pluginId:f.id,items:[]})}for(const x of S.keybindings??[])o.push({...x,pluginId:f.id})}}let b=0;const w=new Map;for(const f of n)for(const[S,x]of Object.entries(((c=f.contributes)==null?void 0:c.menus)??{})){const j=S.slice(8),T=a.get(j);if(!T){h.push(`${f.id} 往不存在的顶层菜单 ${j} 添加菜单项，已忽略`);continue}for(const z of x){if(z.command&&!i.has(z.command)){h.push(`${f.id} 的菜单项引用了未声明的命令 ${z.command}，已忽略`);continue}const _={...z,pluginId:f.id,...kC(z.group)};w.set(_,b++),T.items.push(_)}}for(const f of a.values())f.items.sort((S,x)=>S.groupName===x.groupName?S.groupOrder-x.groupOrder||w.get(S)-w.get(x):S.groupName<x.groupName?-1:1);const u=[...a.values()].sort((f,S)=>f.order-S.order);return{commands:i,menubar:u,keybindings:o,warnings:h}}function Qp(n,i,a){return a&&i?`${n}(${i})`:n}function e1(n,i){return i==="macos"&&n.mac?n.mac:i==="windows"&&n.win?n.win:i==="linux"&&n.linux?n.linux:n.key}function t1(n,i){return!n.platforms||n.platforms.length===0||n.platforms.includes(i)}function EC(n,i,a){const o=n.keybindings.find(h=>h.command===i&&!h.args&&t1(h,a));return o?e1(o,a):void 0}function MC(n){return!n||n.length===0?[{kind:"command",label:"(空)",command:"",enabled:!1}]:n.map(i=>i.separator?{kind:"separator"}:{kind:"command",label:i.label,command:i.command??"",args:i.args,enabled:i.enabled!==!1&&!!i.command,checked:i.checked})}function LC(n,i){const{platform:a,context:o,dynamicSubmenus:h,showMnemonics:b}=i;return n.menubar.map(w=>{const u=[];let c=null;for(const f of w.items){if(!$g(f.when,o))continue;if(c!==null&&f.groupName!==c&&u.push({kind:"separator"}),c=f.groupName,f.submenu){u.push({kind:"submenu",label:Qp(f.title??f.submenu,f.mnemonic,b),items:MC(h==null?void 0:h[f.submenu])});continue}const S=n.commands.get(f.command),x=EC(n,S.id,a);u.push({kind:"command",label:Qp(f.title??S.title,f.mnemonic,b),command:S.id,enabled:$g(S.enablement,o),shortcut:x?gC(x,a):void 0,accelerator:x,nativeRole:f.nativeRole})}return{id:w.id,label:Qp(w.title,w.mnemonic,b),items:u}})}function NC(n,i,a,o){for(const h of n.keybindings){if(h.dispatch===!1||!t1(h,a))continue;const b=am(e1(h,a));if(!(!b||!pC(b,i))&&$g(h.when,o))return{command:h.command,args:h.args}}return null}const zC=[{manifest:Iv,source:"内置:ycide.workbench"},{manifest:Nv,source:"内置:ycide.project"},{manifest:Sv,source:"内置:ycide.build"},{manifest:jv,source:"内置:ycide.debug"},{manifest:Dv,source:"内置:ycide.themes-colorful"},{manifest:Av,source:"内置:ycide.terminal"},{manifest:wv,source:"内置:ycide.ai-deepseek"},{manifest:_v,source:"内置:ycide.ai-glm"},{manifest:Cv,source:"内置:ycide.compiler-zig"},{manifest:Lv,source:"内置:ycide.lang-eyc"},{manifest:kv,source:"内置:ycide.editor-eyc-table"},{manifest:Ev,source:"内置:ycide.editor-form-designer"},{manifest:Mv,source:"内置:ycide.editor-text"},{manifest:zv,source:"内置:ycide.render-dom"},{manifest:Tv,source:"内置:ycide.render-image"}];class TC{constructor(){this.handlers=new Map,this.fallback=null}setFallback(i){this.fallback=i}register(i,a){if(this.handlers.has(i))throw new Error(`命令 ${i} 已经注册过处理函数`);return this.handlers.set(i,a),{dispose:()=>{this.handlers.get(i)===a&&this.handlers.delete(i)}}}has(i){return this.handlers.has(i)}async execute(i,...a){var b;const o=this.handlers.get(i);if(o)return o(...a);const h=(b=this.fallback)==null?void 0:b.call(this,i,a);if(h)return h;console.warn(`[commands] 命令 ${i} 没有注册处理函数`)}async executeLocal(i,...a){const o=this.handlers.get(i);if(!o)throw new Error(`命令 ${i} 没有注册处理函数`);return o(...a)}getRegisteredIds(){return[...this.handlers.keys()]}}const eh=new TC;function n1(n){return n==="windows"||n==="macos"?n:"linux"}var yv,yf,bv;const i1=n1(((bv=(yf=(yv=window.api)==null?void 0:yv.system)==null?void 0:yf.getRuntimePlatform)==null?void 0:bv.call(yf))??"windows");function AC(){return CC(zC,{platform:i1,host:"electron"}).enabled}let If=AC(),th=Qv(If);const Pg=new Set;function DC(n){If=n,th=Qv(n);for(const i of th.warnings)console.warn(`[plugins] ${i}`);Pg.forEach(i=>i())}function IC(){return th}function s1(n){return Pg.add(n),()=>{Pg.delete(n)}}function RC(){return d.useSyncExternalStore(s1,IC)}function r1(){return If}function Rf(){return d.useSyncExternalStore(s1,r1)}function HC(n){var a,o,h;const i=(a=th.commands.get(n))==null?void 0:a.pluginId;return!!i&&((h=(o=If.find(b=>b.id===i))==null?void 0:o.runtime)==null?void 0:h.type)==="node"}async function xb(){try{const n=await window.api.plugins.getState();DC(n.manifests)}catch(n){console.error("[plugins] 获取插件状态失败",n)}}function OC(){var i;const n=(i=window.api)==null?void 0:i.plugins;n&&(eh.setFallback((a,o)=>HC(a)?n.executeCommand(a,o):void 0),window.api.on("plugins:changed",()=>{xb()}),window.api.on("plugins:executeRendererCommand",a=>{const{requestId:o,command:h,args:b}=a??{};eh.executeLocal(h,...Array.isArray(b)?b:[]).then(w=>n.sendRendererCommandResult({requestId:o,ok:!0,result:BC(w)})).catch(w=>{const u=typeof(w==null?void 0:w.code)=="number"?w.code:void 0;n.sendRendererCommandResult({requestId:o,ok:!1,error:w instanceof Error?w.message:String(w),code:u})})}),xb())}function BC(n){try{return structuredClone(n),n}catch{return}}OC();function nf(n,i=[]){return eh.executeLocal(n,...i)}function mu(n,...i){return eh.execute(n,...i)}function $C(n){if(n.startsWith("file:openRecent:"))try{return mu("file:openRecent",JSON.parse(decodeURIComponent(n.slice(16))))}catch{return Promise.resolve(void 0)}return n.startsWith("theme:")&&n!=="theme:apply"?mu("theme:apply",n.slice(6)):mu(n)}function vf(n){const i=d.useRef(n);d.useLayoutEffect(()=>{i.current=n});const a=Object.keys(n).sort().join(`
 `);d.useEffect(()=>{const o=a.split(`
-`).filter(Boolean).map(h=>eh.register(h,(...b)=>{var w,u;return(u=(w=i.current)[h])==null?void 0:u.call(w,...b)}));return()=>o.forEach(h=>h.dispose())},[a])}function PC(n){var i;return(i=window.api)!=null&&i.on?window.api.on("plugins:message",a=>{const o=a;o&&typeof o.message=="string"&&n(o)}):()=>{}}function VC(n){if(!n)return!1;const i=n.tagName;return i==="INPUT"||i==="TEXTAREA"||i==="SELECT"||n.isContentEditable||!!n.closest('[contenteditable="true"]')||!!n.closest(".monaco-editor")}function FC(n){const a=NC(th,n,i1,{get editableFocus(){return VC(document.activeElement)},get nativeTextSelection(){var o;return!!((o=window.getSelection())!=null&&o.toString())}});return a?(n.preventDefault(),mu(a.command,...a.args??[]).catch(o=>console.error(`[commands] 执行 ${a.command} 失败`,o)),!0):!1}function a1(n){var o;const i=new Set,a=[];for(const h of n)for(const b of((o=h.contributes)==null?void 0:o.compilers)??[])i.has(b.id)||(i.add(b.id),a.push({...b,pluginId:h.id,builtin:!!h.builtin}));return a}const qC="ycide.recentOpened",ZC="ycide.themes";function UC(n){return n.slice(0,10).map(i=>({label:`${i.type==="project"?"项目":"文件"}: ${i.label}`,command:"file:openRecent",args:[{type:i.type,path:i.path}]}))}function WC(n,i,a){const o=a.filter(u=>n.includes(u)),h=n.filter(u=>!a.includes(u)),b=u=>({label:u,command:"theme:apply",args:[u],checked:u===i}),w=o.map(b);return o.length>0&&h.length>0&&w.push({label:"",separator:!0}),[...w,...h.map(b)]}const KC=["默认深色","默认浅色"];function GC(n,i,a,o,h,b,w,u,c){return LC(n,{platform:n1(a),showMnemonics:!0,context:{projectOpen:o,workspaceOpen:h,fileOpen:b,compilerAvailable:i},dynamicSubmenus:{[qC]:UC(c),[ZC]:WC(w,u,KC)}})}function YC({onCommand:n,onWindowClose:i,runtimePlatform:a="windows",hasProject:o=!1,hasWorkspace:h=!1,hasOpenFile:b=!1,themes:w=[],currentTheme:u="",recentOpened:c=[]}){const f=RC(),S=a1(Rf()).length>0,x=GC(f,S,a,o,h,b,w,u,c),j=rm(a),[T,z]=d.useState(null),_=d.useRef(null),v=d.useRef(null),m=d.useRef(null),y=d.useRef(null),p=()=>{var O;return(O=window.api)==null?void 0:O.window.minimize()},M=()=>{var O;return(O=window.api)==null?void 0:O.window.maximize()},I=()=>{var O;i?i():(O=window.api)==null||O.window.close()},L=d.useCallback(()=>z(null),[]),R=O=>{O.kind!=="command"||!O.enabled||(L(),n==null||n(O.command,...O.args??[]))};d.useEffect(()=>{if(T===null)return;const O=oe=>{_.current&&!_.current.contains(oe.target)&&L()};return document.addEventListener("mousedown",O),()=>document.removeEventListener("mousedown",O)},[T,L]),d.useEffect(()=>{var O,oe,Y,he;(O=v.current)==null||O.style.setProperty("-webkit-app-region",T===null?"drag":"no-drag"),(oe=m.current)==null||oe.style.setProperty("-webkit-app-region","no-drag"),(Y=_.current)==null||Y.style.setProperty("-webkit-app-region","no-drag"),(he=y.current)==null||he.style.setProperty("-webkit-app-region","no-drag")},[T]);const A=O=>{var Y;if(T===null)return;const oe=O.target;(Y=_.current)!=null&&Y.contains(oe)||L()};return r.jsxs("header",{className:`titlebar${T!==null?" menu-open":""}`,role:"banner",onMouseDownCapture:A,children:[r.jsxs("div",{className:"titlebar-drag",ref:v,children:[!j&&r.jsx("div",{className:"titlebar-icon","aria-hidden":"true",ref:m,children:r.jsx("img",{src:Uv,className:"titlebar-icon-image",alt:"",draggable:!1})}),!j&&r.jsx("nav",{className:"titlebar-menu",role:"menubar","aria-label":"主菜单",ref:_,children:x.map((O,oe)=>r.jsxs("div",{className:"titlebar-menu-item",children:[r.jsx("button",{role:"menuitem",tabIndex:oe===0?0:-1,className:T===oe?"active":"",onClick:()=>z(T===oe?null:oe),onMouseEnter:()=>{T!==null&&z(oe)},children:O.label}),T===oe&&r.jsx("div",{className:"titlebar-dropdown",role:"menu",children:O.items.map((Y,he)=>Y.kind==="separator"?r.jsx("div",{className:"titlebar-dropdown-divider"},he):Y.kind==="submenu"?r.jsxs("div",{className:"titlebar-dropdown-submenu-wrapper",children:[r.jsxs("button",{role:"menuitem",className:"titlebar-dropdown-item titlebar-has-submenu",children:[r.jsx("span",{children:Y.label}),r.jsx("span",{className:"titlebar-submenu-arrow",children:"▶"})]}),r.jsx("div",{className:"titlebar-submenu",role:"menu",children:Y.items.map((le,ge)=>le.kind==="separator"?r.jsx("div",{className:"titlebar-dropdown-divider"},ge):le.kind==="command"?r.jsxs("button",{role:"menuitem",className:`titlebar-dropdown-item${le.enabled?"":" disabled"}`,disabled:!le.enabled,onClick:()=>R(le),children:[r.jsxs("span",{children:[le.checked?"✓ ":"    ",le.label]}),le.shortcut&&r.jsx("span",{className:"titlebar-dropdown-shortcut",children:le.shortcut})]},ge):null)})]},he):r.jsxs("button",{role:"menuitem",className:`titlebar-dropdown-item${Y.enabled?"":" disabled"}`,disabled:!Y.enabled,onClick:()=>R(Y),children:[r.jsx("span",{children:Y.label}),Y.shortcut&&r.jsx("span",{className:"titlebar-dropdown-shortcut",children:Y.shortcut})]},he))})]},O.id))}),r.jsx("div",{className:"titlebar-title",children:"ycIDE - 易承语言集成开发环境"})]}),!j&&r.jsxs("div",{className:"titlebar-controls","aria-label":"窗口控制",ref:y,children:[r.jsx("button",{className:"titlebar-btn",onClick:p,"aria-label":"最小化",tabIndex:-1,children:r.jsx("svg",{width:"10",height:"1",viewBox:"0 0 10 1",children:r.jsx("line",{x1:"0",y1:"0.5",x2:"10",y2:"0.5",stroke:"currentColor",strokeWidth:"1"})})}),r.jsx("button",{className:"titlebar-btn",onClick:M,"aria-label":"最大化",tabIndex:-1,children:r.jsx("svg",{width:"10",height:"10",viewBox:"0 0 10 10",children:r.jsx("rect",{x:"0.5",y:"0.5",width:"9",height:"9",stroke:"currentColor",strokeWidth:"1",fill:"none"})})}),r.jsx("button",{className:"titlebar-btn titlebar-btn-close",onClick:I,"aria-label":"关闭",tabIndex:-1,children:r.jsxs("svg",{width:"10",height:"10",viewBox:"0 0 10 10",children:[r.jsx("line",{x1:"0",y1:"0",x2:"10",y2:"10",stroke:"currentColor",strokeWidth:"1.2"}),r.jsx("line",{x1:"10",y1:"0",x2:"0",y2:"10",stroke:"currentColor",strokeWidth:"1.2"})]})})]})]})}const XC=d.memo(YC),JC=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-yellow{fill: #996f00; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightNewDocument</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M14.5,4.5v10H3.5V7.95A4.984,4.984,0,0,0,8,3a4.966,4.966,0,0,0-.254-1.5H11.5Z" />\r
-      <path class="light-defaultgrey" d="M15,4.5v10l-.5.5H3.5L3,14.5V8a4.988,4.988,0,0,0,1-.1V14H14V5H11V2H7.9a4.968,4.968,0,0,0-.321-1H11.5l.354.146,3,3Z" />\r
-    </g>\r
-    <path class="light-yellow" d="M3,2,3,0H4L4,2l-.5.5Zm.5,2.5L3,5V7H4V5Zm1-1L5,4,7,4V3L5,3Zm-2,0L2,3,0,3V4L2,4Zm1.708-.7h.708L6.328,1.378,5.62.671,4.208,2.088ZM2.792,4.206H2.085L.673,5.623l.707.706L2.793,4.913Zm1.414,0v.708L5.623,6.328l.706-.708L4.913,4.208ZM2.794,2.792V2.085L1.378.673.671,1.38,2.088,2.793Z" />\r
-  </g>\r
-</svg>\r
-`,QC=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow-25{fill: #996f00; opacity: 0.25;}.light-yellow{fill: #996f00; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightOpenFolder</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-yellow-10" d="M11.5,6V8H3.431l-.464.314L1.5,11.981V4.5h4L7,6h4.5Z" />\r
-    <path class="light-yellow-25" d="M14.5,8.5l-2,5H1.5l2-5Z" />\r
-    <path class="light-yellow-25" d="M12,13H11V9h1Z" />\r
-    <path class="light-yellow" d="M14.431,8H12V5.5L11.5,5H11V8H3.431l-.464.314L2,10.8V5H5.293l1,1H8V5H6.707l-.853-.854L5.5,4h-4L1,4.5v8.864L1.431,14h11l.464-.314,2-5Zm-2.339,5H2.169l1.6-4h9.922Z" />\r
-    <path class="light-blue" d="M14.854,2.146v.708l-2,2-.707-.708L13.293,3H12a2,2,0,0,0-2,2V6H9V5a3,3,0,0,1,3-3h1.293L12.147.854l.707-.708Z" />\r
-  </g>\r
-</svg>\r
-`,e5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>Save</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue-10" d="M14.515,3.5v11h-13V1.5h11Z" />\r
-    <path class="light-blue" d="M14.854,3.146l-2-2L12.5,1H1.5L1,1.5v13l.5.5h13l.5-.5V3.5ZM5,2h6V6H5Zm9,12H2V2H4V6.5l.5.5h7l.5-.5V2h.293L14,3.707Z" />\r
-    <g class="cls-1">\r
-      <path class="light-blue" d="M13,8.5v6H12V9H4v5.5H3v-6L3.5,8h9Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,t5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightUndo</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M13.973,5.689A4.571,4.571,0,0,1,12.85,8.854l-6,6-.707-.707,6-6a3.61,3.61,0,0,0,.83-2.454,3.674,3.674,0,0,0-1.028-2.639,3.892,3.892,0,0,0-5.1-.2L3.705,6H8V7H2.5L2,6.5V1H3V5.291L6.143,2.148a4.926,4.926,0,0,1,6.478.17A4.677,4.677,0,0,1,13.973,5.689Z" />\r
-  </g>\r
-</svg>\r
-`,n5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightRedo</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M0,0H16V16H0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M3.379,2.318a4.926,4.926,0,0,1,6.478-.17L13,5.291V1h1V6.5l-.5.5H8V6h4.3L9.15,2.855a3.892,3.892,0,0,0-5.1.2A3.674,3.674,0,0,0,3.027,5.694a3.61,3.61,0,0,0,.83,2.454l6,6-.707.707-6-6A4.571,4.571,0,0,1,2.027,5.689,4.677,4.677,0,0,1,3.379,2.318Z" />\r
-  </g>\r
-</svg>\r
-`,i5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-green{fill: #1f801f; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightRun</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-green" d="M3.777,1.084,3,1.5v12l.777.416,9-6V7.084Z" />\r
-  </g>\r
-</svg>\r
-`,s5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightLibrary</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M3.5,2.5v11h-2V2.5Zm4,0v11h-2V2.5ZM14.389,13l-1.931.517L9.611,2.9l1.931-.517Z" />\r
-    <path class="light-defaultgrey" d="M12.025,2.249,11.412,1.9,9.48,2.413l-.353.613,2.848,10.625.613.354,1.932-.518.353-.613Zm.787,10.66L10.223,3.25l.965-.259,2.589,9.659ZM7.5,14h-2L5,13.5V2.5L5.5,2h2l.5.5v11ZM6,13H7V3H6ZM3.5,14h-2L1,13.5V2.5L1.5,2h2l.5.5v11ZM2,13H3V3H2Z" />\r
-  </g>\r
-</svg>\r
-`,r5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-red-10{fill: #c50b17; opacity: 0.1;}.light-red{fill: #c50b17; opacity: 1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightToolbox</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-red-10" d="M14.5,8.5v5H1.5v-5Z" />\r
-    <path class="light-red-10" d="M14.5,5.5v3H1.5v-3Z" />\r
-    <path class="light-red" d="M15,8.5v5l-.5.5H1.5L1,13.5v-5H2V13H14V8.5Z" />\r
-    <path class="light-red" d="M14.5,5H1.5L1,5.5v3l.5.5h13l.5-.5v-3ZM14,8H2V6H14Z" />\r
-    <path class="light-defaultgrey" d="M4,7H5v3H4Zm7,0v3h1V7Z" />\r
-    <path class="light-defaultgrey" d="M11,3.5V5H10V4H6V5H5V3.5L5.5,3h5Z" />\r
-  </g>\r
-</svg>\r
-`,a5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightCollapseLeft</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M5.707,8l6,6L11,14.707,4.646,8.354V7.646L11,1.293,11.707,2Z" />\r
-  </g>\r
-</svg>\r
-`,l5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightExpandRight</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M0,0H16V16H0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M4.293,2,5,1.293l6.354,6.353v.708L5,14.707,4.293,14l6-6Z" />\r
-  </g>\r
-</svg>\r
-`,o5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>Zoom</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M0,0H16V16H0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M11.5,6.5a5,5,0,1,1-5-5A5,5,0,0,1,11.5,6.5Z" />\r
-    <path class="light-defaultgrey" d="M1,6.5a5.5,5.5,0,0,0,9.017,4.224l5.129,5.13.708-.708-5.13-5.129A5.5,5.5,0,1,0,1,6.5Zm1,0A4.5,4.5,0,1,1,6.5,11,4.505,4.505,0,0,1,2,6.5Z" />\r
-  </g>\r
-</svg>\r
-`,c5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightBranch</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M12,7.5A2.5,2.5,0,0,1,9.5,10H7a2,2,0,0,0-2,2H4V5H5V9.78A2.981,2.981,0,0,1,7,9H9.5A1.5,1.5,0,0,0,11,7.5Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M6.5,3.5a2,2,0,1,1-2-2A2,2,0,0,1,6.5,3.5Zm0,10a2,2,0,1,1-2-2A2,2,0,0,1,6.5,13.5Zm7-8a2,2,0,1,1-2-2A2,2,0,0,1,13.5,5.5Z" />\r
-    <path class="light-defaultgrey" d="M4.5,1A2.5,2.5,0,1,0,7,3.5,2.5,2.5,0,0,0,4.5,1Zm0,4A1.5,1.5,0,1,1,6,3.5,1.5,1.5,0,0,1,4.5,5Zm0,6A2.5,2.5,0,1,0,7,13.5,2.5,2.5,0,0,0,4.5,11Zm0,4A1.5,1.5,0,1,1,6,13.5,1.5,1.5,0,0,1,4.5,15Zm7-12A2.5,2.5,0,1,0,14,5.5,2.5,2.5,0,0,0,11.5,3Zm0,4A1.5,1.5,0,1,1,13,5.5,1.5,1.5,0,0,1,11.5,7Z" />\r
-  </g>\r
-</svg>\r
-`,u5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightExtensionApplication</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M2.5,4V7H3.91L4,7.09v-1l.5-.5V5.5h.09l.5-.5H9.91l.5.5h.09v.09l.5.5v4.82l-.5.5v.09h-.09l-.5.5H15.5V4Z" />\r
-      <path class="light-defaultgrey" d="M15.5,4H2.5L2,4.5V7H3V5H15v7H8.91l.09.09V13h6.5l.5-.5v-8Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M3,2V4H15V2Z" />\r
-    <path class="light-defaultgrey" d="M15.5,1H2.5L2,1.5v3l.5.5h13l.5-.5v-3ZM3,4V2H15V4Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M7.5,12.5v3H.5v-7h3v4Z" />\r
-      <path class="light-defaultgrey" d="M7.5,12H4V8.5L3.5,8H.5L0,8.5v7l.5.5h7l.5-.5v-3ZM7,15H1V9H3v3.5l.5.5H7Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M9.5,6.5v4h-4v-4Z" />\r
-    <path class="light-defaultgrey" d="M9.5,6h-4L5,6.5v4l.5.5h4l.5-.5v-4ZM9,10H6V7H9Z" />\r
-  </g>\r
-</svg>\r
-`,d5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightUser</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M8,3.5a3,3,0,1,1-3,3A3,3,0,0,1,8,3.5Z" />\r
-    <path class="light-defaultgrey-10" d="M3.5,14a4.5,4.5,0,0,1,9,0Z" />\r
-    <path class="light-defaultgrey" d="M9.957,9.4a3.5,3.5,0,1,0-3.914,0A5.007,5.007,0,0,0,3,14H4a4,4,0,0,1,8,0h1A5.007,5.007,0,0,0,9.957,9.4ZM5.5,6.5A2.5,2.5,0,1,1,8,9,2.5,2.5,0,0,1,5.5,6.5Z" />\r
-  </g>\r
-</svg>\r
-`,h5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>Field</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-blue-10" d="M14.5,5.5V10l-9,5-4-4V6.5l9-5Z" />\r
-      <path class="light-blue" d="M14.854,5.146l-4-4-.6-.083-9,5L1,6.5V11l.146.354,4,4,.6.083,9-5L15,10V5.5ZM14,9.706,6,14.15V10.5H5v3.293l-3-3v-4L10.413,2.12,14,5.707Z" />\r
-    </g>\r
-    <path class="light-blue-10" d="M14.5,5.5l-9,5-4-4,9-5Z" />\r
-    <path class="light-blue" d="M10.854,1.146l-.6-.083-9,5-.111.791,4,4,.6.083,9-5,.111-.791ZM5.587,9.88,2.322,6.615,10.413,2.12l3.265,3.265Z" />\r
-  </g>\r
-</svg>\r
-`,wb=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightMeasureTree</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M13.5,11.5v3h-3v-3Z" />\r
-    <path class="light-defaultgrey-10" d="M10.5,6.5h3v3h-3Z" />\r
-    <path class="light-defaultgrey-10" d="M2.5,5.5v-4h4v4Z" />\r
-    <path class="light-defaultgrey" d="M10.5,10h3l.5-.5v-3L13.5,6h-3l-.5.5V8H5V6H6.5L7,5.5v-4L6.5,1h-4L2,1.5v4l.5.5H4v7.5l.5.5H10v.5l.5.5h3l.5-.5v-3l-.5-.5h-3l-.5.5V13H5V9h5v.5ZM11,7h2V9H11ZM3,5V2H6V5Zm8,7h2v2H11Z" />\r
-  </g>\r
-</svg>\r
-`,f5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-lightblue{fill: #0077a0; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightConePreview</title>\r
-  <g id="Canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-lightblue-10" d="M13.5,13c0,.828-2.462,1.5-5.5,1.5S2.5,13.828,2.5,13a.457.457,0,0,1,.053-.2L8,1.5l5.447,11.3A.457.457,0,0,1,13.5,13Z" />\r
-    <path class="light-lightblue" d="M8,15c-2.229,0-6-.421-6-2a.941.941,0,0,1,.1-.415L7.55,1.283h.9l5.447,11.3A.934.934,0,0,1,14,13C14,14.579,10.229,15,8,15ZM8,2.651,3,13.02c.134.315,1.976.98,5,.98,2.948,0,4.772-.633,4.99-.995Z" />\r
-    <g class="cls-1">\r
-      <path class="light-lightblue-10" d="M2.5,13c0-.828,2.462-1.5,5.5-1.5s5.5.672,5.5,1.5S11.038,14.5,8,14.5,2.5,13.828,2.5,13Z" />\r
-      <path class="light-lightblue" d="M8,11c-2.229,0-6,.421-6,2s3.771,2,6,2,6-.421,6-2S10.229,11,8,11Zm0,3c-3.021,0-4.863-.665-5-.979C3.137,12.665,4.979,12,8,12s4.863.665,5,.979C12.863,13.335,11.021,14,8,14Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,p5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightSpy</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M13.424,11.5l1.5,1L13,15H4L2.076,12.5l1.5-1L2.012,9.436A17.607,17.607,0,0,1,4.5,8.035h.079A2.192,2.192,0,0,1,4.5,7.5a4.171,4.171,0,0,1,.026-.463h.009C3.3,6.7,2.511,6.211,2.511,5.663c0-.679,1.205-1.271,2.992-1.588h0C5.545,1.671,6.305,1.5,7,1.5A2.874,2.874,0,0,1,8.5,2h0A2.874,2.874,0,0,1,10,1.5c.692,0,1.452.171,1.493,2.575h0c1.787.317,2.992.909,2.992,1.588,0,.548-.785,1.038-2.024,1.374h.009A4.171,4.171,0,0,1,12.5,7.5a2.192,2.192,0,0,1-.079.535H12.5a17.607,17.607,0,0,1,2.488,1.4Z" />\r
-    <path class="light-defaultgrey" d="M13.674,15l1.65-2.2-.123-.716-1.058-.706,1.244-1.641L15.3,9.046a17.1,17.1,0,0,0-2.323-1.34c0-.07.021-.135.021-.206C13,7.468,13,7.438,13,7.407c1.187-.384,1.994-.959,1.994-1.744,0-1.16-1.737-1.735-3.011-2C11.872,1.811,11.268,1,10,1a3.237,3.237,0,0,0-1.5.415A3.237,3.237,0,0,0,7,1c-1.265,0-1.869.811-1.975,2.661-1.274.267-3.011.842-3.011,2,0,.785.807,1.36,1.994,1.744,0,.031,0,.061,0,.093,0,.071.018.136.021.206A17.1,17.1,0,0,0,1.7,9.046l-.085.691,1.244,1.641L1.8,12.084l-.123.716L3.326,15h1.25L2.793,12.623l1.061-.707.121-.718L2.728,9.552c.415-.257,1-.579,1.467-.815A4.491,4.491,0,0,0,8,11.958V15H9V11.958a4.491,4.491,0,0,0,3.805-3.221c.464.236,1.052.558,1.467.815L13.025,11.2l.121.718,1.061.707L12.424,15ZM7,2a2.384,2.384,0,0,1,1.209.4h.586A2.391,2.391,0,0,1,10,2c.421,0,1,0,1,2.277C11,4.463,10.141,5,8.5,5S6,4.463,6,4.277C6,2,6.576,2,7,2Zm1.5,9A3.5,3.5,0,0,1,5.017,7.671c.315.066.645.12.983.166V9H8V7.993C8.167,8,8.334,8,8.5,8s.333,0,.5-.007V9h2V7.837c.338-.046.668-.1.983-.166A3.5,3.5,0,0,1,8.5,11Zm0-4C4.878,7,3.011,6.063,3.011,5.663c0-.154.512-.639,2.067-.99C5.437,5.546,6.976,6,8.5,6s3.062-.454,3.421-1.327c1.555.351,2.067.836,2.067.99C13.989,6.063,12.122,7,8.5,7Z" />\r
-  </g>\r
-</svg>\r
-`,g5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-red{fill: #c50b17; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightStop</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-red" d="M12.5,3.5v9h-9v-9Z" />\r
-    </g>\r
-    <path class="light-red" d="M12.5,3h-9L3,3.5v9l.5.5h9l.5-.5v-9ZM12,12H4V4h8Z" />\r
-  </g>\r
-</svg>\r
-`,m5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightPause</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M6.5,3.5v9h-3v-9Z" />\r
-      <path class="light-defaultgrey" d="M12.5,3.5v9h-3v-9Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M12.5,3h-3L9,3.5v9l.5.5h3l.5-.5v-9ZM12,12H10V4h2ZM6.5,3h-3L3,3.5v9l.5.5h3l.5-.5v-9ZM6,12H4V4H6Z" />\r
-  </g>\r
-</svg>\r
-`,y5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightStatusStoppedOutline</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M13.5,7.5a6,6,0,1,1-6-6A6,6,0,0,1,13.5,7.5Z" />\r
-    <path class="light-defaultgrey" d="M7.5,1A6.5,6.5,0,1,0,14,7.5,6.508,6.508,0,0,0,7.5,1Zm0,12A5.5,5.5,0,1,1,13,7.5,5.506,5.506,0,0,1,7.5,13Z" />\r
-    <path class="light-defaultgrey" d="M10,5v5H5V5Z" />\r
-  </g>\r
-</svg>\r
-`,b5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightStepInto</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue" d="M7.5,14.5a2,2,0,1,1,2-2A2,2,0,0,1,7.5,14.5Z" />\r
-    <path class="light-blue" d="M11.036,5.657,7.854,8.839H7.146L3.964,5.657l.708-.707L7,7.278V0H8V7.278L10.328,4.95Z" />\r
-  </g>\r
-</svg>\r
-`,v5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightStepOver</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue" d="M9.5,12.5a2,2,0,1,1-2-2A2,2,0,0,1,9.5,12.5Z" />\r
-    <path class="light-blue" d="M14,4.5v4l-.5.5h-4V8h2.89A5.494,5.494,0,0,0,2.168,9.146L1.2,8.9A6.485,6.485,0,0,1,13,7.069V4.5Z" />\r
-  </g>\r
-</svg>\r
-`,x5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightStepOut</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue" d="M7.5,14.5a2,2,0,1,1,2-2A2,2,0,0,1,7.5,14.5Z" />\r
-    <path class="light-blue" d="M10.4,4.1,8,1.707V9H7V1.707L4.6,4.1,3.9,3.4,7.146.146h.708L11.1,3.4Z" />\r
-  </g>\r
-</svg>\r
-`,w5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightGoToCurrentLine</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M1.843,10H.993V9.15Zm13.15-1v1H5.079l1-1Zm-14,5h14v1h-14Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M10.993,11v2h-10V11Z" />\r
-    <path class="light-blue" d="M7.993,3.5V5h-1V3.5a1.5,1.5,0,0,0-3,0V8.258L5.607,6.644l.707.707-2.5,2.5H3.107l-2.5-2.5.707-.707L2.993,8.322V3.5a2.5,2.5,0,0,1,5,0Z" />\r
-  </g>\r
-</svg>\r
-`,_5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>GoToPrevious</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M0,16V0H16V16Z" />\r
-    <path class="canvas" d="M0,16V0H16V16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M2.146,7.146l5-5h.708l5,5-.708.708L8,3.707V15H7V3.707L2.854,7.854Z" />\r
-  </g>\r
-</svg>\r
-`,S5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightAlignLeft</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M3.5,6.5v-2h11v2Zm0,5v-2h7v2Z" />\r
-    <path class="light-defaultgrey" d="M14.5,7H3.5L3,6.5v-2L3.5,4h11l.5.5v2ZM4,6H14V5H4Zm6.5,6h-7L3,11.5v-2L3.5,9h7l.5.5v2ZM4,11h6V10H4Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M1,2H2V14H1Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,C5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightAlignRight</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M5.5,11.5v-2h7v2Zm-4-5v-2h11v2Z" />\r
-    <path class="light-defaultgrey" d="M12.5,7H1.5L1,6.5v-2L1.5,4h11l.5.5v2ZM2,6H12V5H2Zm10.5,6h-7L5,11.5v-2L5.5,9h7l.5.5v2ZM6,11h6V10H6Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M14,2h1V14H14Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,j5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightAlignTop</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M6.5,14.5h-2V3.5h2Zm5-4h-2v-7h2Z" />\r
-    <path class="light-defaultgrey" d="M6.5,15h-2L4,14.5V3.5L4.5,3h2l.5.5v11ZM5,14H6V4H5Zm6.5-3h-2L9,10.5v-7L9.5,3h2l.5.5v7ZM10,10h1V4H10Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M14,1V2H2V1Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,k5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightAlignBottom</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M6.5,12.5h-2V1.5h2Zm5,0h-2v-7h2Z" />\r
-    <path class="light-defaultgrey" d="M6.5,13h-2L4,12.5V1.5L4.5,1h2l.5.5v11ZM5,12H6V2H5Zm6.5,1h-2L9,12.5v-7L9.5,5h2l.5.5v7ZM10,12h1V6H10Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M2,14H14v1H2Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,E5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>CenterHorizontally</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M2.5,6.5v-2h10v2Zm2,5v-2h6v2Z" />\r
-    <path class="light-defaultgrey" d="M11,11.5v-2L10.5,9h-6L4,9.5v2l.5.5h6ZM5,11V10h5v1Zm8-6.5L12.5,4H2.5L2,4.5v2l.5.5h10l.5-.5ZM3,6V5h9V6Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M8,2V4H7V2ZM8,7V9H7V7Zm0,5v2H7V12Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,M5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightCenterVertically</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M6.5,12.5h-2V2.5h2Zm5-2h-2v-6h2Z" />\r
-    <path class="light-defaultgrey" d="M11.5,4h-2L9,4.5v6l.5.5h2l.5-.5v-6ZM11,10H10V5h1ZM4.5,2,4,2.5v10l.5.5h2l.5-.5V2.5L6.5,2ZM6,12H5V3H6Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M2,7H4V8H2ZM7,7H9V8H7Zm5,0h2V8H12Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,L5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightAlignHorizontalStretch</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M3.5,11.5v-2h9v2Zm0-5v-2h9v2Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M1,2H2V14H1ZM14,2V14h1V2Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M12.5,12h-9L3,11.5v-2L3.5,9h9l.5.5v2ZM4,11h8V10H4Zm8.5-4h-9L3,6.5v-2L3.5,4h9l.5.5v2ZM4,6h8V5H4Z" />\r
-  </g>\r
-</svg>\r
-`,N5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightAlignVerticalStretch</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M6.5,12.5h-2v-9h2Zm5,0h-2v-9h2Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M2,14H14v1H2ZM2,2H14V1H2Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M11.5,13h-2L9,12.5v-9L9.5,3h2l.5.5v9ZM10,12h1V4H10ZM6.5,13h-2L4,12.5v-9L4.5,3h2l.5.5v9ZM5,12H6V4H5Z" />\r
-  </g>\r
-</svg>\r
-`,z5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightMakeSameHeight</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M14,3H1V2H14Zm0,12H1V14H14Z" />\r
-    <path class="light-blue" d="M10.355,11.354l-2.5,2.5H7.148l-2.5-2.5.707-.708L7,12.291V4.705L5.352,6.354l-.707-.708,2.5-2.5h.707l2.5,2.5-.707.708L8,4.709V12.3l1.648-1.649Z" />\r
-  </g>\r
-</svg>\r
-`,T5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">\r
-  <path d="M8 2L13 7H10V14H6V7H3L8 2Z" fill="#212121"/>\r
-</svg>\r
-`,A5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow{fill: #996f00; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightFolderClosed</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-yellow-10" d="M14.5,3.5v9H1.5V2.5h6l1,1Z" />\r
-    <path class="light-yellow" d="M14.5,3H8.707l-.853-.854L7.5,2h-6L1,2.5v10l.5.5h13l.5-.5v-9ZM7.293,3l.488.488L7.268,4H2V3ZM14,12H2V5H7.475l.354-.146L8.682,4H14Z" />\r
-  </g>\r
-</svg>\r
-`,D5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow-25{fill: #996f00; opacity: 0.25;}.light-yellow{fill: #996f00; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightFolderOpened</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-yellow-10" d="M13.5,3.5v2h-5l-1,1h-5l-2,6V2.5h5l1,1Z" />\r
-    <path class="light-yellow-25" d="M8.5,5.5h7l-2,7H.5l2-6h5Z" />\r
-    <path class="light-yellow" d="M15.408,5H14V3.5L13.5,3H6.707l-.853-.854L5.5,2H.5L0,2.5v10l.5.5H13.541l.483-.371,1.868-7ZM1,3H5.293l.853.854L6.5,4H13V5H8.475l-.354.146L7.268,6H2.475L2,6.342,1,9.421Zm12.157,9H1.168L2.835,7h4.64l.353-.146L8.682,6h6.076Z" />\r
-    <path class="light-yellow-25" d="M14,12.5H13V6h1Z" />\r
-  </g>\r
-</svg>\r
-`,I5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-purple-10{fill: #6936aa; opacity: 0.1;}.light-purple{fill: #6936aa; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>Module</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-purple-10" d="M2.5,9.5v5h12v-5Z" />\r
-      <path class="light-purple" d="M14.5,9H2.5L2,9.5v5l.5.5h12l.5-.5v-5ZM14,14H3V10H14Z" />\r
-    </g>\r
-    <path class="light-purple-10" d="M14.5,2.5v5h-5v-5Zm-12,5h5v-5h-5Z" />\r
-    <path class="light-purple" d="M14.5,2h-5L9,2.5v5l.5.5h5l.5-.5v-5ZM14,7H10V3h4ZM2.5,2,2,2.5v5l.5.5h5L8,7.5v-5L7.5,2ZM7,7H3V3H7Z" />\r
-  </g>\r
-</svg>\r
-`,R5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-purple-10{fill: #6936aa; opacity: 0.1;}.light-purple{fill: #6936aa; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>Method</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-purple-10" d="M13.5,5.045v7L8,14.545l-5.5-2.5v-7l5.5-3Z" />\r
-      <path class="light-purple" d="M14,5.045v7l-.293.455L8.207,15H7.793l-5.5-2.5L2,12.045v-7l.261-.439.032.894L3,5.821v5.9l4.5,2.045,0-5.9.3.135h.414l.288-.131,0,5.9L13,11.723v-5.9l.707-.321.032-.894Z" />\r
-    </g>\r
-    <path class="light-purple-10" d="M13.5,5.045,8,7.545l-5.5-2.5,5.5-3Z" />\r
-    <path class="light-purple" d="M8.239,1.606H7.761l-5.5,3,.032.894L7.793,8h.414l5.5-2.5.032-.894ZM8,7,3.619,5,8,2.614,12.381,5Z" />\r
-  </g>\r
-</svg>\r
-`,H5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-purple-10{fill: #6936aa; opacity: 0.1;}.light-purple{fill: #6936aa; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightWindowsForm</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M14.5,5v8.5H1.5V5Z" />\r
-      <path class="light-defaultgrey" d="M15,4.5v9l-.5.5H1.5L1,13.5v-9l.5.5H2v8H14V5h.5Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M14.5,1.5v3H1.5v-3Z" />\r
-    <path class="light-defaultgrey" d="M14.5,1H1.5L1,1.5v3l.5.5h13l.5-.5v-3ZM14,4H2V2H14Z" />\r
-    <path class="light-purple-10" d="M12.5,6.5v3h-3v-3Zm-5,2v3h-4v-3Z" />\r
-    <path class="light-purple" d="M12.5,10h-3L9,9.5v-3L9.5,6h3l.5.5v3ZM10,9h2V7H10ZM7.5,8h-4L3,8.5v3l.5.5h4l.5-.5v-3ZM7,11H4V9H7Z" />\r
-  </g>\r
-</svg>\r
-`,O5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightProcedure</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M14.5,5v8H1.5V5Z" />\r
-      <path class="light-defaultgrey" d="M14.5,5H1.5L1,5.5v8l.5.5h13l.5-.5v-8ZM14,13H2V6H14Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M14,3V5H2V3Z" />\r
-    <path class="light-defaultgrey" d="M14.5,6H1.5L1,5.5v-3L1.5,2h13l.5.5v3ZM2,5H14V3H2Z" />\r
-    <path class="light-defaultgrey" d="M8,8H3V7H8ZM8,9H3v1H8ZM3,12H5V11H3Zm8-5H9V8h2Zm1,2H9v1h3ZM6,11v1h7V11Z" />\r
-  </g>\r
-</svg>\r
-`,B5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow{fill: #996f00; opacity: 1;}</style>\r
-  </defs>\r
-  <title>Class</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-yellow-10" d="M5.5.5l3,3-5,5-3-3Zm10,6-2-2-3,3,2,2Zm-5,7,2,2,3-3-2-2Z" />\r
-    <path class="light-yellow" d="M10.146,7.854l2,2h.708l3-3V6.146l-2-2h-.708L11.293,6H6.707L8.854,3.854V3.146l-3-3H5.146l-5,5v.708l3,3h.708L5.707,7H8v5.5l.5.5h1.793l-.147.146v.708l2,2h.708l3-3v-.708l-2-2h-.708L11.293,12H9V7h1.293l-.147.146ZM3.5,7.793,1.207,5.5,5.5,1.207,7.793,3.5Zm10,3.414L14.793,12.5,12.5,14.793,11.207,13.5Zm0-6L14.793,6.5,12.5,8.793,11.207,7.5Z" />\r
-  </g>\r
-</svg>\r
-`,$5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>DocumentCollection</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M14.5,1.5V9.911H12V5.5L11.5,5h-4V1.5Z" />\r
-      <path class="light-defaultgrey-10" d="M4,12.5H1.5v-9H7V5H4.5L4,5.5Z" />\r
-      <path class="light-defaultgrey" d="M15,1.5v9l-.5.5H12V10h2V2H8V5H7V4H2v8H4v1H1.5L1,12.5v-9L1.5,3H7V1.5L7.5,1h7Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M11.5,14.5h-7v-9h7Z" />\r
-    <path class="light-defaultgrey" d="M11.5,15h-7L4,14.5v-9L4.5,5h7l.5.5v9ZM5,14h6V6H5Z" />\r
-    <path class="light-defaultgrey-25" d="M11,10v1H7.5L7,10.5V6H8v4Z" />\r
-  </g>\r
-</svg>\r
-`,P5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-yellow-25{fill: #996f00; opacity: 0.25;}.light-yellow{fill: #996f00; opacity: 1;}</style>\r
-  </defs>\r
-  <title>Event</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-yellow-25" d="M12.5,6.5l-8,8H3l3.5-6H3l4-7h5.387L8,6.5Z" />\r
-    <path class="light-yellow" d="M12.5,6H9.1l3.659-4.17L12.387,1H7l-.434.252-4,7L3,9H5.629L2.568,14.248,3,15H4.5l.354-.146,8-8ZM4.293,14H3.871L6.932,8.752,6.5,8H3.862L7.29,2h3.993L7.624,6.17,8,7h3.293Z" />\r
-  </g>\r
-</svg>\r
-`,V5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightProperty</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M10.242,7.167c-1.722,1.75-5.418,5.45-7.191,7.1-.861.75-2.076-.651-1.418-1.4,1.671-1.75,5.418-5.449,7.14-7.1a1.078,1.078,0,0,1,.659-.25A1.026,1.026,0,0,1,10.242,7.167Z" />\r
-      <path class="light-defaultgrey" d="M10.828,5.938a1.508,1.508,0,0,0-1.4-.921,1.628,1.628,0,0,0-1.005.388c-1.714,1.643-5.473,5.355-7.17,7.131a1.444,1.444,0,0,0,.187,1.973,1.5,1.5,0,0,0,1.056.47,1.352,1.352,0,0,0,.892-.346C5.254,12.9,9.051,9.09,10.61,7.506A1.45,1.45,0,0,0,10.828,5.938Zm-.942.878C8.344,8.384,4.561,12.178,2.723,13.89a.4.4,0,0,1-.571-.087C2,13.653,1.86,13.365,2,13.212c1.673-1.753,5.417-5.448,7.076-7.044a.575.575,0,0,1,.361-.151.513.513,0,0,1,.48.322A.465.465,0,0,1,9.886,6.816Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M14.974,5a4,4,0,0,1-8,0,3.961,3.961,0,0,1,4-4,4.19,4.19,0,0,1,1.441.241L9.534,4.2l2.24,2.241,2.96-2.882A4.19,4.19,0,0,1,14.974,5Z" />\r
-  </g>\r
-</svg>\r
-`,F5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightTextBox</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M.5,3.5h15v10H.5Z" />\r
-    <path class="light-defaultgrey" d="M15.5,3H.5L0,3.5v10l.5.5h15l.5-.5V3.5ZM15,13H1V4H15Z" />\r
-    <path class="light-defaultgrey" d="M9,8a1.987,1.987,0,0,0-1,.277V6H7v6H8v-.277A2,2,0,1,0,9,8Zm0,3a1,1,0,1,1,1-1A1,1,0,0,1,9,11ZM5,8v.277a2,2,0,1,0,0,3.446V12H6V8ZM4,11a1,1,0,1,1,1-1A1,1,0,0,1,4,11Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M14,6.506v3.988a.46.46,0,0,0,.5.506v1a1.456,1.456,0,0,1-1-.352,1.456,1.456,0,0,1-1,.352V11a.46.46,0,0,0,.5-.506V6.506A.46.46,0,0,0,12.5,6V5a1.456,1.456,0,0,1,1,.352A1.456,1.456,0,0,1,14.5,5V6A.46.46,0,0,0,14,6.506Z" />\r
-    </g>\r
-  </g>\r
-</svg>\r
-`,q5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightLabel</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M6.069,9.48H9.881L10.834,12H12L8.539,3.009H7.448L4,12H5.172ZM7.818,4.7a3.316,3.316,0,0,0,.144-.6h.025a3.655,3.655,0,0,0,.138.6L9.536,8.533H6.42Z" />\r
-  </g>\r
-</svg>\r
-`,Z5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}.white{fill: #ffffff; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightListBox</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-25" d="M16,11H11V4h5Z" />\r
-    <path class="light-defaultgrey-10" d="M11,14.5H.5V.5H11Z" />\r
-    <path class="light-defaultgrey" d="M15,15H.5L0,14.5V.5L.5,0H15l1,1H1V14H16Z" />\r
-    <path class="light-defaultgrey" d="M8,4H3V3H8ZM8,8H3V7H8Zm0,4H3V11H8ZM8,6H3V5H8Zm0,4H3V9H8Z" />\r
-    <path class="light-blue" d="M16,.5v4l-.5.5H11V0h4.5Zm0,10v4l-.5.5H11V10h4.5Z" />\r
-    <path class="white" d="M13.5,1,15,3H12ZM12,12h3l-1.5,2Z" />\r
-  </g>\r
-</svg>\r
-`,U5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{fill:none;}</style>\r
-  </defs>\r
-  <title>IconLightGroupBox</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="cls-1" d="M16,16H0V0H16Z" />\r
-    <path class="light-defaultgrey" d="M6.547,3.068,7.992,5H6.812L6,3.845,5.188,5H4.008L5.453,3.068,4,1H5L6,2.337,7,1H8ZM11,3.134V5H10V3.134L8.5,1h1l1,1.337h0L11.5,1h1Z" />\r
-    <path class="light-defaultgrey" d="M14,3.5v10l-.5.5H2.5L2,13.5V3.5L2.5,3H4V4H3v9H13V4H12V3h1.5Z" />\r
-  </g>\r
-</svg>\r
-`,W5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightProgressBar</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M14.5,12.5H.5v-8h14Z" />\r
-    <path class="light-defaultgrey" d="M14.5,13H.5L0,12.5v-8L.5,4h14l.5.5v8ZM1,12H14V5H1Z" />\r
-    <path class="light-blue" d="M10,11H2V6h8Z" />\r
-  </g>\r
-</svg>\r
-`,K5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightTimer</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-    <path class="light-defaultgrey-10" d="M13,9A5.5,5.5,0,1,1,7.5,3.5,5.5,5.5,0,0,1,13,9Z" />\r
-    <path class="light-defaultgrey" d="M8.5,9a1,1,0,0,1-2,0A.985.985,0,0,1,7,8.153V5H8V8.153A.985.985,0,0,1,8.5,9Z" />\r
-    <path class="light-defaultgrey" d="M13.854,3.854l-.708-.708L11.632,4.661A5.976,5.976,0,0,0,8,3.025V2h2V1H5V2H7V3.025A6.013,6.013,0,1,0,12.3,5.41ZM7.5,14a5,5,0,1,1,5-5A5.006,5.006,0,0,1,7.5,14Z" />\r
-  </g>\r
-</svg>\r
-`,G5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}</style>\r
-  </defs>\r
-  <title>IconLightRadioButton</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M8,13a5,5,0,1,1,5-5A5.006,5.006,0,0,1,8,13ZM8,4a4,4,0,1,0,4,4A4,4,0,0,0,8,4Z" />\r
-    <path class="light-defaultgrey-10" d="M8,12.5A4.5,4.5,0,1,1,12.5,8,4.5,4.5,0,0,1,8,12.5Z" />\r
-    <path class="light-defaultgrey" d="M6,8a2,2,0,1,1,2,2A2,2,0,0,1,6,8Z" />\r
-  </g>\r
-</svg>\r
-`,Y5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightMonthCalendar</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M11.5,11.5h-2v-2h2Z" />\r
-    <path class="light-defaultgrey-10" d="M13.5,2.5v3H1.5v-3Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M13.5,6v7.5H1.5V6Z" />\r
-      <path class="light-defaultgrey" d="M14,5.5v8l-.5.5H1.5L1,13.5v-8l.5.5H2v7H13V6h.5Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M8,8H7V7H8Zm2-1H9V8h1Zm2,0H11V8h1ZM8,9H7v1H8ZM6,7H5V8H6ZM6,9H5v1H6Zm0,2H5v1H6ZM4,7H3V8H4ZM4,9H3v1H4Zm0,2H3v1H4Zm4,0H7v1H8Z" />\r
-    <path class="light-defaultgrey" d="M13.5,2H11V1H10V2H5V1H4V2H1.5L1,2.5v3l.5.5h12l.5-.5v-3ZM13,5H2V3H4V4H5V3h5V4h1V3h2Z" />\r
-    <path class="light-defaultgrey" d="M11.5,12h-2L9,11.5v-2L9.5,9h2l.5.5v2ZM10,11h1V10H10Z" />\r
-  </g>\r
-</svg>\r
-`,X5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightDateTimePicker</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M4.5,6h10v7.5H4.5Z" />\r
-      <path class="light-defaultgrey" d="M14.5,6l.5-.5v8l-.5.5H4.5L4,13.5V6H5v7h9V6Z" />\r
-      <path class="light-defaultgrey" d="M7,8H6V7H7ZM9,7H8V8H9Zm2,0H10V8h1Zm2,0H12V8h1ZM7,9H6v1H7ZM9,9H8v1H9ZM7,11H6v1H7Zm2,0H8v1H9Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M12.5,11.5h-2v-2h2Z" />\r
-    <path class="light-defaultgrey" d="M12.5,12h-2l-.5-.5v-2l.5-.5h2l.5.5v2ZM11,11h1V10H11Z" />\r
-    <path class="light-defaultgrey-10" d="M14.5,5.5H1.5v-4h13Z" />\r
-    <path class="light-defaultgrey" d="M14.5,1H1.5L1,1.5v4l.5.5h13l.5-.5v-4ZM2,2h8V5H2ZM14,5H11V2h3Z" />\r
-    <path class="light-defaultgrey" d="M12.5,4.125,11.75,3h1.5Z" />\r
-  </g>\r
-</svg>\r
-`,J5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightSlider</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M0,16V0H16V16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M1.5,11.5v-9h6v9l-3,3Z" />\r
-    <path class="light-defaultgrey" d="M8,6V2.5L7.5,2h-6L1,2.5v9l.146.354,3,3h.708l3-3L8,11.5V7h7V6ZM7,11.293l-2.5,2.5L2,11.293V5H7ZM7,4H2V3H7Z" />\r
-  </g>\r
-</svg>\r
-`,Q5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightTab</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M13.5,7.5V9h-5V7.5Z" />\r
-      <path class="light-defaultgrey" d="M14,7.5V9H13V8H9V9H8V7.5L8.5,7h5Z" />\r
-    </g>\r
-    <path class="light-blue-10" d="M8.5,6.5V9h-7V6.5Z" />\r
-    <path class="light-blue" d="M9,9V6.5L8.5,6h-7L1,6.5V10H15V9ZM2,9V7H8V9Z" />\r
-  </g>\r
-</svg>\r
-`,ej=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-shadow{fill: #000000; opacity: 0.1;}.cls-1{opacity:0.75;}.cls-2{opacity:0.1;}</style>\r
-  </defs>\r
-  <title>IconLightMutuallExclusiveCheckbox</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-2">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M.5,8.5h6v6H.5Zm8-8v6h6V.5Z" />\r
-      <path class="light-defaultgrey" d="M.5,8,0,8.5v6l.5.5h6l.5-.5v-6L6.5,8ZM6,14H1V9H6ZM14.5,0h-6L8,.5v6l.5.5h6l.5-.5V.5ZM14,6H9V1h5Z" />\r
-    </g>\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-2">\r
-      <path class="light-defaultgrey" d="M15,8.5v2.448l-1,1.019V9l.5-1ZM6,1V3.967L7,2.948V.5L6.5,0Z" />\r
-    </g>\r
-    <path class="light-shadow" d="M0,7.5.5,8h6L7,7.5v-1L6.5,7H.5L0,6.5Zm8,8,.5.5h6l.5-.5v-1l-.5.5h-6L8,14.5Z" />\r
-    <path class="light-defaultgrey-10" d="M5.047,1H6V3.967L6.5,3.5v3H.5V.5H5.538Zm8,8H14v2.967l.5-.467v3h-6v-6h5.038Z" />\r
-    <path class="light-defaultgrey" d="M6,3.967,7,2.948V6.5L6.5,7H.5L0,6.5V.5L.5,0h6L7,.5,6.988,1.859,3.846,5,3.135,5,1.8,3.624l.714-.7L3.5,3.936,6,1.432V1H1V6H6Zm8,8,1-1.019V14.5l-.5.5h-6L8,14.5v-6L8.5,8h6l.5.5-.012,1.359L11.846,13l-.711,0L9.8,11.624l.714-.7.987,1.011,2.5-2.5V9H9v5h5Z" />\r
-  </g>\r
-</svg>\r
-`,tj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightButton</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey" d="M10,7a1.978,1.978,0,0,0-1,.278V5H8v6H9v-.278A1.978,1.978,0,0,0,10,11a2,2,0,0,0,0-4Zm0,3a1,1,0,1,1,1-1A1,1,0,0,1,10,10ZM6,7v.278A1.978,1.978,0,0,0,5,7a2,2,0,0,0,0,4,1.978,1.978,0,0,0,1-.278V11H7V7ZM5,10A1,1,0,1,1,6,9,1,1,0,0,1,5,10Z" />\r
-    </g>\r
-    <path class="light-defaultgrey-10" d="M1.5,12.5a1,1,0,0,1-1-1v-7a1,1,0,0,1,1-1h12a1,1,0,0,1,1,1v7a1,1,0,0,1-1,1Z" />\r
-    <path class="light-defaultgrey" d="M13.5,13H1.5A1.5,1.5,0,0,1,0,11.5v-7A1.5,1.5,0,0,1,1.5,3h12A1.5,1.5,0,0,1,15,4.5v7A1.5,1.5,0,0,1,13.5,13ZM1.5,4a.5.5,0,0,0-.5.5v7a.5.5,0,0,0,.5.5h12a.5.5,0,0,0,.5-.5v-7a.5.5,0,0,0-.5-.5Z" />\r
-  </g>\r
-</svg>\r
-`,nj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-yellow{fill: #996f00; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightImageButton</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M12.5,13.5H2.5a2,2,0,0,1-2-2v-8a2,2,0,0,1,2-2h10a2,2,0,0,1,2,2v8A2,2,0,0,1,12.5,13.5Z" />\r
-    <path class="light-blue" d="M14.291,12.083l-.145,1.271L9.98,9.187l-1.64,1.64H7.633L4.986,8.181.893,12.274A.98.98,0,0,1,.5,11.5v-.247L4.633,7.12H5.34L7.986,9.767l1.641-1.64h.707Z" />\r
-    <path class="light-defaultgrey" d="M12.5,14H2.5A2.5,2.5,0,0,1,0,11.5v-8A2.5,2.5,0,0,1,2.5,1h10A2.5,2.5,0,0,1,15,3.5v8A2.5,2.5,0,0,1,12.5,14ZM2.5,2A1.5,1.5,0,0,0,1,3.5v8A1.5,1.5,0,0,0,2.5,13h10A1.5,1.5,0,0,0,14,11.5v-8A1.5,1.5,0,0,0,12.5,2Z" />\r
-    <path class="light-yellow" d="M11,4.5A1.5,1.5,0,1,1,9.5,3,1.5,1.5,0,0,1,11,4.5Z" />\r
-  </g>\r
-</svg>\r
-`,ij=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightCursor</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M0,0H16V16H0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue" d="M9.09,10.034l1.38,3.8-.94.342L8.123,10.3,6,12V3l6,7.2Z" />\r
-  </g>\r
-</svg>\r
-`,sj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.light-defaultgrey{fill: #212121; opacity: 1;}.white{fill: #ffffff; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightHorizontalScrollBar</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-25" d="M12.5,11H4V6h8.5Z" />\r
-    <path class="light-defaultgrey" d="M16,6.5v4l-.5.5H11V6h4.5ZM.5,6,0,6.5v4l.5.5H5V6Z" />\r
-    <path class="white" d="M13,10V7l2,1.49ZM1,8.49,3,7v3Z" />\r
-  </g>\r
-</svg>\r
-`,rj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.light-defaultgrey{fill: #212121; opacity: 1;}.white{fill: #ffffff; opacity: 1;}</style>\r
-  </defs>\r
-  <title>VerticalScrollBar</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-25" d="M5,12.5V4h5v8.5Z" />\r
-    <path class="light-defaultgrey" d="M9.5,16h-4L5,15.5V11h5v4.5ZM10,.5,9.5,0h-4L5,.5V5h5Z" />\r
-    <path class="white" d="M6,13H9L7.51,15ZM7.51,1,9,3H6Z" />\r
-  </g>\r
-</svg>\r
-`,aj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-lightblue{fill: #0077a0; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightDataGrid</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M15.5.5v9H10V5.97c0-1.624-1.626-2.47-3.5-2.8V.5Z" />\r
-    <path class="light-defaultgrey" d="M15.5,0h-9L6,.5V3.094A6.877,6.877,0,0,1,8.821,4L9,4.123A2.238,2.238,0,0,1,10,5.97V4h2V6H10V7h2V9H10v1h5.5l.5-.5V.5ZM9,3H7V1H9Zm3,0H10V1h2Zm3,6H13V7h2Zm0-3H13V4h2Zm0-3H13V1h2Z" />\r
-    <path class="light-lightblue-10" d="M8.5,5.97V14c0,.828-1.791,1.5-4,1.5s-4-.672-4-1.5V5.97c0-.828,1.791-1.5,4-1.5S8.5,5.142,8.5,5.97Z" />\r
-    <path class="light-lightblue" d="M9,5.97c0-2.627-9-2.627-9,0H0V14c0,1.313,2.264,2,4.5,2S9,15.313,9,14V5.97Zm-4.5-1c2.273,0,3.5.71,3.5,1s-1.227,1-3.5,1S1,6.26,1,5.97,2.227,4.97,4.5,4.97ZM8,14c0,.29-1.227,1-3.5,1S1,14.29,1,14V7.261H1a7.863,7.863,0,0,0,3.5.709A7.863,7.863,0,0,0,8,7.261H8Z" />\r
-  </g>\r
-</svg>\r
-`,lj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-lightblue{fill: #0077a0; opacity: 1;}</style>\r
-  </defs>\r
-  <title>DataSource</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-lightblue-10" d="M12.5,4v8c0,.829-1.791,1.5-4,1.5s-4-.671-4-1.5V4c0-.828,1.791-1.5,4-1.5S12.5,3.172,12.5,4Z" />\r
-    <path class="light-lightblue" d="M4,3.97V12c0,1.314,2.264,2,4.5,2s4.5-.686,4.5-2V3.97C13,1.343,4,1.343,4,3.97Zm8,3.884c-.175.21-.941.9-3.5.9s-3.325-.686-3.5-.9V5.261a7.863,7.863,0,0,0,3.5.709A7.863,7.863,0,0,0,12,5.261ZM8.5,2.97c2.273,0,3.5.71,3.5,1s-1.227,1-3.5,1S5,4.26,5,3.97,6.227,2.97,8.5,2.97ZM8.5,13C6.227,13,5,12.29,5,12V9.084a7.412,7.412,0,0,0,3.5.666A7.412,7.412,0,0,0,12,9.084V12C12,12.29,10.773,13,8.5,13Z" />\r
-  </g>\r
-</svg>\r
-`,oj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightSerialPort</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M13.5,6.5V9L12,11.5H3L1.5,9V6.5a1,1,0,0,1,1-1h10A1,1,0,0,1,13.5,6.5Z" />\r
-      <path class="light-defaultgrey" d="M12,12H3l-.429-.243-1.5-2.5L1,9V6.5A1.5,1.5,0,0,1,2.5,5h10A1.5,1.5,0,0,1,14,6.5V9l-.071.257-1.5,2.5ZM3.283,11h8.434L13,8.861V6.5a.5.5,0,0,0-.5-.5H2.5a.5.5,0,0,0-.5.5V8.861Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M4,8H3V7H4ZM6,7H5V8H6ZM8,7H7V8H8Zm2,0H9V8h1Zm2,0H11V8h1ZM5,9H4v1H5ZM7,9H6v1H7ZM9,9H8v1H9Zm2,0H10v1h1Z" />\r
-  </g>\r
-</svg>\r
-`,cj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-shadow{fill: #000000; opacity: 0.1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightServer</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-2">\r
-    <g class="cls-1">\r
-      <path class="light-shadow" d="M13,3.5H12a.5.5,0,0,0-.5-.5h-6a.5.5,0,0,0-.5.5H4A1.5,1.5,0,0,1,5.5,2h6A1.5,1.5,0,0,1,13,3.5Z" />\r
-      <path class="light-defaultgrey-10" d="M12.5,2.5v12h-8V2.5a1,1,0,0,1,1-1h6A1,1,0,0,1,12.5,2.5Z" />\r
-      <path class="light-defaultgrey" d="M11.5,1h-6A1.5,1.5,0,0,0,4,2.5v12l.5.5h8l.5-.5V2.5A1.5,1.5,0,0,0,11.5,1ZM12,14H5V2.5A.5.5,0,0,1,5.5,2h6a.5.5,0,0,1,.5.5Z" />\r
-    </g>\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-shadow" d="M10.5,5V6h-4V5Zm-4,7h4V11h-4Zm0,2h4V13h-4Z" />\r
-    <path class="light-defaultgrey" d="M10.5,4V5h-4V4Zm-4,7h4V10h-4Zm0,2h4V12h-4Z" />\r
-  </g>\r
-</svg>\r
-`,uj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightCustomControl</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M0,0H16V16H0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue-10" d="M15.192,8.681,9.635,14.238,8.153,12.72l5.539-5.539a1.059,1.059,0,0,1,1.5,0A1.062,1.062,0,0,1,15.192,8.681Z" />\r
-    <path class="light-defaultgrey-10" d="M8.252,10.5H1.5v-9h9V8.252Z" />\r
-    <path class="light-blue" d="M15.543,6.83a1.56,1.56,0,0,0-2.2,0l-5.25,5.25L6.511,15.326,7.186,16l2.995-1.629,5.365-5.336A1.562,1.562,0,0,0,15.543,6.83Zm-.7,1.5-5.2,5.2-.783-.8,5.19-5.189a.56.56,0,0,1,.792.793Z" />\r
-    <path class="light-defaultgrey" d="M7.752,11H1.5L1,10.5v-9L1.5,1h9l.5.5V7.752L9.75,9V2.25H2.25v7.5H9Z" />\r
-  </g>\r
-</svg>\r
-`,dj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightSelectObject</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,0V16H0V0Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue-10" d="M13.5,4.825v6.35L8,14.351,2.5,11.175V4.825L8,1.649Z" />\r
-    <path class="light-blue" d="M13.75,4.392,8.25,1.216h-.5L2.25,4.392,2,4.825v6.35l.25.433,5.5,3.176h.5l5.5-3.176.25-.433V4.825ZM8,2.226l4.5,2.6L8,7.423l-4.5-2.6ZM3,5.691l4.5,2.6v5.2L3,10.887Zm5.5,7.794v-5.2l4.5-2.6v5.2Z" />\r
-  </g>\r
-</svg>\r
-`,hj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightDialog</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M14.5,4.5v9H1.5v-9Z" />\r
-      <path class="light-defaultgrey" d="M14.5,4H1.5L1,4.5v9l.5.5h13l.5-.5v-9ZM14,13H2V5H14Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M6,11H9v1H6Z" />\r
-    <path class="light-defaultgrey" d="M10,12h3V11H10Z" />\r
-    <path class="light-defaultgrey" d="M7,6H3V7H7Z" />\r
-    <path class="light-defaultgrey" d="M7,8H3V9H7Z" />\r
-    <path class="light-defaultgrey-10" d="M14.5,2.5v2H1.5v-2Z" />\r
-    <path class="light-defaultgrey-10" d="M12.5,8.5h-4v-2h4Z" />\r
-    <path class="light-defaultgrey" d="M14.5,5H1.5L1,4.5v-2L1.5,2h13l.5.5v2ZM2,4H14V3H2Z" />\r
-    <path class="light-defaultgrey" d="M12.5,6h-4L8,6.5v2l.5.5h4l.5-.5v-2ZM12,8H9V7h3Z" />\r
-  </g>\r
-</svg>\r
-`,fj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightPanel</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M13.5,13.5H1.5V1.5h12Z" />\r
-    <path class="light-defaultgrey" d="M13.5,14H1.5L1,13.5V1.5L1.5,1h12l.5.5v12ZM2,13H13V2H2Z" />\r
-    <path class="light-defaultgrey" d="M5,7H6V8H5ZM5,6H6V5H5Zm2,6H8V11H7ZM5,10H6V9H5ZM5,4H6V3H5ZM3,10H4V9H3ZM3,8H4V7H3Zm4,2H8V9H7ZM3,12H4V11H3ZM3,4H4V3H3ZM3,6H4V5H3Zm2,6H6V11H5Zm4-2h1V9H9ZM9,4h1V3H9Zm2,8h1V11H11Zm0-4h1V7H11Zm0,2h1V9H11Zm0-4h1V5H11ZM7,8H8V7H7Zm4-5V4h1V3ZM7,4H8V3H7ZM9,6h1V5H9ZM7,6H8V5H7Zm2,6h1V11H9ZM9,8h1V7H9Z" />\r
-  </g>\r
-</svg>\r
-`,pj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>\r
-  </defs>\r
-  <title>IconLightNetwork</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M9.5,11.5h-4v-4h4Z" />\r
-    <g class="cls-1">\r
-      <path class="light-defaultgrey-10" d="M8.5,7h-2V3.5h2Zm-8,3.5v-2H5v2Zm9.5,0v-2h4.5v2Z" />\r
-      <path class="light-defaultgrey" d="M15,8.5v2l-.5.5H10V10h4V9H10V8h4.5ZM6,7V3.5L6.5,3h2l.5.5V7H8V4H7V7ZM5,11H.5L0,10.5v-2L.5,8H5V9H1v1H5Z" />\r
-    </g>\r
-    <path class="light-defaultgrey" d="M9.5,12h-4L5,11.5v-4L5.5,7h4l.5.5v4ZM6,11H9V8H6Z" />\r
-  </g>\r
-</svg>\r
-`,gj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-yellow{fill: #996f00; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightImage</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M14.5,2.5v12H1.5V2.5Z" />\r
-    <path class="light-defaultgrey" d="M14.5,2H1.5L1,2.5v12l.5.5h13l.5-.5V2.5ZM14,14H2V3H14Z" />\r
-    <path class="light-yellow" d="M12,5.5A1.5,1.5,0,1,1,10.5,4,1.5,1.5,0,0,1,12,5.5Z" />\r
-    <path class="light-blue" d="M14,11.09V12.5l-2.819-2.82L8.988,11.877H8.281L4.814,8.41,2,11.225V9.811L4.461,7.35h.707l3.466,3.466,2.193-2.193h.707Z" />\r
-  </g>\r
-</svg>\r
-`,mj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-lightblue{fill: #0077a0; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightColorPicker</title>\r
-  <g id="Canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-lightblue-10" d="M10.048,8.073l-5.3,5.3-1.061.353-.56.561L1.709,12.877l.561-.561.354-1.061,5.3-5.3Z" />\r
-    <path class="light-defaultgrey-10" d="M11.816,6.306l1.061,1.06L11.462,8.78,7.22,4.538,8.634,3.124,9.7,4.184l2.828-2.828,2.121,2.121Z" />\r
-    <path class="light-defaultgrey" d="M15,3.124,12.877,1H12.17L9.694,3.477,8.987,2.77H8.28L6.866,4.184v.707l4.243,4.243h.707L13.23,7.72V7.013l-.707-.707L15,3.831ZM11.463,8.073,7.927,4.538l.707-.707L12.17,7.366ZM11.816,5.6,10.4,4.184l2.122-2.121,1.414,1.414Z" />\r
-    <path class="light-lightblue" d="M3.477,14.644H2.77L1.356,13.23v-.707l.476-.477.317-.949.121-.2,5.3-5.3.707.707-5.219,5.22-.317.948-.121.2-.207.207.707.707.208-.207.195-.121.949-.316L9.694,7.72l.707.707-5.3,5.3-.2.121-.949.316Z" />\r
-  </g>\r
-</svg>\r
-`,yj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightSpinner</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M10.5,9.5v6h-7v-6Z" />\r
-    <path class="light-defaultgrey-10" d="M3.5,7.5v-6h7v6Z" />\r
-    <path class="light-defaultgrey" d="M3,7.5v-6L3.5,1h7l.5.5v6l-.5.5h-7ZM4,2V7h6V2Z" />\r
-    <path class="light-defaultgrey" d="M6.989,3,9,6H5Z" />\r
-    <path class="light-defaultgrey" d="M11,9.5v6l-.5.5h-7L3,15.5v-6L3.5,9h7ZM10,15V10H4v5Z" />\r
-    <path class="light-defaultgrey" d="M7.011,14,5,11H9Z" />\r
-  </g>\r
-</svg>\r
-`,bj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightHyperLink</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-blue" d="M6.069,9.48H9.881L10.834,12H12L8.539,3.009H7.448L4,12H5.172ZM7.818,4.7a3.316,3.316,0,0,0,.144-.6h.025a3.655,3.655,0,0,0,.138.6L9.536,8.533H6.42ZM4,13h8v1H4Z" />\r
-  </g>\r
-</svg>\r
-`,vj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>IconLightEdit</title>\r
-  <g id="canvas" class="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey-10" d="M13.26,2.736a1.5,1.5,0,0,1,0,2.119l0,0L6.116,12,4,9.884l7.143-7.148A1.5,1.5,0,0,1,13.26,2.736Z" />\r
-    <path class="light-defaultgrey" d="M13.588,5.233A2,2,0,0,0,10.761,2.41v0h0L4.042,9.13,2,13.333,2.667,14l4.065-1.944L13.588,5.24ZM6.224,11.19l-.082.039L4.771,9.858l.039-.082,6.655-6.658a1,1,0,1,1,1.414,1.414h0Z" />\r
-  </g>\r
-</svg>\r
-`,xj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\r
-  <defs>\r
-    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>\r
-  </defs>\r
-  <title>QuestionMark</title>\r
-  <g id="canvas">\r
-    <path class="canvas" d="M16,16H0V0H16Z" />\r
-  </g>\r
-  <g id="level-1">\r
-    <path class="light-defaultgrey" d="M10.6,4.725c0,1.493-.985,2.121-1.836,3A2.153,2.153,0,0,0,8.12,9.685H6.88a3.99,3.99,0,0,1,.184-1.633A3.962,3.962,0,0,1,8.12,6.637,5.061,5.061,0,0,0,9.176,5.461a1.806,1.806,0,0,0-.949-2.45A1.861,1.861,0,0,0,5.64,4.725H4.4a3.1,3.1,0,0,1,6.2,0ZM7.5,11.5a1,1,0,1,0,1,1A1,1,0,0,0,7.5,11.5Z" />\r
-  </g>\r
-</svg>\r
+`).filter(Boolean).map(h=>eh.register(h,(...b)=>{var w,u;return(u=(w=i.current)[h])==null?void 0:u.call(w,...b)}));return()=>o.forEach(h=>h.dispose())},[a])}function PC(n){var i;return(i=window.api)!=null&&i.on?window.api.on("plugins:message",a=>{const o=a;o&&typeof o.message=="string"&&n(o)}):()=>{}}function VC(n){if(!n)return!1;const i=n.tagName;return i==="INPUT"||i==="TEXTAREA"||i==="SELECT"||n.isContentEditable||!!n.closest('[contenteditable="true"]')||!!n.closest(".monaco-editor")}function FC(n){const a=NC(th,n,i1,{get editableFocus(){return VC(document.activeElement)},get nativeTextSelection(){var o;return!!((o=window.getSelection())!=null&&o.toString())}});return a?(n.preventDefault(),mu(a.command,...a.args??[]).catch(o=>console.error(`[commands] 执行 ${a.command} 失败`,o)),!0):!1}function a1(n){var o;const i=new Set,a=[];for(const h of n)for(const b of((o=h.contributes)==null?void 0:o.compilers)??[])i.has(b.id)||(i.add(b.id),a.push({...b,pluginId:h.id,builtin:!!h.builtin}));return a}const qC="ycide.recentOpened",ZC="ycide.themes";function UC(n){return n.slice(0,10).map(i=>({label:`${i.type==="project"?"项目":"文件"}: ${i.label}`,command:"file:openRecent",args:[{type:i.type,path:i.path}]}))}function WC(n,i,a){const o=a.filter(u=>n.includes(u)),h=n.filter(u=>!a.includes(u)),b=u=>({label:u,command:"theme:apply",args:[u],checked:u===i}),w=o.map(b);return o.length>0&&h.length>0&&w.push({label:"",separator:!0}),[...w,...h.map(b)]}const KC=["默认深色","默认浅色"];function GC(n,i,a,o,h,b,w,u,c){return LC(n,{platform:n1(a),showMnemonics:!0,context:{projectOpen:o,workspaceOpen:h,fileOpen:b,compilerAvailable:i},dynamicSubmenus:{[qC]:UC(c),[ZC]:WC(w,u,KC)}})}function YC({onCommand:n,onWindowClose:i,runtimePlatform:a="windows",hasProject:o=!1,hasWorkspace:h=!1,hasOpenFile:b=!1,themes:w=[],currentTheme:u="",recentOpened:c=[]}){const f=RC(),S=a1(Rf()).length>0,x=GC(f,S,a,o,h,b,w,u,c),j=rm(a),[T,z]=d.useState(null),_=d.useRef(null),v=d.useRef(null),m=d.useRef(null),y=d.useRef(null),p=()=>{var O;return(O=window.api)==null?void 0:O.window.minimize()},M=()=>{var O;return(O=window.api)==null?void 0:O.window.maximize()},I=()=>{var O;i?i():(O=window.api)==null||O.window.close()},L=d.useCallback(()=>z(null),[]),R=O=>{O.kind!=="command"||!O.enabled||(L(),n==null||n(O.command,...O.args??[]))};d.useEffect(()=>{if(T===null)return;const O=oe=>{_.current&&!_.current.contains(oe.target)&&L()};return document.addEventListener("mousedown",O),()=>document.removeEventListener("mousedown",O)},[T,L]),d.useEffect(()=>{var O,oe,Y,he;(O=v.current)==null||O.style.setProperty("-webkit-app-region",T===null?"drag":"no-drag"),(oe=m.current)==null||oe.style.setProperty("-webkit-app-region","no-drag"),(Y=_.current)==null||Y.style.setProperty("-webkit-app-region","no-drag"),(he=y.current)==null||he.style.setProperty("-webkit-app-region","no-drag")},[T]);const A=O=>{var Y;if(T===null)return;const oe=O.target;(Y=_.current)!=null&&Y.contains(oe)||L()};return r.jsxs("header",{className:`titlebar${T!==null?" menu-open":""}`,role:"banner",onMouseDownCapture:A,children:[r.jsxs("div",{className:"titlebar-drag",ref:v,children:[!j&&r.jsx("div",{className:"titlebar-icon","aria-hidden":"true",ref:m,children:r.jsx("img",{src:Uv,className:"titlebar-icon-image",alt:"",draggable:!1})}),!j&&r.jsx("nav",{className:"titlebar-menu",role:"menubar","aria-label":"主菜单",ref:_,children:x.map((O,oe)=>r.jsxs("div",{className:"titlebar-menu-item",children:[r.jsx("button",{role:"menuitem",tabIndex:oe===0?0:-1,className:T===oe?"active":"",onClick:()=>z(T===oe?null:oe),onMouseEnter:()=>{T!==null&&z(oe)},children:O.label}),T===oe&&r.jsx("div",{className:"titlebar-dropdown",role:"menu",children:O.items.map((Y,he)=>Y.kind==="separator"?r.jsx("div",{className:"titlebar-dropdown-divider"},he):Y.kind==="submenu"?r.jsxs("div",{className:"titlebar-dropdown-submenu-wrapper",children:[r.jsxs("button",{role:"menuitem",className:"titlebar-dropdown-item titlebar-has-submenu",children:[r.jsx("span",{children:Y.label}),r.jsx("span",{className:"titlebar-submenu-arrow",children:"▶"})]}),r.jsx("div",{className:"titlebar-submenu",role:"menu",children:Y.items.map((le,ge)=>le.kind==="separator"?r.jsx("div",{className:"titlebar-dropdown-divider"},ge):le.kind==="command"?r.jsxs("button",{role:"menuitem",className:`titlebar-dropdown-item${le.enabled?"":" disabled"}`,disabled:!le.enabled,onClick:()=>R(le),children:[r.jsxs("span",{children:[le.checked?"✓ ":"    ",le.label]}),le.shortcut&&r.jsx("span",{className:"titlebar-dropdown-shortcut",children:le.shortcut})]},ge):null)})]},he):r.jsxs("button",{role:"menuitem",className:`titlebar-dropdown-item${Y.enabled?"":" disabled"}`,disabled:!Y.enabled,onClick:()=>R(Y),children:[r.jsx("span",{children:Y.label}),Y.shortcut&&r.jsx("span",{className:"titlebar-dropdown-shortcut",children:Y.shortcut})]},he))})]},O.id))}),r.jsx("div",{className:"titlebar-title",children:"ycIDE - 易承语言集成开发环境"})]}),!j&&r.jsxs("div",{className:"titlebar-controls","aria-label":"窗口控制",ref:y,children:[r.jsx("button",{className:"titlebar-btn",onClick:p,"aria-label":"最小化",tabIndex:-1,children:r.jsx("svg",{width:"10",height:"1",viewBox:"0 0 10 1",children:r.jsx("line",{x1:"0",y1:"0.5",x2:"10",y2:"0.5",stroke:"currentColor",strokeWidth:"1"})})}),r.jsx("button",{className:"titlebar-btn",onClick:M,"aria-label":"最大化",tabIndex:-1,children:r.jsx("svg",{width:"10",height:"10",viewBox:"0 0 10 10",children:r.jsx("rect",{x:"0.5",y:"0.5",width:"9",height:"9",stroke:"currentColor",strokeWidth:"1",fill:"none"})})}),r.jsx("button",{className:"titlebar-btn titlebar-btn-close",onClick:I,"aria-label":"关闭",tabIndex:-1,children:r.jsxs("svg",{width:"10",height:"10",viewBox:"0 0 10 10",children:[r.jsx("line",{x1:"0",y1:"0",x2:"10",y2:"10",stroke:"currentColor",strokeWidth:"1.2"}),r.jsx("line",{x1:"10",y1:"0",x2:"0",y2:"10",stroke:"currentColor",strokeWidth:"1.2"})]})})]})]})}const XC=d.memo(YC),JC=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-yellow{fill: #996f00; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightNewDocument</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M14.5,4.5v10H3.5V7.95A4.984,4.984,0,0,0,8,3a4.966,4.966,0,0,0-.254-1.5H11.5Z" />
+      <path class="light-defaultgrey" d="M15,4.5v10l-.5.5H3.5L3,14.5V8a4.988,4.988,0,0,0,1-.1V14H14V5H11V2H7.9a4.968,4.968,0,0,0-.321-1H11.5l.354.146,3,3Z" />
+    </g>
+    <path class="light-yellow" d="M3,2,3,0H4L4,2l-.5.5Zm.5,2.5L3,5V7H4V5Zm1-1L5,4,7,4V3L5,3Zm-2,0L2,3,0,3V4L2,4Zm1.708-.7h.708L6.328,1.378,5.62.671,4.208,2.088ZM2.792,4.206H2.085L.673,5.623l.707.706L2.793,4.913Zm1.414,0v.708L5.623,6.328l.706-.708L4.913,4.208ZM2.794,2.792V2.085L1.378.673.671,1.38,2.088,2.793Z" />
+  </g>
+</svg>
+`,QC=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow-25{fill: #996f00; opacity: 0.25;}.light-yellow{fill: #996f00; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightOpenFolder</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-yellow-10" d="M11.5,6V8H3.431l-.464.314L1.5,11.981V4.5h4L7,6h4.5Z" />
+    <path class="light-yellow-25" d="M14.5,8.5l-2,5H1.5l2-5Z" />
+    <path class="light-yellow-25" d="M12,13H11V9h1Z" />
+    <path class="light-yellow" d="M14.431,8H12V5.5L11.5,5H11V8H3.431l-.464.314L2,10.8V5H5.293l1,1H8V5H6.707l-.853-.854L5.5,4h-4L1,4.5v8.864L1.431,14h11l.464-.314,2-5Zm-2.339,5H2.169l1.6-4h9.922Z" />
+    <path class="light-blue" d="M14.854,2.146v.708l-2,2-.707-.708L13.293,3H12a2,2,0,0,0-2,2V6H9V5a3,3,0,0,1,3-3h1.293L12.147.854l.707-.708Z" />
+  </g>
+</svg>
+`,e5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>Save</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue-10" d="M14.515,3.5v11h-13V1.5h11Z" />
+    <path class="light-blue" d="M14.854,3.146l-2-2L12.5,1H1.5L1,1.5v13l.5.5h13l.5-.5V3.5ZM5,2h6V6H5Zm9,12H2V2H4V6.5l.5.5h7l.5-.5V2h.293L14,3.707Z" />
+    <g class="cls-1">
+      <path class="light-blue" d="M13,8.5v6H12V9H4v5.5H3v-6L3.5,8h9Z" />
+    </g>
+  </g>
+</svg>
+`,t5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightUndo</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M13.973,5.689A4.571,4.571,0,0,1,12.85,8.854l-6,6-.707-.707,6-6a3.61,3.61,0,0,0,.83-2.454,3.674,3.674,0,0,0-1.028-2.639,3.892,3.892,0,0,0-5.1-.2L3.705,6H8V7H2.5L2,6.5V1H3V5.291L6.143,2.148a4.926,4.926,0,0,1,6.478.17A4.677,4.677,0,0,1,13.973,5.689Z" />
+  </g>
+</svg>
+`,n5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightRedo</title>
+  <g id="canvas">
+    <path class="canvas" d="M0,0H16V16H0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M3.379,2.318a4.926,4.926,0,0,1,6.478-.17L13,5.291V1h1V6.5l-.5.5H8V6h4.3L9.15,2.855a3.892,3.892,0,0,0-5.1.2A3.674,3.674,0,0,0,3.027,5.694a3.61,3.61,0,0,0,.83,2.454l6,6-.707.707-6-6A4.571,4.571,0,0,1,2.027,5.689,4.677,4.677,0,0,1,3.379,2.318Z" />
+  </g>
+</svg>
+`,i5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-green{fill: #1f801f; opacity: 1;}</style>
+  </defs>
+  <title>IconLightRun</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-green" d="M3.777,1.084,3,1.5v12l.777.416,9-6V7.084Z" />
+  </g>
+</svg>
+`,s5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightLibrary</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M3.5,2.5v11h-2V2.5Zm4,0v11h-2V2.5ZM14.389,13l-1.931.517L9.611,2.9l1.931-.517Z" />
+    <path class="light-defaultgrey" d="M12.025,2.249,11.412,1.9,9.48,2.413l-.353.613,2.848,10.625.613.354,1.932-.518.353-.613Zm.787,10.66L10.223,3.25l.965-.259,2.589,9.659ZM7.5,14h-2L5,13.5V2.5L5.5,2h2l.5.5v11ZM6,13H7V3H6ZM3.5,14h-2L1,13.5V2.5L1.5,2h2l.5.5v11ZM2,13H3V3H2Z" />
+  </g>
+</svg>
+`,r5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-red-10{fill: #c50b17; opacity: 0.1;}.light-red{fill: #c50b17; opacity: 1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightToolbox</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-red-10" d="M14.5,8.5v5H1.5v-5Z" />
+    <path class="light-red-10" d="M14.5,5.5v3H1.5v-3Z" />
+    <path class="light-red" d="M15,8.5v5l-.5.5H1.5L1,13.5v-5H2V13H14V8.5Z" />
+    <path class="light-red" d="M14.5,5H1.5L1,5.5v3l.5.5h13l.5-.5v-3ZM14,8H2V6H14Z" />
+    <path class="light-defaultgrey" d="M4,7H5v3H4Zm7,0v3h1V7Z" />
+    <path class="light-defaultgrey" d="M11,3.5V5H10V4H6V5H5V3.5L5.5,3h5Z" />
+  </g>
+</svg>
+`,a5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightCollapseLeft</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M5.707,8l6,6L11,14.707,4.646,8.354V7.646L11,1.293,11.707,2Z" />
+  </g>
+</svg>
+`,l5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightExpandRight</title>
+  <g id="canvas">
+    <path class="canvas" d="M0,0H16V16H0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M4.293,2,5,1.293l6.354,6.353v.708L5,14.707,4.293,14l6-6Z" />
+  </g>
+</svg>
+`,o5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>Zoom</title>
+  <g id="canvas">
+    <path class="canvas" d="M0,0H16V16H0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M11.5,6.5a5,5,0,1,1-5-5A5,5,0,0,1,11.5,6.5Z" />
+    <path class="light-defaultgrey" d="M1,6.5a5.5,5.5,0,0,0,9.017,4.224l5.129,5.13.708-.708-5.13-5.129A5.5,5.5,0,1,0,1,6.5Zm1,0A4.5,4.5,0,1,1,6.5,11,4.505,4.505,0,0,1,2,6.5Z" />
+  </g>
+</svg>
+`,c5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightBranch</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M12,7.5A2.5,2.5,0,0,1,9.5,10H7a2,2,0,0,0-2,2H4V5H5V9.78A2.981,2.981,0,0,1,7,9H9.5A1.5,1.5,0,0,0,11,7.5Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M6.5,3.5a2,2,0,1,1-2-2A2,2,0,0,1,6.5,3.5Zm0,10a2,2,0,1,1-2-2A2,2,0,0,1,6.5,13.5Zm7-8a2,2,0,1,1-2-2A2,2,0,0,1,13.5,5.5Z" />
+    <path class="light-defaultgrey" d="M4.5,1A2.5,2.5,0,1,0,7,3.5,2.5,2.5,0,0,0,4.5,1Zm0,4A1.5,1.5,0,1,1,6,3.5,1.5,1.5,0,0,1,4.5,5Zm0,6A2.5,2.5,0,1,0,7,13.5,2.5,2.5,0,0,0,4.5,11Zm0,4A1.5,1.5,0,1,1,6,13.5,1.5,1.5,0,0,1,4.5,15Zm7-12A2.5,2.5,0,1,0,14,5.5,2.5,2.5,0,0,0,11.5,3Zm0,4A1.5,1.5,0,1,1,13,5.5,1.5,1.5,0,0,1,11.5,7Z" />
+  </g>
+</svg>
+`,u5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightExtensionApplication</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M2.5,4V7H3.91L4,7.09v-1l.5-.5V5.5h.09l.5-.5H9.91l.5.5h.09v.09l.5.5v4.82l-.5.5v.09h-.09l-.5.5H15.5V4Z" />
+      <path class="light-defaultgrey" d="M15.5,4H2.5L2,4.5V7H3V5H15v7H8.91l.09.09V13h6.5l.5-.5v-8Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M3,2V4H15V2Z" />
+    <path class="light-defaultgrey" d="M15.5,1H2.5L2,1.5v3l.5.5h13l.5-.5v-3ZM3,4V2H15V4Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M7.5,12.5v3H.5v-7h3v4Z" />
+      <path class="light-defaultgrey" d="M7.5,12H4V8.5L3.5,8H.5L0,8.5v7l.5.5h7l.5-.5v-3ZM7,15H1V9H3v3.5l.5.5H7Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M9.5,6.5v4h-4v-4Z" />
+    <path class="light-defaultgrey" d="M9.5,6h-4L5,6.5v4l.5.5h4l.5-.5v-4ZM9,10H6V7H9Z" />
+  </g>
+</svg>
+`,d5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightUser</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M8,3.5a3,3,0,1,1-3,3A3,3,0,0,1,8,3.5Z" />
+    <path class="light-defaultgrey-10" d="M3.5,14a4.5,4.5,0,0,1,9,0Z" />
+    <path class="light-defaultgrey" d="M9.957,9.4a3.5,3.5,0,1,0-3.914,0A5.007,5.007,0,0,0,3,14H4a4,4,0,0,1,8,0h1A5.007,5.007,0,0,0,9.957,9.4ZM5.5,6.5A2.5,2.5,0,1,1,8,9,2.5,2.5,0,0,1,5.5,6.5Z" />
+  </g>
+</svg>
+`,h5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>Field</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-blue-10" d="M14.5,5.5V10l-9,5-4-4V6.5l9-5Z" />
+      <path class="light-blue" d="M14.854,5.146l-4-4-.6-.083-9,5L1,6.5V11l.146.354,4,4,.6.083,9-5L15,10V5.5ZM14,9.706,6,14.15V10.5H5v3.293l-3-3v-4L10.413,2.12,14,5.707Z" />
+    </g>
+    <path class="light-blue-10" d="M14.5,5.5l-9,5-4-4,9-5Z" />
+    <path class="light-blue" d="M10.854,1.146l-.6-.083-9,5-.111.791,4,4,.6.083,9-5,.111-.791ZM5.587,9.88,2.322,6.615,10.413,2.12l3.265,3.265Z" />
+  </g>
+</svg>
+`,wb=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightMeasureTree</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M13.5,11.5v3h-3v-3Z" />
+    <path class="light-defaultgrey-10" d="M10.5,6.5h3v3h-3Z" />
+    <path class="light-defaultgrey-10" d="M2.5,5.5v-4h4v4Z" />
+    <path class="light-defaultgrey" d="M10.5,10h3l.5-.5v-3L13.5,6h-3l-.5.5V8H5V6H6.5L7,5.5v-4L6.5,1h-4L2,1.5v4l.5.5H4v7.5l.5.5H10v.5l.5.5h3l.5-.5v-3l-.5-.5h-3l-.5.5V13H5V9h5v.5ZM11,7h2V9H11ZM3,5V2H6V5Zm8,7h2v2H11Z" />
+  </g>
+</svg>
+`,f5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-lightblue{fill: #0077a0; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightConePreview</title>
+  <g id="Canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-lightblue-10" d="M13.5,13c0,.828-2.462,1.5-5.5,1.5S2.5,13.828,2.5,13a.457.457,0,0,1,.053-.2L8,1.5l5.447,11.3A.457.457,0,0,1,13.5,13Z" />
+    <path class="light-lightblue" d="M8,15c-2.229,0-6-.421-6-2a.941.941,0,0,1,.1-.415L7.55,1.283h.9l5.447,11.3A.934.934,0,0,1,14,13C14,14.579,10.229,15,8,15ZM8,2.651,3,13.02c.134.315,1.976.98,5,.98,2.948,0,4.772-.633,4.99-.995Z" />
+    <g class="cls-1">
+      <path class="light-lightblue-10" d="M2.5,13c0-.828,2.462-1.5,5.5-1.5s5.5.672,5.5,1.5S11.038,14.5,8,14.5,2.5,13.828,2.5,13Z" />
+      <path class="light-lightblue" d="M8,11c-2.229,0-6,.421-6,2s3.771,2,6,2,6-.421,6-2S10.229,11,8,11Zm0,3c-3.021,0-4.863-.665-5-.979C3.137,12.665,4.979,12,8,12s4.863.665,5,.979C12.863,13.335,11.021,14,8,14Z" />
+    </g>
+  </g>
+</svg>
+`,p5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightSpy</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M13.424,11.5l1.5,1L13,15H4L2.076,12.5l1.5-1L2.012,9.436A17.607,17.607,0,0,1,4.5,8.035h.079A2.192,2.192,0,0,1,4.5,7.5a4.171,4.171,0,0,1,.026-.463h.009C3.3,6.7,2.511,6.211,2.511,5.663c0-.679,1.205-1.271,2.992-1.588h0C5.545,1.671,6.305,1.5,7,1.5A2.874,2.874,0,0,1,8.5,2h0A2.874,2.874,0,0,1,10,1.5c.692,0,1.452.171,1.493,2.575h0c1.787.317,2.992.909,2.992,1.588,0,.548-.785,1.038-2.024,1.374h.009A4.171,4.171,0,0,1,12.5,7.5a2.192,2.192,0,0,1-.079.535H12.5a17.607,17.607,0,0,1,2.488,1.4Z" />
+    <path class="light-defaultgrey" d="M13.674,15l1.65-2.2-.123-.716-1.058-.706,1.244-1.641L15.3,9.046a17.1,17.1,0,0,0-2.323-1.34c0-.07.021-.135.021-.206C13,7.468,13,7.438,13,7.407c1.187-.384,1.994-.959,1.994-1.744,0-1.16-1.737-1.735-3.011-2C11.872,1.811,11.268,1,10,1a3.237,3.237,0,0,0-1.5.415A3.237,3.237,0,0,0,7,1c-1.265,0-1.869.811-1.975,2.661-1.274.267-3.011.842-3.011,2,0,.785.807,1.36,1.994,1.744,0,.031,0,.061,0,.093,0,.071.018.136.021.206A17.1,17.1,0,0,0,1.7,9.046l-.085.691,1.244,1.641L1.8,12.084l-.123.716L3.326,15h1.25L2.793,12.623l1.061-.707.121-.718L2.728,9.552c.415-.257,1-.579,1.467-.815A4.491,4.491,0,0,0,8,11.958V15H9V11.958a4.491,4.491,0,0,0,3.805-3.221c.464.236,1.052.558,1.467.815L13.025,11.2l.121.718,1.061.707L12.424,15ZM7,2a2.384,2.384,0,0,1,1.209.4h.586A2.391,2.391,0,0,1,10,2c.421,0,1,0,1,2.277C11,4.463,10.141,5,8.5,5S6,4.463,6,4.277C6,2,6.576,2,7,2Zm1.5,9A3.5,3.5,0,0,1,5.017,7.671c.315.066.645.12.983.166V9H8V7.993C8.167,8,8.334,8,8.5,8s.333,0,.5-.007V9h2V7.837c.338-.046.668-.1.983-.166A3.5,3.5,0,0,1,8.5,11Zm0-4C4.878,7,3.011,6.063,3.011,5.663c0-.154.512-.639,2.067-.99C5.437,5.546,6.976,6,8.5,6s3.062-.454,3.421-1.327c1.555.351,2.067.836,2.067.99C13.989,6.063,12.122,7,8.5,7Z" />
+  </g>
+</svg>
+`,g5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-red{fill: #c50b17; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightStop</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-red" d="M12.5,3.5v9h-9v-9Z" />
+    </g>
+    <path class="light-red" d="M12.5,3h-9L3,3.5v9l.5.5h9l.5-.5v-9ZM12,12H4V4h8Z" />
+  </g>
+</svg>
+`,m5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightPause</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M6.5,3.5v9h-3v-9Z" />
+      <path class="light-defaultgrey" d="M12.5,3.5v9h-3v-9Z" />
+    </g>
+    <path class="light-defaultgrey" d="M12.5,3h-3L9,3.5v9l.5.5h3l.5-.5v-9ZM12,12H10V4h2ZM6.5,3h-3L3,3.5v9l.5.5h3l.5-.5v-9ZM6,12H4V4H6Z" />
+  </g>
+</svg>
+`,y5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightStatusStoppedOutline</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M13.5,7.5a6,6,0,1,1-6-6A6,6,0,0,1,13.5,7.5Z" />
+    <path class="light-defaultgrey" d="M7.5,1A6.5,6.5,0,1,0,14,7.5,6.508,6.508,0,0,0,7.5,1Zm0,12A5.5,5.5,0,1,1,13,7.5,5.506,5.506,0,0,1,7.5,13Z" />
+    <path class="light-defaultgrey" d="M10,5v5H5V5Z" />
+  </g>
+</svg>
+`,b5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightStepInto</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue" d="M7.5,14.5a2,2,0,1,1,2-2A2,2,0,0,1,7.5,14.5Z" />
+    <path class="light-blue" d="M11.036,5.657,7.854,8.839H7.146L3.964,5.657l.708-.707L7,7.278V0H8V7.278L10.328,4.95Z" />
+  </g>
+</svg>
+`,v5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightStepOver</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue" d="M9.5,12.5a2,2,0,1,1-2-2A2,2,0,0,1,9.5,12.5Z" />
+    <path class="light-blue" d="M14,4.5v4l-.5.5h-4V8h2.89A5.494,5.494,0,0,0,2.168,9.146L1.2,8.9A6.485,6.485,0,0,1,13,7.069V4.5Z" />
+  </g>
+</svg>
+`,x5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightStepOut</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue" d="M7.5,14.5a2,2,0,1,1,2-2A2,2,0,0,1,7.5,14.5Z" />
+    <path class="light-blue" d="M10.4,4.1,8,1.707V9H7V1.707L4.6,4.1,3.9,3.4,7.146.146h.708L11.1,3.4Z" />
+  </g>
+</svg>
+`,w5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightGoToCurrentLine</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M1.843,10H.993V9.15Zm13.15-1v1H5.079l1-1Zm-14,5h14v1h-14Z" />
+    </g>
+    <path class="light-defaultgrey" d="M10.993,11v2h-10V11Z" />
+    <path class="light-blue" d="M7.993,3.5V5h-1V3.5a1.5,1.5,0,0,0-3,0V8.258L5.607,6.644l.707.707-2.5,2.5H3.107l-2.5-2.5.707-.707L2.993,8.322V3.5a2.5,2.5,0,0,1,5,0Z" />
+  </g>
+</svg>
+`,_5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>GoToPrevious</title>
+  <g id="canvas">
+    <path class="canvas" d="M0,16V0H16V16Z" />
+    <path class="canvas" d="M0,16V0H16V16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M2.146,7.146l5-5h.708l5,5-.708.708L8,3.707V15H7V3.707L2.854,7.854Z" />
+  </g>
+</svg>
+`,S5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightAlignLeft</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M3.5,6.5v-2h11v2Zm0,5v-2h7v2Z" />
+    <path class="light-defaultgrey" d="M14.5,7H3.5L3,6.5v-2L3.5,4h11l.5.5v2ZM4,6H14V5H4Zm6.5,6h-7L3,11.5v-2L3.5,9h7l.5.5v2ZM4,11h6V10H4Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M1,2H2V14H1Z" />
+    </g>
+  </g>
+</svg>
+`,C5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightAlignRight</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M5.5,11.5v-2h7v2Zm-4-5v-2h11v2Z" />
+    <path class="light-defaultgrey" d="M12.5,7H1.5L1,6.5v-2L1.5,4h11l.5.5v2ZM2,6H12V5H2Zm10.5,6h-7L5,11.5v-2L5.5,9h7l.5.5v2ZM6,11h6V10H6Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M14,2h1V14H14Z" />
+    </g>
+  </g>
+</svg>
+`,j5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightAlignTop</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M6.5,14.5h-2V3.5h2Zm5-4h-2v-7h2Z" />
+    <path class="light-defaultgrey" d="M6.5,15h-2L4,14.5V3.5L4.5,3h2l.5.5v11ZM5,14H6V4H5Zm6.5-3h-2L9,10.5v-7L9.5,3h2l.5.5v7ZM10,10h1V4H10Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M14,1V2H2V1Z" />
+    </g>
+  </g>
+</svg>
+`,k5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightAlignBottom</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M6.5,12.5h-2V1.5h2Zm5,0h-2v-7h2Z" />
+    <path class="light-defaultgrey" d="M6.5,13h-2L4,12.5V1.5L4.5,1h2l.5.5v11ZM5,12H6V2H5Zm6.5,1h-2L9,12.5v-7L9.5,5h2l.5.5v7ZM10,12h1V6H10Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M2,14H14v1H2Z" />
+    </g>
+  </g>
+</svg>
+`,E5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>CenterHorizontally</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M2.5,6.5v-2h10v2Zm2,5v-2h6v2Z" />
+    <path class="light-defaultgrey" d="M11,11.5v-2L10.5,9h-6L4,9.5v2l.5.5h6ZM5,11V10h5v1Zm8-6.5L12.5,4H2.5L2,4.5v2l.5.5h10l.5-.5ZM3,6V5h9V6Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M8,2V4H7V2ZM8,7V9H7V7Zm0,5v2H7V12Z" />
+    </g>
+  </g>
+</svg>
+`,M5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightCenterVertically</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M6.5,12.5h-2V2.5h2Zm5-2h-2v-6h2Z" />
+    <path class="light-defaultgrey" d="M11.5,4h-2L9,4.5v6l.5.5h2l.5-.5v-6ZM11,10H10V5h1ZM4.5,2,4,2.5v10l.5.5h2l.5-.5V2.5L6.5,2ZM6,12H5V3H6Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M2,7H4V8H2ZM7,7H9V8H7Zm5,0h2V8H12Z" />
+    </g>
+  </g>
+</svg>
+`,L5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightAlignHorizontalStretch</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M3.5,11.5v-2h9v2Zm0-5v-2h9v2Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M1,2H2V14H1ZM14,2V14h1V2Z" />
+    </g>
+    <path class="light-defaultgrey" d="M12.5,12h-9L3,11.5v-2L3.5,9h9l.5.5v2ZM4,11h8V10H4Zm8.5-4h-9L3,6.5v-2L3.5,4h9l.5.5v2ZM4,6h8V5H4Z" />
+  </g>
+</svg>
+`,N5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightAlignVerticalStretch</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M6.5,12.5h-2v-9h2Zm5,0h-2v-9h2Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M2,14H14v1H2ZM2,2H14V1H2Z" />
+    </g>
+    <path class="light-defaultgrey" d="M11.5,13h-2L9,12.5v-9L9.5,3h2l.5.5v9ZM10,12h1V4H10ZM6.5,13h-2L4,12.5v-9L4.5,3h2l.5.5v9ZM5,12H6V4H5Z" />
+  </g>
+</svg>
+`,z5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightMakeSameHeight</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M14,3H1V2H14Zm0,12H1V14H14Z" />
+    <path class="light-blue" d="M10.355,11.354l-2.5,2.5H7.148l-2.5-2.5.707-.708L7,12.291V4.705L5.352,6.354l-.707-.708,2.5-2.5h.707l2.5,2.5-.707.708L8,4.709V12.3l1.648-1.649Z" />
+  </g>
+</svg>
+`,T5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M8 2L13 7H10V14H6V7H3L8 2Z" fill="#212121"/>
+</svg>
+`,A5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow{fill: #996f00; opacity: 1;}</style>
+  </defs>
+  <title>IconLightFolderClosed</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-yellow-10" d="M14.5,3.5v9H1.5V2.5h6l1,1Z" />
+    <path class="light-yellow" d="M14.5,3H8.707l-.853-.854L7.5,2h-6L1,2.5v10l.5.5h13l.5-.5v-9ZM7.293,3l.488.488L7.268,4H2V3ZM14,12H2V5H7.475l.354-.146L8.682,4H14Z" />
+  </g>
+</svg>
+`,D5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow-25{fill: #996f00; opacity: 0.25;}.light-yellow{fill: #996f00; opacity: 1;}</style>
+  </defs>
+  <title>IconLightFolderOpened</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-yellow-10" d="M13.5,3.5v2h-5l-1,1h-5l-2,6V2.5h5l1,1Z" />
+    <path class="light-yellow-25" d="M8.5,5.5h7l-2,7H.5l2-6h5Z" />
+    <path class="light-yellow" d="M15.408,5H14V3.5L13.5,3H6.707l-.853-.854L5.5,2H.5L0,2.5v10l.5.5H13.541l.483-.371,1.868-7ZM1,3H5.293l.853.854L6.5,4H13V5H8.475l-.354.146L7.268,6H2.475L2,6.342,1,9.421Zm12.157,9H1.168L2.835,7h4.64l.353-.146L8.682,6h6.076Z" />
+    <path class="light-yellow-25" d="M14,12.5H13V6h1Z" />
+  </g>
+</svg>
+`,I5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-purple-10{fill: #6936aa; opacity: 0.1;}.light-purple{fill: #6936aa; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>Module</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-purple-10" d="M2.5,9.5v5h12v-5Z" />
+      <path class="light-purple" d="M14.5,9H2.5L2,9.5v5l.5.5h12l.5-.5v-5ZM14,14H3V10H14Z" />
+    </g>
+    <path class="light-purple-10" d="M14.5,2.5v5h-5v-5Zm-12,5h5v-5h-5Z" />
+    <path class="light-purple" d="M14.5,2h-5L9,2.5v5l.5.5h5l.5-.5v-5ZM14,7H10V3h4ZM2.5,2,2,2.5v5l.5.5h5L8,7.5v-5L7.5,2ZM7,7H3V3H7Z" />
+  </g>
+</svg>
+`,R5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-purple-10{fill: #6936aa; opacity: 0.1;}.light-purple{fill: #6936aa; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>Method</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-purple-10" d="M13.5,5.045v7L8,14.545l-5.5-2.5v-7l5.5-3Z" />
+      <path class="light-purple" d="M14,5.045v7l-.293.455L8.207,15H7.793l-5.5-2.5L2,12.045v-7l.261-.439.032.894L3,5.821v5.9l4.5,2.045,0-5.9.3.135h.414l.288-.131,0,5.9L13,11.723v-5.9l.707-.321.032-.894Z" />
+    </g>
+    <path class="light-purple-10" d="M13.5,5.045,8,7.545l-5.5-2.5,5.5-3Z" />
+    <path class="light-purple" d="M8.239,1.606H7.761l-5.5,3,.032.894L7.793,8h.414l5.5-2.5.032-.894ZM8,7,3.619,5,8,2.614,12.381,5Z" />
+  </g>
+</svg>
+`,H5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-purple-10{fill: #6936aa; opacity: 0.1;}.light-purple{fill: #6936aa; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightWindowsForm</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M14.5,5v8.5H1.5V5Z" />
+      <path class="light-defaultgrey" d="M15,4.5v9l-.5.5H1.5L1,13.5v-9l.5.5H2v8H14V5h.5Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M14.5,1.5v3H1.5v-3Z" />
+    <path class="light-defaultgrey" d="M14.5,1H1.5L1,1.5v3l.5.5h13l.5-.5v-3ZM14,4H2V2H14Z" />
+    <path class="light-purple-10" d="M12.5,6.5v3h-3v-3Zm-5,2v3h-4v-3Z" />
+    <path class="light-purple" d="M12.5,10h-3L9,9.5v-3L9.5,6h3l.5.5v3ZM10,9h2V7H10ZM7.5,8h-4L3,8.5v3l.5.5h4l.5-.5v-3ZM7,11H4V9H7Z" />
+  </g>
+</svg>
+`,O5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightProcedure</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M14.5,5v8H1.5V5Z" />
+      <path class="light-defaultgrey" d="M14.5,5H1.5L1,5.5v8l.5.5h13l.5-.5v-8ZM14,13H2V6H14Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M14,3V5H2V3Z" />
+    <path class="light-defaultgrey" d="M14.5,6H1.5L1,5.5v-3L1.5,2h13l.5.5v3ZM2,5H14V3H2Z" />
+    <path class="light-defaultgrey" d="M8,8H3V7H8ZM8,9H3v1H8ZM3,12H5V11H3Zm8-5H9V8h2Zm1,2H9v1h3ZM6,11v1h7V11Z" />
+  </g>
+</svg>
+`,B5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-yellow-10{fill: #996f00; opacity: 0.1;}.light-yellow{fill: #996f00; opacity: 1;}</style>
+  </defs>
+  <title>Class</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-yellow-10" d="M5.5.5l3,3-5,5-3-3Zm10,6-2-2-3,3,2,2Zm-5,7,2,2,3-3-2-2Z" />
+    <path class="light-yellow" d="M10.146,7.854l2,2h.708l3-3V6.146l-2-2h-.708L11.293,6H6.707L8.854,3.854V3.146l-3-3H5.146l-5,5v.708l3,3h.708L5.707,7H8v5.5l.5.5h1.793l-.147.146v.708l2,2h.708l3-3v-.708l-2-2h-.708L11.293,12H9V7h1.293l-.147.146ZM3.5,7.793,1.207,5.5,5.5,1.207,7.793,3.5Zm10,3.414L14.793,12.5,12.5,14.793,11.207,13.5Zm0-6L14.793,6.5,12.5,8.793,11.207,7.5Z" />
+  </g>
+</svg>
+`,$5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>DocumentCollection</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M14.5,1.5V9.911H12V5.5L11.5,5h-4V1.5Z" />
+      <path class="light-defaultgrey-10" d="M4,12.5H1.5v-9H7V5H4.5L4,5.5Z" />
+      <path class="light-defaultgrey" d="M15,1.5v9l-.5.5H12V10h2V2H8V5H7V4H2v8H4v1H1.5L1,12.5v-9L1.5,3H7V1.5L7.5,1h7Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M11.5,14.5h-7v-9h7Z" />
+    <path class="light-defaultgrey" d="M11.5,15h-7L4,14.5v-9L4.5,5h7l.5.5v9ZM5,14h6V6H5Z" />
+    <path class="light-defaultgrey-25" d="M11,10v1H7.5L7,10.5V6H8v4Z" />
+  </g>
+</svg>
+`,P5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-yellow-25{fill: #996f00; opacity: 0.25;}.light-yellow{fill: #996f00; opacity: 1;}</style>
+  </defs>
+  <title>Event</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-yellow-25" d="M12.5,6.5l-8,8H3l3.5-6H3l4-7h5.387L8,6.5Z" />
+    <path class="light-yellow" d="M12.5,6H9.1l3.659-4.17L12.387,1H7l-.434.252-4,7L3,9H5.629L2.568,14.248,3,15H4.5l.354-.146,8-8ZM4.293,14H3.871L6.932,8.752,6.5,8H3.862L7.29,2h3.993L7.624,6.17,8,7h3.293Z" />
+  </g>
+</svg>
+`,V5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightProperty</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M10.242,7.167c-1.722,1.75-5.418,5.45-7.191,7.1-.861.75-2.076-.651-1.418-1.4,1.671-1.75,5.418-5.449,7.14-7.1a1.078,1.078,0,0,1,.659-.25A1.026,1.026,0,0,1,10.242,7.167Z" />
+      <path class="light-defaultgrey" d="M10.828,5.938a1.508,1.508,0,0,0-1.4-.921,1.628,1.628,0,0,0-1.005.388c-1.714,1.643-5.473,5.355-7.17,7.131a1.444,1.444,0,0,0,.187,1.973,1.5,1.5,0,0,0,1.056.47,1.352,1.352,0,0,0,.892-.346C5.254,12.9,9.051,9.09,10.61,7.506A1.45,1.45,0,0,0,10.828,5.938Zm-.942.878C8.344,8.384,4.561,12.178,2.723,13.89a.4.4,0,0,1-.571-.087C2,13.653,1.86,13.365,2,13.212c1.673-1.753,5.417-5.448,7.076-7.044a.575.575,0,0,1,.361-.151.513.513,0,0,1,.48.322A.465.465,0,0,1,9.886,6.816Z" />
+    </g>
+    <path class="light-defaultgrey" d="M14.974,5a4,4,0,0,1-8,0,3.961,3.961,0,0,1,4-4,4.19,4.19,0,0,1,1.441.241L9.534,4.2l2.24,2.241,2.96-2.882A4.19,4.19,0,0,1,14.974,5Z" />
+  </g>
+</svg>
+`,F5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightTextBox</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M.5,3.5h15v10H.5Z" />
+    <path class="light-defaultgrey" d="M15.5,3H.5L0,3.5v10l.5.5h15l.5-.5V3.5ZM15,13H1V4H15Z" />
+    <path class="light-defaultgrey" d="M9,8a1.987,1.987,0,0,0-1,.277V6H7v6H8v-.277A2,2,0,1,0,9,8Zm0,3a1,1,0,1,1,1-1A1,1,0,0,1,9,11ZM5,8v.277a2,2,0,1,0,0,3.446V12H6V8ZM4,11a1,1,0,1,1,1-1A1,1,0,0,1,4,11Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M14,6.506v3.988a.46.46,0,0,0,.5.506v1a1.456,1.456,0,0,1-1-.352,1.456,1.456,0,0,1-1,.352V11a.46.46,0,0,0,.5-.506V6.506A.46.46,0,0,0,12.5,6V5a1.456,1.456,0,0,1,1,.352A1.456,1.456,0,0,1,14.5,5V6A.46.46,0,0,0,14,6.506Z" />
+    </g>
+  </g>
+</svg>
+`,q5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightLabel</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+    <path class="canvas" d="M16,16H0V0H16Z" />
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M6.069,9.48H9.881L10.834,12H12L8.539,3.009H7.448L4,12H5.172ZM7.818,4.7a3.316,3.316,0,0,0,.144-.6h.025a3.655,3.655,0,0,0,.138.6L9.536,8.533H6.42Z" />
+  </g>
+</svg>
+`,Z5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}.white{fill: #ffffff; opacity: 1;}</style>
+  </defs>
+  <title>IconLightListBox</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-25" d="M16,11H11V4h5Z" />
+    <path class="light-defaultgrey-10" d="M11,14.5H.5V.5H11Z" />
+    <path class="light-defaultgrey" d="M15,15H.5L0,14.5V.5L.5,0H15l1,1H1V14H16Z" />
+    <path class="light-defaultgrey" d="M8,4H3V3H8ZM8,8H3V7H8Zm0,4H3V11H8ZM8,6H3V5H8Zm0,4H3V9H8Z" />
+    <path class="light-blue" d="M16,.5v4l-.5.5H11V0h4.5Zm0,10v4l-.5.5H11V10h4.5Z" />
+    <path class="white" d="M13.5,1,15,3H12ZM12,12h3l-1.5,2Z" />
+  </g>
+</svg>
+`,U5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{fill:none;}</style>
+  </defs>
+  <title>IconLightGroupBox</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="cls-1" d="M16,16H0V0H16Z" />
+    <path class="light-defaultgrey" d="M6.547,3.068,7.992,5H6.812L6,3.845,5.188,5H4.008L5.453,3.068,4,1H5L6,2.337,7,1H8ZM11,3.134V5H10V3.134L8.5,1h1l1,1.337h0L11.5,1h1Z" />
+    <path class="light-defaultgrey" d="M14,3.5v10l-.5.5H2.5L2,13.5V3.5L2.5,3H4V4H3v9H13V4H12V3h1.5Z" />
+  </g>
+</svg>
+`,W5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightProgressBar</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M14.5,12.5H.5v-8h14Z" />
+    <path class="light-defaultgrey" d="M14.5,13H.5L0,12.5v-8L.5,4h14l.5.5v8ZM1,12H14V5H1Z" />
+    <path class="light-blue" d="M10,11H2V6h8Z" />
+  </g>
+</svg>
+`,K5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightTimer</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+    <path class="light-defaultgrey-10" d="M13,9A5.5,5.5,0,1,1,7.5,3.5,5.5,5.5,0,0,1,13,9Z" />
+    <path class="light-defaultgrey" d="M8.5,9a1,1,0,0,1-2,0A.985.985,0,0,1,7,8.153V5H8V8.153A.985.985,0,0,1,8.5,9Z" />
+    <path class="light-defaultgrey" d="M13.854,3.854l-.708-.708L11.632,4.661A5.976,5.976,0,0,0,8,3.025V2h2V1H5V2H7V3.025A6.013,6.013,0,1,0,12.3,5.41ZM7.5,14a5,5,0,1,1,5-5A5.006,5.006,0,0,1,7.5,14Z" />
+  </g>
+</svg>
+`,G5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}</style>
+  </defs>
+  <title>IconLightRadioButton</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M8,13a5,5,0,1,1,5-5A5.006,5.006,0,0,1,8,13ZM8,4a4,4,0,1,0,4,4A4,4,0,0,0,8,4Z" />
+    <path class="light-defaultgrey-10" d="M8,12.5A4.5,4.5,0,1,1,12.5,8,4.5,4.5,0,0,1,8,12.5Z" />
+    <path class="light-defaultgrey" d="M6,8a2,2,0,1,1,2,2A2,2,0,0,1,6,8Z" />
+  </g>
+</svg>
+`,Y5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightMonthCalendar</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M11.5,11.5h-2v-2h2Z" />
+    <path class="light-defaultgrey-10" d="M13.5,2.5v3H1.5v-3Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M13.5,6v7.5H1.5V6Z" />
+      <path class="light-defaultgrey" d="M14,5.5v8l-.5.5H1.5L1,13.5v-8l.5.5H2v7H13V6h.5Z" />
+    </g>
+    <path class="light-defaultgrey" d="M8,8H7V7H8Zm2-1H9V8h1Zm2,0H11V8h1ZM8,9H7v1H8ZM6,7H5V8H6ZM6,9H5v1H6Zm0,2H5v1H6ZM4,7H3V8H4ZM4,9H3v1H4Zm0,2H3v1H4Zm4,0H7v1H8Z" />
+    <path class="light-defaultgrey" d="M13.5,2H11V1H10V2H5V1H4V2H1.5L1,2.5v3l.5.5h12l.5-.5v-3ZM13,5H2V3H4V4H5V3h5V4h1V3h2Z" />
+    <path class="light-defaultgrey" d="M11.5,12h-2L9,11.5v-2L9.5,9h2l.5.5v2ZM10,11h1V10H10Z" />
+  </g>
+</svg>
+`,X5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightDateTimePicker</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M4.5,6h10v7.5H4.5Z" />
+      <path class="light-defaultgrey" d="M14.5,6l.5-.5v8l-.5.5H4.5L4,13.5V6H5v7h9V6Z" />
+      <path class="light-defaultgrey" d="M7,8H6V7H7ZM9,7H8V8H9Zm2,0H10V8h1Zm2,0H12V8h1ZM7,9H6v1H7ZM9,9H8v1H9ZM7,11H6v1H7Zm2,0H8v1H9Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M12.5,11.5h-2v-2h2Z" />
+    <path class="light-defaultgrey" d="M12.5,12h-2l-.5-.5v-2l.5-.5h2l.5.5v2ZM11,11h1V10H11Z" />
+    <path class="light-defaultgrey-10" d="M14.5,5.5H1.5v-4h13Z" />
+    <path class="light-defaultgrey" d="M14.5,1H1.5L1,1.5v4l.5.5h13l.5-.5v-4ZM2,2h8V5H2ZM14,5H11V2h3Z" />
+    <path class="light-defaultgrey" d="M12.5,4.125,11.75,3h1.5Z" />
+  </g>
+</svg>
+`,J5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightSlider</title>
+  <g id="canvas">
+    <path class="canvas" d="M0,16V0H16V16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M1.5,11.5v-9h6v9l-3,3Z" />
+    <path class="light-defaultgrey" d="M8,6V2.5L7.5,2h-6L1,2.5v9l.146.354,3,3h.708l3-3L8,11.5V7h7V6ZM7,11.293l-2.5,2.5L2,11.293V5H7ZM7,4H2V3H7Z" />
+  </g>
+</svg>
+`,Q5=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightTab</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M13.5,7.5V9h-5V7.5Z" />
+      <path class="light-defaultgrey" d="M14,7.5V9H13V8H9V9H8V7.5L8.5,7h5Z" />
+    </g>
+    <path class="light-blue-10" d="M8.5,6.5V9h-7V6.5Z" />
+    <path class="light-blue" d="M9,9V6.5L8.5,6h-7L1,6.5V10H15V9ZM2,9V7H8V9Z" />
+  </g>
+</svg>
+`,ej=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-shadow{fill: #000000; opacity: 0.1;}.cls-1{opacity:0.75;}.cls-2{opacity:0.1;}</style>
+  </defs>
+  <title>IconLightMutuallExclusiveCheckbox</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-2">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M.5,8.5h6v6H.5Zm8-8v6h6V.5Z" />
+      <path class="light-defaultgrey" d="M.5,8,0,8.5v6l.5.5h6l.5-.5v-6L6.5,8ZM6,14H1V9H6ZM14.5,0h-6L8,.5v6l.5.5h6l.5-.5V.5ZM14,6H9V1h5Z" />
+    </g>
+  </g>
+  <g id="level-1">
+    <g class="cls-2">
+      <path class="light-defaultgrey" d="M15,8.5v2.448l-1,1.019V9l.5-1ZM6,1V3.967L7,2.948V.5L6.5,0Z" />
+    </g>
+    <path class="light-shadow" d="M0,7.5.5,8h6L7,7.5v-1L6.5,7H.5L0,6.5Zm8,8,.5.5h6l.5-.5v-1l-.5.5h-6L8,14.5Z" />
+    <path class="light-defaultgrey-10" d="M5.047,1H6V3.967L6.5,3.5v3H.5V.5H5.538Zm8,8H14v2.967l.5-.467v3h-6v-6h5.038Z" />
+    <path class="light-defaultgrey" d="M6,3.967,7,2.948V6.5L6.5,7H.5L0,6.5V.5L.5,0h6L7,.5,6.988,1.859,3.846,5,3.135,5,1.8,3.624l.714-.7L3.5,3.936,6,1.432V1H1V6H6Zm8,8,1-1.019V14.5l-.5.5h-6L8,14.5v-6L8.5,8h6l.5.5-.012,1.359L11.846,13l-.711,0L9.8,11.624l.714-.7.987,1.011,2.5-2.5V9H9v5h5Z" />
+  </g>
+</svg>
+`,tj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightButton</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey" d="M10,7a1.978,1.978,0,0,0-1,.278V5H8v6H9v-.278A1.978,1.978,0,0,0,10,11a2,2,0,0,0,0-4Zm0,3a1,1,0,1,1,1-1A1,1,0,0,1,10,10ZM6,7v.278A1.978,1.978,0,0,0,5,7a2,2,0,0,0,0,4,1.978,1.978,0,0,0,1-.278V11H7V7ZM5,10A1,1,0,1,1,6,9,1,1,0,0,1,5,10Z" />
+    </g>
+    <path class="light-defaultgrey-10" d="M1.5,12.5a1,1,0,0,1-1-1v-7a1,1,0,0,1,1-1h12a1,1,0,0,1,1,1v7a1,1,0,0,1-1,1Z" />
+    <path class="light-defaultgrey" d="M13.5,13H1.5A1.5,1.5,0,0,1,0,11.5v-7A1.5,1.5,0,0,1,1.5,3h12A1.5,1.5,0,0,1,15,4.5v7A1.5,1.5,0,0,1,13.5,13ZM1.5,4a.5.5,0,0,0-.5.5v7a.5.5,0,0,0,.5.5h12a.5.5,0,0,0,.5-.5v-7a.5.5,0,0,0-.5-.5Z" />
+  </g>
+</svg>
+`,nj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-yellow{fill: #996f00; opacity: 1;}</style>
+  </defs>
+  <title>IconLightImageButton</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M12.5,13.5H2.5a2,2,0,0,1-2-2v-8a2,2,0,0,1,2-2h10a2,2,0,0,1,2,2v8A2,2,0,0,1,12.5,13.5Z" />
+    <path class="light-blue" d="M14.291,12.083l-.145,1.271L9.98,9.187l-1.64,1.64H7.633L4.986,8.181.893,12.274A.98.98,0,0,1,.5,11.5v-.247L4.633,7.12H5.34L7.986,9.767l1.641-1.64h.707Z" />
+    <path class="light-defaultgrey" d="M12.5,14H2.5A2.5,2.5,0,0,1,0,11.5v-8A2.5,2.5,0,0,1,2.5,1h10A2.5,2.5,0,0,1,15,3.5v8A2.5,2.5,0,0,1,12.5,14ZM2.5,2A1.5,1.5,0,0,0,1,3.5v8A1.5,1.5,0,0,0,2.5,13h10A1.5,1.5,0,0,0,14,11.5v-8A1.5,1.5,0,0,0,12.5,2Z" />
+    <path class="light-yellow" d="M11,4.5A1.5,1.5,0,1,1,9.5,3,1.5,1.5,0,0,1,11,4.5Z" />
+  </g>
+</svg>
+`,ij=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightCursor</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M0,0H16V16H0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue" d="M9.09,10.034l1.38,3.8-.94.342L8.123,10.3,6,12V3l6,7.2Z" />
+  </g>
+</svg>
+`,sj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.light-defaultgrey{fill: #212121; opacity: 1;}.white{fill: #ffffff; opacity: 1;}</style>
+  </defs>
+  <title>IconLightHorizontalScrollBar</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-25" d="M12.5,11H4V6h8.5Z" />
+    <path class="light-defaultgrey" d="M16,6.5v4l-.5.5H11V6h4.5ZM.5,6,0,6.5v4l.5.5H5V6Z" />
+    <path class="white" d="M13,10V7l2,1.49ZM1,8.49,3,7v3Z" />
+  </g>
+</svg>
+`,rj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-25{fill: #212121; opacity: 0.25;}.light-defaultgrey{fill: #212121; opacity: 1;}.white{fill: #ffffff; opacity: 1;}</style>
+  </defs>
+  <title>VerticalScrollBar</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-25" d="M5,12.5V4h5v8.5Z" />
+    <path class="light-defaultgrey" d="M9.5,16h-4L5,15.5V11h5v4.5ZM10,.5,9.5,0h-4L5,.5V5h5Z" />
+    <path class="white" d="M6,13H9L7.51,15ZM7.51,1,9,3H6Z" />
+  </g>
+</svg>
+`,aj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-lightblue{fill: #0077a0; opacity: 1;}</style>
+  </defs>
+  <title>IconLightDataGrid</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M15.5.5v9H10V5.97c0-1.624-1.626-2.47-3.5-2.8V.5Z" />
+    <path class="light-defaultgrey" d="M15.5,0h-9L6,.5V3.094A6.877,6.877,0,0,1,8.821,4L9,4.123A2.238,2.238,0,0,1,10,5.97V4h2V6H10V7h2V9H10v1h5.5l.5-.5V.5ZM9,3H7V1H9Zm3,0H10V1h2Zm3,6H13V7h2Zm0-3H13V4h2Zm0-3H13V1h2Z" />
+    <path class="light-lightblue-10" d="M8.5,5.97V14c0,.828-1.791,1.5-4,1.5s-4-.672-4-1.5V5.97c0-.828,1.791-1.5,4-1.5S8.5,5.142,8.5,5.97Z" />
+    <path class="light-lightblue" d="M9,5.97c0-2.627-9-2.627-9,0H0V14c0,1.313,2.264,2,4.5,2S9,15.313,9,14V5.97Zm-4.5-1c2.273,0,3.5.71,3.5,1s-1.227,1-3.5,1S1,6.26,1,5.97,2.227,4.97,4.5,4.97ZM8,14c0,.29-1.227,1-3.5,1S1,14.29,1,14V7.261H1a7.863,7.863,0,0,0,3.5.709A7.863,7.863,0,0,0,8,7.261H8Z" />
+  </g>
+</svg>
+`,lj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-lightblue{fill: #0077a0; opacity: 1;}</style>
+  </defs>
+  <title>DataSource</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-lightblue-10" d="M12.5,4v8c0,.829-1.791,1.5-4,1.5s-4-.671-4-1.5V4c0-.828,1.791-1.5,4-1.5S12.5,3.172,12.5,4Z" />
+    <path class="light-lightblue" d="M4,3.97V12c0,1.314,2.264,2,4.5,2s4.5-.686,4.5-2V3.97C13,1.343,4,1.343,4,3.97Zm8,3.884c-.175.21-.941.9-3.5.9s-3.325-.686-3.5-.9V5.261a7.863,7.863,0,0,0,3.5.709A7.863,7.863,0,0,0,12,5.261ZM8.5,2.97c2.273,0,3.5.71,3.5,1s-1.227,1-3.5,1S5,4.26,5,3.97,6.227,2.97,8.5,2.97ZM8.5,13C6.227,13,5,12.29,5,12V9.084a7.412,7.412,0,0,0,3.5.666A7.412,7.412,0,0,0,12,9.084V12C12,12.29,10.773,13,8.5,13Z" />
+  </g>
+</svg>
+`,oj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightSerialPort</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M13.5,6.5V9L12,11.5H3L1.5,9V6.5a1,1,0,0,1,1-1h10A1,1,0,0,1,13.5,6.5Z" />
+      <path class="light-defaultgrey" d="M12,12H3l-.429-.243-1.5-2.5L1,9V6.5A1.5,1.5,0,0,1,2.5,5h10A1.5,1.5,0,0,1,14,6.5V9l-.071.257-1.5,2.5ZM3.283,11h8.434L13,8.861V6.5a.5.5,0,0,0-.5-.5H2.5a.5.5,0,0,0-.5.5V8.861Z" />
+    </g>
+    <path class="light-defaultgrey" d="M4,8H3V7H4ZM6,7H5V8H6ZM8,7H7V8H8Zm2,0H9V8h1Zm2,0H11V8h1ZM5,9H4v1H5ZM7,9H6v1H7ZM9,9H8v1H9Zm2,0H10v1h1Z" />
+  </g>
+</svg>
+`,cj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-shadow{fill: #000000; opacity: 0.1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightServer</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-2">
+    <g class="cls-1">
+      <path class="light-shadow" d="M13,3.5H12a.5.5,0,0,0-.5-.5h-6a.5.5,0,0,0-.5.5H4A1.5,1.5,0,0,1,5.5,2h6A1.5,1.5,0,0,1,13,3.5Z" />
+      <path class="light-defaultgrey-10" d="M12.5,2.5v12h-8V2.5a1,1,0,0,1,1-1h6A1,1,0,0,1,12.5,2.5Z" />
+      <path class="light-defaultgrey" d="M11.5,1h-6A1.5,1.5,0,0,0,4,2.5v12l.5.5h8l.5-.5V2.5A1.5,1.5,0,0,0,11.5,1ZM12,14H5V2.5A.5.5,0,0,1,5.5,2h6a.5.5,0,0,1,.5.5Z" />
+    </g>
+  </g>
+  <g id="level-1">
+    <path class="light-shadow" d="M10.5,5V6h-4V5Zm-4,7h4V11h-4Zm0,2h4V13h-4Z" />
+    <path class="light-defaultgrey" d="M10.5,4V5h-4V4Zm-4,7h4V10h-4Zm0,2h4V12h-4Z" />
+  </g>
+</svg>
+`,uj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightCustomControl</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M0,0H16V16H0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue-10" d="M15.192,8.681,9.635,14.238,8.153,12.72l5.539-5.539a1.059,1.059,0,0,1,1.5,0A1.062,1.062,0,0,1,15.192,8.681Z" />
+    <path class="light-defaultgrey-10" d="M8.252,10.5H1.5v-9h9V8.252Z" />
+    <path class="light-blue" d="M15.543,6.83a1.56,1.56,0,0,0-2.2,0l-5.25,5.25L6.511,15.326,7.186,16l2.995-1.629,5.365-5.336A1.562,1.562,0,0,0,15.543,6.83Zm-.7,1.5-5.2,5.2-.783-.8,5.19-5.189a.56.56,0,0,1,.792.793Z" />
+    <path class="light-defaultgrey" d="M7.752,11H1.5L1,10.5v-9L1.5,1h9l.5.5V7.752L9.75,9V2.25H2.25v7.5H9Z" />
+  </g>
+</svg>
+`,dj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue-10{fill: #005dba; opacity: 0.1;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightSelectObject</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,0V16H0V0Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue-10" d="M13.5,4.825v6.35L8,14.351,2.5,11.175V4.825L8,1.649Z" />
+    <path class="light-blue" d="M13.75,4.392,8.25,1.216h-.5L2.25,4.392,2,4.825v6.35l.25.433,5.5,3.176h.5l5.5-3.176.25-.433V4.825ZM8,2.226l4.5,2.6L8,7.423l-4.5-2.6ZM3,5.691l4.5,2.6v5.2L3,10.887Zm5.5,7.794v-5.2l4.5-2.6v5.2Z" />
+  </g>
+</svg>
+`,hj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightDialog</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M14.5,4.5v9H1.5v-9Z" />
+      <path class="light-defaultgrey" d="M14.5,4H1.5L1,4.5v9l.5.5h13l.5-.5v-9ZM14,13H2V5H14Z" />
+    </g>
+    <path class="light-defaultgrey" d="M6,11H9v1H6Z" />
+    <path class="light-defaultgrey" d="M10,12h3V11H10Z" />
+    <path class="light-defaultgrey" d="M7,6H3V7H7Z" />
+    <path class="light-defaultgrey" d="M7,8H3V9H7Z" />
+    <path class="light-defaultgrey-10" d="M14.5,2.5v2H1.5v-2Z" />
+    <path class="light-defaultgrey-10" d="M12.5,8.5h-4v-2h4Z" />
+    <path class="light-defaultgrey" d="M14.5,5H1.5L1,4.5v-2L1.5,2h13l.5.5v2ZM2,4H14V3H2Z" />
+    <path class="light-defaultgrey" d="M12.5,6h-4L8,6.5v2l.5.5h4l.5-.5v-2ZM12,8H9V7h3Z" />
+  </g>
+</svg>
+`,fj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightPanel</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M13.5,13.5H1.5V1.5h12Z" />
+    <path class="light-defaultgrey" d="M13.5,14H1.5L1,13.5V1.5L1.5,1h12l.5.5v12ZM2,13H13V2H2Z" />
+    <path class="light-defaultgrey" d="M5,7H6V8H5ZM5,6H6V5H5Zm2,6H8V11H7ZM5,10H6V9H5ZM5,4H6V3H5ZM3,10H4V9H3ZM3,8H4V7H3Zm4,2H8V9H7ZM3,12H4V11H3ZM3,4H4V3H3ZM3,6H4V5H3Zm2,6H6V11H5Zm4-2h1V9H9ZM9,4h1V3H9Zm2,8h1V11H11Zm0-4h1V7H11Zm0,2h1V9H11Zm0-4h1V5H11ZM7,8H8V7H7Zm4-5V4h1V3ZM7,4H8V3H7ZM9,6h1V5H9ZM7,6H8V5H7Zm2,6h1V11H9ZM9,8h1V7H9Z" />
+  </g>
+</svg>
+`,pj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.cls-1{opacity:0.75;}</style>
+  </defs>
+  <title>IconLightNetwork</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M9.5,11.5h-4v-4h4Z" />
+    <g class="cls-1">
+      <path class="light-defaultgrey-10" d="M8.5,7h-2V3.5h2Zm-8,3.5v-2H5v2Zm9.5,0v-2h4.5v2Z" />
+      <path class="light-defaultgrey" d="M15,8.5v2l-.5.5H10V10h4V9H10V8h4.5ZM6,7V3.5L6.5,3h2l.5.5V7H8V4H7V7ZM5,11H.5L0,10.5v-2L.5,8H5V9H1v1H5Z" />
+    </g>
+    <path class="light-defaultgrey" d="M9.5,12h-4L5,11.5v-4L5.5,7h4l.5.5v4ZM6,11H9V8H6Z" />
+  </g>
+</svg>
+`,gj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-yellow{fill: #996f00; opacity: 1;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightImage</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M14.5,2.5v12H1.5V2.5Z" />
+    <path class="light-defaultgrey" d="M14.5,2H1.5L1,2.5v12l.5.5h13l.5-.5V2.5ZM14,14H2V3H14Z" />
+    <path class="light-yellow" d="M12,5.5A1.5,1.5,0,1,1,10.5,4,1.5,1.5,0,0,1,12,5.5Z" />
+    <path class="light-blue" d="M14,11.09V12.5l-2.819-2.82L8.988,11.877H8.281L4.814,8.41,2,11.225V9.811L4.461,7.35h.707l3.466,3.466,2.193-2.193h.707Z" />
+  </g>
+</svg>
+`,mj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-lightblue-10{fill: #0077a0; opacity: 0.1;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}.light-lightblue{fill: #0077a0; opacity: 1;}</style>
+  </defs>
+  <title>IconLightColorPicker</title>
+  <g id="Canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-lightblue-10" d="M10.048,8.073l-5.3,5.3-1.061.353-.56.561L1.709,12.877l.561-.561.354-1.061,5.3-5.3Z" />
+    <path class="light-defaultgrey-10" d="M11.816,6.306l1.061,1.06L11.462,8.78,7.22,4.538,8.634,3.124,9.7,4.184l2.828-2.828,2.121,2.121Z" />
+    <path class="light-defaultgrey" d="M15,3.124,12.877,1H12.17L9.694,3.477,8.987,2.77H8.28L6.866,4.184v.707l4.243,4.243h.707L13.23,7.72V7.013l-.707-.707L15,3.831ZM11.463,8.073,7.927,4.538l.707-.707L12.17,7.366ZM11.816,5.6,10.4,4.184l2.122-2.121,1.414,1.414Z" />
+    <path class="light-lightblue" d="M3.477,14.644H2.77L1.356,13.23v-.707l.476-.477.317-.949.121-.2,5.3-5.3.707.707-5.219,5.22-.317.948-.121.2-.207.207.707.707.208-.207.195-.121.949-.316L9.694,7.72l.707.707-5.3,5.3-.2.121-.949.316Z" />
+  </g>
+</svg>
+`,yj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightSpinner</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M10.5,9.5v6h-7v-6Z" />
+    <path class="light-defaultgrey-10" d="M3.5,7.5v-6h7v6Z" />
+    <path class="light-defaultgrey" d="M3,7.5v-6L3.5,1h7l.5.5v6l-.5.5h-7ZM4,2V7h6V2Z" />
+    <path class="light-defaultgrey" d="M6.989,3,9,6H5Z" />
+    <path class="light-defaultgrey" d="M11,9.5v6l-.5.5h-7L3,15.5v-6L3.5,9h7ZM10,15V10H4v5Z" />
+    <path class="light-defaultgrey" d="M7.011,14,5,11H9Z" />
+  </g>
+</svg>
+`,bj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-blue{fill: #005dba; opacity: 1;}</style>
+  </defs>
+  <title>IconLightHyperLink</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-blue" d="M6.069,9.48H9.881L10.834,12H12L8.539,3.009H7.448L4,12H5.172ZM7.818,4.7a3.316,3.316,0,0,0,.144-.6h.025a3.655,3.655,0,0,0,.138.6L9.536,8.533H6.42ZM4,13h8v1H4Z" />
+  </g>
+</svg>
+`,vj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey-10{fill: #212121; opacity: 0.1;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>IconLightEdit</title>
+  <g id="canvas" class="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey-10" d="M13.26,2.736a1.5,1.5,0,0,1,0,2.119l0,0L6.116,12,4,9.884l7.143-7.148A1.5,1.5,0,0,1,13.26,2.736Z" />
+    <path class="light-defaultgrey" d="M13.588,5.233A2,2,0,0,0,10.761,2.41v0h0L4.042,9.13,2,13.333,2.667,14l4.065-1.944L13.588,5.24ZM6.224,11.19l-.082.039L4.771,9.858l.039-.082,6.655-6.658a1,1,0,1,1,1.414,1.414h0Z" />
+  </g>
+</svg>
+`,xj=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>.canvas{fill: none; opacity: 0;}.light-defaultgrey{fill: #212121; opacity: 1;}</style>
+  </defs>
+  <title>QuestionMark</title>
+  <g id="canvas">
+    <path class="canvas" d="M16,16H0V0H16Z" />
+  </g>
+  <g id="level-1">
+    <path class="light-defaultgrey" d="M10.6,4.725c0,1.493-.985,2.121-1.836,3A2.153,2.153,0,0,0,8.12,9.685H6.88a3.99,3.99,0,0,1,.184-1.633A3.962,3.962,0,0,1,8.12,6.637,5.061,5.061,0,0,0,9.176,5.461a1.806,1.806,0,0,0-.949-2.45A1.861,1.861,0,0,0,5.64,4.725H4.4a3.1,3.1,0,0,1,6.2,0ZM7.5,11.5a1,1,0,1,0,1,1A1,1,0,0,0,7.5,11.5Z" />
+  </g>
+</svg>
 `,l1={"new-document":JC,"open-folder":QC,save:e5,undo:t5,redo:n5,run:i5,stop:g5,"status-stopped-outline":y5,pause:m5,"step-into":b5,"step-over":v5,"step-out":x5,"run-to-cursor":w5,"go-to-previous":_5,library:s5,toolbox:r5,"collapse-left":a5,"expand-right":l5,search:o5,"source-control":c5,extension:u5,account:d5,"dll-command":wb,spy:p5,"align-left":S5,"align-right":C5,"align-top":j5,"align-bottom":k5,"center-h":E5,"center-v":M5,"same-width":L5,"same-height":N5,"same-size":z5,"move-up":T5,"folder-closed":A5,"folder-opened":D5,module:I5,method:R5,"windows-form":H5,procedure:O5,class:B5,field:h5,dll:wb,constant:f5,"resource-view":$5,event:P5,property:V5,textbox:F5,label:q5,listbox:Z5,groupbox:U5,progressbar:W5,timer:K5,radiobutton:G5,"month-calendar":Y5,"date-picker":X5,slider:J5,tab:Q5,checkbox:ej,button:tj,"image-button":nj,cursor:ij,hscrollbar:sj,vscrollbar:rj,datagrid:aj,datasource:lj,serialport:oj,server:cj,"custom-control":uj,"select-object":dj,dialog:hj,panel:fj,network:pj,image:gj,"color-picker":mj,spinner:yj,hyperlink:bj,edit:vj,"unknown-unit":xj};function lm(n){return n.replace(/<title[\s\S]*?<\/title>/gi,"")}function om(n,i){return n=n.replace(/<style>([\s\S]*?)<\/style>/gi,(a,o)=>`<style>${o.replace(/\.(?!\d)([\w-]+)/g,`.${i}__$1`)}</style>`),n=n.replace(/\bclass="([^"]*)"/gi,(a,o)=>`class="${o.trim().split(/\s+/).filter(Boolean).map(b=>`${i}__${b}`).join(" ")}"`),n}function wj(n,i){return om(lm(n).replace(/\s(fill|stroke)="(?!none|currentColor)[^"]*"/gi,' $1="currentColor"').replace(/(fill|stroke)\s*:\s*(?!none|currentColor)[^;"]+/gi,"$1: currentColor"),i)}function _j(n,i){return om(lm(n).replace(/\s(fill|stroke)="(#(?:212121|1e1e1e|252526|2d2d2d|1f1f1f))"/gi,' $1="currentColor"').replace(/(fill|stroke)\s*:\s*(#(?:212121|1e1e1e|252526|2d2d2d|1f1f1f))\s*([;"])/gi,"$1: currentColor$3"),i)}const _b=new Map;function Wi({name:n,size:i=16,className:a="",title:o,preserveOriginalColors:h=!1,colorMode:b}){const w=d.useRef(null),u=l1[n],c=b??(h?"original":"themed"),f=`${n}_${c}`;let S=u?_b.get(f):void 0;if(u&&!S){switch(c){case"original":S=om(lm(u),n);break;case"preserve-accent":S=_j(u,n);break;default:S=wj(u,n);break}_b.set(f,S)}return d.useEffect(()=>{w.current&&(w.current.style.width=`${i}px`,w.current.style.height=`${i}px`)},[i]),!u||!S?null:r.jsx("span",{ref:w,className:`vs-icon ${a}`,title:o,"aria-label":o,dangerouslySetInnerHTML:{__html:S}})}const Sj={窗口:"windows-form",按钮:"button",编辑框:"textbox",标签:"label",图片框:"image",列表框:"listbox",组合框:"listbox",选择框:"checkbox",单选框:"radiobutton",分组框:"groupbox",进度条:"progressbar",时钟:"timer",选择列表框:"listbox",横向滚动条:"hscrollbar",纵向滚动条:"vscrollbar",通用对话框:"dialog",画板:"panel",超级列表框:"datagrid",选择夹:"tab",影像框:"image",日期框:"date-picker",月历:"month-calendar",驱动器框:"custom-control",目录框:"folder-closed",文件框:"custom-control",颜色选择器:"color-picker",超级编辑框:"edit",状态条:"custom-control",工具条:"toolbox",树型框:"custom-control",数据报表:"datagrid",图片组:"image",外形框:"custom-control",超级链接框:"hyperlink",调节器:"spinner",滑块条:"slider",数据报:"network",客户:"network",服务器:"server",端口:"serialport",表格:"datagrid",数据源:"datasource",图形按钮:"image-button",打印机:"custom-control",通用提供者:"custom-control",数据库提供者:"datasource",外部数据库:"datasource",外部数据提供者:"datasource"},Cj={"BindingNavigator_16x.png":"datasource","BindingSource_16x.png":"datasource","Button_16x.png":"button","Checkbox_16x.png":"checkbox","CheckboxList_16x.png":"listbox","ClientStatistcs_16x.png":"network","ColorDialog_16x.png":"color-picker","ComboBox_16x.png":"listbox","Cursor_16x.png":"cursor","DatabaseGroup_16x.png":"datasource","DatePicker_16x.png":"date-picker","Diagram_16x.png":"network","Driver_16x.png":"custom-control","FolderBrowserDialogControl_16x.png":"folder-closed","GroupBox_16x.png":"groupbox","HorizontalScrollBarControl_16x.png":"hscrollbar","Image_16x.png":"image","ImageButton_16x.png":"image-button","Label_16x.png":"label","LinkButton_16x.png":"hyperlink","ListBox_16x.png":"listbox","ListView_16x.png":"datagrid","MaskedTextbox_16x.png":"textbox","Media_16x.png":"image","MenuItem_16x.png":"custom-control","MonthCalendar_16x.png":"month-calendar","OpenfileDialog_16x.png":"dialog","PaintBrush_16x.png":"panel","Panel_16x.png":"panel","PrintDialog_16x.png":"dialog","ProgressBar_16x.png":"progressbar","ProjectFilterFile_16x.png":"custom-control","RadioButton_16x.png":"radiobutton","Relationship_16x.png":"datasource","RichTextBox_16x.png":"edit","SerialPort_16x.png":"serialport","ServerReport_16x.png":"server","Slider_16x.png":"slider","SpinButton_16x.png":"spinner","StatusStrip_16x.png":"custom-control","Tab_16x.png":"tab","Table_16x.png":"datagrid","TableAdapter_16x.png":"datasource","TextArea_16x.png":"edit","TextBox_16x.png":"textbox","Timer_16x.png":"timer","ToolBar_16x.png":"toolbox","TreeView_16x.png":"custom-control","VerticalScrollBarControl_16x.png":"vscrollbar","VideoCamera_16x.png":"image"};function jj(n){const i=typeof n=="string"?n.trim().toLowerCase():"";return i?i==="krnln"||i==="core"?!0:i.includes("核心支持库"):!1}function Vg(n,i,a){const o=typeof i=="string"?i.trim():"";if(o){const h=o.replace(/\\/g,"/").split("/").pop()||o,b=Cj[h];return b&&l1[b]?b:"unknown-unit"}return jj(a)&&Sj[n]||"unknown-unit"}function mo({name:n,colorMode:i}){return r.jsx(Wi,{name:n,className:"toolbar-icon-sized",colorMode:i})}function yo({onAction:n,onMouseDown:i,disabled:a,children:o,...h}){const b=d.useRef(!1);return r.jsx("button",{...h,disabled:a,onMouseDown:w=>{i==null||i(w),!(w.defaultPrevented||a||w.button!==0||!n)&&(b.current=!0,w.preventDefault(),n())},onClick:w=>{if(!(!n||a)){if(b.current&&w.detail>0){b.current=!1;return}b.current=!1,n()}},children:o})}function kj(n){return n?"preserve-accent":"themed"}function Ej({runtimePlatform:n="windows",onCompileRun:i,onStop:a,onDebugStepOver:o,onDebugStepInto:h,onDebugStepOut:b,onDebugRunToCursor:w,hasProject:u=!1,canCompileRun:c,isCompiling:f=!1,compilerWarmup:S,isRunning:x=!1,isDebugPaused:j=!1,platform:T="windows",arch:z="x64",onPlatformChange:_,onArchChange:v,onNew:m,onOpen:y,onSave:p,onUndo:M,onRedo:I,preserveOriginalIconColors:L=!1}){const R=iC(n),A=sC(n),O=`${R}+F8`,oe=S==null?void 0:S.phase,Y=oe==="checking"||oe==="warming"||oe==="failed"||oe==="no-compiler",he=Y?(S==null?void 0:S.message)||"编译环境未就绪":"",le=ye=>he?`${ye}（${he}）`:ye,ge=(c??!!u)&&!f&&!Y&&(!x||j),Se=!!x,ee=!!u&&!!j,ae=!!u&&!f&&!Y&&!x,X=T==="macos"||T==="android"||T==="ios"||T==="harmony"?[{value:"arm64",label:"arm64"}]:[{value:"x64",label:"x64"},{value:"x86",label:"x86"},{value:"arm64",label:"arm64"}],B=kj(L),U=L&&ge?"preserve-accent":"themed",ue=L&&Se?"preserve-accent":"themed";return r.jsxs("div",{className:"toolbar",role:"toolbar","aria-label":"工具栏",children:[r.jsxs("div",{className:"toolbar-group",children:[r.jsx(yo,{className:"toolbar-btn","aria-label":"新建文件",title:`新建文件 (${R}+N)`,onAction:m,children:r.jsx(mo,{name:"new-document",colorMode:B})}),r.jsx(yo,{className:"toolbar-btn","aria-label":"打开文件",title:`打开文件 (${R}+O)`,onAction:y,children:r.jsx(mo,{name:"open-folder",colorMode:B})}),r.jsx(yo,{className:"toolbar-btn","aria-label":"保存",title:`保存 (${R}+S)`,onAction:p,children:r.jsx(mo,{name:"save",colorMode:B})})]}),r.jsx("div",{className:"toolbar-separator","aria-hidden":"true"}),r.jsxs("div",{className:"toolbar-group",children:[r.jsx(yo,{className:"toolbar-btn","aria-label":"撤销",title:`撤销 (${R}+Z)`,onAction:M,children:r.jsx(mo,{name:"undo",colorMode:B})}),r.jsx(yo,{className:"toolbar-btn","aria-label":"重做",title:`重做 (${A})`,onAction:I,children:r.jsx(mo,{name:"redo",colorMode:B})})]}),r.jsx("div",{className:"toolbar-separator","aria-hidden":"true"}),r.jsxs("div",{className:"toolbar-group",children:[r.jsx("label",{className:"toolbar-select-label",htmlFor:"toolbar-platform-select",children:"平台"}),r.jsxs("select",{id:"toolbar-platform-select",className:"toolbar-select",value:T,onChange:ye=>_==null?void 0:_(ye.target.value),"aria-label":"目标平台",title:"目标平台",children:[r.jsx("option",{value:"windows",children:"Windows"}),r.jsx("option",{value:"macos",children:"macOS"}),r.jsx("option",{value:"linux",children:"Linux"}),r.jsx("option",{value:"android",children:"Android"}),r.jsx("option",{value:"ios",children:"iOS"}),r.jsx("option",{value:"harmony",children:"HarmonyOS"})]})]}),r.jsxs("div",{className:"toolbar-group",children:[r.jsx("label",{className:"toolbar-select-label",htmlFor:"toolbar-arch-select",children:"架构"}),r.jsx("select",{id:"toolbar-arch-select",className:"toolbar-select",value:z,onChange:ye=>v==null?void 0:v(ye.target.value),"aria-label":"目标架构",title:"目标架构",children:X.map(ye=>r.jsx("option",{value:ye.value,children:ye.label},ye.value))})]}),r.jsxs("div",{className:"toolbar-group",children:[r.jsx(yo,{className:"toolbar-btn toolbar-btn-run","aria-label":j?"继续运行":"编译运行",title:le(j?"继续运行 (F5)":"编译运行 (F5)"),onAction:i,disabled:!ge,children:r.jsx(mo,{name:"run",colorMode:U})}),r.jsx(yo,{className:"toolbar-btn toolbar-btn-stop","aria-label":"停止",title:"停止 (Shift+F5)",onAction:a,disabled:!Se,children:r.jsx(mo,{name:"stop",colorMode:ue})})]}),r.jsx("div",{className:"toolbar-separator","aria-hidden":"true"}),r.jsxs("div",{className:"toolbar-group",children:[r.jsx(yo,{className:"toolbar-btn","aria-label":"逐过程",title:"逐过程 (F10)",disabled:!ee,onAction:o,children:r.jsx(mo,{name:"step-over",colorMode:B})}),r.jsx(yo,{className:"toolbar-btn","aria-label":"逐语句",title:"逐语句 (F11)",disabled:!ee,onAction:h,children:r.jsx(mo,{name:"step-into",colorMode:B})}),r.jsx(yo,{className:"toolbar-btn","aria-label":"跳出",title:"跳出 (Shift+F11)",disabled:!ee,onAction:b,children:r.jsx(mo,{name:"step-out",colorMode:B})}),r.jsx(yo,{className:"toolbar-btn","aria-label":"运行到光标处",title:`运行到光标处 (${O})`,disabled:!ae,onAction:w,children:r.jsx(mo,{name:"run-to-cursor",colorMode:B})})]})]})}const Mj=d.memo(Ej),eg=[137,80,78,71,13,10,26,10];function Lj(n){if(n.length<eg.length)return!1;for(let i=0;i<eg.length;i++)if(n[i]!==eg[i])return!1;return!0}function o1(n){if(!Lj(n))return n;const i=new DataView(n.buffer,n.byteOffset,n.byteLength),a=c=>{if(c+12>n.length)return null;const f=i.getUint32(c,!1);return c+12+f>n.length?null:{type:String.fromCharCode(n[c+4],n[c+5],n[c+6],n[c+7]),dataEnd:c+8+f,next:c+12+f}};let o=!1;for(let c=8;c+12<=n.length;){const f=a(c);if(!f)return n;if((f.type==="iCCP"||f.type==="cHRM")&&(o=!0),f.type==="IEND")break;c=f.next}if(!o)return n;const h=[n.subarray(0,8)];for(let c=8;c+12<=n.length;){const f=a(c);if(!f)return n;if(f.type!=="iCCP"&&f.type!=="cHRM"&&h.push(n.subarray(c,f.next)),f.type==="IEND")break;c=f.next}let b=0;for(const c of h)b+=c.length;const w=new Uint8Array(b);let u=0;for(const c of h)w.set(c,u),u+=c.length;return w}function Nj(n){const i=n.indexOf(",");if(i<0)return null;try{const a=atob(n.slice(i+1)),o=new Uint8Array(a.length);for(let h=0;h<a.length;h++)o[h]=a.charCodeAt(h);return o}catch{return null}}function zj(n){let a="";for(let o=0;o<n.length;o+=32768)a+=String.fromCharCode(...n.subarray(o,Math.min(o+32768,n.length)));return`data:image/png;base64,${btoa(a)}`}function $c(n){if(!n.startsWith("data:image/png;base64,"))return n;const i=Nj(n);if(!i)return n;const a=o1(i);if(a===i)return n;try{return zj(a)}catch{return n}}const Sb={黑色:0,白色:16777215,红色:255,绿色:65280,蓝色:16711680,黄色:65535,青色:16776960,紫红色:16711935,灰色:8421504};function Lf(n){const i=n>>>0&16777215,a=i&255,o=i>>8&255,h=i>>16&255;return`#${(a<<16|o<<8|h).toString(16).padStart(6,"0")}`}function c1(n){const i=/^#?([0-9a-f]{6})$/i.exec(n.trim());if(!i)return 0;const a=Number.parseInt(i[1],16),o=a>>16&255,h=a>>8&255,b=a&255;return o|h<<8|b<<16}function u1(n){if(!n||n[0]!=="#")return null;const i=n.slice(1);if(/^[0-9a-fA-F]+$/.test(i)){let a=null;return i.length===3?a=i[0]+i[0]+i[1]+i[1]+i[2]+i[2]:i.length===6?a=i:i.length===8&&(a=i.slice(0,6)),a?c1(a):null}return Object.prototype.hasOwnProperty.call(Sb,i)?Sb[i]:null}const Tj="宋体",Fg=9,tg=["宋体","新宋体","微软雅黑","黑体","楷体","仿宋","等线","幼圆","Arial","Times New Roman","Courier New","Consolas","Tahoma","Segoe UI","Verdana"];function Xd(n){if(typeof n!="string"||!n.trim().startsWith("{"))return null;try{const i=JSON.parse(n);if(i&&typeof i=="object"&&typeof i.name=="string"&&i.name.trim())return{name:i.name.trim(),size:Number.isFinite(i.size)&&i.size>0?Math.round(i.size):Fg,bold:!!i.bold,italic:!!i.italic,underline:!!i.underline,strikeout:!!i.strikeout,color:typeof i.color=="number"&&i.color>=0?Math.floor(i.color):void 0}}catch{}return null}function d1(n){return JSON.stringify(n)}function Aj(n){if(!n)return"（默认字体）";const i=[];return n.bold&&i.push("粗"),n.italic&&i.push("斜"),n.underline&&i.push("下划线"),n.strikeout&&i.push("删除线"),`${n.name} ${n.size}${i.length?" "+i.join("/"):""}`}function h1(n){if(!n)return{};const i=[];return n.underline&&i.push("underline"),n.strikeout&&i.push("line-through"),{fontFamily:`"${n.name}"`,fontSize:`${Math.round(n.size*96/72)}px`,fontWeight:n.bold?"700":"400",fontStyle:n.italic?"italic":"normal",textDecoration:i.length?i.join(" "):"none",...typeof n.color=="number"?{color:Lf(n.color)}:{}}}let Dj=1;function Cb(){return`tabrow_${Dj++}`}function Ij({titles:n,controlName:i,onSave:a,onClose:o}){const[h,b]=d.useState(()=>(n||"").split(`
 `).map(_=>_.trim()).filter(Boolean).map(_=>({id:Cb(),title:_}))),[w,u]=d.useState(0),c=h[w];d.useEffect(()=>{const _=v=>{v.key==="Escape"&&(v.stopPropagation(),o())};return window.addEventListener("keydown",_,!0),()=>window.removeEventListener("keydown",_,!0)},[o]);const f=_=>b(v=>v.map((m,y)=>y===w?{...m,title:_}:m)),S=()=>{const _={id:Cb(),title:`子夹${h.length+1}`};b(v=>{const m=[...v];return m.splice(w+1,0,_),m}),u(v=>Math.min(v+1,h.length))},x=()=>{h.length!==0&&(b(_=>_.filter((v,m)=>m!==w)),u(_=>Math.max(0,Math.min(_,h.length-2))))},j=()=>{w<=0||(b(_=>{const v=[..._];return[v[w-1],v[w]]=[v[w],v[w-1]],v}),u(_=>_-1))},T=()=>{w>=h.length-1||(b(_=>{const v=[..._];return[v[w+1],v[w]]=[v[w],v[w+1]],v}),u(_=>_+1))},z=()=>a(h.map(_=>_.title.trim()).filter(Boolean).join(`
 `));return r.jsx("div",{className:"menued-overlay",onMouseDown:o,children:r.jsxs("div",{className:"menued-dialog",onMouseDown:_=>_.stopPropagation(),children:[r.jsxs("div",{className:"menued-header",children:[r.jsxs("span",{className:"menued-title",children:["子夹管理 — ",i]}),r.jsx("button",{type:"button",className:"menued-x",onClick:o,"aria-label":"关闭",children:"×"})]}),r.jsx("div",{className:"menued-props",children:r.jsxs("label",{className:"menued-field",children:[r.jsx("span",{children:"子夹标题"}),r.jsx("input",{type:"text",value:(c==null?void 0:c.title)??"",disabled:!c,onChange:_=>f(_.target.value)})]})}),r.jsxs("div",{className:"menued-tools",children:[r.jsx("button",{type:"button",onClick:j,disabled:w<=0,title:"上移",children:"↑"}),r.jsx("button",{type:"button",onClick:T,disabled:w>=h.length-1,title:"下移",children:"↓"}),r.jsx("span",{className:"menued-tools-gap"}),r.jsx("button",{type:"button",onClick:S,children:"插入"}),r.jsx("button",{type:"button",onClick:x,disabled:h.length===0,children:"删除"})]}),r.jsxs("div",{className:"menued-list",children:[h.map((_,v)=>r.jsx("div",{className:`menued-row${v===w?" menued-row-sel":""}`,onMouseDown:()=>u(v),children:r.jsxs("span",{className:"menued-rowtext",children:[v+1,". ",_.title||"(未命名)"]})},_.id)),h.length===0&&r.jsx("div",{className:"menued-empty",children:"还没有子夹，点「插入」添加。"})]}),r.jsxs("div",{className:"menued-footer",children:[r.jsx("button",{type:"button",className:"menued-ok",onClick:z,children:"确定"}),r.jsx("button",{type:"button",onClick:o,children:"取消"})]})]})})}let Rj=1;function ng(){return`lirow_${Rj++}`}function Hj({mode:n,value:i,controlName:a,controlType:o,onSave:h,onClose:b}){const w=n==="values",[u,c]=d.useState(()=>{const p=(i||"").split(`

@@ -21,6 +21,7 @@
       <nav class="nav" id="mainNav">
         <a href="#features">功能</a>
         <a href="#preview">预览</a>
+        <a href="#changelog">更新日志</a>
         <a href="#plans">友链</a>
         <a href="https://github.com/chungbinb/ycIDE-electron/tree/main/lib" target="_blank" rel="noopener noreferrer">支持库</a>
         <a href="https://github.com/chungbinb/ycIDE-electron/issues" target="_blank" rel="noopener noreferrer">联系</a>
@@ -41,10 +42,10 @@
             你可以现在先体验前端交互界面。
           </p>
           <div class="hero-actions">
-            <a href="#" class="btn btn-primary">立即体验</a>
+            <a href="https://github.com/chungbinb/ycIDE-electron/releases" class="btn btn-primary" id="downloadBtn" target="_blank" rel="noopener noreferrer">下载最新版</a>
             <a href="#features" class="btn btn-ghost">查看核心能力</a>
           </div>
-          <p class="hero-version-note">开发测试版 v0.0.4-beta.5(2026-07-06) - 请到QQ群下载 </p>
+          <p class="hero-version-note" id="versionNote">最新版本请查看 <a href="#changelog">更新日志</a></p>
         </div>
 
         <div class="hero-panel">
@@ -120,6 +121,19 @@
       </div>
     </section>
 
+    <section class="changelog-section" id="changelog">
+      <div class="container reveal-up">
+        <div class="changelog-head">
+          <h2>更新日志</h2>
+          <a class="changelog-all" id="releasesLink" href="https://github.com/chungbinb/ycIDE-electron/releases" target="_blank" rel="noopener noreferrer">全部版本 →</a>
+        </div>
+        <p class="section-subtitle">自动同步自 GitHub Releases。</p>
+        <div class="changelog-list" id="changelogList">
+          <p class="changelog-empty">正在加载版本信息…</p>
+        </div>
+      </div>
+    </section>
+
     <section class="plan-section" id="plans">
       <div class="container reveal-up">
         <h2>友情链接</h2>
@@ -167,5 +181,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="releases.js"></script>
 </body>
 </html>

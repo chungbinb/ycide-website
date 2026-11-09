@@ -412,6 +412,31 @@ a {
   color: var(--text-muted);
 }
 
+.playground-cta {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 20px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(13, 95, 153, 0.14);
+  background: linear-gradient(140deg, #ffffff, #eef7ff);
+  box-shadow: var(--shadow-soft);
+}
+
+.playground-cta h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.playground-cta p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
 .changelog-section {
   padding: 70px 0;
 }

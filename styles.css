@@ -408,6 +408,226 @@ a {
   color: var(--text-muted);
 }
 
+.changelog-section {
+  padding: 70px 0;
+}
+
+.changelog-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.changelog-head h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+.changelog-all {
+  color: var(--brand-a);
+  font-weight: 800;
+}
+
+.hero-version-note a {
+  color: var(--brand-a);
+  font-weight: 700;
+}
+
+.changelog-list {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.changelog-empty {
+  color: var(--text-muted);
+}
+
+.changelog-empty a {
+  color: var(--brand-a);
+  font-weight: 700;
+}
+
+.release-card {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(13, 95, 153, 0.08);
+  overflow: hidden;
+}
+
+.release-card[open] {
+  border-color: rgba(20, 130, 184, 0.35);
+}
+
+.release-card summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.release-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.release-card summary::after {
+  content: "▾";
+  color: var(--brand-b);
+  transition: transform 0.2s ease;
+}
+
+.release-card[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.release-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+}
+
+.release-card time {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.release-badge {
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #0b7a4b;
+  background: #e3f7ee;
+}
+
+.release-badge.is-pre {
+  color: #a35a00;
+  background: #fff1dc;
+}
+
+.release-body {
+  padding: 0 20px 18px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--text-main);
+  font-size: 0.94rem;
+  overflow-wrap: anywhere;
+}
+
+.release-body h3,
+.release-body h4,
+.release-body h5 {
+  margin: 16px 0 6px;
+  font-size: 1rem;
+  color: var(--brand-a);
+}
+
+.release-body ul {
+  margin: 6px 0;
+  padding-left: 1.3em;
+}
+
+.release-body li {
+  margin: 4px 0;
+}
+
+.release-body li ul {
+  color: var(--text-muted);
+}
+
+.release-body p {
+  margin: 8px 0;
+}
+
+.release-body hr {
+  border: 0;
+  border-top: 1px solid var(--line-soft);
+  margin: 12px 0;
+}
+
+.release-body blockquote {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--brand-c);
+  background: #f2f9ff;
+  color: var(--text-muted);
+  border-radius: 0 8px 8px 0;
+}
+
+.release-body code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.88em;
+  background: #eef5fc;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.release-body a {
+  color: var(--brand-a);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 0 6px;
+  margin-right: 4px;
+  border-radius: 6px;
+  background: #eaf4ff;
+  color: var(--brand-a);
+}
+
+.tag-修复 {
+  background: #fdecef;
+  color: #b4233a;
+}
+
+.tag-新增 {
+  background: #e3f7ee;
+  color: #0b7a4b;
+}
+
+.release-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.release-download,
+.release-link {
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+}
+
+.release-body .release-download {
+  color: #fff;
+  background: linear-gradient(140deg, var(--brand-a), var(--brand-b));
+  overflow-wrap: anywhere;
+}
+
+.release-download span {
+  margin-left: 8px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.release-link {
+  color: var(--brand-a);
+  border: 1px solid rgba(13, 95, 153, 0.3);
+}
+
 .site-footer {
   border-top: 1px solid rgba(13, 95, 153, 0.12);
   padding: 20px 0 30px;

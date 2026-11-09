@@ -1,0 +1,42 @@
+name: 同步 ycIDE 版本
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # 每 30 分钟检查一次
+  workflow_dispatch: # 支持在 Actions 页面手动触发
+  repository_dispatch: # 支持 ycIDE-electron 发版后主动通知
+    types: [ycide-release]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-releases
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 拉取最新版本数据
+        run: node scripts/sync-releases.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 有变化则提交
+        run: |
+          if git diff --quiet -- data/releases.json && git ls-files --error-unmatch data/releases.json >/dev/null 2>&1; then
+            echo "无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          git add data/releases.json
+          git commit -m "chore: 同步 ycIDE 最新版本 $(node -p "require('./data/releases.json').releases[0]?.version ?? ''")"
+          git push

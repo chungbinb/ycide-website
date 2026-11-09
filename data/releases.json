@@ -3,6 +3,23 @@
   "releasesUrl": "https://github.com/chungbinb/ycIDE-electron/releases",
   "releases": [
     {
+      "tag": "dev-v0.0.5-beta.34",
+      "name": "开发测试包 · v0.0.5-beta.34 · fca2d3a",
+      "version": "v0.0.5-beta.34",
+      "date": "2026-11-09",
+      "publishedAt": "2026-11-09T14:46:58Z",
+      "prerelease": true,
+      "url": "https://github.com/chungbinb/ycIDE-electron/releases/tag/dev-v0.0.5-beta.34",
+      "body": "## ycIDE - 开发测试版 v0.0.5-beta.34(2026-11-09)\n\n---\n\n### 优化调整\n\n- [优化] **官网在线体验随开发版自动更新**：开发版一有更新，官网的「在线体验」就会自动用最新代码重新构建，不用再等每天的定时同步。\n\n> 这是自动构建的开发测试包，不包含 compiler/ 工具链。",
+      "assets": [
+        {
+          "name": "ycIDE-win-unpacked-v0.0.5-beta.34.7z",
+          "size": 97934120,
+          "url": "https://github.com/chungbinb/ycIDE-electron/releases/download/dev-v0.0.5-beta.34/ycIDE-win-unpacked-v0.0.5-beta.34.7z"
+        }
+      ]
+    },
+    {
       "tag": "dev-v0.0.5-beta.33",
       "name": "开发测试包 · v0.0.5-beta.33 · 9788238",
       "version": "v0.0.5-beta.33",
